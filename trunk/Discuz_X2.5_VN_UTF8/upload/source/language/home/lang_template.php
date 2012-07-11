@@ -4,7 +4,7 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: lang_template.php 29183 2012-03-28 06:39:26Z zhengqingpeng $
+ *      $Id: lang_template.php 30789 2012-06-19 09:05:13Z zhengqingpeng $
  *
  *      This file is automatically generate
  */
@@ -91,7 +91,7 @@ $lang = array (
   'did_not_follow_to_me' => 'Bạn đã không xem bài của fan',
   'accept_invitation' => 'Chấp nhận',
   'and_play_together' => ', và cùng chơi',
-  'become_friend' => '<p>Trở thành bạn bè, bạn có thể với chủ đề của cuộc thảo luận, và sự quan tâm kịp thời mỗi khác cập nhật, bạn cũng có thể chơi trò chơi vui nhộn $userapp[appname] ……</p>
+ 'become_friend' => '<p>Trở thành bạn bè, bạn có thể với chủ đề của cuộc thảo luận, và sự quan tâm kịp thời mỗi khác cập nhật, bạn cũng có thể chơi trò chơi vui nhộn $userapp[appname] ……</p>
 						<p>Bạn hãy đăng nhập và tải những bức ảnh cuộc sống của bạn</p>
 						<p>Bạn có muốn tham gia không? Hãy đến với chúng tôi.</p>',
   'friend_information' => '<p>Có $space[friends] bạn, $space[albums] album, $space[doings] tâm trạng, $space[blogs] nhật ký, $space[threads] chủ đề</p>',
@@ -149,11 +149,11 @@ $lang = array (
   'comprehensive_overview' => 'Tổng hợp',
   'comprehensive_overview_message' => 'Đây là thông tin tổng hợp tình hình diễn đàn(cần 2 ngày sau mới có hiệu lực).',
   'info_interactive' => 'Thông tin tương tác',
-  'interactive_help_message' => '<li>Thăm bạn bè: Thăm nhiều lần trong 1 ngày thì chỉ  tính là 1 lần</li>
-  									<li>{$_G[setting][navs][2][navname]}Được công bố chủ đề hàng ngày, tổng số bỏ phiếu, các hoạt động, khen thưởng, cuộc tranh luận, hàng hóa Trả lời chủ đề</li>
-									<li>Nhóm: Mỗi ngày được tạo ra {$_G[setting][navs][3][navname]}, {$_G[setting][navs][3][navname]} theme, {$_G[setting][navs][3][navname]} tổng số bài trả lời. </li>
-									<li>Trang chủ：Được công bố hồ sơ hàng ngày, nhật ký, hình ảnh, chủ đề, bỏ phiếu, các hoạt động, chia sẻ và đánh giá lẫn nhau, tổng số </li>
-									<li>Tương tác：Là một trong những người dùng hàng ngày nhắn tin, chào hỏi và {$_G[setting][navs][4][navname]} tương ứng với vị trí tương tác tổng số </li>',
+  'interactive_help_message' => '<li>来访用户：指的是每天访问本站的唯一用户数。一个用户访问多次，也只算一次</li>
+  									<li>{$_G[setting][navs][2][navname]}：指的是每天发布主题、投票、活动、悬赏、辩论、商品和主题回帖的总数量 </li>
+									<li>群组：指的是每天创建{$_G[setting][navs][3][navname]}、{$_G[setting][navs][3][navname]}主题、{$_G[setting][navs][3][navname]}回帖的总数量 </li>
+									<li>家园：指的是每天发布记录、日志、图片、话题、投票、活动、分享和互相评论的总数量 </li>
+									<li>互动：指的是每天用户之间互相留言、打招呼和的{$_G[setting][navs][4][navname]}相应的表态互动总数量 </li>',
   'member_interactive' => 'Tương tác',
   'show' => 'Xem',
   'home' => 'Trang chủ',
@@ -313,7 +313,7 @@ $lang = array (
   'use_magic_tools' => 'Sử dụng Thẻ VIP',
   'view_blog' => 'Xem blog',
   'add_friend' => 'Kết bạn',
-  'connect_me' => 'Lưu bút',
+  'connect_me' => 'Tường',
   'diy_space' => 'Trang trí',
   'edit_avatar' => 'Avatar',
   'enter' => 'Vào',
@@ -472,7 +472,7 @@ $lang = array (
   'visit_my_space' => 'Thăm nhà tôi',
   'feed' => 'Tin tức',
   'main_page' => 'Home',
-  'message_board' => 'Bảng tin',
+  'message_board' => 'Tường',
   'depending_your' => 'Tùy thuộc',
   'filter_settings' => 'Tùy chọn nhắc nhở',
   'fix_profile' => 'Sửa thông tin',
@@ -615,7 +615,7 @@ $lang = array (
   'manage_group_threads' => 'Chủ đề nhóm',
   'manage_share' => 'Chia sẻ',
   'member_manage' => 'Tác vụ',
-  'message' => 'Bảng tin',
+  'message' => 'Tường',
   'space_menu_send_pm' => 'Gửi PM',
   'all_applications_news' => 'Mọi Thông báo App',
   'applications_news' => 'Tin tức App',
@@ -643,7 +643,7 @@ $lang = array (
   'delete_privatepm_user' => 'Xóa các PM từ thành viên',
   'dots' => '....',
   'ignore_list' => 'DS bỏ qua',
-  'ignore_member_pm_message' => '<p>Thêm tên ai vào danh sách thì hắn gửi tin nhắn ngắn sẽ không được chấp nhận</p>
+ 'ignore_member_pm_message' => '<p>Thêm tên ai vào danh sách thì hắn gửi tin nhắn ngắn sẽ không được chấp nhận</p>
 								<p>Nếu thêm nhiều người thì dùng dấu , để ngăn cách</p>
 								<p>Nếu muốn tất cả thì điền "&#123;ALL&#125;"</p>',
   'just_now' => 'Vừa mới',
@@ -681,7 +681,7 @@ $lang = array (
   'view_newpm' => 'Xem PM mới',
   'view_privatepm' => 'Xem PM riêng tư',
   'yes' => 'Có',
-  'you_to' => '',
+  'you_to' => 'để',
   'pmreport' => 'Báo cáo gửi',
   'create_new_poll' => 'Tạo khảo sát',
   'friend_poll' => 'Của bạn tôi',
@@ -720,7 +720,7 @@ $lang = array (
   'shares_num' => 'Chia sẻ',
   'space_visits' => 'Lượt thăm',
   'time_offset' => 'Múi giờ',
-  'timezone' => '
+ 'timezone' => '
 		\'9999\' => \'Sử dụng giờ mặc định của hệ thống\',
 		\'-12\' => \'(GMT -12:00) Enewetak Island, Kwajalein Atoll\',
 		\'-11\' => \'(GMT -11:00) Midway Island, Samoa\',
@@ -1223,8 +1223,8 @@ $lang = array (
   'copy_invite_link' => 'Đã sao chép liên kết mời',
   'copy_invite_manage' => 'Mời liên kết (Quản lý đặc biệt)',
   'credit_recharge' => 'Nạp tiền điểm',
-  'delete_log_message' => '<p>Bạn có chắc chắn muốn xóa ?</p>',
-
+  'delete_log_message' => '<p>Bạn có chắc chắn muốn xóa ?</p>
+							<p>Xóa các bản ghi lời mời là bạn bè của bạn </p>',
   'friend_email_address' => 'Email bạn bè',
   'friend_get' => 'Bạn bè nhận được ',
   'friend_invite_link' => 'Liên kết lời mời bạn bè của tôi',
@@ -1300,7 +1300,7 @@ $lang = array (
   'max_text_poke_message' => 'Chọn nội dung, gửi kèm theo chào hỏi, tối đa 150 ký tự',
   'me' => 'Tôi',
   'no_new_poke' => 'Không có lời chào mới',
-  'poke' => 'Trêu chọc',
+  'poke' => 'trêu chọc',
   'poke_received' => 'Trêu chọc nhận được',
   'see_all_poke' => 'Xem tất cả Trêu chọc',
   'to' => ' đến ',

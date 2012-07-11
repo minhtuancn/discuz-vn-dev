@@ -15,11 +15,11 @@ $lang = array
 (
 	'email_name' => 'Xác nhận Email',
 	'email_desc' => 'Bạn cần xác nhận Email và sau đó nhận thưởng.',
-	'email_view' => '<strong>Làm theo các bước sau để hoàn thành nhiệm vụ:</strong>
+	'email_view' => '<strong>请按照以下的说明来参与本任务：</strong>
 		<ul>
-		<li><a href="home.php?mod=spacecp&ac=profile&op=password" target="_blank">Vào trang cá nhân</a></li>
-		<li>Điền vào email của bạn rồi nhấn "xác nhận email"</li>
-		<li>Hệ thống sẽ gủi email cho bạn, bạn đọc email và làm theo hướng dẫn để hoàn thành.</li>
+		<li><a href="home.php?mod=spacecp&ac=profile&op=password" target="_blank">新窗口打开账号设置页面</a></li>
+		<li>在新打开的设置页面中，将自己的邮箱真实填写(新填写的邮箱需要先保存)，并点击“重新接收验证邮件”链接</li>
+		<li>几分钟后，系统会给您发送一封邮件，收到邮件后，请按照邮件的说明，访问邮件中的验证链接就可以了</li>
 		</ul>',
 );
 

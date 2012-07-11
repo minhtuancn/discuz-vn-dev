@@ -30,7 +30,7 @@ $lang = array
 	'security_question_6' => 'Bạn thích ca sĩ nào nhất',
 	'security_question_7' => 'Sinh nhật của bạn',
 
-	'login_tips' => 'AdminCP Discuz <a href="http://discuz.vn">Việt Nam</a>',
+	'login_tips' => 'AdminCP Discuz',
 	'login_nosecques' => 'Bạn chưa thiết đặt câu hỏi an toàn. Vui lòng vào <a href="forum.php?mod=memcp&action=profile&typeid=1" target="_blank">Trung tâm cá nhân</a> cài đặt câu hỏi an toàn.',
 
 	'login_cplock' => 'Trang quản lý đã bị khóa <br>Vui lòng đợi<b> {ltime} </b>giây nữa để thử lại',
