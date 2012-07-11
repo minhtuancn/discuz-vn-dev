@@ -1,5 +1,5 @@
 /*
-	[Discuz!] (C)2001-2099 Comsenz Inc.
+	[Discuz!] (C)2001-2099 Comsenz Inc.DCV
 	This is NOT a freeware, use is subject to license terms
 
 	$Id: common_extra.js 29415 2012-04-11 05:20:28Z zhangguosheng $
@@ -60,7 +60,7 @@ function _updatesecqaa(idhash) {
 		}
 		$('checksecqaaverify_' + idhash).innerHTML = '<img src="'+ IMGDIR + '/none.gif" width="16" height="16" class="vm" />';
 		ajaxget('misc.php?mod=secqaa&action=update&idhash=' + idhash, 'secqaa_' + idhash, null, '', '', function() {
-			secST['qaa_' + idhash] = setTimeout(function() {$('secqaa_' + idhash).innerHTML = '<span class="xi2 cur1" onclick="updatesecqaa(\''+idhash+'\')">刷新验证问答</span>';}, 180000);
+			secST['qaa_' + idhash] = setTimeout(function() {$('secqaa_' + idhash).innerHTML = '<span class="xi2 cur1" onclick="updatesecqaa(\''+idhash+'\')">Đổi câu hỏi</span>';}, 180000);
 		});
 	}
 }
@@ -74,7 +74,7 @@ function _updateseccode(idhash, play) {
 			}
 			$('checkseccodeverify_' + idhash).innerHTML = '<img src="'+ IMGDIR + '/none.gif" width="16" height="16" class="vm" />';
 			ajaxget('misc.php?mod=seccode&action=update&idhash=' + idhash, 'seccode_' + idhash, null, '', '', function() {
-				secST['code_' + idhash] = setTimeout(function() {$('seccode_' + idhash).innerHTML = '<span class="xi2 cur1" onclick="updateseccode(\''+idhash+'\')">刷新验证码</span>';}, 180000);
+				secST['code_' + idhash] = setTimeout(function() {$('seccode_' + idhash).innerHTML = '<span class="xi2 cur1" onclick="updateseccode(\''+idhash+'\')">Đổi mã khác</span>';}, 180000);
 			});
 		}
 	} else {
@@ -103,9 +103,9 @@ function _checksec(type, idhash, showmsg, recall) {
 			obj.innerHTML = '<img src="'+ IMGDIR + '/check_error.gif" width="16" height="16" class="vm" />';
 			if(showmsg) {
 				if(type == 'code') {
-					showError('验证码错误，请重新填写');
+					showError('Sai mã. Mời nhập lại!');
 				} else if(type == 'qaa') {
-					showError('验证问答错误，请重新填写');
+					showError('Sai câu hỏi an toàn!');
 				}
 				recall(0);
 			}
@@ -169,7 +169,7 @@ function _copycode(obj) {
 		rng.moveToElementText(obj);
 		rng.select();
 	}
-	setCopy(BROWSER.ie ? obj.innerText.replace(/\r\n\r\n/g, '\r\n') : obj.textContent, '代码已复制到剪贴板');
+	setCopy(BROWSER.ie ? obj.innerText.replace(/\r\n\r\n/g, '\r\n') : obj.textContent, 'Đã sao chép');
 }
 
 function _setCopy(text, msg){
@@ -180,10 +180,10 @@ function _setCopy(text, msg){
 				showPrompt(null, null, '<span>' + msg + '</span>', 1500);
 			}
 		} else {
-			showDialog('<div class="c"><div style="width: 200px; text-align: center;">复制失败，请选择“允许访问”</div></div>', 'alert');
+			showDialog('<div class="c"><div style="width: 200px; text-align: center;">Sao chép thất bại. Chọn "Cho phép truy cập"</div></div>', 'alert');
 		}
 	} else {
-		var msg = '<div class="c"><div style="width: 200px; text-align: center; text-decoration:underline;">点此复制到剪贴板</div>' +
+		var msg = '<div class="c"><div style="width: 200px; text-align: center; text-decoration:underline;">Nhấn để sao chép</div>' +
 		AC_FL_RunContent('id', 'clipboardswf', 'name', 'clipboardswf', 'devicefont', 'false', 'width', '200', 'height', '40', 'src', STATICURL + 'image/common/clipboard.swf', 'menu', 'false',  'allowScriptAccess', 'sameDomain', 'swLiveConnect', 'true', 'wmode', 'transparent', 'style' , 'margin-top:-20px') + '</div>';
 		showDialog(msg, 'info');
 		text = text.replace(/[\xA0]/g, ' ');
@@ -230,27 +230,27 @@ function _showselect(obj, inpid, t, rettype) {
 		$('append_parent').appendChild(div);
 		s = '';
 		if(!t) {
-			s += showselect_row(inpid, '一天', 1, 0, rettype);
-			s += showselect_row(inpid, '一周', 7, 0, rettype);
-			s += showselect_row(inpid, '一个月', 30, 0, rettype);
-			s += showselect_row(inpid, '三个月', 90, 0, rettype);
-			s += showselect_row(inpid, '自定义', -2);
+			s += showselect_row(inpid, '1 ngày', 1, 0, rettype);
+			s += showselect_row(inpid, '1 tuần', 7, 0, rettype);
+			s += showselect_row(inpid, '1 tháng', 30, 0, rettype);
+			s += showselect_row(inpid, '3 tháng', 90, 0, rettype);
+			s += showselect_row(inpid, 'Tùy chọn', -2);
 		} else {
 			if($(t)) {
 				var lis = $(t).getElementsByTagName('LI');
 				for(i = 0;i < lis.length;i++) {
 					s += '<a href="javascript:;" onclick="$(\'' + inpid + '\').value = this.innerHTML;$(\''+obj.id+'_menu\').style.display=\'none\'">' + lis[i].innerHTML + '</a>';
 				}
-				s += showselect_row(inpid, '自定义', -1);
+				s += showselect_row(inpid, 'Tùy chọn', -1);
 			} else {
-				s += '<a href="javascript:;" onclick="$(\'' + inpid + '\').value = \'0\'">永久</a>';
-				s += showselect_row(inpid, '7 天', 7, 1, rettype);
-				s += showselect_row(inpid, '14 天', 14, 1, rettype);
-				s += showselect_row(inpid, '一个月', 30, 1, rettype);
-				s += showselect_row(inpid, '三个月', 90, 1, rettype);
-				s += showselect_row(inpid, '半年', 182, 1, rettype);
-				s += showselect_row(inpid, '一年', 365, 1, rettype);
-				s += showselect_row(inpid, '自定义', -1);
+				s += '<a href="javascript:;" onclick="$(\'' + inpid + '\').value = \'0\'">Mãi mãi</a>';
+				s += showselect_row(inpid, '7 ngày', 7, 1, rettype);
+				s += showselect_row(inpid, '14 ngày', 14, 1, rettype);
+				s += showselect_row(inpid, '1 tháng', 30, 1, rettype);
+				s += showselect_row(inpid, '3 tháng', 90, 1, rettype);
+				s += showselect_row(inpid, '6 tháng', 182, 1, rettype);
+				s += showselect_row(inpid, '1 năm', 365, 1, rettype);
+				s += showselect_row(inpid, 'Tùy chọn', -1);
 			}
 		}
 		$(div.id).innerHTML = s;
@@ -469,11 +469,11 @@ function _zoom(obj, zimg, nocover, pn, showexif) {
 		menu = document.createElement('div');
 		menu.id = menuid;
 		if(cover) {
-			menu.innerHTML = '<div class="zoominner" id="' + menuid + '_zoomlayer" style="display:none"><p><span class="y"><a id="' + menuid + '_imglink" class="imglink" target="_blank" title="在新窗口打开">在新窗口打开</a><a id="' + menuid + '_adjust" href="javascipt:;" class="imgadjust" title="实际大小">实际大小</a>' +
-				'<a href="javascript:;" onclick="hideMenu()" class="imgclose" title="关闭">关闭</a></span>鼠标滚轮缩放图片</p>' +
+			menu.innerHTML = '<div class="zoominner" id="' + menuid + '_zoomlayer" style="display:none"><p><span class="y"><a id="' + menuid + '_imglink" class="imglink" target="_blank" title="Mở cửa sổ mới" alt="Mở cửa sổ mới">Mở cửa sổ mới</a><a id="' + menuid + '_adjust" href="javascipt:;" class="imgadjust" title="Kích thước thực" alt="Kích thước thực">Kích thước thực</a>' +
+				'<a href="javascript:;" onclick="hideMenu()" class="imgclose" title="Đóng">Đóng</a></span>Lăn chuột giữa để zoom ảnh</p>' +
 				'<div class="zimg_p" id="' + menuid + '_picpage"></div><div class="hm" id="' + menuid + '_img"></div></div>';
 		} else {
-			menu.innerHTML = '<div class="popupmenu_popup" id="' + menuid + '_zoomlayer" style="width:auto"><span class="right y"><a href="javascript:;" onclick="hideMenu()" class="flbc" style="width:20px;margin:0 0 2px 0">关闭</a></span>鼠标滚轮缩放图片<div class="zimg_p" id="' + menuid + '_picpage"></div><div class="hm" id="' + menuid + '_img"></div></div>';
+			menu.innerHTML = '<div class="popupmenu_popup" id="' + menuid + '_zoomlayer" style="width:auto"><span class="right y"><a href="javascript:;" onclick="hideMenu()" class="flbc" style="width:20px;margin:0 0 2px 0">Đóng</a></span>Lăn chuột giữa để zoom ảnh<div class="zimg_p" id="' + menuid + '_picpage"></div><div class="hm" id="' + menuid + '_img"></div></div>';
 		}
 		if(BROWSER.ie || BROWSER.chrome){
 			menu.onmousewheel = adjust;
@@ -499,9 +499,9 @@ function _zoom(obj, zimg, nocover, pn, showexif) {
 			}
 			if(authorcurrent !== '') {
 				paid = authorcurrent > 0 ? authorimgs[authorcurrent - 1] : authorimgs[authorlength - 1];
-				picpage += ' <div id="zimg_prev" onmouseover="dragMenuDisabled=true;this.style.backgroundPosition=\'0 50px\'" onmouseout="dragMenuDisabled=false;this.style.backgroundPosition=\'0 -100px\';" onclick="_zoom_page(\'' + paid + '\', ' + (showexif ? 1 : 0) + ')" class="zimg_prev"><strong>上一张</strong></div> ';
+				picpage += ' <div id="zimg_prev" onmouseover="dragMenuDisabled=true;this.style.backgroundPosition=\'0 50px\'" onmouseout="dragMenuDisabled=false;this.style.backgroundPosition=\'0 -100px\';" onclick="_zoom_page(\'' + paid + '\', ' + (showexif ? 1 : 0) + ')" class="zimg_prev"><strong>Trước</strong></div> ';
 				paid = authorcurrent < authorlength - 1 ? authorimgs[authorcurrent + 1] : authorimgs[0];
-				picpage += ' <div id="zimg_next" onmouseover="dragMenuDisabled=true;this.style.backgroundPosition=\'100% 50px\'" onmouseout="dragMenuDisabled=false;this.style.backgroundPosition=\'100% -100px\';" onclick="_zoom_page(\'' + paid + '\', ' + (showexif ? 1 : 0) + ')" class="zimg_next"><strong>下一张</strong></div> ';
+				picpage += ' <div id="zimg_next" onmouseover="dragMenuDisabled=true;this.style.backgroundPosition=\'100% 50px\'" onmouseout="dragMenuDisabled=false;this.style.backgroundPosition=\'100% -100px\';" onclick="_zoom_page(\'' + paid + '\', ' + (showexif ? 1 : 0) + ')" class="zimg_next"><strong>Tiếp</strong></div> ';
 			}
 			if(picpage) {
 				$(menuid + '_picpage').innerHTML = picpage;
@@ -1039,7 +1039,7 @@ function _showColorBox(ctrlid, layer, k, bgcolor) {
 		menu.unselectable = true;
 		menu.style.display = 'none';
 		var coloroptions = ['Black', 'Sienna', 'DarkOliveGreen', 'DarkGreen', 'DarkSlateBlue', 'Navy', 'Indigo', 'DarkSlateGray', 'DarkRed', 'DarkOrange', 'Olive', 'Green', 'Teal', 'Blue', 'SlateGray', 'DimGray', 'Red', 'SandyBrown', 'YellowGreen', 'SeaGreen', 'MediumTurquoise', 'RoyalBlue', 'Purple', 'Gray', 'Magenta', 'Orange', 'Yellow', 'Lime', 'Cyan', 'DeepSkyBlue', 'DarkOrchid', 'Silver', 'Pink', 'Wheat', 'LemonChiffon', 'PaleGreen', 'PaleTurquoise', 'LightBlue', 'Plum', 'White'];
-		var colortexts = ['黑色', '赭色', '暗橄榄绿色', '暗绿色', '暗灰蓝色', '海军色', '靛青色', '墨绿色', '暗红色', '暗桔黄色', '橄榄色', '绿色', '水鸭色', '蓝色', '灰石色', '暗灰色', '红色', '沙褐色', '黄绿色', '海绿色', '间绿宝石', '皇家蓝', '紫色', '灰色', '红紫色', '橙色', '黄色', '酸橙色', '青色', '深天蓝色', '暗紫色', '银色', '粉色', '浅黄色', '柠檬绸色', '苍绿色', '苍宝石绿', '亮蓝色', '洋李色', '白色'];
+		var colortexts = ['Black', 'Sienna', 'DarkOliveGreen', 'DarkGreen', 'DarkSlateBlue', 'Navy', 'Indigo', 'DarkSlateGray', 'DarkRed', 'DarkOrange', 'Olive', 'Green', 'Teal', 'Blue', 'SlateGray', 'DimGray', 'Red', 'SandyBrown', 'YellowGreen', 'SeaGreen', 'MediumTurquoise', 'RoyalBlue', 'Purple', 'Gray', 'Magenta', 'Orange', 'Yellow', 'Lime', 'Cyan', 'DeepSkyBlue', 'DarkOrchid', 'Silver', 'Pink', 'Wheat', 'LemonChiffon', 'PaleGreen', 'PaleTurquoise', 'LightBlue', 'Plum', 'White'];
 		var str = '';
 		for(var i = 0; i < 40; i++) {
 			str += '<input type="button" style="background-color: ' + coloroptions[i] + '"' + (typeof setEditorTip == 'function' ? ' onmouseover="setEditorTip(\'' + colortexts[i] + '\')" onmouseout="setEditorTip(\'\')"' : '') + ' onclick="'
@@ -1113,12 +1113,12 @@ function _widthauto(obj) {
 		}
 		HTMLNODE.className += ' widthauto';
 		setcookie('widthauto', 1, 86400 * 30);
-		obj.innerHTML = '切换到窄版';
+		obj.innerHTML = 'Thu hẹp';
 	} else {
 		$('css_widthauto').disabled = true;
 		HTMLNODE.className = HTMLNODE.className.replace(' widthauto', '');
 		setcookie('widthauto', -1, 86400 * 30);
-		obj.innerHTML = '切换到宽版';
+		obj.innerHTML = 'Mở rộng';
 	}
 	hideMenu();
 }
@@ -1129,7 +1129,7 @@ function _showCreditmenu() {
 		menu.id = 'extcreditmenu_menu';
 		menu.style.display = 'none';
 		menu.className = 'p_pop';
-		menu.innerHTML = '<div class="p_opt"><img src="'+ IMGDIR + '/loading.gif" width="16" height="16" class="vm" /> 请稍候...</div>';
+		menu.innerHTML = '<div class="p_opt"><img src="'+ IMGDIR + '/loading.gif" width="16" height="16" class="vm" /> Đang tải...</div>';
 		$('append_parent').appendChild(menu);
 		ajaxget($('extcreditmenu').href, 'extcreditmenu_menu', 'ajaxwaitid');
 	}
@@ -1143,7 +1143,7 @@ function _showForummenu(fid) {
 		menu.id = 'fjump_menu';
 		menu.style.display = 'none';
 		menu.className = 'p_pop';
-		menu.innerHTML = '<div class="p_opt"><img src="'+ IMGDIR + '/loading.gif" width="16" height="16" class="vm" /> 请稍候...</div>';
+		menu.innerHTML = '<div class="p_opt"><img src="'+ IMGDIR + '/loading.gif" width="16" height="16" class="vm" /> Đang tải...</div>';
 		$('append_parent').appendChild(menu);
 		ajaxget('forum.php?mod=ajax&action=forumjump&jfid=' + fid, 'fjump_menu', 'ajaxwaitid');
 	}

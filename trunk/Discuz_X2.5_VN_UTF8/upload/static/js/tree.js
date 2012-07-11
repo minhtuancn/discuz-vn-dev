@@ -1,7 +1,7 @@
 /*
 	[Discuz!] (C)2001-2099 Comsenz Inc.
 	This is NOT a freeware, use is subject to license terms
-
+	Vietnamese by Kyehani - discuz.vn
 	$Id: tree.js 23838 2011-08-11 06:51:58Z monkey $
 */
 
@@ -70,7 +70,7 @@ function dzTree(treeName) {
 		if(node.id == 0){
 			var icon1 = '';
 		} else {
-			var icon1 = '<img src="' + this.getIcon1(node) + '" onclick="' + treeName + '.switchDisplay(\'' + node.id + '\')" id="icon1_' + node.id + '" style="cursor: pointer;">';
+			var icon1 = '<img src="' + this.getIcon1(node) + '" onclick="' + treeName + '.switchDisplay(\'' + node.id + '\')" id="icon1_' + node.id + '" style="cursor: pointer;">';// discuz . vn
 		}
 		var icon2 = '<img src="' + this.getIcon2(node) + '" onclick="' + treeName + '.switchDisplay(\'' + node.id + '\')" id="icon2_' + node.id + '" style="cursor: pointer;">';
 		var s = '<div class="node" id="node_' + node.id + '">' + padding + icon1 + icon2 + this.getName(node) + '</div>';
@@ -149,7 +149,7 @@ function dzTree(treeName) {
 
 	this.getName = function(theNode) {
 		if(theNode.url) {
-			return '<a href="'+theNode.url+'" target="' + theNode.target + '"> '+theNode.name+'</a>';
+			return '<a href="'+theNode.url+'" target="' + theNode.target + '"> '+theNode.name+'</a>';// discuz . v n
 		} else {
 			return theNode.name;
 		}

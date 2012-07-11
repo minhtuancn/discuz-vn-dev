@@ -1,7 +1,7 @@
 /*
 	[Discuz!] (C)2001-2099 Comsenz Inc.
 	This is NOT a freeware, use is subject to license terms
-
+	Vietnamese by Kyehani - discuz.vn
 	$Id: forum.js 28137 2012-02-23 03:28:22Z zhengqingpeng $
 */
 
@@ -156,7 +156,7 @@ function announcement() {
 }
 
 function removeindexheats() {
-	return confirm('您确认要把此主题从热点主题中移除么？');
+	return confirm('Xác nhận loại bỏ khỏi chủ đề nóng?');
 }
 
 function showTypes(id, mod) {
@@ -166,7 +166,7 @@ function showTypes(id, mod) {
 	mod = isUndefined(mod) ? 1 : mod;
 	var baseh = o.getElementsByTagName('li')[0].offsetHeight * 2;
 	var tmph = o.offsetHeight;
-	var lang = ['展开', '收起'];
+	var lang = ['Mở rộng', 'Đóng'];
 	var cls = ['unfold', 'fold'];
 	if(tmph > baseh) {
 		var octrl = document.createElement('li');
@@ -207,14 +207,14 @@ function fastpostvalidate(theform, noajaxpost) {
 		}
 	}
 	if(theform.message.value == '' || theform.subject.value == '') {
-		s = '抱歉，您尚未输入标题或内容';
+		s = 'Có lỗi! Bạn chưa nhập Tiêu đề hoặc Nội dung';
 		theform.message.focus();
-	} else if(mb_strlen(theform.subject.value) > 80) {
-		s = '您的标题超过 80 个字符的限制';
+	} else if(mb_strlen(theform.subject.value) > 255) {
+		s = 'Tiêu đề bài viết lớn hơn 255 kí tự';
 		theform.subject.focus();
 	}
 	if(!disablepostctrl && ((postminchars != 0 && mb_strlen(theform.message.value) < postminchars) || (postmaxchars != 0 && mb_strlen(theform.message.value) > postmaxchars))) {
-		s = '您的帖子长度不符合要求。\n\n当前长度: ' + mb_strlen(theform.message.value) + ' ' + '字节\n系统限制: ' + postminchars + ' 到 ' + postmaxchars + ' 字节';
+		s = 'Độ dài bài viết lỗi. \n\n Độ dài hiện tại: ' + mb_strlen(theform.message.value) + ' ' + 'ký tự\nHệ thống giới hạn từ: ' + postminchars + ' đến ' + postmaxchars + ' ký tự';// d iscuz .vn
 	}
 	if(s) {
 		showError(s);
@@ -234,7 +234,7 @@ function fastpostvalidate(theform, noajaxpost) {
 }
 
 function updatefastpostattach(aid, url) {
-	ajaxget('forum.php?mod=ajax&action=attachlist&posttime=' + $('posttime').value + (!fid ? '' : '&fid=' + fid), 'attachlist');
+	ajaxget('forum.php?mod=ajax&action=attachlist&posttime=' + $('posttime').value + (!fid ? '' : '&fid=' + fid), 'attachlist');// k y e hani
 	$('attach_tblheader').style.display = '';
 }
 
@@ -274,12 +274,12 @@ function loadData(quiet, formobj) {
 
 	if(in_array((data = trim(data)), ['', 'null', 'false', null, false])) {
 		if(!quiet) {
-			showDialog('没有可以恢复的数据！', 'info');
+			showDialog('Không có dữ liệu để phục hồi!', 'info');
 		}
 		return;
 	}
 
-	if(!quiet && !confirm('此操作将覆盖当前帖子内容，确定要恢复数据吗？')) {
+	if(!quiet && !confirm('Việc này sẽ ghi đè lên nội dung hiện tại của bài viết. Bạn chắc chứ?')) {
 		return;
 	}
 
@@ -370,7 +370,7 @@ function checkForumnew(fid, lasttime) {
 			}
 			removetbodyrow(table, 'forumnewshow');
 			var colspan = table.getElementsByTagName('tbody')[0].rows[0].children.length;
-			var checknew = {'tid':'', 'thread':{'common':{'className':'', 'val':'<a href="javascript:void(0);" onclick="ajaxget(\'forum.php?mod=ajax&action=forumchecknew&fid=' + fid+ '&time='+lasttime+'&uncheck=1&inajax=yes\', \'forumnew\');">有新回复的主题，点击查看', 'colspan': colspan }}};
+			var checknew = {'tid':'', 'thread':{'common':{'className':'', 'val':'<a href="javascript:void(0);" onclick="ajaxget(\'forum.php?mod=ajax&action=forumchecknew&fid=' + fid+ '&time='+lasttime+'&uncheck=1&inajax=yes\', \'forumnew\');">Gửi bài, Click để xem', 'colspan': colspan }}};
 			addtbodyrow(table, ['tbody'], ['forumnewshow'], 'separatorline', checknew);
 		} else {
 			if(checkForumcount < 50) {

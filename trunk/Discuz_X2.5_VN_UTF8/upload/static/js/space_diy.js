@@ -1,7 +1,7 @@
 /*
 	[Discuz!] (C)2001-2099 Comsenz Inc.
 	This is NOT a freeware, use is subject to license terms
-
+	Vietnamese by Kyehani - discuz.vn
 	$Id: space_diy.js 23838 2011-08-11 06:51:58Z monkey $
 */
 
@@ -9,8 +9,8 @@ var drag = new Drag();
 drag.extend({
 
 	setDefalutMenu : function () {
-		this.addMenu('default', '删除', 'drag.removeBlock(event)');
-		this.addMenu('block', '属性', 'drag.openBlockEdit(event)');
+		this.addMenu('default', 'Xóa', 'drag.removeBlock(event)');
+		this.addMenu('block', 'Tùy chọn', 'drag.openBlockEdit(event)');
 	},
 	removeBlock : function (e) {
 		if ( typeof e !== 'string') {
@@ -19,7 +19,7 @@ drag.extend({
 		} else {
 			id = e;
 		}
-		if (!confirm('您确实要删除吗,删除以后将不可恢复')) return false;
+		if (!confirm('Bạn có chắc chắn muốn xóa, sau khi xóa sẽ không được phục hồi?')) return false;
 		$(id).parentNode.removeChild($(id));
 		var el = $('chk'+id);
 		if (el != null) el.className = '';
@@ -63,7 +63,7 @@ drag.extend({
 					el  = document.createElement("div");
 					el.className = drag.blockClass + ' ' + drag.moveableObject;
 					el.id = blockname;
-					s = s.replace(/\<script.*\<\/script\>/ig,'<font color="red"> [javascript脚本保存后显示] </font>');
+					s = s.replace(/\<script.*\<\/script\>/ig,'<font color="red"> [javascript hiển thị sau khi lưu] </font>');
 					el.innerHTML = s;
 					var id = drag.data['diypage'][0]['columns']['frame1_left']['children'][0]['name'];
 					$('frame1_left').insertBefore(el,$(id));
@@ -191,7 +191,7 @@ spaceDiy.extend({
 			if (!$('infoedit')) {
 				var dom = document.createElement('em');
 				dom.id = 'infoedit';
-				dom.innerHTML = '编辑';
+				dom.innerHTML = 'Edit';
 				$('spacename').appendChild(dom);
 			}
 			$('spaceinfoshow').onmousedown = function () {spaceDiy.showEditSpaceInfo();};
@@ -208,7 +208,7 @@ spaceDiy.extend({
 		var nv = $('editnvinfo');
 		if(!nv) {
 			var dom = document.createElement('div');
-			dom.innerHTML = '<span id="editnvinfo" class="edit" style="background-color:#336699;" onclick="spaceDiy.opNvEditInfo();">设置</span>';
+			dom.innerHTML = '<span id="editnvinfo" class="edit" style="background-color:#336699;" onclick="spaceDiy.opNvEditInfo();">Setting</span>';
 			$('nv').appendChild(dom.childNodes[0]);
 		} else {
 			nv.style.display = '';

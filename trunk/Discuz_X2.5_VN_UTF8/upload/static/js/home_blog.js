@@ -1,7 +1,7 @@
 /*
 	[Discuz!] (C)2001-2099 Comsenz Inc.
 	This is NOT a freeware, use is subject to license terms
-
+	Vietnamese by Kyehani - discuz.vn
 	$Id: home_blog.js 23838 2011-08-11 06:51:58Z monkey $
 */
 
@@ -9,8 +9,8 @@ function validate_ajax(obj) {
 	var subject = $('subject');
 	if (subject) {
 		var slen = strlen(subject.value);
-		if (slen < 1 || slen > 80) {
-			alert("标题长度(1~80字符)不符合要求");
+		if (slen < 1 || slen > 255) {
+			alert("Tiêu đề giới hạn từ 1 đến 255 ký tự");
 			subject.focus();
 			return false;
 		}
@@ -42,7 +42,7 @@ function edit_album_show(id) {
 	if(id == 'album') {
 		$('uchome-edit-pic').style.display = 'none';
 	}
-	if(id == 'pic') {
+	if(id == 'pic') {//discuz.vn
 		$('uchome-edit-album').style.display = 'none';
 	}
 	if(obj.style.display == '') {

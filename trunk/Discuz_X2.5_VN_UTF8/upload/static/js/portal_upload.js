@@ -1,7 +1,7 @@
 /*
 	[Discuz!] (C)2001-2099 Comsenz Inc.
 	This is NOT a freeware, use is subject to license terms
-
+	Vietnamese by Kyehani - discuz.vn
 	$Id: portal_upload.js 23838 2011-08-11 06:51:58Z monkey $
 */
 
@@ -44,11 +44,11 @@ function insertAttach(id) {
 	var ext = path.lastIndexOf('.') == -1 ? '' : path.substr(path.lastIndexOf('.') + 1, path.length).toLowerCase();
 	var re = new RegExp("(^|\\s|,)" + ext + "($|\\s|,)", "ig");
 	if(extensions != '' && (re.exec(extensions) == null || ext == '')) {
-		alert('对不起，不支持上传此类文件');
+		alert('Xin lỗi, tập tin ko được tải lên');
 		return;
 	}
 	var localfile = $('attach_' + id).value.substr($('attach_' + id).value.replace(/\\/g, '/').lastIndexOf('/') + 1);
-	$('localfile_' + id).innerHTML = localfile + ' 上传中...';
+	$('localfile_' + id).innerHTML = localfile + ' đang tải...';
 	$('attach_' + id).style.display = 'none';
 	$('upload_' + id).action += '&attach_target_id=' + id;
 	$('upload_' + id).submit();

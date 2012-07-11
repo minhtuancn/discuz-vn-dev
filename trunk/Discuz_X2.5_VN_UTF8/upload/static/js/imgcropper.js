@@ -1,7 +1,7 @@
 /*
 	[Discuz!] (C)2001-2099 Comsenz Inc.
 	This is NOT a freeware, use is subject to license terms
-
+	Vietnamese by Kyehani - discuz.vn
 	$Id: imgcropper.js 29037 2012-03-23 05:35:25Z zhengqingpeng $
 */
 (function(){

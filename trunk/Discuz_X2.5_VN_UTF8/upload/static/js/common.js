@@ -291,7 +291,7 @@ function Ajax(recvType, waitId) {
 
 	var aj = new Object();
 
-	aj.loading = '请稍候...';
+	aj.loading = 'Vui lòng chờ...';
 	aj.recvType = recvType ? recvType : 'XML';
 	aj.waitId = waitId ? $(waitId) : null;
 
@@ -349,7 +349,7 @@ function Ajax(recvType, waitId) {
 				aj.resultHandle(aj.XMLHttpRequest.responseText, aj);
 			} else if(aj.recvType == 'XML') {
 				if(!aj.XMLHttpRequest.responseXML || !aj.XMLHttpRequest.responseXML.lastChild || aj.XMLHttpRequest.responseXML.lastChild.localName == 'parsererror') {
-					aj.resultHandle('<a href="' + aj.targetUrl + '" target="_blank" style="color:red">内部错误，无法显示此内容</a>' , aj);
+					aj.resultHandle('<a href="' + aj.targetUrl + '" target="_blank" style="color:red">Lỗi nội bộ, không thể hiển thị nội dung này</a>' , aj);
 				} else {
 					aj.resultHandle(aj.XMLHttpRequest.responseXML.lastChild.firstChild.nodeValue, aj);
 				}
@@ -640,7 +640,7 @@ function ajaxpost(formid, showid, waitid, showidclass, submitbtn, recall) {
 				try {
 					s = $(ajaxframeid).contentWindow.document.documentElement.firstChild.nodeValue;
 				} catch(e) {
-					s = '内部错误，无法显示此内容';
+					s = 'Lỗi nội bộ, không thể hiển thị nội dung này';
 				}
 			}
 		}
@@ -792,7 +792,7 @@ function showPreview(val, id) {
 
 function showloading(display, waiting) {
 	var display = display ? display : 'block';
-	var waiting = waiting ? waiting : '请稍候...';
+	var waiting = waiting ? waiting : 'Vui lòng chờ...';
 	$('ajaxwaitid').innerHTML = waiting;
 	$('ajaxwaitid').style.display = display;
 }
@@ -1327,7 +1327,7 @@ function showDialog(msg, mode, t, func, cover, funccancel, leftmsg, confirmtxt, 
 	var menuid = 'fwin_dialog';
 	var menuObj = $(menuid);
 	var showconfirm = 1;
-	confirmtxtdefault = '确定';
+	confirmtxtdefault = 'Xác định';
 	closetime = isUndefined(closetime) ? '' : closetime;
 	closefunc = function () {
 		if(typeof func == 'function') func();
@@ -1335,18 +1335,18 @@ function showDialog(msg, mode, t, func, cover, funccancel, leftmsg, confirmtxt, 
 		hideMenu(menuid, 'dialog');
 	};
 	if(closetime) {
-		leftmsg = closetime + ' 秒后窗口关闭';
+		leftmsg = closetime + ' Vài giây sau khi cửa sổ được đóng lại';
 		showDialogST = setTimeout(closefunc, closetime * 1000);
 		showconfirm = 0;
 	}
 	locationtime = isUndefined(locationtime) ? '' : locationtime;
 	if(locationtime) {
-		leftmsg = locationtime + ' 秒后页面跳转';
+		leftmsg = locationtime + ' Vài giây sau khi nhảy trang';
 		showDialogST = setTimeout(closefunc, locationtime * 1000);
 		showconfirm = 0;
 	}
 	confirmtxt = confirmtxt ? confirmtxt : confirmtxtdefault;
-	canceltxt = canceltxt ? canceltxt : '取消';
+	canceltxt = canceltxt ? canceltxt : 'Bị hủy bỏ';
 
 	if(menuObj) hideMenu('fwin_dialog', 'dialog');
 	menuObj = document.createElement('div');
@@ -1359,8 +1359,8 @@ function showDialog(msg, mode, t, func, cover, funccancel, leftmsg, confirmtxt, 
 		hidedom = '<style type="text/css">object{visibility:hidden;}</style>';
 	}
 	var s = hidedom + '<table cellpadding="0" cellspacing="0" class="fwin"><tr><td class="t_l"></td><td class="t_c"></td><td class="t_r"></td></tr><tr><td class="m_l">&nbsp;&nbsp;</td><td class="m_c"><h3 class="flb"><em>';
-	s += t ? t : '提示信息';
-	s += '</em><span><a href="javascript:;" id="fwin_dialog_close" class="flbc" onclick="hideMenu(\'' + menuid + '\', \'dialog\')" title="关闭">关闭</a></span></h3>';
+	s += t ? t : 'Tin nhắn';
+	s += '</em><span><a href="javascript:;" id="fwin_dialog_close" class="flbc" onclick="hideMenu(\'' + menuid + '\', \'dialog\')" title="Đóng">Đóng</a></span></h3>';
 	if(mode == 'info') {
 		s += msg ? msg : '';
 	} else {
@@ -1417,7 +1417,7 @@ function showWindow(k, url, mode, cache, menuv) {
 			ajaxpost(url, 'fwin_content_' + k, '', '', '', function() {initMenu();show();});
 		}
 		if(parseInt(BROWSER.ie) != 6) {
-			loadingst = setTimeout(function() {showDialog('', 'info', '<img src="' + IMGDIR + '/loading.gif"> 请稍候...')}, 500);
+			loadingst = setTimeout(function() {showDialog('', 'info', '<img src="' + IMGDIR + '/loading.gif"> Vui lòng chờ...')}, 500);
 		}
 	};
 	var initMenu = function() {
@@ -1475,7 +1475,7 @@ function showError(msg) {
 	var p = /<script[^\>]*?>([^\x00]*?)<\/script>/ig;
 	msg = msg.replace(p, '');
 	if(msg !== '') {
-		showDialog(msg, 'alert', '错误信息', null, true, null, '', '', '', 3);
+		showDialog(msg, 'alert', 'Thông báo lỗi', null, true, null, '', '', '', 3);
 	}
 }
 
@@ -1837,20 +1837,20 @@ function initSearchmenu(searchform, cloudSearchUrl) {
 	var tclass = searchtxt.className;
 	searchtxt.className = tclass + ' xg1';
 	if (!!("placeholder" in document.createElement("input"))) {
-		if(searchtxt.value == '请输入搜索内容') {
+		if(searchtxt.value == 'Nhập nội dung tìm kiếm') {
 			searchtxt.value = '';
 		}
-		searchtxt.placeholder = '请输入搜索内容';
+		searchtxt.placeholder = 'Nhập nội dung tìm kiếm';
 	} else {
 		searchtxt.onfocus = function () {
-			if(searchtxt.value == '请输入搜索内容') {
+			if(searchtxt.value == 'Nhập nội dung tìm kiếm') {
 				searchtxt.value = '';
 				searchtxt.className = tclass;
 			}
 		};
 		searchtxt.onblur = function () {
 			if(searchtxt.value == '' ) {
-				searchtxt.value = '请输入搜索内容';
+				searchtxt.value = 'Nhập nội dung tìm kiếm';
 				searchtxt.className = tclass + ' xg1';
 			}
 		};
@@ -1892,7 +1892,7 @@ function initSearchmenu(searchform, cloudSearchUrl) {
 }
 
 function searchFocus(obj) {
-	if(obj.value == '请输入搜索内容') {
+	if(obj.value == 'Nhập nội dung tìm kiếm') {
 		obj.value = '';
 	}
 	if($('cloudsearchquery') != null) {
@@ -2004,7 +2004,7 @@ function noticeTitle() {
 
 function noticeTitleFlash() {
 	if(NOTICETITLE.flashNumber < 5 || NOTICETITLE.flashNumber > 4 && !NOTICETITLE['State']) {
-		document.title = (NOTICETITLE['State'] ? '【　　　】' : '【新提醒】') + NOTICETITLE['oldTitle'];
+		document.title = (NOTICETITLE['State'] ? '[Bạn có ]' : 'Tin mới ') + NOTICETITLE['oldTitle'];
 		NOTICETITLE['State'] = !NOTICETITLE['State'];
 	}
 	NOTICETITLE.flashNumber = NOTICETITLE.flashNumber < NOTICETITLE.sleep ? ++NOTICETITLE.flashNumber : 0;
@@ -2059,7 +2059,7 @@ function addFavorite(url, title) {
 		try {
 			window.sidebar.addPanel(title, url, '');
         	} catch (e) {
-			showDialog("请按 Ctrl+D 键添加到收藏夹", 'notice');
+			showDialog("Nhấn Ctrl + D để thêm vào Fav", 'notice');
 		}
 	}
 }
@@ -2069,7 +2069,7 @@ function setHomepage(sURL) {
 		document.body.style.behavior = 'url(#default#homepage)';
 		document.body.setHomePage(sURL);
 	} else {
-		showDialog("非 IE 浏览器请手动将本站设为首页", 'notice');
+		showDialog("Chỉ IE mới sài được", 'notice');
 		doane();
 	}
 }
