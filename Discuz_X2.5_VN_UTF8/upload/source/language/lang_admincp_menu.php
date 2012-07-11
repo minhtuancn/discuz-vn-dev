@@ -3,8 +3,8 @@
 /**
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
- *      Translate by DCV team - http://www.discuz.vn
- *      $Id: lang_admincp_menu.php 29171 2012-03-28 02:59:31Z monkey $
+ *
+ *      $Id: lang_admincp_menu.php 29721 2012-04-26 07:01:08Z zhengqingpeng $
  */
 
 if(!defined('IN_DISCUZ')) {
@@ -194,7 +194,7 @@ $lang = array
 	'menu_setting_manyou' => 'Manyou',
 	'menu_setting_qqconnect' => 'QQ',
 
-	'admincp_title' => 'Trung tâm quản lý '.$_G['setting']['bbname'].'',
+	'admincp_title' => $_G['setting']['bbname'].'Trung tâm Quản lý',
 
 );
 

@@ -4,7 +4,7 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: lang_admincp_searchindex.php 29131 2012-03-27 07:31:57Z chenmengshu $
+ *      $Id: lang_admincp_searchindex.php 28868 2012-03-16 02:28:05Z monkey $
  *
  *	This file is automatically generate
  */
@@ -14,385 +14,385 @@ $lang = array (
   array (
     'index' =>
     array (
-      '管理中心首页' => 'action=index',
+      'Trang chủ quản trị' => 'action=index',
     ),
     'text' =>
     array (
-      0 => '管理中心首页',
+      0 => 'Trang chủ quản trị',
     ),
   ),
   1 =>
   array (
     'index' =>
     array (
-      '常用操作管理' => 'action=misc&operation=custommenu',
+      'Thao tác hay dùng' => 'action=misc&operation=custommenu',
     ),
     'text' =>
     array (
-      0 => '常用操作管理',
+      0 => 'Thao tác hay dùng',
     ),
   ),
   2 =>
   array (
     'index' =>
     array (
-      '站点信息' => 'action=setting&operation=basic',
+      'Thông tin hệ thống' => 'action=setting&operation=basic',
     ),
     'text' =>
     array (
-      0 => '站点信息',
+      0 => 'Thông tin hệ thống',
     ),
   ),
   3 =>
   array (
     'index' =>
     array (
-      '注册与访问控制' => 'action=setting&operation=access',
+      'Đ.ký và truy cập' => 'action=setting&operation=access',
     ),
     'text' =>
     array (
-      0 => '注册与访问控制',
+      0 => 'Đ.ký và truy cập',
     ),
   ),
   4 =>
   array (
     'index' =>
     array (
-      '站点功能' => 'action=setting&operation=functions',
+      'Tính năng website' => 'action=setting&operation=functions',
     ),
     'text' =>
     array (
-      0 => '站点功能',
+      0 => 'Tính năng website',
     ),
   ),
   5 =>
   array (
     'index' =>
     array (
-      '性能优化' => 'action=setting&operation=cachethread',
+      'Tối ưu website' => 'action=setting&operation=cachethread',
     ),
     'text' =>
     array (
-      0 => '性能优化',
+      0 => 'Tối ưu website',
     ),
   ),
   6 =>
   array (
     'index' =>
     array (
-      'SEO设置' => 'action=setting&operation=seo',
+      'Thiết lập SEO' => 'action=setting&operation=seo',
     ),
     'text' =>
     array (
-      0 => 'SEO设置',
+      0 => 'Thiết lập SEO',
     ),
   ),
   7 =>
   array (
     'index' =>
     array (
-      '域名设置' => 'action=domain',
+      'T.lập tên miền' => 'action=domain',
     ),
     'text' =>
     array (
-      0 => '域名设置',
+      0 => 'T.lập tên miền',
     ),
   ),
   8 =>
   array (
     'index' =>
     array (
-      '广播设置' => 'action=setting&operation=follow',
+      'T.lập broadcast' => 'action=setting&operation=follow',
     ),
     'text' =>
     array (
-      0 => '广播设置',
+      0 => 'T.lập broadcast',
     ),
   ),
   9 =>
   array (
     'index' =>
     array (
-      '空间设置' => 'action=setting&operation=home',
+      'T.lập space' => 'action=setting&operation=home',
     ),
     'text' =>
     array (
-      0 => '空间设置',
+      0 => 'T.lập space',
     ),
   ),
   10 =>
   array (
     'index' =>
     array (
-      '用户权限' => 'action=setting&operation=permissions',
+      'Quyền t.viên' => 'action=setting&operation=permissions',
     ),
     'text' =>
     array (
-      0 => '用户权限',
+      0 => 'Quyền t.viên',
     ),
   ),
   11 =>
   array (
     'index' =>
     array (
-      '积分设置' => 'action=setting&operation=credits',
+      'T.lập điểm' => 'action=setting&operation=credits',
     ),
     'text' =>
     array (
-      0 => '积分设置',
+      0 => 'T.lập điểm',
     ),
   ),
   12 =>
   array (
     'index' =>
     array (
-      '防灌水设置' => 'action=setting&operation=sec',
+      'T.lập bảo mật' => 'action=setting&operation=sec',
     ),
     'text' =>
     array (
-      0 => '防灌水设置',
+      0 => 'T.lập bảo mật',
     ),
   ),
   13 =>
   array (
     'index' =>
     array (
-      '时间设置' => 'action=setting&operation=datetime',
+      'T.lập thời gian' => 'action=setting&operation=datetime',
     ),
     'text' =>
     array (
-      0 => '时间设置',
+      0 => 'T.lập thời gian',
     ),
   ),
   14 =>
   array (
     'index' =>
     array (
-      '上传设置' => 'action=setting&operation=attach',
+      'T.lập upload' => 'action=setting&operation=attach',
     ),
     'text' =>
     array (
-      0 => '上传设置',
+      0 => 'T.lập upload',
     ),
   ),
   15 =>
   array (
     'index' =>
     array (
-      '水印设置' => 'action=setting&operation=imgwater',
+      'T.lập watermark' => 'action=setting&operation=imgwater',
     ),
     'text' =>
     array (
-      0 => '水印设置',
+      0 => 'T.lập watermark',
     ),
   ),
   16 =>
   array (
     'index' =>
     array (
-      '附件类型尺寸' => 'action=misc&operation=attachtype',
+      'Loại đính kèm' => 'action=misc&operation=attachtype',
     ),
     'text' =>
     array (
-      0 => '附件类型尺寸',
+      0 => 'Loại đính kèm',
     ),
   ),
   17 =>
   array (
     'index' =>
     array (
-      '搜索设置' => 'action=setting&operation=search',
+      'T.lập tìm kiếm' => 'action=setting&operation=search',
     ),
     'text' =>
     array (
-      0 => '搜索设置',
+      0 => 'T.lập tìm kiếm',
     ),
   ),
   18 =>
   array (
     'index' =>
     array (
-      '地区设置' => 'action=district',
+      'Q.lý khu vực' => 'action=district',
     ),
     'text' =>
     array (
-      0 => '地区设置',
+      0 => 'Q.lý khu vực',
     ),
   ),
   19 =>
   array (
     'index' =>
     array (
-      '排行榜设置' => 'action=setting&operation=ranklist',
+      'T.lập thứ hạng' => 'action=setting&operation=ranklist',
     ),
     'text' =>
     array (
-      0 => '排行榜设置',
+      0 => 'T.lập thứ hạng',
     ),
   ),
   20 =>
   array (
     'index' =>
     array (
-      '手机版访问设置' => 'action=setting&operation=mobile',
+      'T.lập mobile' => 'action=setting&operation=mobile',
     ),
     'text' =>
     array (
-      0 => '手机版访问设置',
+      0 => 'T.lập mobile',
     ),
   ),
   21 =>
   array (
     'index' =>
     array (
-      '导航设置' => 'action=nav&operation=headernav',
+      'T.lập NAV' => 'action=nav&operation=headernav',
     ),
     'text' =>
     array (
-      0 => '导航设置',
+      0 => 'T.lập NAV',
     ),
   ),
   22 =>
   array (
     'index' =>
     array (
-      '界面设置' => 'action=setting&operation=styles',
+      'T.lập giao diện' => 'action=setting&operation=styles',
     ),
     'text' =>
     array (
-      0 => '界面设置',
+      0 => 'T.lập giao diện',
     ),
   ),
   23 =>
   array (
     'index' =>
     array (
-      '风格管理' => 'action=styles',
+      'Q.lý style' => 'action=styles',
     ),
     'text' =>
     array (
-      0 => '风格管理',
+      0 => 'Q.lý style',
     ),
   ),
   24 =>
   array (
     'index' =>
     array (
-      '模板管理' => 'action=templates',
+      'Q.lý giao diện' => 'action=templates',
     ),
     'text' =>
     array (
-      0 => '模板管理',
+      0 => 'Q.lý giao diện',
     ),
   ),
   25 =>
   array (
     'index' =>
     array (
-      '表情管理' => 'action=smilies',
+      'Q.lý mặt cười' => 'action=smilies',
     ),
     'text' =>
     array (
-      0 => '表情管理',
+      0 => 'Q.lý mặt cười',
     ),
   ),
   26 =>
   array (
     'index' =>
     array (
-      '表态动作' => 'action=click',
+      'Q.lý thứ hạng' => 'action=click',
     ),
     'text' =>
     array (
-      0 => '表态动作',
+      0 => 'Q.lý thứ hạng',
     ),
   ),
   27 =>
   array (
     'index' =>
     array (
-      '主题鉴定' => 'action=misc&operation=stamp',
+      'Tem đề tài' => 'action=misc&operation=stamp',
     ),
     'text' =>
     array (
-      0 => '主题鉴定',
+      0 => 'Tem đề tài',
     ),
   ),
   28 =>
   array (
     'index' =>
     array (
-      '编辑器设置' => 'action=setting&operation=editor',
+      'T.lập editor' => 'action=setting&operation=editor',
     ),
     'text' =>
     array (
-      0 => '编辑器设置',
+      0 => 'T.lập editor',
     ),
   ),
   29 =>
   array (
     'index' =>
     array (
-      '在线列表图标' => 'action=misc&operation=onlinelist',
+      'B.tượng online' => 'action=misc&operation=onlinelist',
     ),
     'text' =>
     array (
-      0 => '在线列表图标',
+      0 => 'B.tượng online',
     ),
   ),
   30 =>
   array (
     'index' =>
     array (
-      '内容审核' => 'action=moderate',
+      'Duyệt nội dung' => 'action=moderate',
     ),
     'text' =>
     array (
-      0 => '内容审核',
+      0 => 'Duyệt nội dung',
     ),
   ),
   31 =>
   array (
     'index' =>
     array (
-      '词语过滤' => 'action=misc&operation=censor',
+      'Bộ lọc từ' => 'action=misc&operation=censor',
     ),
     'text' =>
     array (
-      0 => '词语过滤',
+      0 => 'Bộ lọc từ',
     ),
   ),
   32 =>
   array (
     'index' =>
     array (
-      '用户举报' => 'action=report',
+      'B.cáo từ t.viên' => 'action=report',
     ),
     'text' =>
     array (
-      0 => '用户举报',
+      0 => 'B.cáo từ t.viên',
     ),
   ),
   33 =>
   array (
     'index' =>
     array (
-      '标签管理' => 'action=tag',
+      'Quản lý tag' => 'action=tag',
     ),
     'text' =>
     array (
-      0 => '标签管理',
+      0 => 'Quản lý tag',
     ),
   ),
   34 =>
   array (
     'index' =>
     array (
-      '淘帖管理' => 'action=collection',
+      'Q.lý collection' => 'action=collection',
     ),
     'text' =>
     array (
-      0 => '淘帖管理',
+      0 => 'Q.lý collection',
     ),
   ),
   35 =>
@@ -410,33 +410,33 @@ $lang = array (
   array (
     'index' =>
     array (
-      '论坛主题管理' => 'action=threads',
+      'Q.lý đề tài' => 'action=threads',
     ),
     'text' =>
     array (
-      0 => '论坛主题管理',
+      0 => 'Q.lý đề tài',
     ),
   ),
   37 =>
   array (
     'index' =>
     array (
-      '论坛批量删帖' => 'action=prune',
+      'Xóa loạt đề tài' => 'action=prune',
     ),
     'text' =>
     array (
-      0 => '论坛批量删帖',
+      0 => 'Xóa loạt đề tài',
     ),
   ),
   38 =>
   array (
     'index' =>
     array (
-      '论坛附件管理' => 'action=attach',
+      'Quản lý tệp đính kèm' => 'action=attach',
     ),
     'text' =>
     array (
-      0 => '论坛附件管理',
+      0 => 'Quản lý tệp đính kèm',
     ),
   ),
   39 =>
@@ -465,33 +465,33 @@ $lang = array (
   array (
     'index' =>
     array (
-      '群组主题管理' => 'action=threads&operation=group',
+      'Q.lý đề tài nhóm' => 'action=threads&operation=group',
     ),
     'text' =>
     array (
-      0 => '群组主题管理',
+      0 => 'Q.lý đề tài nhóm',
     ),
   ),
   42 =>
   array (
     'index' =>
     array (
-      '群组批量删帖' => 'action=prune&operation=group',
+      'Xóa loạt đề tài nhóm' => 'action=prune&operation=group',
     ),
     'text' =>
     array (
-      0 => '群组批量删帖',
+      0 => 'Xóa loạt đề tài nhóm',
     ),
   ),
   43 =>
   array (
     'index' =>
     array (
-      '群组附件管理' => 'action=attach&operation=group',
+      'Q.lý đính kèm nhóm' => 'action=attach&operation=group',
     ),
     'text' =>
     array (
-      0 => '群组附件管理',
+      0 => 'Q.lý đính kèm nhóm',
     ),
   ),
   44 =>
@@ -520,44 +520,44 @@ $lang = array (
   array (
     'index' =>
     array (
-      '主题回收站' => 'action=recyclebin',
+      'Đề tài rác' => 'action=recyclebin',
     ),
     'text' =>
     array (
-      0 => '主题回收站',
+      0 => 'Đề tài rác',
     ),
   ),
   47 =>
   array (
     'index' =>
     array (
-      '回帖回收站' => 'action=recyclebinpost',
+      'Trả lời rác' => 'action=recyclebinpost',
     ),
     'text' =>
     array (
-      0 => '回帖回收站',
+      0 => 'Trả lời rác',
     ),
   ),
   48 =>
   array (
     'index' =>
     array (
-      '版块/群组置顶' => 'action=threads&operation=forumstick',
+      'Bài dán diễn đàn' => 'action=threads&operation=forumstick',
     ),
     'text' =>
     array (
-      0 => '版块/群组置顶',
+      0 => 'Bài dán diễn đàn',
     ),
   ),
   49 =>
   array (
     'index' =>
     array (
-      '帖子点评管理' => 'action=postcomment',
+      'Q.lý nhận xét' => 'action=postcomment',
     ),
     'text' =>
     array (
-      0 => '帖子点评管理',
+      0 => 'Q.lý nhận xét',
     ),
   ),
   50 =>
@@ -586,77 +586,77 @@ $lang = array (
   array (
     'index' =>
     array (
-      '记录管理' => 'action=doing',
+      'Q.lý cảm xúc' => 'action=doing',
     ),
     'text' =>
     array (
-      0 => '记录管理',
+      0 => 'Q.lý cảm xúc',
     ),
   ),
   53 =>
   array (
     'index' =>
     array (
-      '日志管理' => 'action=blog',
+      'Q.lý blog' => 'action=blog',
     ),
     'text' =>
     array (
-      0 => '日志管理',
+      0 => 'Q.lý blog',
     ),
   ),
   54 =>
   array (
     'index' =>
     array (
-      '动态管理' => 'action=feed',
+      'Q.lý tin động' => 'action=feed',
     ),
     'text' =>
     array (
-      0 => '动态管理',
+      0 => 'Q.lý tin động',
     ),
   ),
   55 =>
   array (
     'index' =>
     array (
-      '相册管理' => 'action=album',
+      'Q.lý album' => 'action=album',
     ),
     'text' =>
     array (
-      0 => '相册管理',
+      0 => 'Q.lý album',
     ),
   ),
   56 =>
   array (
     'index' =>
     array (
-      '图片管理' => 'action=pic',
+      'Q.lý hình' => 'action=pic',
     ),
     'text' =>
     array (
-      0 => '图片管理',
+      0 => 'Q.lý hình',
     ),
   ),
   57 =>
   array (
     'index' =>
     array (
-      '评论/留言管理' => 'action=comment',
+      'Q.lý n.xét/tin nhắn' => 'action=comment',
     ),
     'text' =>
     array (
-      0 => '评论/留言管理',
+      0 => 'Q.lý n.xét/tin nhắn',
     ),
   ),
   58 =>
   array (
     'index' =>
     array (
-      '分享管理' => 'action=share',
+      'Q.lý chia sẻ' => 'action=share',
     ),
     'text' =>
     array (
-      0 => '分享管理',
+      0 => 'Q.lý chia sẻ',
     ),
   ),
   59 =>
@@ -674,154 +674,154 @@ $lang = array (
   array (
     'index' =>
     array (
-      '用户管理' => 'action=members&operation=search',
+      'Q.lý thành viên' => 'action=members&operation=search',
     ),
     'text' =>
     array (
-      0 => '用户管理',
+      0 => 'Q.lý thành viên',
     ),
   ),
   61 =>
   array (
     'index' =>
     array (
-      '添加用户' => 'action=members&operation=add',
+      'Thêm t.viên' => 'action=members&operation=add',
     ),
     'text' =>
     array (
-      0 => '添加用户',
+      0 => 'Thêm t.viên',
     ),
   ),
   62 =>
   array (
     'index' =>
     array (
-      '用户栏目' => 'action=members&operation=profile',
+      'T.tin thành viên' => 'action=members&operation=profile',
     ),
     'text' =>
     array (
-      0 => '用户栏目',
+      0 => 'T.tin thành viên',
     ),
   ),
   63 =>
   array (
     'index' =>
     array (
-      '资料统计' => 'action=members&operation=stat',
+      'D.liệu thống kê' => 'action=members&operation=stat',
     ),
     'text' =>
     array (
-      0 => '资料统计',
+      0 => 'D.liệu thống kê',
     ),
   ),
   64 =>
   array (
     'index' =>
     array (
-      '发送通知' => 'action=members&operation=newsletter',
+      'Gửi thông báo' => 'action=members&operation=newsletter',
     ),
     'text' =>
     array (
-      0 => '发送通知',
+      0 => 'Gửi thông báo',
     ),
   ),
   65 =>
   array (
     'index' =>
     array (
-      '用户标签' => 'action=usertag',
+      'Danh hiệu t.viên' => 'action=usertag',
     ),
     'text' =>
     array (
-      0 => '用户标签',
+      0 => 'Danh hiệu t.viên',
     ),
   ),
   66 =>
   array (
     'index' =>
     array (
-      '禁止用户' => 'action=members&operation=ban',
+      'Cấm t.viên' => 'action=members&operation=ban',
     ),
     'text' =>
     array (
-      0 => '禁止用户',
+      0 => 'Cấm t.viên',
     ),
   ),
   67 =>
   array (
     'index' =>
     array (
-      '禁止 IP' => 'action=members&operation=ipban',
+      'Cấm IP' => 'action=members&operation=ipban',
     ),
     'text' =>
     array (
-      0 => '禁止 IP',
+      0 => 'Cấm IP',
     ),
   ),
   68 =>
   array (
     'index' =>
     array (
-      '积分奖惩' => 'action=members&operation=reward',
+      'Tặng thưởng' => 'action=members&operation=reward',
     ),
     'text' =>
     array (
-      0 => '积分奖惩',
+      0 => 'Tặng thưởng',
     ),
   ),
   69 =>
   array (
     'index' =>
     array (
-      '审核新用户' => 'action=moderate&operation=members',
+      'Xét duyệt t.viên' => 'action=moderate&operation=members',
     ),
     'text' =>
     array (
-      0 => '审核新用户',
+      0 => 'Xét duyệt t.viên',
     ),
   ),
   70 =>
   array (
     'index' =>
     array (
-      '管理组' => 'action=admingroup',
+      'Nhóm quản trị' => 'action=admingroup',
     ),
     'text' =>
     array (
-      0 => '管理组',
+      0 => 'Nhóm quản trị',
     ),
   ),
   71 =>
   array (
     'index' =>
     array (
-      '用户组' => 'action=usergroups',
+      'Nhóm t.viên' => 'action=usergroups',
     ),
     'text' =>
     array (
-      0 => '用户组',
+      0 => 'Nhóm t.viên',
     ),
   ),
   72 =>
   array (
     'index' =>
     array (
-      '推荐关注' => 'action=specialuser&operation=follow',
+      'T.viên nổi bật' => 'action=specialuser&operation=follow',
     ),
     'text' =>
     array (
-      0 => '推荐关注',
+      0 => 'T.viên nổi bật',
     ),
   ),
   73 =>
   array (
     'index' =>
     array (
-      '推荐好友' => 'action=specialuser&operation=defaultuser',
+      'T.viên tiêu biểu' => 'action=specialuser&operation=defaultuser',
     ),
     'text' =>
     array (
-      0 => '推荐好友',
+      0 => 'T.viên tiêu biểu',
     ),
   ),
   74 =>
@@ -839,11 +839,11 @@ $lang = array (
   array (
     'index' =>
     array (
-      '认证设置' => 'action=verify',
+      'T.lập xác thực' => 'action=verify',
     ),
     'text' =>
     array (
-      0 => '认证设置',
+      0 => 'T.lập xác thực',
     ),
   ),
   76 =>
@@ -872,55 +872,55 @@ $lang = array (
   array (
     'index' =>
     array (
-      '频道栏目' => 'action=portalcategory',
+      'Danh mục kênh' => 'action=portalcategory',
     ),
     'text' =>
     array (
-      0 => '频道栏目',
+      0 => 'Danh mục kênh',
     ),
   ),
   79 =>
   array (
     'index' =>
     array (
-      '文章管理' => 'action=article',
+      'Quản lý tin bài' => 'action=article',
     ),
     'text' =>
     array (
-      0 => '文章管理',
+      0 => 'Quản lý tin bài',
     ),
   ),
   80 =>
   array (
     'index' =>
     array (
-      '专题管理' => 'action=topic',
+      'Q.lý đề tài' => 'action=topic',
     ),
     'text' =>
     array (
-      0 => '专题管理',
+      0 => 'Q.lý đề tài',
     ),
   ),
   81 =>
   array (
     'index' =>
     array (
-      '页面管理' => 'action=diytemplate',
+      'Q.lý trang' => 'action=diytemplate',
     ),
     'text' =>
     array (
-      0 => '页面管理',
+      0 => 'Q.lý trang',
     ),
   ),
   82 =>
   array (
     'index' =>
     array (
-      '模块管理' => 'action=block',
+      'Portal CP' => 'action=block',
     ),
     'text' =>
     array (
-      0 => '模块管理',
+      0 => 'Portal CP',
     ),
   ),
   83 =>
@@ -960,66 +960,66 @@ $lang = array (
   array (
     'index' =>
     array (
-      '日志分类' => 'action=blogcategory',
+      'D.mục blog' => 'action=blogcategory',
     ),
     'text' =>
     array (
-      0 => '日志分类',
+      0 => 'D.mục blog',
     ),
   ),
   87 =>
   array (
     'index' =>
     array (
-      '相册分类' => 'action=albumcategory',
+      'D.mục album' => 'action=albumcategory',
     ),
     'text' =>
     array (
-      0 => '相册分类',
+      0 => 'D.mục album',
     ),
   ),
   88 =>
   array (
     'index' =>
     array (
-      '版块管理' => 'action=forums',
+      'Q.lý diễn đàn' => 'action=forums',
     ),
     'text' =>
     array (
-      0 => '版块管理',
+      0 => 'Q.lý diễn đàn',
     ),
   ),
   89 =>
   array (
     'index' =>
     array (
-      '版块合并' => 'action=forums&operation=merge',
+      'Gộp diễn đàn' => 'action=forums&operation=merge',
     ),
     'text' =>
     array (
-      0 => '版块合并',
+      0 => 'Gộp diễn đàn',
     ),
   ),
   90 =>
   array (
     'index' =>
     array (
-      '分类信息' => 'action=threadtypes',
+      'Loại thông tin' => 'action=threadtypes',
     ),
     'text' =>
     array (
-      0 => '分类信息',
+      0 => 'Loại thông tin',
     ),
   ),
   91 =>
   array (
     'index' =>
     array (
-      '群组设置' => 'action=group&operation=setting',
+      'T.lập nhóm' => 'action=group&operation=setting',
     ),
     'text' =>
     array (
-      0 => '群组设置',
+      0 => 'T.lập nhóm',
     ),
   ),
   92 =>
@@ -1081,121 +1081,121 @@ $lang = array (
   array (
     'index' =>
     array (
-      '站点公告' => 'action=announce',
+      'Thông báo chung' => 'action=announce',
     ),
     'text' =>
     array (
-      0 => '站点公告',
+      0 => 'Thông báo chung',
     ),
   ),
   98 =>
   array (
     'index' =>
     array (
-      '站点广告' => 'action=adv',
+      'Quảng cáo' => 'action=adv',
     ),
     'text' =>
     array (
-      0 => '站点广告',
+      0 => 'Quảng cáo',
     ),
   ),
   99 =>
   array (
     'index' =>
     array (
-      '站点任务' => 'action=tasks',
+      'Nhiệm vụ' => 'action=tasks',
     ),
     'text' =>
     array (
-      0 => '站点任务',
+      0 => 'Nhiệm vụ',
     ),
   ),
   100 =>
   array (
     'index' =>
     array (
-      '道具中心' => 'action=magics',
+      'Ma thuật' => 'action=magics',
     ),
     'text' =>
     array (
-      0 => '道具中心',
+      0 => 'Ma thuật',
     ),
   ),
   101 =>
   array (
     'index' =>
     array (
-      '勋章中心' => 'action=medals',
+      'Huy chương' => 'action=medals',
     ),
     'text' =>
     array (
-      0 => '勋章中心',
+      0 => 'Huy chương',
     ),
   ),
   102 =>
   array (
     'index' =>
     array (
-      '站点帮助' => 'action=faq',
+      'Trợ giúp' => 'action=faq',
     ),
     'text' =>
     array (
-      0 => '站点帮助',
+      0 => 'Trợ giúp',
     ),
   ),
   103 =>
   array (
     'index' =>
     array (
-      '电子商务' => 'action=setting&operation=ec',
+      'TM đ.tử' => 'action=setting&operation=ec',
     ),
     'text' =>
     array (
-      0 => '电子商务',
+      0 => 'TM đ.tử',
     ),
   ),
   104 =>
   array (
     'index' =>
     array (
-      '友情链接' => 'action=misc&operation=link',
+      'L.kết bạn bè' => 'action=misc&operation=link',
     ),
     'text' =>
     array (
-      0 => '友情链接',
+      0 => 'L.kết bạn bè',
     ),
   ),
   105 =>
   array (
     'index' =>
     array (
-      '站长推荐' => 'action=misc&operation=focus',
+      'Đề tài nên xem' => 'action=misc&operation=focus',
     ),
     'text' =>
     array (
-      0 => '站长推荐',
+      0 => 'Đề tài nên xem',
     ),
   ),
   106 =>
   array (
     'index' =>
     array (
-      '关联链接' => 'action=misc&operation=relatedlink',
+      'L.kết trao đổi' => 'action=misc&operation=relatedlink',
     ),
     'text' =>
     array (
-      0 => '关联链接',
+      0 => 'L.kết trao đổi',
     ),
   ),
   107 =>
   array (
     'index' =>
     array (
-      '充值卡密' => 'action=card',
+      'Thẻ nạp' => 'action=card',
     ),
     'text' =>
     array (
-      0 => '充值卡密',
+      0 => 'Thẻ nạp',
     ),
   ),
   108 =>
@@ -1257,11 +1257,11 @@ $lang = array (
   array (
     'index' =>
     array (
-      '插件' => 'action=plugins',
+      'Plug-in' => 'action=plugins',
     ),
     'text' =>
     array (
-      0 => '插件',
+      0 => 'Plug-in',
     ),
   ),
   114 =>
@@ -1279,66 +1279,66 @@ $lang = array (
   array (
     'index' =>
     array (
-      '更新缓存' => 'action=tools&operation=updatecache',
+      'Cập nhật cache' => 'action=tools&operation=updatecache',
     ),
     'text' =>
     array (
-      0 => '更新缓存',
+      0 => 'Cập nhật cache',
     ),
   ),
   116 =>
   array (
     'index' =>
     array (
-      '更新统计' => 'action=counter',
+      'C.nhật thống kê' => 'action=counter',
     ),
     'text' =>
     array (
-      0 => '更新统计',
+      0 => 'C.nhật thống kê',
     ),
   ),
   117 =>
   array (
     'index' =>
     array (
-      '运行记录' => 'action=logs',
+      'Log thao tác' => 'action=logs',
     ),
     'text' =>
     array (
-      0 => '运行记录',
+      0 => 'Log thao tác',
     ),
   ),
   118 =>
   array (
     'index' =>
     array (
-      '计划任务' => 'action=misc&operation=cron',
+      'Lịch trình việc' => 'action=misc&operation=cron',
     ),
     'text' =>
     array (
-      0 => '计划任务',
+      0 => 'Lịch trình việc',
     ),
   ),
   119 =>
   array (
     'index' =>
     array (
-      '文件权限检查' => 'action=tools&operation=fileperms',
+      'Kiểm tra tệp tin' => 'action=tools&operation=fileperms',
     ),
     'text' =>
     array (
-      0 => '文件权限检查',
+      0 => 'Kiểm tra tệp tin',
     ),
   ),
   120 =>
   array (
     'index' =>
     array (
-      '文件校验' => 'action=checktools&operation=filecheck',
+      'Kiểm xét tệp' => 'action=checktools&operation=filecheck',
     ),
     'text' =>
     array (
-      0 => '文件校验',
+      0 => 'Kiểm xét tệp',
     ),
   ),
   121 =>
@@ -1356,55 +1356,55 @@ $lang = array (
   array (
     'index' =>
     array (
-      '后台管理团队' => 'action=founder&operation=perm',
+      'Đội ngũ q.lý' => 'action=founder&operation=perm',
     ),
     'text' =>
     array (
-      0 => '后台管理团队',
+      0 => 'Đội ngũ q.lý',
     ),
   ),
   123 =>
   array (
     'index' =>
     array (
-      '邮件设置' => 'action=setting&operation=mail',
+      'T.lập email' => 'action=setting&operation=mail',
     ),
     'text' =>
     array (
-      0 => '邮件设置',
+      0 => 'T.lập email',
     ),
   ),
   124 =>
   array (
     'index' =>
     array (
-      '安全中心' => 'action=patch',
+      'T.tâm bảo mật' => 'action=patch',
     ),
     'text' =>
     array (
-      0 => '安全中心',
+      0 => 'T.tâm bảo mật',
     ),
   ),
   125 =>
   array (
     'index' =>
     array (
-      'UCenter 设置' => 'action=setting&operation=uc',
+      'T.lập Ucenter' => 'action=setting&operation=uc',
     ),
     'text' =>
     array (
-      0 => 'UCenter 设置',
+      0 => 'T.lập Ucenter',
     ),
   ),
   126 =>
   array (
     'index' =>
     array (
-      '数据库' => 'action=db&operation=export',
+      'Cơ sở dữ liệu' => 'action=db&operation=export',
     ),
     'text' =>
     array (
-      0 => '数据库',
+      0 => 'Cơ sở dữ liệu',
     ),
   ),
   127 =>
@@ -1444,18 +1444,18 @@ $lang = array (
   array (
     'index' =>
     array (
-      '在线升级' => 'action=upgrade',
+      'Nâng cấp online' => 'action=upgrade',
     ),
     'text' =>
     array (
-      0 => '在线升级',
+      0 => 'Nâng cấp online',
     ),
   ),
   131 =>
   array (
     'index' =>
     array (
-      '管理组' => 'action=admingroup',
+      'Nhóm quản trị' => 'action=admingroup',
       '主题管理权限' => 'action=admingroup&operation=edit&anchor=threadperm',
     ),
     'text' =>
@@ -1529,7 +1529,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      '管理组' => 'action=admingroup',
+      'Nhóm quản trị' => 'action=admingroup',
       '帖子管理权限' => 'action=admingroup&operation=edit&anchor=postperm',
     ),
     'text' =>
@@ -1561,7 +1561,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      '管理组' => 'action=admingroup',
+      'Nhóm quản trị' => 'action=admingroup',
       '管理面板权限' => 'action=admingroup&operation=edit&anchor=modcpperm',
     ),
     'text' =>
@@ -1608,7 +1608,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      '管理组' => 'action=admingroup',
+      'Nhóm quản trị' => 'action=admingroup',
       '空间管理权限' => 'action=admingroup&operation=edit&anchor=spaceperm',
     ),
     'text' =>
@@ -1648,7 +1648,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      '管理组' => 'action=admingroup',
+      'Nhóm quản trị' => 'action=admingroup',
       '其他权限' => 'action=admingroup&operation=edit&anchor=otherperm',
     ),
     'text' =>
@@ -1668,7 +1668,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      '管理组' => 'action=admingroup',
+      'Nhóm quản trị' => 'action=admingroup',
       '门户管理权限' => 'action=admingroup&operation=edit&anchor=portalperm',
     ),
     'text' =>
@@ -1694,7 +1694,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      '站点广告' => 'action=adv',
+      'Quảng cáo' => 'action=adv',
       '广告位' => 'action=adv&operation=list',
     ),
     'text' =>
@@ -1708,7 +1708,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      '相册管理' => 'action=album',
+      'Q.lý album' => 'action=album',
       '最新列表' => 'action=album',
     ),
     'text' =>
@@ -1722,8 +1722,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      '相册管理' => 'action=album',
-      '搜索' => 'action=album&search=true',
+      'Q.lý album' => 'action=album',
+      'Tìm kiếm' => 'action=album&search=true',
     ),
     'text' =>
     array (
@@ -1740,7 +1740,7 @@ $lang = array (
       10 => '相册 ID',
       11 => '多相册 ID 中间请用半角逗号 "," 隔开',
       12 => 'album_search_uid',
-      13 => '用户 UID',
+      13 => 'UserID',
       14 => '多 UID 中间请用半角逗号 "," 隔开',
       15 => 'album_search_user',
       16 => '创建相册用户名',
@@ -1756,11 +1756,11 @@ $lang = array (
   array (
     'index' =>
     array (
-      '相册分类' => 'action=albumcategory',
+      'D.mục album' => 'action=albumcategory',
     ),
     'text' =>
     array (
-      0 => '相册分类',
+      0 => 'D.mục album',
       1 => 'system_category_stat',
       2 => '开启系统分类',
       3 => 'system_category_required',
@@ -1771,11 +1771,11 @@ $lang = array (
   array (
     'index' =>
     array (
-      '站点公告' => 'action=announce',
+      'Thông báo chung' => 'action=announce',
     ),
     'text' =>
     array (
-      0 => '站点公告',
+      0 => 'Thông báo chung',
       1 => 'announce_edit',
       2 => '站点公告编辑',
       3 => 'start_time',
@@ -1785,7 +1785,7 @@ $lang = array (
       7 => 'announce_type',
       8 => '公告类型',
       9 => 'announce_message',
-      10 => '内容',
+      10 => 'Nội dung',
       11 => '文字公告: 直接输入公告内容，支持 Discuz! 代码网址链接: 请输入公告的链接地址如某个主题地址: http://xxx.xxx.xxx',
     ),
   ),
@@ -1794,7 +1794,7 @@ $lang = array (
     'index' =>
     array (
       '第三方模块' => 'action=blockxml',
-      '搜索' => 'action=blockxml&operation=add',
+      'Tìm kiếm' => 'action=blockxml&operation=add',
     ),
     'text' =>
     array (
@@ -1821,7 +1821,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      '日志管理' => 'action=blog',
+      'Q.lý blog' => 'action=blog',
       '最新列表' => 'action=blog',
     ),
     'text' =>
@@ -1835,8 +1835,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      '日志管理' => 'action=blog',
-      '搜索' => 'action=blog&search=true',
+      'Q.lý blog' => 'action=blog',
+      'Tìm kiếm' => 'action=blog&search=true',
     ),
     'text' =>
     array (
@@ -1848,7 +1848,7 @@ $lang = array (
       5 => 'resultsort',
       6 => '结果排序',
       7 => 'blog_search_uid',
-      8 => '用户 UID',
+      8 => 'UserID',
       9 => '多 UID 中间请用半角逗号 "," 隔开',
       10 => 'blog_search_blogid',
       11 => '日志 ID',
@@ -1872,7 +1872,7 @@ $lang = array (
       29 => 'blog_search_reply',
       30 => '回复数',
       31 => 'blog_search_hot',
-      32 => '热度',
+      32 => 'Độ hot',
       33 => 'blog_search_time',
       34 => '发表时间范围',
       35 => '格式 yyyy-mm-dd',
@@ -1882,11 +1882,11 @@ $lang = array (
   array (
     'index' =>
     array (
-      '日志分类' => 'action=blogcategory',
+      'D.mục blog' => 'action=blogcategory',
     ),
     'text' =>
     array (
-      0 => '日志分类',
+      0 => 'D.mục blog',
       1 => 'system_category_stat',
       2 => '开启系统分类',
       3 => 'system_category_required',
@@ -1897,13 +1897,13 @@ $lang = array (
   array (
     'index' =>
     array (
-      '允许前台充值' => 'action=card',
+      'Cho phép nạp thẻ' => 'action=card',
     ),
     'text' =>
     array (
-      0 => '允许前台充值',
+      0 => 'Cho phép nạp thẻ',
       1 => 'card_config_open',
-      2 => '允许前台充值',
+      2 => 'Cho phép nạp thẻ',
       3 => '设置是否允许前台充值，关闭前台充值功能，不影响后台卡密的生成充值卡密验证码开关：全局->防灌水设置->验证码设置',
     ),
   ),
@@ -1945,24 +1945,24 @@ $lang = array (
       1 => 'card_make_tips',
       2 => '生成卡密时，简单的规则或较小的生成张数可能导致实际生成张数小于预设生成张数。',
       3 => 'card_make_rule',
-      4 => '卡密生成规则',
+      4 => 'Quy tắc tạo thẻ',
       5 => '"@"代表任意随机英文字符，"#"代表任意随机数字，"*"代表任意英文或数字卡密规则样本："DZ2011@@@@@#####*****"注意：规则位数过小会造成卡密生成重复概率增大，过多的重复卡密会造成卡密生成终止卡密规则中不能带有中文及其他特殊符号为了避免卡密重复，随机位数最好不要少于8位',
       6 => 'card_type',
-      7 => '卡密分类',
+      7 => 'Loại thẻ',
       8 => 'card_make_num',
-      9 => '生成张数',
+      9 => 'Số lượng thẻ',
       10 => '设置本次生成的卡密张数',
       11 => 'card_make_extcredits',
-      12 => '积分数额及类型',
+      12 => 'Loại điểm thẻ',
       13 => '设置本次生成充值卡密可充得的积分数额与类型',
       14 => 'card_make_price',
-      15 => '实际面值',
+      15 => 'Giá trị thực',
       16 => '单位(元)，实际面值常用在卡片印刷，用作告知用户面值以衡量卡密价值',
       17 => 'card_make_cleardateline',
-      18 => '有效期至',
+      18 => 'Ngày hết hạn',
       19 => '默认有效期为一年卡密会在设定时间的24:00失效，状态变更为“已过期”',
       20 => 'card_make_description',
-      21 => '备注',
+      21 => 'Ghi chú',
       22 => '为本次生成的卡密添加备注说明，备注将显示在“生成记录”中',
     ),
   ),
@@ -1970,11 +1970,11 @@ $lang = array (
   array (
     'index' =>
     array (
-      '表态动作' => 'action=click',
+      'Q.lý thứ hạng' => 'action=click',
     ),
     'text' =>
     array (
-      0 => '表态动作',
+      0 => 'Q.lý thứ hạng',
       1 => 'click_edit_tips',
       2 => '本功能用于设置日志/图片/文章表态动作，动作图片中请填写图片文件名，并将相应图片文件上传到 static/image/click/ 目录中。警告：站点运营一段时间后，中途改变各表情的顺序将会影响之前的表态结果每个类型最多启用8个动作',
     ),
@@ -1983,11 +1983,11 @@ $lang = array (
   array (
     'index' =>
     array (
-      '淘帖管理' => 'action=collection',
+      'Q.lý collection' => 'action=collection',
     ),
     'text' =>
     array (
-      0 => '淘帖管理',
+      0 => 'Q.lý collection',
       1 => 'collection_ctid',
       2 => '淘专辑 ID',
       3 => 'collection_comment_message',
@@ -2091,11 +2091,11 @@ $lang = array (
   array (
     'index' =>
     array (
-      '更新统计' => 'action=counter',
+      'C.nhật thống kê' => 'action=counter',
     ),
     'text' =>
     array (
-      0 => '更新统计',
+      0 => 'C.nhật thống kê',
       1 => 'counter_tips',
       2 => '当下列数据不正常时，可以使用此功能对数据进行更新校正。请尽量避开会员访问的高峰时间
 				每个循环更新数量：数值请在一个合理范围，不要过大，否则会给服务器带来负载压力
@@ -2106,7 +2106,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      '数据库' => 'action=db&operation=export',
+      'Cơ sở dữ liệu' => 'action=db&operation=export',
       '备份' => 'action=db&operation=export',
     ),
     'text' =>
@@ -2131,7 +2131,7 @@ $lang = array (
       17 => 'db_export_filename',
       18 => '备份文件名',
       19 => 'db_import_tips',
-      20 => '本功能在恢复备份数据的同时，将全部覆盖原有数据，请确定恢复前已将论坛关闭，恢复全部完成后可以将论坛重新开放。恢复数据前请在 Discuz! X2.5 安装文件目录下utility文件夹内找到 restore.php 文件，然后将 restore.php 文件上传到程序文件夹data目录下。为了您站点的安全，成功恢复数据后请务必及时删除 restore.php 文件。您可以在数据备份记录处查看站点的备份文件的详细信息，删除过期的备份,并导入需要的备份。',
+      20 => '本功能在恢复备份数据的同时，将全部覆盖原有数据，请确定恢复前已将论坛关闭，恢复全部完成后可以将论坛重新开放。恢复数据前请在Discuz! X2安装文件目录下utility文件夹内找到 restore.php 文件，然后将 restore.php 文件上传到程序文件夹data目录下。为了您站点的安全，成功恢复数据后请务必及时删除 restore.php 文件。您可以在数据备份记录处查看站点的备份文件的详细信息，删除过期的备份,并导入需要的备份。',
       21 => 'db_import',
       22 => '数据恢复',
     ),
@@ -2140,7 +2140,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      '数据库' => 'action=db&operation=export',
+      'Cơ sở dữ liệu' => 'action=db&operation=export',
       '升级' => 'action=db&operation=runquery',
     ),
     'text' =>
@@ -2158,7 +2158,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      '数据库' => 'action=db&operation=export',
+      'Cơ sở dữ liệu' => 'action=db&operation=export',
       '优化' => 'action=db&operation=optimize',
     ),
     'text' =>
@@ -2172,11 +2172,11 @@ $lang = array (
   array (
     'index' =>
     array (
-      '地区设置' => 'action=district',
+      'Q.lý khu vực' => 'action=district',
     ),
     'text' =>
     array (
-      0 => '地区设置',
+      0 => 'Q.lý khu vực',
       1 => 'district_tips',
       2 => '您可以自己编辑地区数据添加，编辑或删除操作后需要点击“提交”按钮才生效',
     ),
@@ -2185,11 +2185,11 @@ $lang = array (
   array (
     'index' =>
     array (
-      '记录管理' => 'action=doing',
+      'Q.lý cảm xúc' => 'action=doing',
     ),
     'text' =>
     array (
-      0 => '记录管理',
+      0 => 'Q.lý cảm xúc',
       1 => 'doing_tips',
       2 => '批量记录信息管理用于删除记录使用，并且连同对应的回复一同删除。关键字可以使用限定符 {x} 以限定相邻两字符间可忽略的文字，x 是忽略字符的个数，如 "a{1}s{2}s"(不含引号) 可以搜索到 "ass" 也可搜索到 "axsxs" 和 "axsxxs" 等等。提醒：点击搜索结果页的删除按钮，将会直接删除相关信息！',
     ),
@@ -2198,8 +2198,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      '记录管理' => 'action=doing',
-      '搜索' => 'action=doing&search=true',
+      'Q.lý cảm xúc' => 'action=doing',
+      'Tìm kiếm' => 'action=doing&search=true',
     ),
     'text' =>
     array (
@@ -2229,7 +2229,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      '域名设置' => 'action=domain',
+      'T.lập tên miền' => 'action=domain',
       '应用域名' => 'domain&operation=app',
     ),
     'text' =>
@@ -2243,7 +2243,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      '域名设置' => 'action=domain',
+      'T.lập tên miền' => 'action=domain',
       '根域名设置' => 'domain&operation=root',
     ),
     'text' =>
@@ -2257,7 +2257,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      '域名设置' => 'action=domain',
+      'T.lập tên miền' => 'action=domain',
       '基本设置' => 'domain&operation=base',
     ),
     'text' =>
@@ -2280,7 +2280,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      '电子商务' => 'action=setting&operation=ec',
+      'TM đ.tử' => 'action=setting&operation=ec',
       '支付宝' => 'action=ec&operation=alipay',
     ),
     'text' =>
@@ -2313,7 +2313,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      '电子商务' => 'action=setting&operation=ec',
+      'TM đ.tử' => 'action=setting&operation=ec',
       '财付通' => 'action=ec&operation=tenpay',
     ),
     'text' =>
@@ -2348,7 +2348,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      '电子商务' => 'action=setting&operation=ec',
+      'TM đ.tử' => 'action=setting&operation=ec',
       '积分充值订单' => 'action=ec&operation=orders',
     ),
     'text' =>
@@ -2378,7 +2378,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      '电子商务' => 'action=setting&operation=ec',
+      'TM đ.tử' => 'action=setting&operation=ec',
       '诚信规则' => 'action=ec&operation=credit',
     ),
     'text' =>
@@ -2397,11 +2397,11 @@ $lang = array (
   array (
     'index' =>
     array (
-      '动态管理' => 'action=feed',
+      'Q.lý tin động' => 'action=feed',
     ),
     'text' =>
     array (
-      0 => '动态管理',
+      0 => 'Q.lý tin động',
       1 => 'feed_global_title',
       2 => '动态标题',
       3 => '支持html，例如：加粗&lt;b&gt;&lt;/b&gt;，变色 &lt;font color=red&gt;&lt;/font&gt;',
@@ -2425,7 +2425,7 @@ $lang = array (
       21 => 'feed_global_image_4_link',
       22 => '第4张图片链接',
       23 => 'feed_global_dateline',
-      24 => '发布时间',
+      24 => 'Ngày đăng',
       25 => '(格式：yyyy-mm-dd H:i)您可以填写一个将来的日期和时间，那么这条动态会在这个将来的日期到来之前，一直显示在第一位',
       26 => 'feed_global_hot',
       27 => '动态热度',
@@ -2435,7 +2435,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      '版块管理' => 'action=forums',
+      'Q.lý diễn đàn' => 'action=forums',
       '编辑版块' => 'action=forums&operation=edit',
     ),
     'text' =>
@@ -2479,7 +2479,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      '版块管理' => 'action=forums',
+      'Q.lý diễn đàn' => 'action=forums',
       '基本设置' => 'action=forums&operation=edit&anchor=basic',
     ),
     'text' =>
@@ -2490,7 +2490,7 @@ $lang = array (
       3 => 'forums_edit_basic',
       4 => '基本设置',
       5 => 'forums_edit_basic_name',
-      6 => '版块名称',
+      6 => 'Tên diễn đàn',
       7 => 'forums_edit_base_name_color',
       8 => '版块名称颜色',
       9 => 'forums_edit_basic_icon',
@@ -2539,7 +2539,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      '版块管理' => 'action=forums',
+      'Q.lý diễn đàn' => 'action=forums',
       '扩展设置' => 'action=forums&operation=edit&anchor=extend',
     ),
     'text' =>
@@ -2633,7 +2633,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      '版块管理' => 'action=forums',
+      'Q.lý diễn đàn' => 'action=forums',
       '帖子选项' => 'action=forums&operation=edit&anchor=posts',
     ),
     'text' =>
@@ -2650,7 +2650,7 @@ $lang = array (
       9 => '允许编辑帖子',
       10 => '选择“是”将允许用户编辑本版发表的帖子',
       11 => 'forums_edit_posts_recyclebin',
-      12 => '回收站',
+      12 => 'Thùng rác',
       13 => '是否在本版启用回收站功能，打开此功能后，所有被删除主题和回帖将被放在回收站中，而不会被直接删除',
       14 => 'forums_edit_posts_html',
       15 => '允许使用 HTML 代码',
@@ -2708,7 +2708,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      '版块管理' => 'action=forums',
+      'Q.lý diễn đàn' => 'action=forums',
       '附件类型' => 'action=forums&operation=edit&anchor=attachtype',
     ),
     'text' =>
@@ -2722,7 +2722,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      '版块管理' => 'action=forums',
+      'Q.lý diễn đàn' => 'action=forums',
       '扩展积分增减策略' => 'action=forums&operation=edit&anchor=credits',
     ),
     'text' =>
@@ -2738,8 +2738,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      '版块管理' => 'action=forums',
-      '主题分类' => 'action=forums&operation=edit&anchor=threadtypes',
+      'Q.lý diễn đàn' => 'action=forums',
+      'Loại đề tài' => 'action=forums&operation=edit&anchor=threadtypes',
     ),
     'text' =>
     array (
@@ -2747,7 +2747,7 @@ $lang = array (
       1 => 'forums_edit_tips',
       2 => '以下设置没有继承性，即仅对当前版块有效，不会对下级子版块产生影响。',
       3 => 'forums_edit_threadtypes_config',
-      4 => '主题分类',
+      4 => 'Loại đề tài',
       5 => 'forums_edit_threadtypes_status',
       6 => '启用主题分类',
       7 => '设置是否在本版块启用主题分类功能，您需要同时设定相应的分类选项，才能启用本功能',
@@ -2761,7 +2761,7 @@ $lang = array (
       15 => '类别前缀',
       16 => '是否在主题前面显示分类的名称',
       17 => 'forums_edit_threadtypes',
-      18 => '主题分类',
+      18 => 'Loại đề tài',
       19 => '您可以启用已有的主题分类或添加新主题分类应用于本版块，在分类很多的情况下，建议只有重要的分类使用“平板显示”方式，更多的分类使用“下拉显示”方式',
     ),
   ),
@@ -2769,8 +2769,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      '版块管理' => 'action=forums',
-      '分类信息' => 'action=forums&operation=edit&anchor=threadsorts',
+      'Q.lý diễn đàn' => 'action=forums',
+      'Loại thông tin' => 'action=forums&operation=edit&anchor=threadsorts',
     ),
     'text' =>
     array (
@@ -2778,7 +2778,7 @@ $lang = array (
       1 => 'forums_edit_tips',
       2 => '以下设置没有继承性，即仅对当前版块有效，不会对下级子版块产生影响。',
       3 => 'forums_edit_threadsorts',
-      4 => '分类信息',
+      4 => 'Loại thông tin',
       5 => 'forums_edit_threadsorts_status',
       6 => '启用分类信息',
       7 => 'forums_edit_threadtypes_required',
@@ -2796,7 +2796,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      '版块管理' => 'action=forums',
+      'Q.lý diễn đàn' => 'action=forums',
       '版块权限' => 'action=forums&operation=edit&anchor=perm',
     ),
     'text' =>
@@ -2833,11 +2833,11 @@ $lang = array (
   array (
     'index' =>
     array (
-      '后台管理团队' => 'action=founder',
+      'Đội ngũ q.lý' => 'action=founder',
     ),
     'text' =>
     array (
-      0 => '后台管理团队',
+      0 => 'Đội ngũ q.lý',
       1 => 'home_security_founder',
       2 => '您可以制定多种团队职务分配给您网站管理团队的各个成员，让他们管理网站的不同事务“副站长”拥有除“创始人(站长)”专有权限以外的所有后台权限，仅次于“创始人(站长)”',
     ),
@@ -2846,11 +2846,11 @@ $lang = array (
   array (
     'index' =>
     array (
-      '群组设置' => 'action=group&operation=setting',
+      'T.lập nhóm' => 'action=group&operation=setting',
     ),
     'text' =>
     array (
-      0 => '群组设置',
+      0 => 'T.lập nhóm',
       1 => 'groups_setting_basic',
       2 => '基本设置',
       3 => 'groups_setting_basic_status',
@@ -2928,7 +2928,7 @@ $lang = array (
       11 => 'groups_manage_replycount',
       12 => '回复数',
       13 => 'groups_manage_createtime',
-      14 => '创建时间',
+      14 => 'Ngày tạo',
       15 => 'groups_manage_updatetime',
       16 => '最后更新时间',
       17 => 'groups_manage_founder',
@@ -2941,11 +2941,11 @@ $lang = array (
   array (
     'index' =>
     array (
-      '道具中心' => 'action=magics',
+      'Ma thuật' => 'action=magics',
     ),
     'text' =>
     array (
-      0 => '道具中心',
+      0 => 'Ma thuật',
       1 => 'magics_tips',
       2 => '安装新的道具，需将道具脚本程序上传到 source/class/magic/ 目录，然后即可在以下列表中使用了。插件开发人员在设计新的道具前请务必仔细阅读《Discuz! 技术文库》中的内容。',
       3 => 'magics_config_open',
@@ -2960,11 +2960,11 @@ $lang = array (
   array (
     'index' =>
     array (
-      '勋章中心' => 'action=medals',
+      'Huy chương' => 'action=medals',
     ),
     'text' =>
     array (
-      0 => '勋章中心',
+      0 => 'Huy chương',
       1 => 'medals_tips',
       2 => '本功能用于设置可以颁发给用户的勋章信息，勋章图片中请填写图片文件名，并将相应图片文件上传到 static/image/common/ 目录中。',
     ),
@@ -2979,9 +2979,9 @@ $lang = array (
     array (
       0 => '马甲',
       1 => 'members_search_repeatuser',
-      2 => '用户名',
+      2 => 'Tài khoản',
       3 => 'members_search_uid',
-      4 => '用户 UID',
+      4 => 'UserID',
       5 => 'members_search_repeatip',
       6 => 'IP 地址',
     ),
@@ -2990,19 +2990,19 @@ $lang = array (
   array (
     'index' =>
     array (
-      '添加用户' => 'action=members&operation=add',
+      'Thêm t.viên' => 'action=members&operation=add',
     ),
     'text' =>
     array (
-      0 => '添加用户',
+      0 => 'Thêm t.viên',
       1 => 'username',
-      2 => '用户名',
+      2 => 'Tài khoản',
       3 => 'password',
-      4 => '密　码',
+      4 => 'Mật khẩu',
       5 => 'email',
       6 => 'Email',
       7 => 'usergroup',
-      8 => '用户组',
+      8 => 'Nhóm t.viên',
       9 => 'members_add_email_notify',
       10 => '发送通知到上述地址',
     ),
@@ -3017,7 +3017,7 @@ $lang = array (
     array (
       0 => '编辑会员用户组',
       1 => 'usergroup',
-      2 => '用户组',
+      2 => 'Nhóm t.viên',
       3 => 'members_group_group',
       4 => '所属用户组',
       5 => 'members_group_related_adminid',
@@ -3030,7 +3030,7 @@ $lang = array (
       12 => 'members_group_orig_groupid',
       13 => '过期后管理组变为',
       14 => 'members_group_extended',
-      15 => '扩展用户组',
+      15 => 'Nhóm mở rộng',
       16 => '注意: 有效期格式 yyyy-mm-dd，如果留空，则默认该扩展用户组不自动过期',
       17 => 'members_edit_reason',
       18 => '变更理由',
@@ -3079,19 +3079,19 @@ $lang = array (
   array (
     'index' =>
     array (
-      '编辑用户' => 'action=members&operation=edit',
+      'Sửa t.viên' => 'action=members&operation=edit',
     ),
     'text' =>
     array (
-      0 => '编辑用户',
+      0 => 'Sửa t.viên',
       1 => 'members_edit_username',
-      2 => '用户名',
+      2 => 'Tài khoản',
       3 => 'members_edit_avatar',
       4 => '头像',
       5 => 'members_edit_statistics',
-      6 => '统计信息',
+      6 => 'Thông tin thống kê',
       7 => 'members_edit_password',
-      8 => '新密码',
+      8 => 'Mật khẩu mới',
       9 => '如果不更改密码此处请留空',
       10 => 'members_edit_unbind',
       11 => '解除QQ帐号绑定状态',
@@ -3113,9 +3113,9 @@ $lang = array (
       27 => 'members_edit_digestposts',
       28 => '精华帖数',
       29 => 'members_edit_regip',
-      30 => '注册 IP',
+      30 => 'IP đăng ký',
       31 => 'members_edit_regdate',
-      32 => '注册时间',
+      32 => 'Tham gia lúc',
       33 => 'members_edit_lastvisit',
       34 => '上次访问',
       35 => 'members_edit_lastip',
@@ -3132,38 +3132,38 @@ $lang = array (
       46 => 'members_edit_option',
       47 => '论坛选项',
       48 => 'members_edit_cstatus',
-      49 => '自定义头衔',
+      49 => 'Danh hiệu cá nhân',
       50 => 'members_edit_signature',
       51 => '签名',
       52 => 'members_profile',
-      53 => '用户栏目',
+      53 => 'T.tin thành viên',
     ),
   ),
   191 =>
   array (
     'index' =>
     array (
-      '用户管理' => 'action=members&operation=search',
+      'Q.lý thành viên' => 'action=members&operation=search',
     ),
     'text' =>
     array (
-      0 => '用户管理',
+      0 => 'Q.lý thành viên',
       1 => 'members_search_table',
       2 => '用户表',
       3 => '更新用户数据时，存档表中的用户相关数据不会更新',
       4 => 'members_search_user',
-      5 => '用户名',
+      5 => 'Tài khoản',
       6 => '可使用通配符 *，多个用户名用半角逗号 "," 隔开',
       7 => 'members_search_uid',
-      8 => '用户 UID',
+      8 => 'UserID',
       9 => 'members_search_group',
       10 => '主用户组',
       11 => '设置允许参与搜索的用户组，可以按住 CTRL 多选',
       12 => 'members_search_medal',
-      13 => '勋章',
+      13 => 'Huy chương',
       14 => '设置拥有指定勋章的用户，可以按住 CTRL 多选',
       15 => 'members_search_usertag',
-      16 => '用户标签',
+      16 => 'Danh hiệu t.viên',
       17 => '设置指定标签的用户，可以按住 CTRL 多选',
       18 => 'members_search_conisbind',
       19 => '是否绑定QQ',
@@ -3236,11 +3236,11 @@ $lang = array (
   array (
     'index' =>
     array (
-      '在线列表图标' => 'action=misc&operation=onlinelist',
+      'B.tượng online' => 'action=misc&operation=onlinelist',
     ),
     'text' =>
     array (
-      0 => '在线列表图标',
+      0 => 'B.tượng online',
       1 => 'misc_onlinelist_tips',
       2 => '本功能用于自定义首页及主题列表页显示的在线会员分组及图例，只在在线列表功能打开时有效。用户组图例处空白为不区分该组用户，所有未区分的用户组将统一归入第一行的“普通用户”项。用户组图例中请填写图片文件名，并将相应图片文件上传到 static/image/common/ 目录中。',
     ),
@@ -3249,11 +3249,11 @@ $lang = array (
   array (
     'index' =>
     array (
-      '友情链接' => 'action=misc&operation=link',
+      'L.kết bạn bè' => 'action=misc&operation=link',
     ),
     'text' =>
     array (
-      0 => '友情链接',
+      0 => 'L.kết bạn bè',
       1 => 'misc_link_tips',
       2 => '如果您不想在论坛首页显示友情链接，可以在“界面设置”中关闭。未填写文字说明的项目将以紧凑型显示。
 						友情链接分组只供 DIY 的展示类模块使用。',
@@ -3263,11 +3263,11 @@ $lang = array (
   array (
     'index' =>
     array (
-      '关联链接' => 'action=misc&operation=relatedlink',
+      'L.kết trao đổi' => 'action=misc&operation=relatedlink',
     ),
     'text' =>
     array (
-      0 => '关联链接',
+      0 => 'L.kết trao đổi',
       1 => 'misc_relatedlink_tips',
       2 => '在指定范围内出现的相关文字自动加上链接。',
     ),
@@ -3276,7 +3276,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      '编辑器设置' => 'action=setting&operation=editor',
+      'T.lập editor' => 'action=setting&operation=editor',
       'Discuz! 代码' => 'action=setting&operation=bbcode',
     ),
     'text' =>
@@ -3290,11 +3290,11 @@ $lang = array (
   array (
     'index' =>
     array (
-      '词语过滤' => 'action=misc&operation=censor',
+      'Bộ lọc từ' => 'action=misc&operation=censor',
     ),
     'text' =>
     array (
-      0 => '词语过滤',
+      0 => 'Bộ lọc từ',
       1 => 'misc_censor_tips',
       2 => '替换前的内容可以使用限定符 {x} 以限定相邻两字符间可忽略的文字，x 是忽略的字节数。如 "a{1}s{2}s"(不含引号) 可以过滤 "ass" 也可过滤 "axsxs" 和 "axsxxs" 等等。对于中文字符，若使用 GBK、Big-5 版本，每个中文字符相当于 2 个字节；若使用 UTF-8 版本，每个中文字符相当于 3 个字节。为不影响程序效率，请不要设置过多不需要的过滤内容。审核只对论坛中的内容有效如果您不是论坛管理员，您将只能对自己添加的项目进行编辑或删除。不良词语如果以"/"(不含引号)开头和结尾则表示格式为正则表达式，这时替换内容可用"(n)"引用正则中的子模式，如"/1\\d{10}([^\\d]+|$)/"替换为"手机(1)"。',
       3 => 'misc_censor_batch_add_tips',
@@ -3307,7 +3307,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      '主题鉴定' => 'action=misc&operation=stamp',
+      'Tem đề tài' => 'action=misc&operation=stamp',
       '图章' => 'action=misc&operation=stamp&anchor=list',
     ),
     'text' =>
@@ -3321,7 +3321,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      '主题鉴定' => 'action=misc&operation=stamp',
+      'Tem đề tài' => 'action=misc&operation=stamp',
       '图标' => 'action=misc&operation=stamp&anchor=llist',
     ),
     'text' =>
@@ -3335,8 +3335,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      '主题鉴定' => 'action=misc&operation=stamp',
-      '添加' => 'action=misc&operation=stamp&anchor=add',
+      'Tem đề tài' => 'action=misc&operation=stamp',
+      'Thêm' => 'action=misc&operation=stamp&anchor=add',
     ),
     'text' =>
     array (
@@ -3349,11 +3349,11 @@ $lang = array (
   array (
     'index' =>
     array (
-      '附件类型尺寸' => 'action=misc&operation=attachtype',
+      'Loại đính kèm' => 'action=misc&operation=attachtype',
     ),
     'text' =>
     array (
-      0 => '附件类型尺寸',
+      0 => 'Loại đính kèm',
       1 => 'misc_attachtype_tips',
       2 => '本功能可限定某特定类型附件的最大尺寸，当这里设定的尺寸小于用户组允许的最大尺寸时，指定类型的附件尺寸限制将按本设定为准。您可以设置某类附件最大尺寸为 0 以整体禁止这类附件被上传。',
     ),
@@ -3362,11 +3362,11 @@ $lang = array (
   array (
     'index' =>
     array (
-      '计划任务' => 'action=misc&operation=cron',
+      'Lịch trình việc' => 'action=misc&operation=cron',
     ),
     'text' =>
     array (
-      0 => '计划任务',
+      0 => 'Lịch trình việc',
       1 => 'misc_cron_tips',
       2 => '计划任务是 Discuz! 提供的一项使系统在规定时间自动执行某些特定任务的功能，在需要的情况下，您也可以方便的将其用于站点功能的扩展。计划任务是与系统核心紧密关联的功能特性，不当的设置可能造成站点功能的隐患，严重时可能导致站点无法正常运行，因此请务必仅在您对计划任务特性十分了解，并明确知道正在做什么、有什么样后果的时候才自行添加或修改任务项目。此处和其他功能不同，本功能中完全按照站点系统默认时差对时间进行设定和显示，而不会依据某一用户或管理员的时差设定而改变显示或设置的时间值。',
     ),
@@ -3375,8 +3375,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      '站长推荐' => 'action=misc&operation=focus',
-      '管理' => 'action=misc&operation=focus',
+      'Đề tài nên xem' => 'action=misc&operation=focus',
+      'Quản lý' => 'action=misc&operation=focus',
     ),
     'text' =>
     array (
@@ -3384,15 +3384,15 @@ $lang = array (
       1 => 'misc_focus_tips',
       2 => '站长推荐将以浮窗的形式显示在帖子内容页面右下角。您可以手动添加一些指定的主题，或者选择一些版主推荐的主题。最多 10 条，每次随机显示其中 1 条。',
       3 => 'admin',
-      4 => '管理',
+      4 => 'Quản lý',
     ),
   ),
   205 =>
   array (
     'index' =>
     array (
-      '站长推荐' => 'action=misc&operation=focus',
-      '添加' => 'action=misc&operation=focus&do=add',
+      'Đề tài nên xem' => 'action=misc&operation=focus',
+      'Thêm' => 'action=misc&operation=focus&do=add',
     ),
     'text' =>
     array (
@@ -3417,14 +3417,14 @@ $lang = array (
   array (
     'index' =>
     array (
-      '站长推荐' => 'action=misc&operation=focus',
-      '设置' => 'action=misc&operation=focus&do=config',
+      'Đề tài nên xem' => 'action=misc&operation=focus',
+      'Thiết lập' => 'action=misc&operation=focus&do=config',
     ),
     'text' =>
     array (
       0 => '站长推荐 &raquo; 设置',
       1 => 'config',
-      2 => '设置',
+      2 => 'Thiết lập',
       3 => 'misc_focus_area_title',
       4 => '站长推荐区域标题',
       5 => '默认为“站长推荐”，您可以设置为您希望的标题',
@@ -3438,11 +3438,11 @@ $lang = array (
   array (
     'index' =>
     array (
-      '图片管理' => 'action=pic',
+      'Q.lý hình' => 'action=pic',
     ),
     'text' =>
     array (
-      0 => '图片管理',
+      0 => 'Q.lý hình',
       1 => 'pic_tips',
       2 => '批量图片管理用于删除图片使用。连图片评论一同删除提醒：点击搜索结果页的删除按钮，将会直接删除相关信息！',
     ),
@@ -3451,8 +3451,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      '图片管理' => 'action=pic',
-      '搜索' => 'action=pic&search=true',
+      'Q.lý hình' => 'action=pic',
+      'Tìm kiếm' => 'action=pic&search=true',
     ),
     'text' =>
     array (
@@ -3478,7 +3478,7 @@ $lang = array (
       19 => '发布IP',
       20 => '通配符 "*" 如 "127.0.*.*"(不含引号)，慎用!!!',
       21 => 'pic_search_hot',
-      22 => '热度',
+      22 => 'Độ hot',
       23 => 'pic_search_time',
       24 => '上传时间范围',
       25 => '格式 yyyy-mm-dd',
@@ -3488,11 +3488,11 @@ $lang = array (
   array (
     'index' =>
     array (
-      '帖子点评管理' => 'action=postcomment',
+      'Q.lý nhận xét' => 'action=postcomment',
     ),
     'text' =>
     array (
-      0 => '帖子点评管理',
+      0 => 'Q.lý nhận xét',
       1 => 'postcomment_tips',
       2 => '批量点评管理用于删除帖子点评。提醒：点击搜索结果页的删除按钮，将会直接删除相关信息！',
     ),
@@ -3501,8 +3501,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      '帖子点评管理' => 'action=postcomment',
-      '搜索' => 'action=postcomment&search=true',
+      'Q.lý nhận xét' => 'action=postcomment',
+      'Tìm kiếm' => 'action=postcomment&search=true',
     ),
     'text' =>
     array (
@@ -3565,11 +3565,11 @@ $lang = array (
   array (
     'index' =>
     array (
-      '论坛批量删帖' => 'action=prune',
+      'Xóa loạt đề tài' => 'action=prune',
     ),
     'text' =>
     array (
-      0 => '论坛批量删帖',
+      0 => 'Xóa loạt đề tài',
       1 => 'prune_tips',
       2 => '批量删帖仅用于删除违规帖子使用，如您需要批量删除历史旧帖，请使用批量主题管理功能。使用此功能，需同时提供起始时间和终止时间其中之一，及发帖用户名、发帖 IP、内容关键字其中之一，至少共二项必要的条件，否则将无法进行操作。如果符合删除条件的帖子为主题第一帖，或该主题无回复，将删除整个主题。如果您不是论坛管理员，您只能删除从某一时间到现在的范围内的帖子。超级版主的删帖的时间范围为二星期(14 天)；版主的时间范围为一星期(7 天)且只能删除所管辖论坛内的帖子。关键字可以使用限定符 {x} 以限定相邻两字符间可忽略的文字，x 是忽略字符的个数，如 "a{1}s{2}s"(不含引号) 可以搜索到 "ass" 也可搜索到 "axsxs" 和 "axsxxs" 等等。',
       3 => 'prune_search_detail',
@@ -3601,8 +3601,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      '主题回收站' => 'action=recyclebin',
-      '搜索' => 'action=recyclebin&operation=search',
+      'Đề tài rác' => 'action=recyclebin',
+      'Tìm kiếm' => 'action=recyclebin&operation=search',
     ),
     'text' =>
     array (
@@ -3634,7 +3634,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      '主题回收站' => 'action=recyclebin',
+      'Đề tài rác' => 'action=recyclebin',
       '清理' => 'action=recyclebin&operation=clean',
     ),
     'text' =>
@@ -3651,8 +3651,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      '回帖回收站' => 'action=recyclebinpost',
-      '搜索' => 'action=recyclebinpost&operation=search',
+      'Trả lời rác' => 'action=recyclebinpost',
+      'Tìm kiếm' => 'action=recyclebinpost&operation=search',
     ),
     'text' =>
     array (
@@ -3680,7 +3680,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      '回帖回收站' => 'action=recyclebinpost',
+      'Trả lời rác' => 'action=recyclebinpost',
       '清理' => 'action=recyclebinpost&operation=clean',
     ),
     'text' =>
@@ -3697,11 +3697,11 @@ $lang = array (
   array (
     'index' =>
     array (
-      '用户举报' => 'action=report',
+      'B.cáo từ t.viên' => 'action=report',
     ),
     'text' =>
     array (
-      0 => '用户举报',
+      0 => 'B.cáo từ t.viên',
       1 => 'report_tips',
       2 => '可以根据举报真实情况，给举报者加减积分，设置用户举报奖惩使用的积分多人举报时奖惩第一个举报人。',
     ),
@@ -3710,13 +3710,13 @@ $lang = array (
   array (
     'index' =>
     array (
-      '站点信息' => 'action=setting&operation=basic',
+      'Thông tin hệ thống' => 'action=setting&operation=basic',
     ),
     'text' =>
     array (
-      0 => '站点信息',
+      0 => 'Thông tin hệ thống',
       1 => 'setting_basic_bbname',
-      2 => '站点名称',
+      2 => 'Tên website',
       3 => '站点名称，将显示在浏览器窗口标题等位置',
       4 => 'setting_basic_sitename',
       5 => '网站名称',
@@ -3753,7 +3753,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      '广播设置' => 'action=setting&operation=follow',
+      'T.lập broadcast' => 'action=setting&operation=follow',
       '基本设置' => 'action=setting&operation=follow&anchor=base',
     ),
     'text' =>
@@ -3806,8 +3806,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      '空间设置' => 'action=setting&operation=home',
-      '隐私设置' => 'action=setting&operation=home&anchor=privacy',
+      'T.lập space' => 'action=setting&operation=home',
+      'T.lập riêng tư' => 'action=setting&operation=home&anchor=privacy',
     ),
     'text' =>
     array (
@@ -3817,23 +3817,23 @@ $lang = array (
       3 => 'setting_home_privacy_view_index',
       4 => '个人空间首页',
       5 => 'setting_home_privacy_view_friend',
-      6 => '好友列表',
+      6 => 'Danh sách bạn',
       7 => 'setting_home_privacy_view_wall',
-      8 => '留言板',
+      8 => 'Bảng tin',
       9 => 'setting_home_privacy_view_feed',
-      10 => '动态',
+      10 => 'Thông tin',
       11 => '非“全站用户可见”同时限制了动态首页的游客访问',
       12 => 'setting_home_privacy_view_doing',
-      13 => '记录',
+      13 => 'Cảm xúc',
       14 => '在全站的记录列表中可能会出现记录信息。 ',
       15 => 'setting_home_privacy_view_blog',
-      16 => '日志',
+      16 => 'Blog',
       17 => '相关浏览权限需要在每篇日志中单独设置方可完全生效',
       18 => 'setting_home_privacy_view_album',
-      19 => '相册',
+      19 => 'Album',
       20 => '相关浏览权限需要在每个相册中单独设置方可完全生效',
       21 => 'setting_home_privacy_view_share',
-      22 => '分享',
+      22 => 'Chia sẻ',
       23 => '在全站的分享列表中可能会出现分享信息。 ',
       24 => 'setting_home_privacy_default_feed',
       25 => '默认动态发布设置',
@@ -3843,64 +3843,64 @@ $lang = array (
   array (
     'index' =>
     array (
-      '注册与访问控制' => 'action=setting&operation=access',
-      '注册' => 'action=setting&operation=access&anchor=register',
+      'Đ.ký và truy cập' => 'action=setting&operation=access',
+      'Đăng ký' => 'action=setting&operation=access&anchor=register',
     ),
     'text' =>
     array (
       0 => '注册与访问控制 &raquo; 注册',
       1 => 'setting_access_register_status',
-      2 => '允许新用户注册',
+      2 => 'Cho phép đăng ký mới',
       3 => '设置是否允许游客注册成为站点会员，您可以根据站点需求选择注册方式',
       4 => 'setting_access_register_invite_buyprompt',
-      5 => '邀请注册说明',
+      5 => 'Chỉ dẫn mời đăng ký',
       6 => 'setting_access_register_invite_buy',
-      7 => '允许充值购买邀请码',
+      7 => 'Cho phép nạp thể để mua mã mời',
       8 => '允许游客通过在线充值购买注册邀请码。仅限于关闭普通注册时有效。开启前请确认您的电子商务及发送邮件功能可正常使用',
       9 => 'setting_access_register_invite_buyprice',
-      10 => '邀请码单价(元)',
+      10 => 'Giá mỗi mã mời(vnđ)',
       11 => 'setting_access_register_invite_credit',
-      12 => '邀请新注册会员奖励所用扩展积分',
+      12 => 'Điểm thưởng khi có người đăng ký qua giới thiệu',
       13 => '邀请新注册会员奖励所用的扩展积分，包括奖励邀请人和被邀请人的奖励积分',
       14 => 'setting_access_register_invite_addcredit',
-      15 => '被邀请人奖励积分数量',
-      16 => '通过邀请码注册成功后，奖励被邀请人的扩展积分数量',
+      15 => 'Điểm thưởng cho người tham gia mới(được mời)',
+      16 => 'Khi giới thiệu đăng ký thành công, người dùng sẽ nhận được điểm thưởng theo quy định',
       17 => 'setting_access_register_invite_invitedcredit',
-      18 => '邀请人奖励积分数量',
-      19 => '通过邀请码注册成功后，奖励邀请人的扩展积分数量',
+      18 => 'Số điểm thưởng khi giới thiệu thành công',
+      19 => 'Số điểm thưởng dành cho người giới thiệu bạn bè đăng ký thành công',
       20 => 'setting_access_register_invite_group',
-      21 => '邀请注册用户初始用户组',
+      21 => 'Nhóm thành viên được mời đăng ký mới',
       22 => '被邀请人的初始用户组',
       23 => 'setting_access_register_invite_areawhite',
-      24 => '不受邀请码限制的地区列表',
+      24 => 'Danh sách khu vực không cho phép đăng ký',
       25 => '当用户处于本列表中的地址时，注册时不受邀请码限制。每个地区一行，例如 "北京"(不含引号)，留空为不设置。注意：如要正确无误的判断您 IP 地址所在的地区，请到网上下载 qqwry.dat IP 地址库文件上传到 "data/ipdata/" 目录下更名为 wry.dat，同时删除 tinyipdata.dat 文件',
       26 => 'setting_access_register_invite_ipwhite',
       27 => '不受邀请码限制的 IP 列表',
       28 => '当用户处于本列表中的 IP 地址时，注册时不受邀请码限制。每个 IP 一行，既可输入完整地址，也可只输入 IP 开头，例如 "192.168."(不含引号) 可匹配 192.168.0.0～192.168.255.255 范围内的所有地址，留空为不设置',
       29 => 'setting_access_register_regclosemessage',
-      30 => '关闭注册提示信息',
+      30 => 'Thông báo tắt chức năng đăng ký',
       31 => '当站点关闭注册时的提示信息',
       32 => 'setting_access_register_name',
-      33 => '注册地址:',
+      33 => 'Địa chỉ đăng ký:',
       34 => '设置站点注册地址 mod 值，默认为“register”，修改名称有利于防止灌水软件，有别于 Discuz! X 之前的版本更改了此设置，不需要修改任何文件名称，只在此修改即可',
       35 => 'setting_access_register_send_register_url',
-      36 => '通过邮件发送注册链接',
+      36 => 'Gửi liên kết đăng ký qua email',
       37 => '开启后系统会发一条注册的地址到用户的邮箱，从该地址链接过来的允许注册，同时建议UCenter中开启一个邮箱只允许注册一个帐户注意：只有在站长 - 邮件设置中完成邮件设置，确保邮件能发送成功下可以开启该功能 ',
       38 => 'setting_access_register_link_name',
-      39 => '注册链接文字',
+      39 => 'Tên liên kết đăng ký',
       40 => '设置站点注册页的链接文字，默认为“立即注册”',
       41 => 'setting_access_register_censoruser',
-      42 => '用户信息保留关键字',
+      42 => 'Nội dung tên cấm đăng ký',
       43 => '用户在其用户信息中无法使用这些关键字。每个关键字一行，可使用通配符 "*" 如 "*版主*"(不含引号)',
       44 => 'setting_access_register_pwlength',
-      45 => '密码最小长度',
-      46 => '新用户注册时密码最小长度，0或不填为不限制',
+      45 => 'Độ dài tối thiểu mật khẩu',
+      46 => '新用户注册时Độ dài tối thiểu mật khẩu，0或不填为不限制',
       47 => 'setting_access_register_strongpw',
-      48 => '强制密码复杂度',
+      48 => 'Áp đặt độ mạnh mật khẩu',
       49 => '新用户注册时密码中必须存在所选字符类型，不选则为无限制',
       50 => 'setting_access_register_verify',
-      51 => '新用户注册验证',
-      52 => '选择“无”用户可直接注册成功；选择“Email 验证”将向用户注册 Email 发送一封验证邮件以确认邮箱的有效性；选择“人工审核”将由管理员人工逐个确定是否允许新用户注册',
+      51 => 'Xác nhận đăng ký mới',
+      52 => '选择“无”用户可直接注册成功；选择“Email 验证”将向用户注册 Email 发送一封验证邮件以确认邮箱的有效性；选择“人工审核”将由管理员人工逐个确定是否Cho phép đăng ký mới',
       53 => 'setting_access_register_verify_areawhite',
       54 => '不受新用户注册验证限制的地区列表',
       55 => '当用户处于本列表中的地址时，直接注册成功，无需新用户注册验证。每个地区一行，例如 "北京"(不含引号)，留空为不设置',
@@ -3908,34 +3908,34 @@ $lang = array (
       57 => '不受新用户注册验证限制的 IP 列表',
       58 => '当用户处于本列表中的 IP 地址时，直接注册成功，无需新用户注册验证。每个 IP 一行，既可输入完整地址，也可只输入 IP 开头，例如 "192.168."(不含引号) 可匹配 192.168.0.0～192.168.255.255 范围内的所有地址，留空为不设置',
       59 => 'setting_access_register_ctrl',
-      60 => '同一 IP 注册间隔限制(小时)',
+      60 => 'Giới hạn đăng ký cho 1 IP (giờ)',
       61 => '同一 IP 在本时间间隔内将只能注册一个帐号，0 为不限制',
       62 => 'setting_access_register_floodctrl',
-      63 => '同一 IP 在 24 小时允许注册的最大次数',
+      63 => 'Giới hạn đăng ký cho 1 IP/ngày',
       64 => '同一 IP 地址在 24 小时内尝试注册的次数限制，建议在 30 - 100 范围内取值，0 为不限制',
       65 => 'setting_access_register_ipctrl_time',
-      66 => '限时注册IP注册间隔限制(小时):',
+      66 => 'Hạn chế thời gian đăng ký mỗi IP (giờ):',
       67 => '用户处于限时注册的 IP 列表中的 IP 地址时，同一 IP 在本时间间隔内将只能注册一个帐号',
       68 => 'setting_access_register_ipctrl',
-      69 => '限时注册的 IP 列表',
+      69 => 'Danh sách IP giới hạn',
       70 => '当用户处于本列表中的 IP 地址时，在限时注册IP注册间隔限制内将至多只允许注册一个帐号。每个 IP 一行，既可输入完整地址，也可只输入 IP 开头，例如 "192.168."(不含引号) 可匹配 192.168.0.0～192.168.255.255 范围内的所有地址，留空为不设置',
       71 => 'setting_access_register_welcomemsg',
-      72 => '发送欢迎信息',
+      72 => 'Gửi tin chào mừng',
       73 => '可选择是否自动向新注册用户发送一条欢迎信息',
       74 => 'setting_access_register_welcomemsgtitle',
-      75 => '欢迎信息标题',
+      75 => 'Tiêu đề chào mừng',
       76 => '系统发送的欢迎信息的标题，不支持 HTML，不超过 75 字节。 ',
       77 => 'setting_access_register_welcomemsgtxt',
-      78 => '欢迎信息内容',
+      78 => 'Nội dung chào mừng',
       79 => '系统发送的欢迎信息的内容。标题内容均支持变量替换，可以使用如下变量:{username} : 用户名{time} : 发送时间{sitename} : 网站名称（显示在页面底部的联系方式处的名称）{bbname} : 站点名称（显示在浏览器窗口标题等位置的名称）{adminemail} : 管理员 Email',
       80 => 'setting_access_register_bbrules',
-      81 => '显示网站服务条款',
+      81 => 'Hiển thị điều khoản quy định',
       82 => '新用户注册时显示网站服务条款',
       83 => 'setting_access_register_bbruleforce',
-      84 => '是否强制显示网站服务条款',
+      84 => 'Bắt buộc đồng ý với đkqđ',
       85 => '选择是则在用户注册时，首先将看到网站服务条款全文，必须同意才可以继续注册',
       86 => 'setting_access_register_bbrulestxt',
-      87 => '服务条款内容',
+      87 => 'Nội dung điều khoản quy định',
       88 => '网站服务条款的详细内容',
     ),
   ),
@@ -3943,23 +3943,23 @@ $lang = array (
   array (
     'index' =>
     array (
-      '注册与访问控制' => 'action=setting&operation=access',
-      '访问控制' => 'action=setting&operation=access&anchor=access',
+      'Đ.ký và truy cập' => 'action=setting&operation=access',
+      'Q.lý truy cập' => 'action=setting&operation=access&anchor=access',
     ),
     'text' =>
     array (
       0 => '注册与访问控制 &raquo; 访问控制',
       1 => 'setting_access_access_newbiespan',
-      2 => '新手见习期限(分钟)',
+      2 => 'Thời gian là học viên(phút)',
       3 => '新注册用户在本期限内将无法发帖和短消息，不影响版主和管理员，0 为不限制',
       4 => 'setting_access_access_ipaccess',
-      5 => '允许访问站点的 IP 列表',
+      5 => 'Danh sách ip cho phép truy cập website',
       6 => '只有当用户处于本列表中的 IP 地址时才可以访问本站点，列表以外的地址访问将视为 IP 被禁止，仅适用于诸如企业、学校内部站点等极个别场合。本功能对管理员没有特例，如果管理员不在此列表范围内将同样不能登录，请务必慎重使用本功能。每个 IP 一行，既可输入完整地址，也可只输入 IP 开头，例如 "192.168."(不含引号) 可匹配 192.168.0.0～192.168.255.255 范围内的所有地址，留空为所有 IP 除明确禁止的以外均可访问',
       7 => 'setting_access_access_adminipaccess',
-      8 => '允许访问管理中心的 IP 列表',
+      8 => 'Danh sách ip cho phép truy cập admincp',
       9 => '只有当用户处于本列表中的 IP 地址时才可以访问站点管理中心，列表以外的地址访问将无法访问，但仍可访问站点前端用户界面，请务必慎重使用本功能。每个 IP 一行，既可输入完整地址，也可只输入 IP 开头，例如 "192.168."(不含引号) 可匹配 192.168.0.0～192.168.255.255 范围内的所有地址，留空为所有 IP 除明确禁止的以外均可访问管理中心',
       10 => 'setting_access_access_domainwhitelist',
-      11 => '允许发表的域名列表',
+      11 => 'Danh sách tên miền cho phép hiển thị',
       12 => '当用户组禁止发表 URL ，或者 URL 不解析时，处于本列表中的域名下的 URL 仍然可以正常发表，正常解析，每行一个域名，默认为本站域名可以正常发表',
     ),
   ),
@@ -3967,8 +3967,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      '界面设置' => 'action=setting&operation=styles',
-      '全局' => 'action=setting&operation=styles&anchor=global',
+      'T.lập giao diện' => 'action=setting&operation=styles',
+      'Tổng quan' => 'action=setting&operation=styles&anchor=global',
     ),
     'text' =>
     array (
@@ -3976,27 +3976,27 @@ $lang = array (
       1 => 'setting_tips',
       2 => '以红色虚线标示的选项，表示该选项和系统效率、负载能力与资源消耗有关(提高效率、或降低效率)，建议依据自身服务器情况进行调整。',
       3 => 'setting_styles_global',
-      4 => '全局',
+      4 => 'Tổng quan',
       5 => 'setting_styles_global_styleid',
       6 => '站点默认风格',
       7 => '站点默认的界面风格，游客和使用默认风格的会员将以此风格显示',
       8 => 'setting_styles_global_home_style',
-      9 => '家园展示风格',
+      9 => 'Style hiển thị trang chủ',
       10 => '选择日志、相册、分享、记录、广播展示风格',
       11 => 'setting_styles_global_homepage_style',
-      12 => '个人主页默认皮肤',
+      12 => 'Giao diện cá nhân mặc định',
       13 => '选择个人主页默认展示风格',
       14 => 'setting_styles_global_navsubhover',
       15 => '二级导航显示方式',
       16 => '设置二级导航的显示方式。如果设置为显示所有主导航的二级导航，那么会当鼠标移动到其他主导航文字上方的时候显示它们的二级导航',
       17 => 'setting_styles_index_allowwidthauto',
-      18 => '站点宽窄风格',
+      18 => 'Độ rộng giao diện',
       19 => '设置站点的显示风格是宽版还是窄版。其中论坛的版块中还可以进行独立的设置',
       20 => 'setting_styles_index_switchwidthauto',
-      21 => '允许用户自由切换',
+      21 => 'Cho phép người dùng tùy chọn',
       22 => '设置是否允许用户自由切换宽窄风格',
       23 => 'setting_styles_global_jsmenu',
-      24 => '论坛显示版块跳转菜单',
+      24 => 'Hiển thị menu chuyển diễn đàn',
       25 => '注意: 当论坛分版块很多时，本功能会严重加重服务器负担',
       26 => 'setting_styles_global_allowfloatwin',
       27 => '启用浮动窗口',
@@ -4016,7 +4016,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      '界面设置' => 'action=setting&operation=styles',
+      'T.lập giao diện' => 'action=setting&operation=styles',
       '论坛首页' => 'action=setting&operation=styles&anchor=index',
     ),
     'text' =>
@@ -4066,7 +4066,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      '界面设置' => 'action=setting&operation=styles',
+      'T.lập giao diện' => 'action=setting&operation=styles',
       '主题列表页' => 'action=setting&operation=styles&anchor=forumdisplay',
     ),
     'text' =>
@@ -4104,7 +4104,7 @@ $lang = array (
       30 => '显示最近访问版块数量',
       31 => '设置在版块列表和帖子浏览中显示最近访问过的版块数量，建议设置为 10 以内，0 为关闭此功能',
       32 => 'setting_styles_forumdisplay_fastpost',
-      33 => '快速发帖',
+      33 => 'Gửi bài nhanh',
       34 => '底部显示快速发帖表单',
       35 => 'setting_styles_forumdisplay_fastsmilies',
       36 => '显示推荐表情',
@@ -4127,7 +4127,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      '界面设置' => 'action=setting&operation=styles',
+      'T.lập giao diện' => 'action=setting&operation=styles',
       '帖子内容页' => 'action=setting&operation=styles&anchor=viewthread',
     ),
     'text' =>
@@ -4208,14 +4208,14 @@ $lang = array (
   array (
     'index' =>
     array (
-      '界面设置' => 'action=setting&operation=styles',
-      '提示信息' => 'action=setting&operation=styles&anchor=refresh',
+      'T.lập giao diện' => 'action=setting&operation=styles',
+      'Thông tin chỉ dẫn' => 'action=setting&operation=styles&anchor=refresh',
     ),
     'text' =>
     array (
       0 => '界面设置 &raquo; 提示信息',
       1 => 'setting_styles_refresh',
-      2 => '提示信息',
+      2 => 'Thông tin chỉ dẫn',
       3 => 'setting_styles_refresh_refreshtime',
       4 => '提示信息停留时间(秒)',
       5 => '各种提示信息页面显示时间的长短，一般设置为 1-3。较短的提示时间让用户拥有快速的体验，但是也可能让用户无法看清信息',
@@ -4231,7 +4231,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      '界面设置' => 'action=setting&operation=styles',
+      'T.lập giao diện' => 'action=setting&operation=styles',
       '弹出信息' => 'action=setting&operation=styles&anchor=sitemessage',
     ),
     'text' =>
@@ -4260,7 +4260,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      '性能优化' => 'action=setting&operation=seo',
+      'Tối ưu website' => 'action=setting&operation=seo',
       '搜索引擎优化' => 'action=setting&operation=seo',
     ),
     'text' =>
@@ -4280,7 +4280,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      '性能优化' => 'action=setting&operation=seo',
+      'Tối ưu website' => 'action=setting&operation=seo',
       '论坛页面缓存设置' => 'action=setting&operation=cachethread',
     ),
     'text' =>
@@ -4312,7 +4312,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      '性能优化' => 'action=setting&operation=seo',
+      'Tối ưu website' => 'action=setting&operation=seo',
       '服务器优化' => 'action=setting&operation=serveropti',
     ),
     'text' =>
@@ -4363,8 +4363,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      '编辑器设置' => 'action=setting&operation=editor',
-      '全局' => 'action=setting&operation=editor',
+      'T.lập editor' => 'action=setting&operation=editor',
+      'Tổng quan' => 'action=setting&operation=editor',
     ),
     'text' =>
     array (
@@ -4392,21 +4392,21 @@ $lang = array (
   array (
     'index' =>
     array (
-      '站点功能' => 'action=setting&operation=functions',
+      'Tính năng website' => 'action=setting&operation=functions',
       '功能模块' => 'action=setting&operation=functions&anchor=curscript',
     ),
     'text' =>
     array (
       0 => '站点功能 &raquo; 功能模块',
       1 => 'setting_functions_curscript_list',
-      2 => '功能列表',
+      2 => 'D.sách tính năng',
     ),
   ),
   235 =>
   array (
     'index' =>
     array (
-      '站点功能' => 'action=setting&operation=functions',
+      'Tính năng website' => 'action=setting&operation=functions',
       '管理相关' => 'action=setting&operation=functions&anchor=mod',
     ),
     'text' =>
@@ -4459,7 +4459,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      '站点功能' => 'action=setting&operation=functions',
+      'Tính năng website' => 'action=setting&operation=functions',
       '主题热度' => 'action=setting&operation=functions&anchor=heatthread',
     ),
     'text' =>
@@ -4479,8 +4479,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      '站点功能' => 'action=setting&operation=functions',
-      '主题评价' => 'action=setting&operation=functions&anchor=recommend',
+      'Tính năng website' => 'action=setting&operation=functions',
+      'Đánh giá đ.tài' => 'action=setting&operation=functions&anchor=recommend',
     ),
     'text' =>
     array (
@@ -4511,8 +4511,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      '站点功能' => 'action=setting&operation=functions',
-      '帖子点评' => 'action=setting&operation=functions&anchor=comment',
+      'Tính năng website' => 'action=setting&operation=functions',
+      'K.duyệt bài' => 'action=setting&operation=functions&anchor=comment',
     ),
     'text' =>
     array (
@@ -4553,8 +4553,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      '站点功能' => 'action=setting&operation=functions',
-      '其他' => 'action=setting&operation=functions&anchor=other',
+      'Tính năng website' => 'action=setting&operation=functions',
+      'Khác' => 'action=setting&operation=functions&anchor=other',
     ),
     'text' =>
     array (
@@ -4600,7 +4600,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      '站点功能' => 'action=setting&operation=functions',
+      'Tính năng website' => 'action=setting&operation=functions',
       '导读设置' => 'action=setting&operation=functions&anchor=guide',
     ),
     'text' =>
@@ -4619,7 +4619,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      '站点功能' => 'action=setting&operation=functions',
+      'Tính năng website' => 'action=setting&operation=functions',
       '活动主题' => 'action=setting&operation=functions&anchor=activity',
     ),
     'text' =>
@@ -4646,11 +4646,11 @@ $lang = array (
   array (
     'index' =>
     array (
-      '用户权限' => 'action=setting&operation=permissions',
+      'Quyền t.viên' => 'action=setting&operation=permissions',
     ),
     'text' =>
     array (
-      0 => '用户权限',
+      0 => 'Quyền t.viên',
       1 => 'setting_permissions_allowviewuserthread',
       2 => '允许查看用户的主题和帖子',
       3 => '设置是否允许查看其他用户的主题和帖子，选择相应的版块那么在个人空间将出现“主题”模块和链接',
@@ -4703,7 +4703,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      '积分设置' => 'action=setting&operation=credits',
+      'T.lập điểm' => 'action=setting&operation=credits',
       '基本设置' => 'action=setting&operation=credits&anchor=base',
     ),
     'text' =>
@@ -4713,7 +4713,7 @@ $lang = array (
       2 => '扩展积分设置',
       3 => '兑换比率为单项积分对应一个单位标准积分的值，例如 extcredits1 的比率为 1.5(相当于 1.5 个单位标准积分)、extcredits2 的比率为 3(相当于 3 个单位标准积分)、extcredits3 的比率为 15(相当于 15 个单位标准积分)，则 extcredits3 的 1 分相当于 extcredits2 的 5 分或 extcredits1 的 10 分。一旦设置兑换比率，则用户将可以在个人中心自行兑换各项设置了兑换比率的积分，如不希望实行积分自由兑换，请将其兑换比率设置为 0',
       4 => 'setting_credits',
-      5 => '积分设置',
+      5 => 'T.lập điểm',
       6 => 'setting_credits_trans',
       7 => '交易积分设置',
       8 => '交易积分是一种可以由用户间自行转让、买卖交易、发布悬赏主题的积分类型，您可以指定一种积分作为交易积分。如果不指定交易积分，则用户间积分交易功能将不能使用。注意: 交易积分必须是已启用的积分，一旦确定请尽量不要更改，否则以往记录及交易可能会产生问题',
@@ -4768,8 +4768,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      '邮件设置' => 'action=setting&operation=mail',
-      '设置' => 'action=setting&operation=mail&anchor=setting',
+      'T.lập email' => 'action=setting&operation=mail',
+      'Thiết lập' => 'action=setting&operation=mail&anchor=setting',
     ),
     'text' =>
     array (
@@ -4790,7 +4790,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      '邮件设置' => 'action=setting&operation=mail',
+      'T.lập email' => 'action=setting&operation=mail',
       '检测' => 'action=setting&operation=mail&anchor=check',
     ),
     'text' =>
@@ -4807,7 +4807,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      '防灌水设置' => 'action=setting&operation=sec',
+      'T.lập bảo mật' => 'action=setting&operation=sec',
       '防灌水基本设置' => 'action=setting&operation=sec&anchor=base',
     ),
     'text' =>
@@ -4831,7 +4831,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      '防灌水设置' => 'action=setting&operation=sec',
+      'T.lập bảo mật' => 'action=setting&operation=sec',
       '验证码设置' => 'action=setting&operation=sec&anchor=seccode',
     ),
     'text' =>
@@ -4890,7 +4890,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      '防灌水设置' => 'action=setting&operation=sec',
+      'T.lập bảo mật' => 'action=setting&operation=sec',
       '验证问答设置' => 'action=setting&operation=sec&anchor=secqaa',
     ),
     'text' =>
@@ -4915,7 +4915,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      '防灌水设置' => 'action=setting&operation=sec',
+      'T.lập bảo mật' => 'action=setting&operation=sec',
       '注册表单名称设置' => 'action=setting&operation=sec&anchor=reginput',
     ),
     'text' =>
@@ -4941,7 +4941,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      '防灌水设置' => 'action=setting&operation=sec',
+      'T.lập bảo mật' => 'action=setting&operation=sec',
       '注册表单名称设置' => 'action=setting&operation=sec&anchor=postperiodtime',
     ),
     'text' =>
@@ -4967,11 +4967,11 @@ $lang = array (
   array (
     'index' =>
     array (
-      '时间设置' => 'action=setting&operation=datetime',
+      'T.lập thời gian' => 'action=setting&operation=datetime',
     ),
     'text' =>
     array (
-      0 => '时间设置',
+      0 => 'T.lập thời gian',
       1 => 'setting_datetime_format',
       2 => '日期和时间格式',
       3 => 'setting_datetime_dateformat',
@@ -5012,7 +5012,7 @@ $lang = array (
       38 => '缩略图质量',
       39 => '设置图片附件缩略图的质量参数，范围为 0～100 的整数，数值越大结果图片效果越好，但尺寸也越大',
       40 => 'setting_attach_image_preview',
-      41 => '预览',
+      41 => 'Xem trước',
       42 => '无需保存设置即可预览',
     ),
   ),
@@ -5020,7 +5020,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      '上传设置' => 'action=setting&operation=attach',
+      'T.lập upload' => 'action=setting&operation=attach',
       '论坛附件' => 'action=setting&operation=attach&anchor=forumattach',
     ),
     'text' =>
@@ -5056,7 +5056,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      '上传设置' => 'action=setting&operation=attach',
+      'T.lập upload' => 'action=setting&operation=attach',
       '远程附件' => 'action=setting&operation=attach&anchor=remote',
     ),
     'text' =>
@@ -5112,7 +5112,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      '上传设置' => 'action=setting&operation=attach',
+      'T.lập upload' => 'action=setting&operation=attach',
       '空间附件' => 'action=setting&operation=attach&anchor=albumattach',
     ),
     'text' =>
@@ -5127,7 +5127,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      '上传设置' => 'action=setting&operation=attach',
+      'T.lập upload' => 'action=setting&operation=attach',
       '门户附件' => 'action=setting&operation=attach&anchor=portalarticle',
     ),
     'text' =>
@@ -5145,8 +5145,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      '水印设置' => 'action=setting&operation=imgwater',
-      '文章' => 'action=setting&operation=imgwater&anchor=portal',
+      'T.lập watermark' => 'action=setting&operation=imgwater',
+      'Tin bài' => 'action=setting&operation=imgwater&anchor=portal',
     ),
     'text' =>
     array (
@@ -5205,7 +5205,7 @@ $lang = array (
       52 => '文本水印纵向倾斜角度(ImageMagick)',
       53 => '设置水印文本纵向的倾斜角度。本设置只适用于 ImageMagick 图片处理库',
       54 => 'setting_imgwater_preview',
-      55 => '预览',
+      55 => 'Xem trước',
       56 => '请先提交后再预览',
     ),
   ),
@@ -5213,8 +5213,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      '水印设置' => 'action=setting&operation=imgwater',
-      '论坛' => 'action=setting&operation=imgwater&anchor=forum',
+      'T.lập watermark' => 'action=setting&operation=imgwater',
+      'Diễn đàn' => 'action=setting&operation=imgwater&anchor=forum',
     ),
     'text' =>
     array (
@@ -5273,7 +5273,7 @@ $lang = array (
       52 => '文本水印纵向倾斜角度(ImageMagick)',
       53 => '设置水印文本纵向的倾斜角度。本设置只适用于 ImageMagick 图片处理库',
       54 => 'setting_imgwater_preview',
-      55 => '预览',
+      55 => 'Xem trước',
       56 => '请先提交后再预览',
     ),
   ),
@@ -5281,7 +5281,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      '水印设置' => 'action=setting&operation=imgwater',
+      'T.lập watermark' => 'action=setting&operation=imgwater',
       '空间相册' => 'action=setting&operation=imgwater&anchor=album',
     ),
     'text' =>
@@ -5341,7 +5341,7 @@ $lang = array (
       52 => '文本水印纵向倾斜角度(ImageMagick)',
       53 => '设置水印文本纵向的倾斜角度。本设置只适用于 ImageMagick 图片处理库',
       54 => 'setting_imgwater_preview',
-      55 => '预览',
+      55 => 'Xem trước',
       56 => '请先提交后再预览',
     ),
   ),
@@ -5349,11 +5349,11 @@ $lang = array (
   array (
     'index' =>
     array (
-      '搜索设置' => 'action=setting&operation=search',
+      'T.lập tìm kiếm' => 'action=setting&operation=search',
     ),
     'text' =>
     array (
-      0 => '搜索设置',
+      0 => 'T.lập tìm kiếm',
       1 => 'setting_search_status',
       2 => '开启搜索',
       3 => '勾选您要开启的搜索栏目',
@@ -5397,11 +5397,11 @@ $lang = array (
   array (
     'index' =>
     array (
-      'UCenter 设置' => 'action=setting&operation=uc',
+      'T.lập Ucenter' => 'action=setting&operation=uc',
     ),
     'text' =>
     array (
-      0 => 'UCenter 设置',
+      0 => 'T.lập Ucenter',
       1 => 'setting_uc_tips',
       2 => '本设置在站点安装时自动生成，一般情况下请不要修改，修改前请备份 config/config_ucenter.php 文件，以防止修改错误导致站点无法运行',
       3 => 'setting_uc_appid',
@@ -5445,7 +5445,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      '电子商务' => 'action=setting&operation=ec',
+      'TM đ.tử' => 'action=setting&operation=ec',
       '基本设置' => 'action=setting&operation=ec',
     ),
     'text' =>
@@ -5471,7 +5471,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      '性能优化' => 'action=setting&operation=seo',
+      'Tối ưu website' => 'action=setting&operation=seo',
       '内存优化' => 'action=setting&operation=memory',
     ),
     'text' =>
@@ -5489,7 +5489,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      '性能优化' => 'action=setting&operation=seo',
+      'Tối ưu website' => 'action=setting&operation=seo',
       '内存缓存管理' => 'action=setting&operation=memorydata',
     ),
     'text' =>
@@ -5503,11 +5503,11 @@ $lang = array (
   array (
     'index' =>
     array (
-      '排行榜设置' => 'action=setting&operation=ranklist',
+      'T.lập thứ hạng' => 'action=setting&operation=ranklist',
     ),
     'text' =>
     array (
-      0 => '排行榜设置',
+      0 => 'T.lập thứ hạng',
       1 => 'setting_ranklist_status',
       2 => '是否开启排行榜',
       3 => 'setting_ranklist_index_cache_time',
@@ -5528,11 +5528,11 @@ $lang = array (
   array (
     'index' =>
     array (
-      '手机版访问设置' => 'action=setting&operation=mobile',
+      'T.lập mobile' => 'action=setting&operation=mobile',
     ),
     'text' =>
     array (
-      0 => '手机版访问设置',
+      0 => 'T.lập mobile',
       1 => 'setting_mobile_status_tips',
       2 => '提供方便手机方式浏览的页面，此功能仅限论坛范围内。本手机功能页仅支持WAP2.0(XHTML方式)以上的手机浏览器进行访问。手机浏览图片宽度为200像素以内缩略图。',
       3 => 'setting_mobile_status',
@@ -5573,11 +5573,11 @@ $lang = array (
   array (
     'index' =>
     array (
-      '分享管理' => 'action=share',
+      'Q.lý chia sẻ' => 'action=share',
     ),
     'text' =>
     array (
-      0 => '分享管理',
+      0 => 'Q.lý chia sẻ',
       1 => 'share_tips',
       2 => '批量分享管理用于删除分享(share)使用。提醒：点击搜索结果页的删除按钮，将会直接删除相关信息！',
     ),
@@ -5586,8 +5586,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      '分享管理' => 'action=share',
-      '搜索' => 'action=share&search=true',
+      'Q.lý chia sẻ' => 'action=share',
+      'Tìm kiếm' => 'action=share&search=true',
     ),
     'text' =>
     array (
@@ -5599,7 +5599,7 @@ $lang = array (
       5 => 'share_search_icon',
       6 => '分享类型',
       7 => 'share_search_uid',
-      8 => '用户 UID',
+      8 => 'UserID',
       9 => '多 UID 中间请用半角逗号 "," 隔开',
       10 => 'share_search_user',
       11 => '发表分享用户名',
@@ -5608,7 +5608,7 @@ $lang = array (
       14 => '分享 ID',
       15 => '多分享 ID 中间请用半角逗号 "," 隔开',
       16 => 'share_search_hot',
-      17 => '热度',
+      17 => 'Độ hot',
       18 => 'share_search_time',
       19 => '发表时间范围',
       20 => '格式 yyyy-mm-dd',
@@ -5618,7 +5618,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      '表情管理' => 'action=smilies',
+      'Q.lý mặt cười' => 'action=smilies',
       '表情分类' => 'action=smilies',
     ),
     'text' =>
@@ -5632,7 +5632,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      '表情管理' => 'action=smilies',
+      'Q.lý mặt cười' => 'action=smilies',
       '导入表情' => 'action=smilies&operation=import',
     ),
     'text' =>
@@ -5646,11 +5646,11 @@ $lang = array (
   array (
     'index' =>
     array (
-      '风格管理' => 'action=styles',
+      'Q.lý style' => 'action=styles',
     ),
     'text' =>
     array (
-      0 => '风格管理',
+      0 => 'Q.lý style',
       1 => 'styles_admin_tips',
       2 => '如果把导出的风格文件放置在模板目录下，则可以通过风格管理直接安装风格',
     ),
@@ -5659,11 +5659,11 @@ $lang = array (
   array (
     'index' =>
     array (
-      '标签管理' => 'action=tag',
+      'Quản lý tag' => 'action=tag',
     ),
     'text' =>
     array (
-      0 => '标签管理',
+      0 => 'Quản lý tag',
       1 => 'tagname',
       2 => '标签名称',
       3 => 'feed_search_perpage',
@@ -5676,7 +5676,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      '论坛主题管理' => 'action=threads',
+      'Q.lý đề tài' => 'action=threads',
       '最新列表' => 'action=threads',
     ),
     'text' =>
@@ -5690,8 +5690,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      '论坛主题管理' => 'action=threads',
-      '搜索' => 'action=threads&search=true',
+      'Q.lý đề tài' => 'action=threads',
+      'Tìm kiếm' => 'action=threads&search=true',
     ),
     'text' =>
     array (
@@ -5821,11 +5821,11 @@ $lang = array (
   array (
     'index' =>
     array (
-      '更新缓存' => 'action=tools&operation=updatecache',
+      'Cập nhật cache' => 'action=tools&operation=updatecache',
     ),
     'text' =>
     array (
-      0 => '更新缓存',
+      0 => 'Cập nhật cache',
       1 => 'tools_updatecache_tips',
       2 => '当站点进行了数据恢复、升级或者工作出现异常的时候，您可以使用本功能重新生成缓存。更新缓存的时候，可能让服务器负载升高，请尽量避开会员访问的高峰时间
 				数据缓存：更新站点的全部数据缓存
@@ -5838,11 +5838,11 @@ $lang = array (
   array (
     'index' =>
     array (
-      '用户组' => 'action=usergroups',
+      'Nhóm t.viên' => 'action=usergroups',
     ),
     'text' =>
     array (
-      0 => '用户组',
+      0 => 'Nhóm t.viên',
       1 => 'usergroups_tips',
       2 => '用户组分为系统组、会员组和自定义组，会员组以积分确定组别和权限，而系统组和自定义组是人为设定，不会由系统自行改变。系统组和自定义组的设定不需要指定积分，Discuz! 预留了从站点管理员到游客等的 8 个系统头衔，自定义组的用户需要在编辑会员时将其加入。会员用户组至少分为两组，其积分下限分别为负值(任一负数)和 0，否则将导致部分用户无法与用户组匹配的问题。',
     ),
@@ -5851,7 +5851,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      '用户组' => 'action=usergroups',
+      'Nhóm t.viên' => 'action=usergroups',
       '基本设置' => 'action=usergroups&operation=edit&anchor=system',
     ),
     'text' =>
@@ -5872,7 +5872,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      '用户组' => 'action=usergroups',
+      'Nhóm t.viên' => 'action=usergroups',
       '基本设置' => 'action=usergroups&operation=edit&anchor=basic',
     ),
     'text' =>
@@ -5888,7 +5888,7 @@ $lang = array (
       8 => '访问站点权限',
       9 => '禁止访问: 禁止用户浏览本站任何页面正常访问: 当站点开放的时候，可以正常浏览页面超级访问: 即便站点关闭也可以访问，一般用于管理员或站内测试组',
       10 => 'usergroups_edit_basic_read_access',
-      11 => '阅读权限',
+      11 => 'Quyền đọc',
       12 => '设置用户浏览帖子或附件的权限级别，范围 0～255，0 为禁止用户浏览任何帖子或附件。当用户的阅读权限小于帖子或附件的阅读权限许可(默认时为 1)时，用户将不能阅读该帖子或下载该附件',
       13 => 'usergroups_edit_basic_max_friend_number',
       14 => '最多好友数',
@@ -5961,7 +5961,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      '用户组' => 'action=usergroups',
+      'Nhóm t.viên' => 'action=usergroups',
       '特殊主题' => 'action=usergroups&operation=edit&anchor=special',
     ),
     'text' =>
@@ -6014,14 +6014,14 @@ $lang = array (
   array (
     'index' =>
     array (
-      '用户组' => 'action=usergroups',
-      '帖子相关' => 'action=usergroups&operation=edit&anchor=post',
+      'Nhóm t.viên' => 'action=usergroups',
+      'Tính năng gửi bài' => 'action=usergroups&operation=edit&anchor=post',
     ),
     'text' =>
     array (
       0 => '用户组 &raquo; 帖子相关',
       1 => 'usergroups_edit_post',
-      2 => '帖子相关',
+      2 => 'Tính năng gửi bài',
       3 => 'usergroups_edit_post_new',
       4 => '允许发新话题',
       5 => '设置是否允许发新话题。注意: 只有当用户组阅读权限高于 0 时，才能发新话题',
@@ -6065,10 +6065,10 @@ $lang = array (
       43 => '编辑帖子时间限制(分钟)',
       44 => '帖子作者发帖后超过此时间限制将不能再编辑帖，版主和管理员在 全局 - 用户权限 选择“允许用户随时编辑的帖子类型”后不受此限制，0 为不限制',
       45 => 'usergroups_edit_post_allowreplycredit',
-      46 => '允许设置回帖奖励',
+      46 => 'T.lập t.lời hay nhất',
       47 => '允许用户在发布主题时给予回帖者一定的扩展积分奖励。回帖奖励默认积分可在全局 - 积分设置指定',
       48 => 'usergroups_edit_post_tag',
-      49 => '允许使用标签',
+      49 => 'Có thể dùng tags',
       50 => '设置是否允许发表新话题时使用标签',
       51 => 'usergroups_edit_post_allowcommentpost',
       52 => '帖子直接点评',
@@ -6094,7 +6094,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      '用户组' => 'action=usergroups',
+      'Nhóm t.viên' => 'action=usergroups',
       '附件相关' => 'action=usergroups&operation=edit&anchor=attach',
     ),
     'text' =>
@@ -6135,7 +6135,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      '用户组' => 'action=usergroups',
+      'Nhóm t.viên' => 'action=usergroups',
       '道具相关' => 'action=usergroups&operation=edit&anchor=magic',
     ),
     'text' =>
@@ -6158,7 +6158,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      '用户组' => 'action=usergroups',
+      'Nhóm t.viên' => 'action=usergroups',
       '注册相关' => 'action=usergroups&operation=edit&anchor=invite',
     ),
     'text' =>
@@ -6187,7 +6187,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      '用户组' => 'action=usergroups',
+      'Nhóm t.viên' => 'action=usergroups',
       '积分相关' => 'action=usergroups&operation=edit&anchor=credit',
     ),
     'text' =>
@@ -6213,7 +6213,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      '用户组' => 'action=usergroups',
+      'Nhóm t.viên' => 'action=usergroups',
       '空间相关' => 'action=usergroups&operation=edit&anchor=home',
     ),
     'text' =>
@@ -6225,7 +6225,7 @@ $lang = array (
       4 => '空间大小(单位M)',
       5 => '设置最大空间尺寸(单位M)，0 为不限制',
       6 => 'usergroups_edit_home_allow_blog',
-      7 => '发表日志',
+      7 => 'Viết blog',
       8 => 'usergroups_edit_home_allow_blog_mod',
       9 => '发表日志需要审核',
       10 => 'usergroups_edit_home_allow_doing',
@@ -6233,7 +6233,7 @@ $lang = array (
       12 => 'usergroups_edit_home_allow_doing_mod',
       13 => '发表记录需要审核',
       14 => 'usergroups_edit_home_allow_upload',
-      15 => '上传图片',
+      15 => 'Upload hình',
       16 => 'usergroups_edit_home_allow_upload_mod',
       17 => '上传图片需要审核',
       18 => 'usergroups_edit_home_image_max_size',
@@ -6246,7 +6246,7 @@ $lang = array (
       25 => 'usergroups_edit_home_allow_poke',
       26 => '允许打招呼',
       27 => 'usergroups_edit_home_allow_friend',
-      28 => '允许加好友',
+      28 => 'Được kết bạn',
       29 => 'usergroups_edit_home_allow_click',
       30 => '允许表态',
       31 => 'usergroups_edit_home_allow_comment',
@@ -6272,7 +6272,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      '用户组' => 'action=usergroups',
+      'Nhóm t.viên' => 'action=usergroups',
       '群组相关' => 'action=usergroups&operation=edit&anchor=group',
     ),
     'text' =>
@@ -6293,7 +6293,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      '用户组' => 'action=usergroups',
+      'Nhóm t.viên' => 'action=usergroups',
       '门户相关' => 'action=usergroups&operation=edit&anchor=portal',
     ),
     'text' =>
@@ -6317,15 +6317,15 @@ $lang = array (
   array (
     'index' =>
     array (
-      '用户标签' => 'action=usertag',
+      'Danh hiệu t.viên' => 'action=usertag',
     ),
     'text' =>
     array (
-      0 => '用户标签',
+      0 => 'Danh hiệu t.viên',
       1 => 'usertag_add_tips',
       2 => '可以给线下活动的用户批量贴标签当只填写了标签，用户列表为空时，是批量添加用户标签如果标签和用户列表都有输入，说明是给指定用户批量贴标签',
       3 => 'usertag_add_tags',
-      4 => '标签',
+      4 => 'Tags',
       5 => '可以输入多个标签，多个标签可以用空格、逗号 分隔',
       6 => 'usertag_add_usernames',
       7 => '用户列表',

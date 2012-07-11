@@ -54,7 +54,7 @@ $lang = array
 	'fullblankspace' => '　',
 
 	'title_goruptype' => 'Loại',
-	'title_of' => 'title_of',
+	'title_of' => 'của',
 	'title_board_message' => 'Thông báo',
 	'title_view_all' => 'Xem hết',
 	'title_activity' => 'Hoạt động',
@@ -93,7 +93,7 @@ $lang = array
 	'title_article_favorite' => 'Bài viết yêu thích',
 	'title_all_favorite' => 'Tất cả',
 	'title_friend_list' => 'Danh sách bạn bè',
-	'title_of' => 'title_of',
+	'title_of' => 'của',
 	'title_all_poll' => 'Các Khảo sát',
 	'title_we_poll' => 'Của bạn bè',
 	'title_me_poll' => 'Bình chọn của tôi',

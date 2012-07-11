@@ -4,7 +4,7 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: lang_template.php 28113 2012-02-22 09:25:55Z svn_project_zhangjie $
+ *      $Id: lang_template.php 29882 2012-05-02 07:21:37Z liulanbo $
  *
  *      This file is automatically generate
  */
@@ -14,6 +14,11 @@ $lang = array (
   'login_guest' => 'Chưa có tài khoản? <a href="member.php?mod={$_G[setting][regname]}">{$_G[setting][reglinkname]}</a>',
   'new_password' => 'Đổi mật khẩu',
   'new_password_confirm' => 'Xác nhận',
+  'password_weak' => 'Độ mạnh mật khẩu',
+  'strongpw_1' => 'Dùng số',
+  'strongpw_2' => 'Ký tự viết thường',
+  'strongpw_3' => 'Ký tự viết hoa',
+  'strongpw_4' => 'Ký tự đặc biệt',
   'submit' => 'Chấp nhận',
   'close' => 'Đóng',
   'faq' => 'Trợ giúp',
@@ -36,7 +41,7 @@ $lang = array (
   'login_now' => 'Đã có tài khoản, đăng nhập ngay',
   'password_confirm' => 'Nhập lại',
   'register_buyinvitecode' => 'Không có mã mời, bấm vào đây để lấy',
-  'register_email_tips' => 'Điền email hợp lệ',
+  'register_email_tips' => 'Điền email bạn đang dùng để nhận thư kích hoạt',
   'register_message' => 'Đăng ký tại',
   'register_message1' => 'Bạn điền vào lý do đăng ký sẽ được coi như một tài liệu tham khảo quan trọng',
   'register_password_length_tips1' => 'Chiều dài tối thiểu là ',

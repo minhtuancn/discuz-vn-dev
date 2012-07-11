@@ -4,7 +4,7 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: lang_portalcp.php 27449 2012-02-01 05:32:35Z zhangguosheng $
+ *      $Id: lang_portalcp.php 30107 2012-05-11 02:10:58Z svn_project_zhangjie $
  */
 
 if(!defined('IN_DISCUZ')) {
@@ -32,6 +32,8 @@ $lang = array(
 	'article_noexist' => 'Điều quy định không tồn tại, kiểm tra',
 	'article_noallowed' => 'Bạn không được phép hoạt động theo quy định bài viết',
 	'article_publish_noallowed' => 'Bạn không có quyền để xuất bài hoạt động',
+	'article_category_empty' => 'Xin lỗi chuyên mục không được trống',
+	'article_edit_nopermission' => 'Xin lỗi, bạn không có quyền để thực hiện các hoạt động bài viết hiện tại',
 	'article_publish' => 'Được đăng bài viết',
 	'article_manage' => 'Quản lý bài viết',
 	'article_tag' => 'Tags',

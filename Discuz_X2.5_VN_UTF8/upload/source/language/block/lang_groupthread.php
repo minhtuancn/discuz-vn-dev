@@ -107,7 +107,7 @@ $lang = array
 	'groupthread_gviewperm_nolimit' => 'Không giới hạn',
 	'groupthread_gviewperm_only_member' => 'Chỉ thành viên',//'仅成员',
 	'groupthread_gviewperm_all_member' => 'Tất cả',//'所有人',
-	'groupthread_highlight' => 'Đánh dấu những từ được tìm thấy',
+	'groupthread_highlight' => 'Đánh dấu',
 );
 
 ?>

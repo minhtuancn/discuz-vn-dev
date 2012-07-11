@@ -4,7 +4,7 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: lang_admincp_msg.php 29262 2012-03-31 05:19:44Z svn_project_zhangjie $
+ *      $Id: lang_admincp_msg.php 30741 2012-06-15 08:53:29Z monkey $
  *
  *      This file is automatically generate
  */
@@ -410,9 +410,11 @@ $lang = array (
   'plugins_edit_var_invalid' => 'Tên biến cấu hình mà bạn đã nhập không hợp lệ hoặc trùng lặp',
   'plugins_delete_error' => 'Bạn không thể gỡ bỏ cài đặt plug-in.',
   'plugins_delete_confirm' => 'Bạn có chắc chắn muốn bỏ plugin {pluginname} {toversion} này？',
+  'styles_delete_confirm' => 'Bạn chắc chắn muốn xóa giao diện ？<br /><br />Xin vui lòng lựa chọn lý do bạn gỡ bỏ cài đặt các ứng dụng, để chúng ta sau này có thể cung cấp cho bạn với một ứng dụng tốt hơn：<br /><br /><label><input name="uninstallreason[]" class="checkbox" type="checkbox" value="1" />Chức năng này không đáp ứng nhu cầu</label> <label><input name="uninstallreason[]" class="checkbox" type="checkbox" value="2" />Giao diện không đẹp mắt</label> <label><input name="uninstallreason[]" class="checkbox" type="checkbox" value="3" />Hiệu quả vấn đề chạy chậm</label> <label><input name="uninstallreason[]" class="checkbox" type="checkbox" value="4" />Tìm thấy một ứng dụng tốt hơn</label><label><input name="uninstallreason[]" class="checkbox" type="checkbox" value="5" />Cơ bản dùng thử tại gỡ bỏ cài đặt</label>',
   'pluginvar_not_found' => 'plug-in biến không tìm thấy',
   'plugins_edit_var_title_invalid' => 'Bạn đã không nhập tên cấu hình',
   'plugins_edit_vars_succeed' => 'Plug-in cấu hình biến cập nhật thành công',
+  'plugins_edit_vars_invalid' => 'Plug-in tên biến cấu hình là không hợp pháp hoặc đã bị chiếm đóng',
   'plugins_validator_noupdate' => 'Không phát hiện phiên bản mới của các plug-in ',
 
   'portalcategory_update_succeed' => 'cập nhật phân loại thành công',
@@ -620,6 +622,7 @@ $lang = array (
   'cloudaddons_ftp_path_error' => 'Site FTP path errors, please fill out the re-',
 
   'cloudaddons_check_url_fopen_error' => 'Your server can not access the Application Center, which will cause the application can not be installed. Please contact your service provider or Web site technical staff to ensure that your server to function properly access addon.discuz.com',
+  'cloudaddons_check_gzuncompress_error' => 'Máy chủ của bạn không hỗ trợ zlib, điều này sẽ gây ra các ứng dụng không thể được cài đặt. Xin vui lòng liên hệ với nhà cung cấp dịch vụ của bạn hoặc trang web của nhân viên kỹ thuật',
   'cloudaddons_genuine_message' => 'I\'m sorry, you installed is not genuine application, the installer can not continue<br /><br /><a href="admin.php?action=cloudaddons&id={addonid}">Click here to install the genuine application</a>',);
 
 ?>

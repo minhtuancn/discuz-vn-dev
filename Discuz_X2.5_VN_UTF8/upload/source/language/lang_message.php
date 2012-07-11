@@ -4,7 +4,7 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: lang_message.php 28860 2012-03-15 07:17:21Z monkey $
+ *      $Id: lang_message.php 30846 2012-06-25 10:17:09Z zhangjie $
  *
  *      This file is automatically generate
  */
@@ -113,7 +113,7 @@ $lang = array (
   'post_thread_closed' => 'Có lỗi, chủ đề này đã đóng cửa, không thể trả lời mới',
   'reply_quotepost_error' => 'Cấm trích dẫn bài viết của mình bên ngoài các chủ đề bài viết',
   'post_flood_ctrl' => 'Có lỗi, khoảng thời gian giữa 2 lần đăng bài liên tiếp tối thiểu là {floodctrl} giây, vui lòng chờ.',
-  'post_flood_ctrl_posts_per_hour' => 'Có lỗi, Bạn thuộc nhóm thành viên được phép đăng số bài mỗi giờ {posts_per_hour} 个,Vui lòng chờ đến khoảng thời gian tiếp theo',
+  'post_flood_ctrl_posts_per_hour' => 'Có lỗi, Bạn thuộc nhóm thành viên được phép đăng số bài mỗi giờ {posts_per_hour} ,Vui lòng chờ đến khoảng thời gian tiếp theo',
   'trade_please_name' => 'Có lỗi, tên gian hàng không được để trống',
   'trade_price_between' => 'Có lỗi, RMB giá món hàng phải được {mintradeprice} Yếu tố để {maxtradeprice} Việt Nam đồng',
   'trade_credit_between' => 'Có lỗi, Giá món hàng phải được tách rời {mintradeprice} Để {maxtradeprice} Giữa',
@@ -145,6 +145,7 @@ $lang = array (
   'search_forum_invalid' => 'Có lỗi, Bạn chưa quy định phạm vi tìm kiếm của các diễn đàn',
   'search_invalid' => 'Có lỗi, Bạn đã không chỉ định người sử dụng tìm kiếm bằng từ khoá hoặc tên',
   'search_redirect' => 'Tìm kiếm thành công, nó sẽ được chuyển sang trang kết quả',
+  'search_closed' => 'Chức năng tìm kiếm được tắt',
   'to_view_the_photo_does_not_exist' => 'Có lỗi, Album bạn muốn xem không tồn tại hoặc đang chờ phê duyệt',
   'ban_view_other_thead' => 'Có lỗi, Cấm người sử dụng xem các bài viết và chủ đề',
   'album_does_not_exist' => 'Có lỗi, Album không tồn tại',
@@ -215,7 +216,7 @@ $lang = array (
   'no_privilege_avatar' => 'Có lỗi, Bạn cần tạo Avatar để thực hiện tác vụ này, <a href="home.php?mod=spacecp&ac=avatar" target="_blank">Vào cập nhập</a>',
   'no_privilege_email' => 'Có lỗi, Bạn cần phải kích hoạt email để thực hiện tác vụ này, <a href="home.php?mod=spacecp&ac=profile&op=password">Nhấn vào đây để kích hoạt Email</a>',
   'no_privilege_friendnum' => 'Có lỗi, Bạn cần phải thêm {friendnum} Sau đó bạn có thể thực hiện thao tác này,<a href="home.php?mod=spacecp&ac=friend&op=find">Click vào đây để thêm bạn bè</a>',
-  'login_succeed' => 'Chào mừng {usergroup} {username} quay trở lại....',
+  'login_succeed' => 'Chào mừng {username} nhóm {usergroup}  quay trở lại....',
   'login_strike' => 'Sai mật khẩu quá nhiều lần, vui lòng đợi 15p rồi thử lại',
   'logout_succeed' => 'Bạn đã đăng xuất thành công!<br /><a href="member.php?mod=clearcookies&formhash={formhash}">[Xóa Cookies]</a> {ucsynlogout} ',
   'register_activation_invalid' => 'Có lỗi, Kích hoạt không thành công, cài đặt lại để kích hoạt ',
@@ -469,8 +470,8 @@ $lang = array (
   'imagepreview_errorcode_-2' => 'File ko có quyền đọc và ghi, không thể xử lý hình ảnh',
   'imagepreview_errorcode_-3' => 'Hệ thống được thiết lập không chính xác, không thể xử lý hình ảnh',
   'imagepreview_errorcode_-4' => 'Máy chủ đang lỗi, yêu cầu để xử lý hình ảnh không thể xử lý',
-  'group_invite_failed' => 'Có lỗi, Bạn không phải là thành viên {_G/setting/navs/3/navname}, không thể mời',
 
+  'group_invite_failed' => 'Có lỗi, Bạn không phải là thành viên {_G/setting/navs/3/navname}, không thể mời',
   'noperm_at_user' => 'Bạn không @ người dùng',
   'thread_at_usernum_limit' => 'Số người @ đã đạt tối đa',
 
@@ -553,6 +554,7 @@ $lang = array (
   'no_privilege_deluserapp' => 'Có lỗi, Bạn không được phép sử dụng ứng dụng này',
 
   'email_check_sucess' => 'Email của bạn({email})kích hoạt thành công ',
+  'email_check_account_invalid' => 'Xin lỗi, để bảo vệ người dùng hoặc người sáng lập không thể sử dụng hộp thư để xác minh trực tiếp chỉnh sửa thông tin người dùng.',
   'email_check_error' => 'Có lỗi, E-mail các minh không chính xác. Bạn có thể vào trang cá nhân nhập lại e-mail để xác minh lại',
 
   'news_does_not_exist' => 'Có lỗi, Những thông tin bạn đưa ra không tồn tại',
@@ -740,8 +742,8 @@ $lang = array (
   'no_privilege_feed_del' => 'Có lỗi, Bạn không có quyền xóa năng động',
 
   'follow_not_follow_self' => 'Không ai quan tâm đến bạn',
-  'follow_other_unfollow' => 'Mặt khác không cho phép bạn quan tâm TA',
-  'follow_followed_ta' => 'Bạn phải lắng nghe TA',
+  'follow_other_unfollow' => 'Mặt khác không cho phép bạn hâm mộ',
+  'follow_followed_ta' => 'Bạn phải hâm mộ',
   'follow_add_succeed' => 'Hâm mộ thành công',
   'follow_cancel_succeed' => 'Hủy thành công',
   'follow_not_assignation_user' => 'Không được chỉ định, người sử dụng',
@@ -811,7 +813,7 @@ $lang = array (
 
   'not_to_their_own_greeted' => 'Không thể tự chào hỏi',
   'no_privilege_poke' => 'Có lỗi, Bạn chưa được phép chào hỏi, <a href="home.php?mod=spacecp&ac=usergroup">Xem quyền hạn</a>',
-  'poke_success' => 'Đã gửi Trêu chọc, {username} sẽ nhận được sau khi Online',
+  'poke_success' => 'Bạn đã chọc {username}, {username} sẽ nhận được sau khi Online',
   'has_been_hailed_overlooked' => 'Bạn đã phớt lờ chào hỏi.',
 
   'profile_passwd_empty' => 'Hãy thiết lập mật khẩu mới',
@@ -992,10 +994,10 @@ $lang = array (
   'threadtype_num_invalid' => 'Có lỗi, giá trị dữ liệu không đúng, kiểm tra {typetitle} tùy chọn',
   'threadtype_unchangeable_invalid' => 'Có lỗi, Thông tin không được sửa đổi, kiểm tra{typetitle} tùy chọn',
 
-  'location_login' => '',
+  'location_login' => 'Đăng nhập',
   'location_login_succeed_mobile' => 'Chào mừng {username} trở lại',
-  'location_login_succeed' => '',
-  'login_succeed_inactive_member' => 'Welcome back,{usergroup} {username}. Tài khoản của bạn chưa kích hoạt, bạn sẽ được chuyển vào mục Cá nhân',
+  'location_login_succeed' => 'Đăng nhập thành công',
+  'login_succeed_inactive_member' => 'Welcome back,{username} nhóm {usergroup} . Tài khoản của bạn chưa kích hoạt, bạn sẽ được chuyển vào mục Cá nhân',
   'login_question_empty' => 'Hãy chọn câu hỏi bí mật và điền đáp án đúng',
   'login_question_invalid' => 'Có lỗi, Chọn câu hỏi sai',
   'login_invalid' => 'Bạn còn {loginperm} lần nhập sai mật khẩu!',

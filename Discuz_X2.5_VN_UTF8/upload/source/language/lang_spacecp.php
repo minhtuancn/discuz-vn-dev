@@ -23,7 +23,7 @@ $lang = array(
 	'pm_thread_about' => 'Trả lời chủ đề "{subject}" của bạn',
 
 	'wall_pm_subject' => 'Hello!',
-	'wall_pm_message' => 'Tôi đã gửi một tin nhắn lên bảng tin của bạn, [url=\\1]bấm vào đây để đến bảng tin để xem nó[/url]',
+	'wall_pm_message' => 'Tôi đã gửi một tin nhắn lên tường của bạn, [url=\\1]bấm vào đây để đến tường để xem nó[/url]',
 	'reward' => 'Phần thưởng',
 	'reward_info' => 'Sẵn sàng bình chọn  \\1 phù hợp',
 	'poll_separator' => '"."',
@@ -50,7 +50,7 @@ $lang = array(
 
 	'friend_subject' => '<a href="{url}" target="_blank">{username} gửi yêu cầu kết bạn với bạn</a>',
 	'friend_request_note' => ' , PS: {note}',
-	'comment_friend' =>'<a href="\\2" target="_blank">\\1 Tin nhắn của bạn</a>',
+	'comment_friend' =>'<a href="\\2" target="_blank">\\1 给您留言了</a>',
 	'photo_comment' => '<a href="\\2" target="_blank">\\1 Bình luận Ảnh của bạn</a>',
 	'blog_comment' => '<a href="\\2" target="_blank">\\1 Bình luận Blog của bạn</a>',
 	'poll_comment' => '<a href="\\2" target="_blank">\\1 Tham gia Khảo sát của bạn</a>',
@@ -76,15 +76,15 @@ $lang = array(
 		<tr>
 		<td valign="top">{avatar}</td>
 		<td valign="top">
-		<h3>Hi, tôi {username}, mời bạn cùng tham gia {sitename} và làm bạn của tôi</h3><br>
-		Làm bạn với tôi bạn sẽ cập nhật được các thông tin của tôi.<br>
+		<h3>Hi，我是{username}，邀请您也加入{sitename}并成为我的好友</h3><br>
+		请加入到我的好友中，您就可以了解我的近况，与我一起交流，随时与我保持联系。<br>
 		<br>
-		Mời:<br>{saymsg}
+		邀请附言：<br>{saymsg}
 		<br><br>
-		<strong>Xin vui lòng bấm vào liên kết dưới đây, để chấp nhận lời mời:</strong><br>
+		<strong>请您点击以下链接，接受好友邀请：</strong><br>
 		<a href="{inviteurl}">{inviteurl}</a><br>
 		<br>
-		<strong>Nếu bạn có tài khoản tại {sitename} hãy nhấn vào liên kết để xem hồ sơ của tôi：</strong><br>
+		<strong>如果您拥有{sitename}上面的账号，请点击以下链接查看我的个人主页：</strong><br>
 		<a href="{siteurl}home.php?mod=space&uid={uid}">{siteurl}home.php?mod=space&uid={uid}</a><br>
 		</td></tr></table>',
 
@@ -93,15 +93,15 @@ $lang = array(
 		<tr>
 		<td valign="top">{avatar}</td>
 		<td valign="top">
-		<h3>Hi, tôi {username}, tại {sitename} đang chơi {appname}, mời bạn cùng chơi.</h3><br>
+		<h3>Hi，我是{username}，在{sitename}上玩 {appname}，邀请您也加入一起玩</h3><br>
 		<br>
-		Mời:<br>
+		邀请附言：<br>
 		{saymsg}
 		<br><br>
-		<strong>Xin vui lòng bấm vào liên kết dưới đây, để chấp nhận lời mời cùng chơi {appname}：</strong><br>
+		<strong>请您点击以下链接，接受好友邀请一起玩{appname}：</strong><br>
 		<a href="{inviteurl}">{inviteurl}</a><br>
 		<br>
-		<strong>Nếu bạn có tài khoản tại {sitename} hãy nhấn vào liên kết để chơi cùng tôi</strong><br>
+		<strong>如果您拥有{sitename}上面的账号，请点击以下链接查看我的个人主页：</strong><br>
 		<a href="{siteurl}home.php?mod=space&uid={uid}">{siteurl}home.php?mod=space&uid={uid}</a><br>
 		</td></tr></table>',
 
@@ -167,7 +167,7 @@ $lang = array(
 
 
 	'magicunit' => 'thẻ',
-	'magic_note_wall' => '{actor} gửi thông điệp trong bảng tin của bạn. <a href="{url}" target="_blank">Thông điệp</a>',
+	'magic_note_wall' => '{actor} gửi thông điệp trong tường của bạn. <a href="{url}" target="_blank">Thông điệp</a>',
 	'magic_call' => 'Tên đăng nhập của bạn, <a href="{url}" target="_blank">xem nó</a>',
 
 
@@ -325,9 +325,9 @@ $lang = array(
 
 	'spacecp_message_prompt' => '({msg} hỗ trợ, tối đa 1000 kí tự)',
 	'card_update_doing' => ' <a class="xi2" href="###">[Cập nhật Profile]</a>',
-	'email_acitve_message' => '<img src="{imgdir}/mail_inactive.png" alt="Chưa xác minh" class="vm" /> <span class="xi1">Thư mới ({newemail}) chờ xác minh...</span><br />
-								Hệ thống đã gửi email xác minh, vui lòng kiểm tra email của bạn để kích hoạt.<br>
-								Nếu bạn không nhận được email, hãy thử thay email khác hoặc <a href="home.php?mod=spacecp&ac=profile&op=password&resend=1" class="xi2">gửi lại email xác minh.</a>',
+	'email_acitve_message' => '<img src="{imgdir}/mail_inactive.png" alt="Chưa xác minh" class="vm" /> <span class="xi1">新邮箱({newemail})等待验证中...</span><br />
+								系统已经向该邮箱发送了一封验证激活邮件，请查收邮件，进行验证激活。<br>
+								如果没有收到验证邮件，您可以更换一个邮箱，或者<a href="home.php?mod=spacecp&ac=profile&op=password&resend=1" class="xi2">重新接收验证邮件</a>',
 
 );
 

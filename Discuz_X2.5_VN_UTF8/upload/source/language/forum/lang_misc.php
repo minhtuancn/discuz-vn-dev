@@ -4,7 +4,7 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: lang_misc.php 29327 2012-04-01 09:37:17Z liudongdong $
+ *      $Id: lang_misc.php 29624 2012-04-23 06:56:28Z monkey $
  */
 
 if(!defined('IN_DISCUZ')) {
@@ -88,7 +88,7 @@ $lang = array
 	'trade_syspayseller' => 'Người mua đã nhận được hàng, chờ người bán nhận tiền',
 	'trade_finished' => '<font color="green">Giao dịch kết thúc thành công</font>',
 	'trade_closed' => '<font color="gray">Giao dịch đóng(chưa hoàn thành)</font>',
-	'trade_waitselleragree'  => 'Chờ cho người bán hoàn toàn đồng ý',
+	'trade_waitselleragree'  => '等待卖家同意退款',
 	'trade_sellerrefusebuyer' => 'Người bán từ chối yêu cầu người mua, đang chờ người mua thay đổi yêu cầu',
 	'trade_waitbuyerreturn' => 'Bên bán đồng ý hoàn lại tiền, chờ đợi cho người mua trả lại',
 	'trade_waitsellerconfirmgoods' => 'Chờ đợi để nhận hàng hoá bán',
