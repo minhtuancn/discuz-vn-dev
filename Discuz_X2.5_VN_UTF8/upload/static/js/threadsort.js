@@ -1,7 +1,7 @@
 /*
 	[Discuz!] (C)2001-2099 Comsenz Inc.
 	This is NOT a freeware, use is subject to license terms
-
+	Vietnamese by Kyehani - discuz.vn
 	$Id: threadsort.js 28987 2012-03-21 10:34:02Z monkey $
 */
 
@@ -16,7 +16,7 @@ function xmlobj() {
 			} catch(e) {
 			}
 		} else if(window.ActiveXObject) {
-			var versions = ["MSXML2.DOMDocument.5.0", "MSXML2.DOMDocument.4.0", "MSXML2.DOMDocument.3.0", "MSXML2.DOMDocument", "Microsoft.XmlDom"];
+			var versions = ["MSXML2.DOMDocument.5.0", "MSXML2.DOMDocument.4.0", "MSXML2.DOMDocument.3.0", "MSXML2.DOMDocument", "Microsoft.XmlDom"]; //discuz . vn
 			for(var i=0; i<versions.length; i++) {
 				try {
 					xmlobj = new ActiveXObject(versions[i]);
@@ -52,7 +52,7 @@ function xmlobj() {
 			}
 			for(var i = 0;i < nodechilds.length;i++) {
 				if(nodechilds[i].tagName != null) {
-					if(nodechilds[i].childNodes[0] != null && nodechilds[i].childNodes.length <= 1 && (nodechilds[i].childNodes[0].nodeType == 3 || nodechilds[i].childNodes[0].nodeType == 4)) {
+					if(nodechilds[i].childNodes[0] != null && nodechilds[i].childNodes.length <= 1 && (nodechilds[i].childNodes[0].nodeType == 3 || nodechilds[i].childNodes[0].nodeType == 4)) {// discuzvn
 						if(xmlobj[nodechilds[i].tagName] == null) {
 							xmlobj[nodechilds[i].tagName] = nodechilds[i][nodetext];
 						} else {
@@ -116,7 +116,7 @@ function changeselectthreadsort(selectchoiceoptionid, optionid, type) {
 	if((choicesarr[sselectchoiceoptionid]['slevel'] == 1 || type == 'search') && choicesarr[sselectchoiceoptionid]['scount'] == 1) {
 		nameid = name + ' ' + id;
 	}
-	var selectoption = '<select' + nameid + ' class="ps vm" onchange="changeselectthreadsort(this.value, \'' + optionid + '\'' + issearch + ');checkoption(\'' + forum_optionlist[soptionid]['sidentifier'] + '\', \'' + forum_optionlist[soptionid]['srequired'] + '\', \'' + forum_optionlist[soptionid]['stype'] + '\')" ' + ((forum_optionlist[soptionid]['sunchangeable'] == 1 && type == 'update') ? 'disabled' : '') + '><option value="0">请选择</option>';
+	var selectoption = '<select' + nameid + ' class="ps vm" onchange="changeselectthreadsort(this.value, \'' + optionid + '\'' + issearch + ');checkoption(\'' + forum_optionlist[soptionid]['sidentifier'] + '\', \'' + forum_optionlist[soptionid]['srequired'] + '\', \'' + forum_optionlist[soptionid]['stype'] + '\')" ' + ((forum_optionlist[soptionid]['sunchangeable'] == 1 && type == 'update') ? 'disabled' : '') + '><option value="0">Hãy chọn</option>';
 	for(var i in choicesarr) {
 		nameid = '';
 		if((choicesarr[sselectchoiceoptionid]['slevel'] == 1 || type == 'search') && choicesarr[i]['scount'] == choicesarr[sselectchoiceoptionid]['scount']) {
@@ -133,7 +133,7 @@ function changeselectthreadsort(selectchoiceoptionid, optionid, type) {
 			if(parseInt(choicesarr[i]['scount']) >= (parseInt(choicesarr[sselectchoiceoptionid]['scount']) + parseInt(choicesarr[sselectchoiceoptionid]['slevel']))) {
 				break;
 			}
-			selectoption += '</select>' + "\r\n" + '<select' + nameid + ' class="ps vm" onchange="changeselectthreadsort(this.value, \'' + optionid + '\'' + issearch + ');checkoption(\'' + forum_optionlist[soptionid]['sidentifier'] + '\', \'' + forum_optionlist[soptionid]['srequired'] + '\', \'' + forum_optionlist[soptionid]['stype'] + '\')" ' + ((forum_optionlist[soptionid]['sunchangeable'] == 1 && type == 'update') ? 'disabled' : '') + '><option value="0">请选择</option>';
+			selectoption += '</select>' + "\r\n" + '<select' + nameid + ' class="ps vm" onchange="changeselectthreadsort(this.value, \'' + optionid + '\'' + issearch + ');checkoption(\'' + forum_optionlist[soptionid]['sidentifier'] + '\', \'' + forum_optionlist[soptionid]['srequired'] + '\', \'' + forum_optionlist[soptionid]['stype'] + '\')" ' + ((forum_optionlist[soptionid]['sunchangeable'] == 1 && type == 'update') ? 'disabled' : '') + '><option value="0">Hãy chọn</option>';
 
 			lastcount = parseInt(choicesarr[i]['scount']);
 		}
@@ -166,10 +166,10 @@ function checkoption(identifier, required, checktype, checkmaxnum, checkminnum, 
 
 	if(checktype == 'select') {
 		if(required != '0' && $('typeoption_' + identifier) == null) {
-			warning(ce, '必填项目没有填写');
+			warning(ce, 'Mục yêu cầu chưa điền');
 			return false;
 		} else if(required == '0' && ($('typeoption_' + identifier) == null || $('typeoption_' + identifier).value == '0')) {
-			ce.innerHTML = '<img src="' + IMGDIR + '/check_error.gif" width="16" height="16" class="vm" /> 请选择下一级';
+			ce.innerHTML = '<img src="' + IMGDIR + '/check_error.gif" width="16" height="16" class="vm" /> Tiếp tục';
 			ce.className = "warning";
 			return true;
 		}
@@ -186,7 +186,7 @@ function checkoption(identifier, required, checktype, checkmaxnum, checkminnum, 
 			}
 		}
 		if(!nodechecked && required != '0') {
-			warning(ce, '必填项目没有填写');
+			warning(ce, 'Mục yêu cầu chưa điền');
 			return false;
 		}
 	}
@@ -199,7 +199,7 @@ function checkoption(identifier, required, checktype, checkmaxnum, checkminnum, 
 
 	if(required != '0') {
 		if(checkvalue == '') {
-			warning(ce, '必填项目没有填写');
+			warning(ce, 'Mục yêu cầu chưa điền');
 			return false;
 		} else {
 			ce.innerHTML = '<img src="' + IMGDIR + '/check_right.gif" width="16" height="16" class="vm" />';
@@ -208,24 +208,24 @@ function checkoption(identifier, required, checktype, checkmaxnum, checkminnum, 
 
 	if(checkvalue) {
 		if(checktype == 'email' && !(/^[\-\.\w]+@[\.\-\w]+(\.\w+)+$/.test(checkvalue))) {
-			warning(ce, '邮件地址不正确');
+			warning(ce, 'E-mail không đúng');
 			return false;
 		} else if((checktype == 'text' || checktype == 'textarea') && checkmaxlength != '0' && mb_strlen(checkvalue) > checkmaxlength) {
-			warning(ce, '填写项目长度过长');
+			warning(ce, 'Nội dung quá dài');
 			return false;
 		} else if((checktype == 'number' || checktype == 'range')) {
 			if(isNaN(checkvalue)) {
-				warning(ce, '数字填写不正确');
+				warning(ce, 'Chữ số, không chính xác');
 				return false;
 			} else if(checkmaxnum != '0' && parseInt(checkvalue) > parseInt(checkmaxnum)) {
-				warning(ce, '大于设置最大值');
+				warning(ce, 'Lớn hơn giá trị tối đa');
 				return false;
 			} else if(checkminnum != '0' && parseInt(checkvalue) < parseInt(checkminnum)) {
-				warning(ce, '小于设置最小值');
+				warning(ce, 'Ít hơn giá trị tối thiểu');
 				return false;
 			}
 		} else if(checktype == 'url' && !(/(http[s]?|ftp):\/\/[^\/\.]+?\..+\w[\/]?$/i.test(checkvalue))) {
-			warning(ce, '请正确填写以http://开头的URL地址');
+			warning(ce, 'Điền đúng dạng http:// URL');
 			return false;
 		}
 		ce.innerHTML = '<img src="' + IMGDIR + '/check_right.gif" width="16" height="16" class="vm" />';

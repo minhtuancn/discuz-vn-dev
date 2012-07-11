@@ -1,7 +1,7 @@
 /*
 	[Discuz!] (C)2001-2099 Comsenz Inc.
 	This is NOT a freeware, use is subject to license terms
-
+	Vietnamese by Kyehani - discuz.vn
 	$Id: register.js 27312 2012-01-16 02:39:24Z monkey $
 */
 
@@ -51,9 +51,9 @@ function addFormEvent(formid, focus){
 	};
 	formNode[stmp[1]].onblur = function () {
 		if(formNode[stmp[1]].value == '') {
-			var pwmsg = '请填写密码';
+			var pwmsg = 'Điền mật khẩu';
 			if(pwlength > 0) {
-				pwmsg += ', 最小长度为 '+pwlength+' 个字符';
+				pwmsg += ',Độ dài tối thiểu '+pwlength+' ký tự';
 			}
 			errormessage(formNode[stmp[1]].id, pwmsg);
 		}else{
@@ -63,14 +63,14 @@ function addFormEvent(formid, focus){
 	};
 	formNode[stmp[1]].onkeyup = function () {
 		if(pwlength == 0 || $(formNode[stmp[1]].id).value.length >= pwlength) {
-			var passlevels = new Array('','弱','中','强');
+			var passlevels = new Array('','Yếu','Tốt','Ngon');
 			var passlevel = checkstrongpw(formNode[stmp[1]].id);
-			errormessage(formNode[stmp[1]].id, '<span class="passlevel passlevel'+passlevel+'">密码强度:'+passlevels[passlevel]+'</span>');
+			errormessage(formNode[stmp[1]].id, '<span class="passlevel passlevel'+passlevel+'">Độ mạnh mật khẩu:'+passlevels[passlevel]+'</span>');
 		}
 	};
 	formNode[stmp[2]].onblur = function () {
 		if(formNode[stmp[2]].value == '') {
-			errormessage(formNode[stmp[2]].id, '请再次输入密码');
+			errormessage(formNode[stmp[2]].id, 'Nhập lại mật khẩu');
 		}
 		checkpassword(formNode[stmp[1]].id, formNode[stmp[2]].id);
 	};
@@ -97,7 +97,7 @@ function addMailEvent(mailObj) {
 	};
 	mailObj.onblur = function () {
 		if(mailObj.value == '') {
-			errormessage(mailObj.id, '请输入邮箱地址');
+			errormessage(mailObj.id, 'Vui lòng nhập e-mail');
 		}
 		emailMenuOp(3, null, mailObj.id);
 	};
@@ -132,7 +132,7 @@ function showbirthday(){
 	var el = $('birthday');
 	var birthday = el.value;
 	el.length=0;
-	el.options.add(new Option('日', ''));
+	el.options.add(new Option('ngày', ''));
 	for(var i=0;i<28;i++){
 		el.options.add(new Option(i+1, i+1));
 	}
@@ -161,7 +161,7 @@ function trim(str) {
 	return str.replace(/^\s*(.*?)[\s\n]*$/g, '$1');
 }
 
-var emailMenuST = null, emailMenui = 0, emaildomains = ['qq.com', '163.com', 'sina.com', 'sohu.com', 'yahoo.cn', 'gmail.com', 'hotmail.com'];
+var emailMenuST = null, emailMenui = 0, emaildomains = ['gmail.com', 'yahoo.com', 'yahoo.com.vn', 'ymail.com', 'rocketmail.com', 'zing.vn', 'fpt.vn', 'vnn.vn', 'ovi.com', 'hotmail.com', 'live.com'];
 function emailMenuOp(op, e, id) {
 	if(op == 3 && BROWSER.ie && BROWSER.ie < 7) {
 		checkemail(id);
@@ -261,12 +261,12 @@ function checkusername(id) {
 		lastusername = username;
 	}
 	if(username.match(/<|"/ig)) {
-		errormessage(id, '用户名包含敏感字符');
+		errormessage(id, 'Có các ký tự bị cấm');
 		return;
 	}
 	var unlen = username.replace(/[^\x00-\xff]/g, "**").length;
 	if(unlen < 3 || unlen > 15) {
-		errormessage(id, unlen < 3 ? '用户名不得小于 3 个字符' : '用户名不得超过 15 个字符');
+		errormessage(id, unlen < 3 ? 'Quá ngắn (ít hơn 3)' : 'Quá dài (nhiều hơn 15)');
 		return;
 	}
 	var x = new Ajax();
@@ -282,7 +282,7 @@ function checkpassword(id1, id2) {
 	}
 	if(pwlength > 0) {
 		if($(id1).value.length < pwlength) {
-			errormessage(id1, '密码太短，不得少于 '+pwlength+' 个字符');
+			errormessage(id1, 'Không được ngắn hơn '+pwlength+' ký tự');
 			return;
 		}
 	}
@@ -292,33 +292,33 @@ function checkpassword(id1, id2) {
 		for(var i in strongpw) {
 			if(strongpw[i] === 1 && !$(id1).value.match(/\d+/g)) {
 				strongpw_error = true;
-				strongpw_str[j] = '数字';
+				strongpw_str[j] = 'Số';
 				j++;
 			}
 			if(strongpw[i] === 2 && !$(id1).value.match(/[a-z]+/g)) {
 				strongpw_error = true;
-				strongpw_str[j] = '小写字母';
+				strongpw_str[j] = 'Chữ thường';
 				j++;
 			}
 			if(strongpw[i] === 3 && !$(id1).value.match(/[A-Z]+/g)) {
 				strongpw_error = true;
-				strongpw_str[j] = '大写字母';
+				strongpw_str[j] = 'Chữ hoa';
 				j++;
 			}
 			if(strongpw[i] === 4 && !$(id1).value.match(/[^A-Za-z0-9]+/g)) {
 				strongpw_error = true;
-				strongpw_str[j] = '特殊符号';
+				strongpw_str[j] = 'Đặc biệt';
 				j++;
 			}
 		}
 		if(strongpw_error) {
-			errormessage(id1, '密码太弱，密码中必须包含 '+strongpw_str.join('，'));
+			errormessage(id1, 'Mật khẩu cần có '+strongpw_str.join(','));
 			return;
 		}
 	}
 	errormessage(id2);
 	if($(id1).value != $(id2).value) {
-		errormessage(id2, '两次输入的密码不一致');
+		errormessage(id2, 'Mật khẩu không khớp nhau');
 	} else {
 		errormessage(id2, 'succeed');
 	}
@@ -333,7 +333,7 @@ function checkemail(id) {
 		lastemail = email;
 	}
 	if(email.match(/<|"/ig)) {
-		errormessage(id, 'Email 包含敏感字符');
+		errormessage(id, 'Email có ký tự bị cấm');
 		return;
 	}
 	var x = new Ajax();
@@ -352,7 +352,7 @@ function checkinvite() {
 		lastinvitecode = invitecode;
 	}
 	if(invitecode.match(/<|"/ig)) {
-		errormessage('invitecode', '邀请码包含敏感字符');
+		errormessage('invitecode', 'Mã mời chứa kí tự không được phép');
 		return;
 	}
 	var x = new Ajax();

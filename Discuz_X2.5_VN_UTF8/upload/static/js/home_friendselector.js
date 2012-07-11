@@ -1,7 +1,7 @@
 /*
 	[Discuz!] (C)2001-2099 Comsenz Inc.
 	This is NOT a freeware, use is subject to license terms
-
+	Vietnamese by Kyehani - discuz.vn
 	$Id: home_friendselector.js 26733 2011-12-21 07:18:01Z zhengqingpeng $
 */
 
@@ -170,11 +170,11 @@
 						this.selectUser[userName] = userName;
 					}
 					this.selectNumber++;
-					spanObj.innerHTML= '<a href="javascript:;" class="x" onclick="'+this.handleKey+'.delSelUser(\''+(spanObj.id)+'\');">删除</a><em class="z" title="' + userName + '">' + userName + '</em><input type="hidden" name="users[]" value="'+userName+'" uid="uid'+uid+'" />';
+					spanObj.innerHTML= '<a href="javascript:;" class="x" onclick="'+this.handleKey+'.delSelUser(\''+(spanObj.id)+'\');">Xóa</a><em class="z" title="' + userName + '">' + userName + '</em><input type="hidden" name="users[]" value="'+userName+'" uid="uid'+uid+'" />';
 					this.handleObj.parentNode.insertBefore(spanObj, this.handleObj);
 					this.showObj.style.display = 'none';
 				} else {
-					alert('已经存在'+userName);
+					alert('Đã tồn tại '+userName);
 				}
 			}
 		},
@@ -284,7 +284,7 @@
 				var select = false;
 				if(typeof this.selectUser[uid] == 'undefined') {
 					if(this.maxSelectNumber && this.selectNumber >= this.maxSelectNumber) {
-			            alert('最多只允许选择'+this.maxSelectNumber+'个用户');
+			            alert('Chỉ cho phép chọn '+this.maxSelectNumber+'bạn');
 			            return false;
 			        }
 					this.selectUser[uid] = this.dataSource[uid];

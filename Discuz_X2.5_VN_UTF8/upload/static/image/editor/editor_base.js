@@ -40,10 +40,10 @@ function renewContent() {
 		}
 	};
 
-	if(window.confirm('您确定要恢复上次保存?')) {
+	if(window.confirm('Bạn muốn khôi phục lại?')) {
 		var data = loadUserdata('home');
 		if(in_array((data = trim(data)), ['', 'null', 'false', null, false])) {
-			parent.showDialog('没有可以恢复的数据！');
+			parent.showDialog('Có không có dữ liệu để phục hồi!');
 			return;
 		}
 		var data = data.split(/\x09\x09/);
@@ -205,13 +205,13 @@ function format(type, para){
 	if(!gIsIE){
 		switch(type){
 			case "Cut":
-				sAlert = "您的浏览器安全设置不允许编辑器自动执行剪切操作,请使用键盘快捷键(Ctrl+X)来完成";
+				sAlert = "Bạn cần nhấn Ctrl + X để cắt";
 				break;
 			case "Copy":
-				sAlert = "您的浏览器安全设置不允许编辑器自动执行拷贝操作,请使用键盘快捷键(Ctrl+C)来完成";
+				sAlert = "Bạn cần nhấn Ctrl + X để sao chép";
 				break;
 			case "Paste":
-				sAlert = "您的浏览器安全设置不允许编辑器自动执行粘贴操作,请使用键盘快捷键(Ctrl+V)来完成";
+				sAlert = "Bạn cần nhấn Ctrl + X để dán";
 				break;
 		}
 	}
@@ -295,7 +295,7 @@ function doodleBox(event, id) {
 	if(parent.$('uchome-ttHtmlEditor') != null) {
 		parent.showWindow(id, 'home.php?mod=magic&mid=doodle&showid=blog_doodle&target=uchome-ttHtmlEditor&from=editor');
 	} else {
-		alert("找不到涂鸦板初始化数据");
+		alert("Không thể tìm thấy dữ liệu Graffiti");
 	}
 }
 function backColor(e){
@@ -457,7 +457,7 @@ function fSetBorderMouseDown(obj) {
 }
 function fDisplayElement(element,displayValue) {
 	if(gIEVer<=5.01 && gIsIE){
-		alert('只支持IE 5.01以上版本');
+		alert('Chỉ hoạt động từ IÊ 5.0 trở lên');
 		return;
 	}
 	fHideMenu();
@@ -493,7 +493,7 @@ function fSetModeTip(obj){
 		dv.style.padding = "2px";
 		dv.style.border = "1px #000000 solid";
 		dv.style.backgroundColor = "#FFFFCC";
-		dv.innerHTML = "编辑源码";
+		dv.innerHTML = "Chỉnh sửa";
 		document.body.appendChild(dv);
 	}else{
 		dvModeTip.style.display = "";
@@ -616,7 +616,7 @@ function changeEditType(flag, ev){
 			}
 			ev = ev || event;
 			if(ev){
-				if(window.confirm("转换为纯文本时将会遗失某些格式。\n您确定要继续吗？")){
+				if(window.confirm("Chuyển sang dạng văn bản sẽ bị mất một số định dạng.\nBạn có chắc chắn ?")){
 					$('uchome-editstatus').value = 'text';
 					sub1();
 				}else{
@@ -634,7 +634,7 @@ function changeEditFull(flag, ev) {
 		parent.changeEditFull(flag);
 		ev = ev || event;
 		var ele = ev.target || ev.srcElement;
-		ele.innerHTML = flag ? '返回' : '全屏';
+		ele.innerHTML = flag ? 'Trở lại' : 'Full';
 		ele.onclick = function() {changeEditFull(!flag, ev)};
 	}
 }

@@ -1,7 +1,7 @@
 /*
 	[Discuz!] (C)2001-2099 Comsenz Inc.
 	This is NOT a freeware, use is subject to license terms
-
+	Vietnamese by Kyehani - discuz.vn
 	$Id: forum_post.js 28434 2012-02-29 11:03:43Z monkey $
 */
 
@@ -15,19 +15,19 @@ var UPLOADWINRECALL = null;
 var imgexts = typeof imgexts == 'undefined' ? 'jpg, jpeg, gif, png, bmp' : imgexts;
 var ATTACHORIMAGE = '0';
 var STATUSMSG = {
-	'-1' : '内部服务器错误',
-	'0' : '上传成功',
-	'1' : '不支持此类扩展名',
-	'2' : '服务器限制无法上传那么大的附件',
-	'3' : '用户组限制无法上传那么大的附件',
-	'4' : '不支持此类扩展名',
-	'5' : '文件类型限制无法上传那么大的附件',
-	'6' : '今日您已无法上传更多的附件',
-	'7' : '请选择图片文件(' + imgexts + ')',
-	'8' : '附件文件无法保存',
-	'9' : '没有合法的文件被上传',
-	'10' : '非法操作',
-	'11' : '今日您已无法上传那么大的附件'
+	'-1' : 'Internal Server Error',
+	'0' : 'Tải lên thành công',
+	'1' : 'Phần mở rộng này không được hỗ trợ',
+	'2' : 'Không thể tải tập tin quá lớn',
+	'3' : 'Nhóm người dùng hạn chế tải tập tin',
+	'4' : 'Phần mở rộng này không được hỗ trợ',
+	'5' : 'Hạn chế loại tập tin',
+	'6' : 'Hôm nay bạn không thể tải lên tập tin đính kèm nữa',
+	'7' : 'Xin vui lòng chọn tập tin hình ảnh(' + imgexts + ')',
+	'8' : 'File đính kèm không thể được lưu',
+	'9' : 'Không có tập tin hợp lệ được tải lên',
+	'10' : 'Hoạt động bất hợp pháp',
+	'11' : 'Hôm nay bạn có tải lên tập tin'
 };
 
 EXTRAFUNC['validator'] = [];
@@ -59,7 +59,7 @@ function checklength(theform) {
 	if(!theform.parseurloff.checked) {
 		message = parseurl(message);
 	}
-	showDialog('当前长度: ' + mb_strlen(message) + ' 字节，' + (postmaxchars != 0 ? '系统限制: ' + postminchars + ' 到 ' + postmaxchars + ' 字节。' : ''), 'notice', '字数检查');
+	showDialog('Chiều dài ' + mb_strlen(message) + ' ký tự,' + (postmaxchars != 0 ? 'Độ dài: ' + postminchars + ' đến ' + postmaxchars + ' ký tự' : ''), 'notice', 'Kiểm tra số ký tự');//kyehani - idc.discuz.vn
 }
 
 if(!tradepost) {
@@ -72,21 +72,21 @@ function validate(theform) {
 		message = parseurl(message);
 	}
 	if(($('postsubmit').name != 'replysubmit' && !($('postsubmit').name == 'editsubmit' && !isfirstpost) && theform.subject.value == "") || !sortid && !special && trim(message) == "") {
-		showError('抱歉，您尚未输入标题或内容');
+		showError('Có lỗi, bạn không nhập tiêu đề hoặc nội dung');
 		return false;
-	} else if(mb_strlen(theform.subject.value) > 80) {
-		showError('您的标题超过 80 个字符的限制');
+	} else if(mb_strlen(theform.subject.value) > 255) {
+		showError('Tiêu đề quá giới hạn 255 ký tự');
 		return false;
 	}
 	if(ispicstyleforum == 1 && ATTACHORIMAGE == 0 && isfirstpost) {
 	}
 	if(in_array($('postsubmit').name, ['topicsubmit', 'editsubmit'])) {
 		if(theform.typeid && (theform.typeid.options && theform.typeid.options[theform.typeid.selectedIndex].value == 0) && typerequired) {
-			showError('请选择主题对应的分类');
+			showError('Hãy chọn một phân loại chủ đề tương ứng');
 			return false;
 		}
 		if(theform.sortid && (theform.sortid.options && theform.sortid.options[theform.sortid.selectedIndex].value == 0) && sortrequired) {
-			showError('请选择主题对应的分类信息');
+			showError('Hãy chọn một chủ đề tương ứng thông tin phân loại');
 			return false;
 		}
 	}
@@ -100,20 +100,20 @@ function validate(theform) {
 	}
 
 	if(!disablepostctrl && !sortid && !special && ((postminchars != 0 && mb_strlen(message) < postminchars) || (postmaxchars != 0 && mb_strlen(message) > postmaxchars))) {
-		showError('您的帖子长度不符合要求。\n\n当前长度: ' + mb_strlen(message) + ' 字节\n系统限制: ' + postminchars + ' 到 ' + postmaxchars + ' 字节');
+		showError('Chiều dài của bài viết của bạn không đạt yêu cầu.\n\nChiều dài hiện tại: ' + mb_strlen(message) + ' ký tự\nHệ thống giới hạn: ' + postminchars + ' đến ' + postmaxchars + ' ký tự');// ky ehani - di scuz.vn
 		return false;
 	}
 	if(UPLOADSTATUS == 0) {
-		if(!confirm('您有等待上传的附件，确认不上传这些附件吗？')) {
+		if(!confirm('Bạn phải chờ để tải lên tập tin đính kèm, chắc chắn không tải lên các tập tin đính kèm?')) {
 			return false;
 		}
 	} else if(UPLOADSTATUS == 1) {
-		showDialog('您有正在上传的附件，请稍候，上传完成后帖子将会自动发表...', 'notice');
+		showDialog('Bạn đang tải lên tập tin đính kèm, hãy chờ, đính kèm sẽ tự động phát hình khi đăng bài...', 'notice');
 		AUTOPOST = 1;
 		return false;
 	}
 	if(isfirstpost && $('adddynamic') != null && $('adddynamic').checked && $('postsave') != null && isNaN(parseInt($('postsave').value)) && ($('readperm') != null && $('readperm').value || $('price') != null && $('price').value)) {
-		if(confirm('由于您设置了阅读权限或出售帖，您确认还转播给您的听众看吗？') == false) {
+		if(confirm('Because you set the read permissions or sell posts, you confirm that also broadcast to your audience to see?') == false) {
 			return false;
 		}
 	}
@@ -138,7 +138,7 @@ function validate(theform) {
 					setTimeout(function () { validate(theform); }, 100);
 					chk = 0;
 				} else if(chkv.indexOf('check_right') == -1) {
-					showError('验证问答错误，请重新填写');
+					showError('Xác thực câu hỏi và trả lời lỗi, vui lòng nhập lại');
 					chk = 0;
 				}
 			}
@@ -148,7 +148,7 @@ function validate(theform) {
 					setTimeout(function () { validate(theform); }, 100);
 					chk = 0;
 				} else if(chkv.indexOf('check_right') === -1) {
-					showError('验证码错误，请重新填写');
+					showError('Mã xác thực lỗi, vui lòng điền lại');
 					chk = 0;
 				}
 			}
@@ -205,11 +205,11 @@ function uploadNextAttach() {
 	var att = CURRENTATTACH.split('|');
 	var sizelimit = '';
 	if(arr[4] == 'ban') {
-		sizelimit = '(附件类型被禁止)';
+		sizelimit = '(Đính kèm bị cấm)';
 	} else if(arr[4] == 'perday') {
-		sizelimit = '(不能超过 ' + arr[5] + ' 字节)';
+		sizelimit = '(Không thể vượt quá ' + arr[5] + ' Byte)';
 	} else if(arr[4] > 0) {
-		sizelimit = '(不能超过 ' + arr[4] + ' 字节)';
+		sizelimit = '(Không thể vượt quá ' + arr[4] + ' Byte)';
 	}
 	uploadAttach(parseInt(att[0]), arr[0] == 'DISCUZUPLOAD' ? parseInt(arr[1]) : -1, att[1], sizelimit);
 }
@@ -248,7 +248,7 @@ function uploadAttach(curId, statusid, prefix, sizelimit) {
 				updateAttachList();
 			}
 			if(UPLOADFAILED > 0) {
-				showDialog('附件上传完成！成功 ' + UPLOADCOMPLETE + ' 个，失败 ' + UPLOADFAILED + ' 个:' + FAILEDATTACHS);
+				showDialog('Tải tập tin đính kèm hoàn thành, thành công ' + UPLOADCOMPLETE + ' , thất bại ' + UPLOADFAILED + ' :' + FAILEDATTACHS);
 				FAILEDATTACHS = '';
 			}
 			UPLOADSTATUS = 2;
@@ -263,7 +263,7 @@ function uploadAttach(curId, statusid, prefix, sizelimit) {
 				hideMenu();
 				validate($('postform'));
 			} else if(UPLOADFAILED == 0 && (prefix == 'img' || prefix == '')) {
-				showDialog('附件上传完成！', 'right', null, null, 0, null, null, null, null, 3);
+				showDialog('Tải tập tin đính kèm hoàn thành!', 'right', null, null, 0, null, null, null, null, 3);
 			}
 			UPLOADFAILED = UPLOADCOMPLETE = 0;
 			CURRENTATTACH = '0';
@@ -274,7 +274,7 @@ function uploadAttach(curId, statusid, prefix, sizelimit) {
 		$(prefix + 'uploadbtn').style.display = 'none';
 		$(prefix + 'uploading').style.display = '';
 	}
-	$(prefix + 'cpdel_' + nextId).innerHTML = '<img src="' + IMGDIR + '/loading.gif" alt="上传中..." />';
+	$(prefix + 'cpdel_' + nextId).innerHTML = '<img src="' + IMGDIR + '/loading.gif" alt="Loading..." />';
 	UPLOADSTATUS = 1;
 	$(prefix + 'attachform_' + nextId).submit();
 }
@@ -334,16 +334,16 @@ function insertAttach(prefix, id) {
 	}
 	if(extensions != '' && (re.exec(extensions) == null || ext == '')) {
 		reAddAttach(prefix, id);
-		showError('对不起，不支持上传此类扩展名的附件。');
+		showError('Có lỗi, tập tin không hỗ trợ phần mở rộng này');
 		return;
 	}
 	if(prefix == 'img' && imgexts.indexOf(ext) == -1) {
 		reAddAttach(prefix, id);
-		showError('请选择图片文件(' + imgexts + ')');
+		showError('Xin vui lòng chọn tập tin hình ảnh(' + imgexts + ')');
 		return;
 	}
 
-	$(prefix + 'cpdel_' + id).innerHTML = '<a href="javascript:;" class="d" onclick="reAddAttach(\'' + prefix + '\', ' + id + ')">删除</a>';
+	$(prefix + 'cpdel_' + id).innerHTML = '<a href="javascript:;" class="d" onclick="reAddAttach(\'' + prefix + '\', ' + id + ')">Xóa</a>';
 	$(prefix + 'localfile_' + id).innerHTML = '<span>' + filename + '</span>';
 	$(prefix + 'attachnew_' + id).style.display = 'none';
 	$(prefix + 'deschidden_' + id).style.display = '';
@@ -416,7 +416,7 @@ function updateAttach(aid) {
 	obj = $('attach' + aid);
 	if(!objupdate.innerHTML) {
 		obj.style.display = 'none';
-		objupdate.innerHTML = '<input type="file" name="attachupdate[paid' + aid + ']"><a href="javascript:;" onclick="updateAttach(' + aid + ')">取消</a>';
+		objupdate.innerHTML = '<input type="file" name="attachupdate[paid' + aid + ']"><a href="javascript:;" onclick="updateAttach(' + aid + ')">Hủy</a>';
 	} else {
 		obj.style.display = '';
 		objupdate.innerHTML = '';
@@ -429,7 +429,7 @@ function updateattachnum(type) {
 	var num = ATTACHNUM[type + 'used'] + ATTACHNUM[type + 'unused'];
 	if(num) {
 		if($(editorid + '_' + type)) {
-			$(editorid + '_' + type).title = '包含 ' + num + (type == 'image' ? ' 个图片附件' : ' 个附件');
+			$(editorid + '_' + type).title = 'Có chứa ' + num + (type == 'image' ? ' ảnh đính kèm' : ' file đính kèm');
 		}
 		if($(editorid + '_' + type + 'n')) {
 			$(editorid + '_' + type + 'n').style.display = '';
@@ -437,7 +437,7 @@ function updateattachnum(type) {
 		ATTACHORIMAGE = 1;
 	} else {
 		if($(editorid + '_' + type)) {
-			$(editorid + '_' + type).title = type == 'image' ? '图片' : '附件';
+			$(editorid + '_' + type).title = type == 'image' ? 'Hình ảnh' : 'Đính kèm';
 		}
 		if($(editorid + '_' + type + 'n')) {
 			$(editorid + '_' + type + 'n').style.display = 'none';
@@ -467,11 +467,11 @@ function updateImageList(action, aids) {
 
 function updateDownImageList(msg) {
 	if(msg == '') {
-		showError('抱歉，暂无远程附件');
+		showError('Có lỗi, không có tập tin đính kèm từ xa');
 	} else {
 		ajaxget('forum.php?mod=ajax&action=imagelist&pid=' + pid + '&posttime=' + $('posttime').value + (!fid ? '' : '&fid=' + fid), 'imgattachlist', null, null, null, function(){if(wysiwyg) {editdoc.body.innerHTML = msg;switchEditor(0);switchEditor(1)} else {textobj.value = msg;}});
 		switchImagebutton('imgattachlist');$('imgattach_notice').style.display = '';
-		showDialog('远程附件下载完成!', 'right', null, null, 0, null, null, null, null, 3);
+		showDialog('Tải về đính kèm từ xa!', 'right', null, null, 0, null, null, null, null, 3);
 	}
 }
 
@@ -514,11 +514,11 @@ function uploadWindowload() {
 	} else {
 		var sizelimit = '';
 		if(arr[7] == 'ban') {
-			sizelimit = '(附件类型被禁止)';
+			sizelimit = '(Cấm loại tập tin đính kèm)';
 		} else if(arr[7] == 'perday') {
-			sizelimit = '(不能超过 ' + arr[8] + ' 字节)';
+			sizelimit = '(Không vượt quá ' + arr[8] + ' Byte)';
 		} else if(arr[7] > 0) {
-			sizelimit = '(不能超过 ' + arr[7] + ' 字节)';
+			sizelimit = '(Không vượt quá ' + arr[7] + ' Byte)';
 		}
 		showError(STATUSMSG[arr[2]] + sizelimit);
 	}
@@ -607,7 +607,7 @@ function addpolloption() {
 		$('polloption_new').outerHTML = '<p>' + $('polloption_hidden').innerHTML + '</p>' + $('polloption_new').outerHTML;
 		curoptions++;
 	} else {
-		$('polloption_new').outerHTML = '<span>已达到最大投票数'+maxoptions+'</span>';
+		$('polloption_new').outerHTML = '<span>Đã đạt tối đa số phiếu '+maxoptions+'</span>';
 	}
 }
 
@@ -671,8 +671,8 @@ function attachoption(type, op) {
 		display('attachnotice_' + type);
 	} else if(op == 2) {
 		showDialog('<div id="unusedwin" class="c altw" style="overflow:auto;height:100px;">' + $('unusedlist_' + type).innerHTML + '</div>' +
-			'<p class="o pns"><span class="z xg1"><label for="unusedwinchkall"><input id="unusedwinchkall" type="checkbox" onclick="attachoption(\'' + type + '\', 3)" checked="checked" />全选</label></span>' +
-			'<button onclick="attachoption(\'' + type + '\', 1);hideMenu(\'fwin_dialog\', \'dialog\')" class="pn pnc"><strong>使用</strong></button></p>', 'info', '未使用的' + (type == 'attach' ? '附件' : '图片'));
+			'<p class="o pns"><span class="z xg1"><label for="unusedwinchkall"><input id="unusedwinchkall" type="checkbox" onclick="attachoption(\'' + type + '\', 3)" checked="checked" />Chọn hết</label></span>' +
+			'<button onclick="attachoption(\'' + type + '\', 1);hideMenu(\'fwin_dialog\', \'dialog\')" class="pn pnc"><strong>Sử dụng</strong></button></p>', 'info', 'Chưa dùng' + (type == 'attach' ? 'Đính kèm' : 'Hình ảnh'));
 	} else if(op == 3) {
 		list = $('unusedwin').getElementsByTagName('INPUT');
 		for(i = 0;i < list.length;i++) {
@@ -802,10 +802,10 @@ function getreplycredit() {
 	var reply_credits_sum = Math.ceil(parseInt(credit_once * times));
 
 	if(real_reply_credit > userextcredit) {
-		$('replycredit').innerHTML = '<b class="xi1">回帖奖励积分总额过大('+real_reply_credit+')</b>';
+		$('replycredit').innerHTML = '<b class="xi1">Tổng số tiền thưởng điểm là quá lớn('+real_reply_credit+')</b>';
 	} else {
 		if(have_replycredit > 0 && real_reply_credit < 0) {
-			$('replycredit').innerHTML = "<font class='xi1'>返还"+Math.abs(real_reply_credit)+"</font>";
+			$('replycredit').innerHTML = "<font class='xi1'>Trở lại của "+Math.abs(real_reply_credit)+"</font>";
 		} else {
 			$('replycredit').innerHTML = replycredit_result_lang + (real_reply_credit > 0 ? real_reply_credit : 0 );
 		}
@@ -820,7 +820,7 @@ function extraCheckall() {
 }
 
 function deleteThread() {
-	if(confirm('确定要删除该帖子吗？') != 0){
+	if(confirm('Bạn có chắc chắn muốn xóa bài viết này?') != 0){
 		$('delete').value = '1';
 		$('postform').submit();
 	}

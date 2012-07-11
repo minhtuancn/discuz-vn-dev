@@ -1,7 +1,7 @@
 /*
 	[Discuz!] (C)2001-2099 Comsenz Inc.
 	This is NOT a freeware, use is subject to license terms
-
+	Vietnamese by Kyehani - discuz.vn
 	$Id: forum_slide.js 23838 2011-08-11 06:51:58Z monkey $
 */
 
@@ -37,7 +37,7 @@ if(isUndefined(sliderun)) {
 			s.size[0] = parseInt(s.size[0]);
 			s.size[1] = parseInt(s.size[1]);
 			document.write('<div class="slideouter" id="outer_'+s.slideId+'" style="cursor:pointer;position:absolute;width:'+(s.size[0]-2)+'px;height:'+(s.size[1]-2)+'px;border:1px solid '+s.slideBorderColor+'"></div>');
-			document.write('<table cellspacing="0" cellpadding="0" style="cursor:pointer;width:'+s.size[0]+'px;height:'+s.size[1]+'px;table-layout:fixed;overflow:hidden;background:'+s.slideBgColor+';text-align:center"><tr><td valign="middle" style="padding:0" id="slide_'+s.slideId+'">');
+			document.write('<table cellspacing="0" cellpadding="0" style="cursor:pointer;width:'+s.size[0]+'px;height:'+s.size[1]+'px;table-layout:fixed;overflow:hidden;background:'+s.slideBgColor+';text-align:center"><tr><td valign="middle" style="padding:0" id="slide_'+s.slideId+'">');// k-y-e-h-a-n-i - d i s c u z . v n
 			document.write((typeof IMGDIR == 'undefined' ? '' : '<img src="'+IMGDIR+'/loading.gif" />') + '<br /><span id="percent_'+s.slideId+'">0%</span></td></tr></table>');
 			document.write('<div id="switch_'+s.slideId+'" style="position:absolute;margin-left:1px;margin-top:-18px"></div>');
 			$('outer_' + s.slideId).onclick = s.imageLink;
