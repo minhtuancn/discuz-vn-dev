@@ -1028,14 +1028,14 @@ $lang = array(
 	'setting_home_base_showallfriendnum' => 'Mặc định tab cập nhật',
 	'setting_home_base_showallfriendnum_comment' => 'Số bạn ít hơn khi trang cập nhật hiển thị trên tất cả dạng số và bạn bè.<br>Trong nhật ký, danh sách các trang album, các tác dụng tương tự của các tham số.',
 	'setting_home_base_feedhiddenicon' => 'Biểu tượng trang cập nhật',
-	'setting_home_base_feedhiddenicon_comment' => 'Xin vui lòng nhập các loại màn hình hiển thị năng động gấp (biểu tượng), dấu phẩy giữa nhiều loại "," 隔开。<br>
-			将某些动态折叠后，可以适当减少首页的动态噪音。<br>
-			动态类型的获取方法：<br>
-			在查看好友动态的时候，点击每条动态前面的小图标(例如 <img src="static/image/feed/blog.gif" align="absmiddle">)，<br>
-			浏览器的网址会变为类似如下的链接：<br>
-			http://xxx.com/home.php?mod=space&uid=&do=feed&view=we&appid=3&<b>icon=blog</b>，<br>
-			其中，icon=blog，就表示该动态类型为 blog<br>
-			MYOP应用的icon为 7位数字。您可以用英文单词 <b>myop</b> 来表示所有MYOP应用的动态类型',
+	'setting_home_base_feedhiddenicon_comment' => 'Xin vui lòng nhập các loại màn hình hiển thị năng động gấp (biểu tượng), dấu phẩy giữa nhiều loại "," tách biệt nhau.<br>
+			After the collapse of certain dynamic, may decrease the dynamic noise page.<br>
+			Phương pháp xem cập nhật<br>
+			Xem bạn bè động vào thời điểm đó, nhấp vào biểu tượng nhỏ ở phía trước của mỗi động (ví dụ: <img src="static/image/feed/blog.gif" align="absmiddle">),<br>
+			Dạng link là:<br>
+			http://xxx.com/home.php?mod=space&uid=&do=feed&view=we&appid=3&<b>icon=blog</b>,<br>
+			Trong số icon=blog có các loại hoạt động của blog<br>
+			MYOP ứng dụng biểu tượng đến 7 chữ số. Bạn có thể sử dụng từ tiếng Anh <b>myop</b> Đại diện cho loại hình năng động của tất cả các ứng dụng MYOP.',
 	'setting_home_base_feedhotnum' => 'Số lượng điểm nóng',
 	'setting_home_base_feedhotnum_comment' => '(Mặc định là 3) để 0, sau đó trang không hiển thị điểm nóng được đề nghị. Không vượt quá tối đa 10.<br>Hệ thống tự động sẽ nhận được 10 điểm nóng, mà sẽ được cố định số một nóng hiển thị, và số còn lại các điểm nóng sẽ được hiển thị ngẫu nhiên.',
 	'setting_home_base_newspacenum' => 'Sự lựa chọn cho thành viên mới',
@@ -1173,8 +1173,8 @@ $lang = array(
 	'setting_home_hotuser' => 'Giới thiệu các thành viên',
 	'setting_home_hotuser_comment' => 'Thêm cấu hình <br /> Xin vui lòng nhập một tên người dùng, tên người dùng trên mỗi dòng. <br> ví dụ: <br> admin <br> webmaster <br/> những người sử dụng sẽ được hiển thị ngẫu nhiên trong cột "Webmaster Email". ',
 	'setting_home_hotuser_defaultuser' => 'Gọi bạn',
-	'setting_home_hotuser_defaultuser_comment' => '添加格式：<br />请输入用户名，每个用户名一行。<br>例如：<br>admin<br>webmaster<br>这些用户会自动将新注册用户添加为好友，并向其打个招呼。
-							注意，指定的这几位用户浏览自己的首页时，可能会因其好友数众多而增加服务器负载',
+	'setting_home_hotuser_defaultuser_comment' => 'Thêm cấu hình <br /> Xin vui lòng nhập một tên người dùng, tên người dùng trên mỗi dòng. <br> ví dụ: <br> admin <br> webmaster <br> những thành viên sẽ tự động thêm thành viên mới như bạn bè chào hỏi của họ.
+	Lưu ý rằng một số người sử dụng quy định để xem nhà riêng của họ có thể tăng vì số lượng lớn của bạn bè tải máy chủ. ',
 	'setting_home_hotuser_defaultpoke' => 'Mặc định nội dung chúc mừng',
 	'setting_home_hotuser_defaultpoke_comment' => '(Không phải nhiều hơn 25 ký tự) tự động bạn bè để chào đón những nội dung mới. ',
 
@@ -1238,8 +1238,7 @@ $lang = array(
 	'misc_focus_area_title' => 'Khu vực tiêu đề được giới thiệu',
 	'misc_focus_area_title_comment' => 'Mặc định là "Trang web của gia đình", bạn có thể thiết lập mà bạn muốn Tiêu đề',
 	'misc_focus_area_cookie' => 'Đóng cửa sổ bật lên lại sau khi thiết lập thời gian (giờ)',
-	'misc_focus_area_cookie_comment' => '0表示再刷新页面就会弹出。1表示1小时后刷新页面才会出现。默认为1，可以设置为您希望弹出的时间
-',
+	'misc_focus_area_cookie_comment' => '0, sau đó làm mới trang bật lên. 1 cho 1 giờ để làm mới trang xuất hiện. Mặc định là 1, bạn có thể đặt thời gian bạn muốn bật lên',
 	'misc_focus_position' => 'Webmaster recommend running the regional',
 	'misc_focus_position_portal' => 'Portal',
 	'misc_focus_position_home' => 'Trang chủ',
@@ -1274,11 +1273,11 @@ $lang = array(
 	'setting_seo_group_tips' => '<li>Tên trang web&nbsp;<font class="highlight">{bbname}</font> (Ứng dụng : Tất cả địa điểm)</li><li> các font&nbsp;<font class="highlight">{forum}</font>(ứng dung : Ngoài các trang chủ của nhóm, loại trang)</li><li>một tên thể loại&nbsp;<font class="highlight">{first}</font>(ứng dụng : Tất cả địa điểm)</li><li>hai tên thể loại thứ hai&nbsp;<font class="highlight">{second}</font>(Ứng dụng : Tất cả địa điểm)</li><li>Các nhóm hiện tại profile&nbsp;<font class="highlight">{gdes}</font>(áp dụng : các nhóm và các trang đăng nhóm)</li><li>Tiêu đề bài viết&nbsp;<font class="highlight">{subject}</font>(Chương trình : Tập đoàn bưu trang)</li><li>Chủ đề tóm tắt&nbsp;<font class="highlight">{summary}</ ứng dụng font chữ (Tập đoàn bưu trang)></li><li>chủ đề tag&nbsp;<font class="highlight">{tags}</font>(chương trình : Nhóm bài viết nội dung trang)</li><li>trang Số&nbsp;<font class="highlight">{page}</font> (áp dụng : một dánh sách các chủ đề trang, bài nội dung của trang)</li>',
 	'setting_seo_grouppage' => 'Một nhóm trang',
 	'setting_seo_viewthread_group' => 'Nội dung bài viết nhóm',
-	'setting_seo_seoTiêu đề' => 'Tiêu đề',
+	'setting_seo_seotitle' => 'Tiêu đề',
 	'setting_seo_seotitle_comment' => 'Tiêu đề trang thường là sự tập trung của các công cụ tìm kiếm, bổ sung các ký tự sẽ được thiết lập trong tiêu đề của diễn đàn trong tên của lại, nếu có nhiều từ khóa, đề nghị "|",","( mà không có báo giá điểm) và các biểu tượng bị tách',
-	'setting_seo_seoTừ khóa (keywords)' => 'Từ khóa (keywords)',
+	'setting_seo_seokeywords' => 'Từ khóa (keywords)',
 	'setting_seo_seokeywords_comment' => 'Từ khoá Xuất hiện trong các trang của phần đầu của thẻ Meta, cho các bản ghi của trang này từ khóa từ khóa hơn nửa-góc độ sử dụng một dấu phẩy giữa "và" ly thân',
-	'setting_seo_seoMô tả website (description):' => 'Mô tả website (description):',
+	'setting_seo_seodescription' => 'Mô tả website (description):',
 	'setting_seo_seodescription_comment' => 'Mô tả xuất hiện trên trang đầu của các thẻ Meta cho các bản ghi của trang web này và một bản tóm tắt mô tả về',
 	'setting_seo_code_bbname' => 'Tên website',
 	'setting_seo_code_articlelist_curcat' => 'Kênh hiện tại',
@@ -1911,7 +1910,7 @@ $lang = array(
 	'setting_sec_reginput_password2_comment' => 'Mặc định là password2, chỉ được dùng chữ và số, và phải bắt đầu bằng chữ cái.',
 	'setting_sec_reginput_email' => 'Thiết lập Email',
 	'setting_sec_reginput_email_comment' => 'Mặc định là email, chỉ được dùng chữ và số, và phải bắt đầu bằng chữ cái.',
-	'setting_sec_postperiodtime'=> '发帖时间段限制',
+	'setting_sec_postperiodtime'=> 'Đăng giới hạn phân đoạn thời gian',
 
 	'setting_datetime' => 'Thời gian',
 
@@ -1933,7 +1932,7 @@ $lang = array(
 			'-6' => '(GMT -06:00) Central Time (U.S. & Canada), Mexico City',
 			'-5' => '(GMT -05:00) Eastern Time (U.S. & Canada), Bogota, Lima, Quito',
 			'-4' => '(GMT -04:00) Atlantic Time (Canada), Caracas, La Paz',
-			'-3.5' => '(GMT -03:30) 纽芬兰',
+			'-3.5' => '(GMT -03:30) Newfoundland',
 			'-3' => '(GMT -03:00) Brasilia, Buenos Aires, Georgetown, Falkland Islands',
 			'-2' => '(GMT -02:00) Mid-Atlantic, Ascension Islands, St. Helena',
 			'-1' => '(GMT -01:00) Azores, Cape Verde Islands [GMT] Dublin, London, Lisbon, Casablanca',
@@ -1941,18 +1940,18 @@ $lang = array(
 			'1' => '(GMT +01:00) Berlin, Brussels, Copenhagen, Madrid, Paris, Rome',
 			'2' => '(GMT +02:00) Helsinki, Kaliningrad, South Africa, Warsaw',
 			'3' => '(GMT +03:00) Baghdad, Riyadh, Moscow, Nairobi',
-			'3.5' => '(GMT +03:30) 德黑兰',
+			'3.5' => '(GMT +03:30) Tehran',
 			'4' => '(GMT +04:00) Abu Dhabi, Baku, Muscat, Tebilisi',
-			'4.5' => '(GMT +04:30) 坎布尔',
+			'4.5' => '(GMT +04:30) Kan Buer',
 			'5' => '(GMT +05:00) Ekaterinburg, Islamabad, Karachi, Tashkent',
-			'5.5' => '(GMT +05:30) 孟买, 加尔各答, 马德拉斯, 新德里',
-			'5.75' => '(GMT +05:45) 加德满都',
+			'5.5' => '(GMT +05:30) Bombay, Calcutta, Madras, New Delhi',
+			'5.75' => '(GMT +05:45) Kathmandu',
 			'6' => '(GMT +06:00) Almaty, Colombo, Dhaka, Novosibirsk',
-			'6.5' => '(GMT +06:30) 仰光',
+			'6.5' => '(GMT +06:30) Yangon',
 			'7' => '(GMT +07:00) Bangkok, Hanoi, Jakarta',
 			'8' => '(GMT +08:00) Beijing, Hong Kong, Perth, Singapore, Taipei',
 			'9' => '(GMT +09:00) Osaka, Sapporo, Seoul, Tokyo, Yakutsk',
-			'9.5' => '(GMT +09:30) 阿德莱德, 达尔文',
+			'9.5' => '(GMT +09:30) Adelaide, Darwin',
 			'10' => '(GMT +10:00) Canberra, Guam, Melbourne, Sydney, Vladivostok',
 			'11' => '(GMT +11:00) Magadan, New Caledonia, Solomon Islands',
 			'12' => '(GMT +12:00) Auckland, Wellington, Fiji, Marshall Islands'),
@@ -2175,9 +2174,9 @@ $lang = array(
 	'settings_sphinx_sphinxlimit' => 'Thiết lập số lượng tối đa của trận đấu trở lại',
 	'settings_sphinx_sphinxlimit_comment' => 'Điền vào số lượng tối đa của trận đấu trở lại, phải là số nguyên không âm, mặc định giá trị 10.000.',
 	'settings_sphinx_sphinxrank' => 'Thiết lập chế độ đầy đủ văn bản số',
-	'settings_sphinx_sphinxrank_comment' => '(1)SPH_RANK_PROXIMITY_BM25， 默认模式，同时使用词组评分和 BM25 评分，并且将二者结合。[默认]
-<br />(2)SPH_RANK_BM25，统计相关度计算模式，仅使用 BM25 评分计算(与大多数全文检索引擎相同)。这个模式比较快，但是可能使包含多个词的查询的结果质量下降。
-<br />(3)SPH_RANK_NONE，禁用评分的模式，这是最快的模式。实际上这种模式与布尔搜索相同。所有的匹配项都被赋予权重1',
+	'settings_sphinx_sphinxrank_comment' => '(1) SPH_RANK_PROXIMITY_BM25, chế độ mặc định, bằng cách sử dụng cụm từ số điểm và số điểm BM25, và sẽ là một sự kết hợp của cả hai. [Default]
+	<br /> (2) SPH_RANK_BM25, tương quan tính toán chế độ thống kê, chỉ sử dụng các tính toán số điểm BM25 (công cụ tìm kiếm văn bản đầy đủ với hầu hết giống nhau). Chế độ này nhanh hơn, nhưng có thể chứa nhiều hơn kết quả của một sự suy giảm chất lượng thuật ngữ truy vấn
+	<br /> (3) SPH_RANK_NONE, Vô hiệu hoá chế độ chấm điểm, đó là chế độ nhanh nhất. Thực tế là mô hình tương tự và tìm kiếm Boolean. Tất cả các trận đấu được cho trọng lượng 1.',
 
 	'setting_ranklist' => 'Cài đặt TOP',
 	'setting_ranklist_all' => 'Tất cả',
@@ -3603,17 +3602,17 @@ $lang = array(
 	'founder_patchstatus_error4' => 'cách ftp không thể sử dụng các thông tin tài khoản ftp, làm cho chắc chắn để điền vào chính xác',
 	'founder_patchstatus_error5' => 'Sao chép tập tin vấn đề, hãy chắc chắn các thư mục tập tin và thư mục con của các mã nguồn có thể đọc và ghi, hoặc các tập tin có thể bị khóa, xin vui lòng đóng trang web sau khi hoạt động',
 	'founder_patchstatus_error6' => 'Sửa lỗi vấn đề vấn đề dự phòng, càng sớm càng tốt để khôi phục lại các tập tin, sao lưu tập tin có thể được tìm thấy trong cùng thư mục',
-	'founder_patch_tips' => '<li>漏洞修复状态说明：</li>
+	'founder_patch_tips' => '<li>Mô tả tình trạng sửa lỗi:</li>
 							<li>
-								<em class="fixed">&nbsp;2</em> 文件可能已经修改过，未发现漏洞<br />
-								<em class="fixed">&nbsp;1</em> 完成修复<br />
-								<em class="unfixed">&nbsp;0</em> 未修复<br />
-								<em class="unfixed">-1</em> 漏洞编码为空，您本地的漏洞信息数据可能出现问题<br />
-								<em class="unfixed">-2</em> 漏洞修补文件不存在或文件不可修改，请检查并修改权限为可读可写(777)<br />
-								<em class="unfixed">-3</em> 写入临时文件出错，请查看data目录是否可写<br />
-								<em class="unfixed">-4</em> ftp方式无法使用，请确认ftp账号等相关信息填写正确<br />
-								<em class="unfixed">-5</em> 复制文件出现问题，请确认源代码文件目录及子目录可读可写，或文件可能被锁，请关闭站点后进行操作<br />
-								<em class="unfixed">-6</em> 修复漏洞出现问题，回退时出现问题，请尽快恢复文件，文件备份可在同级目录找到
+								<em class="fixed">&nbsp;2</em> Các tập tin có thể đã được sửa đổi và tìm thấy không có sơ hở<br />
+								<em class="fixed">&nbsp;1</em> hoàn thành việc sửa chữa<br />
+								<em class="unfixed">&nbsp;0</em> không sửa chữa<br />
+								<em class="unfixed">-1</em> Các mã hóa dễ bị tổn thương có sản phẩm nào, địa phương thông tin dễ bị tổn thương của bạn và các vấn đề dữ liệu có thể xảy ra<br />
+								<em class="unfixed">-2</em> Lỗi file bản sửa lỗi không tồn tại hoặc tập tin không thể được sửa đổi, kiểm tra và sửa đổi cho phép có thể đọc và ghi (777)<br />
+								<em class="unfixed">-3</em> Viết các tập tin tạm thời lỗi, xin vui lòng xem các thư mục dữ liệu có thể ghi<br />
+								<em class="unfixed">-4</em> cách ftp không thể sử dụng các thông tin tài khoản ftp, làm cho chắc chắn để điền vào chính xác<br />
+								<em class="unfixed">-5</em> Sao chép tập tin vấn đề, hãy chắc chắn các thư mục tập tin và thư mục con của các mã nguồn có thể đọc và ghi, hoặc các tập tin có thể bị khóa, xin vui lòng đóng trang web sau khi hoạt động<br />
+								<em class="unfixed">-6</em> Sửa lỗi vấn đề vấn đề dự phòng, càng sớm càng tốt để khôi phục lại các tập tin, sao lưu tập tin có thể được tìm thấy trong cùng thư mục
 							</li>',
 
 	'usergroups' => 'User Groups',//'用户组',
@@ -3791,7 +3790,7 @@ $lang = array(
 	'usergroups_edit_post_url_mod' => 'Cho phép viết bài, nhưng qua kiểm duyệt',
 	'usergroups_edit_post_url_banned' => 'Cấm',
 	'usergroups_edit_post_url_group' => 'Có cho dùng URL ngoài',
-	'usergroups_edit_post_anonymous' => 'usergroups_edit_post_anonymous',
+	'usergroups_edit_post_anonymous' => 'Gửi bài nặc danh',
 	'usergroups_edit_post_anonymous_comment' => 'Sau thiết đặt này, nếu như lúc thành viên gửi bài mới có chọn mục này thì trên phần thông tin bài viết không hiện tên tác giả. Chỉ có quản lý trở lên mới xem được tên tác giả',
 	'usergroups_edit_post_set_read_perm' => 'Thiết đặt quyền đọc',
 	'usergroups_edit_post_set_read_perm_comment' => 'Sau khi thiết đặt này được kích hoạt cần phải có quyền đọc cao hơn yêu cầu mới xem được bài viết',
@@ -3865,7 +3864,7 @@ $lang = array(
 
 	'usergroups_edit_other' => 'Khác',
 	'usergroups_edit_magic' => 'Công cụ',
-	'usergroups_edit_magic_tips' => 'usergroups_edit_magic_tips',
+	'usergroups_edit_magic_tips' =>'<li>Công cụ <a href="'.ADMINSCRIPT.'?action=magics">Mở chức năng công cụ tại đây</a> </ li > ', 
 	'usergroups_edit_magic_permission' => 'Cho phép sử dụng đạo cụ',
 	'usergroups_edit_magic_permission_comment' => 'Có cho phép việc sử dụng đạo cụ, bao gồm cả bán',
 	'usergroups_edit_magic_discount' => 'Giảm giá mua công cụ',
@@ -3874,17 +3873,18 @@ $lang = array(
 	'usergroups_edit_magic_max_comment' => 'Thiết đặt hạn chế nhóm mang bao nhiêu số công cụ, phạm vi từ 1 đến 65,533',
 	'usergroups_edit_magic_unallowed' => 'Không cho phép sử dụng, mua và chuyển nhượng',
 	'usergroups_edit_magic_allow' => 'Cho phép sử dụng, mua',
-	'usergroups_edit_magic_allow_and_pass' => 'usergroups_edit_magic_allow_and_pass',
+	'usergroups_edit_magic_allow_and_pass' =>'Cho phép sử dụng, mua và chuyển nhượng',
 
 	'usergroups_edit_invite' => 'Mời đăng ký',
-	'usergroups_edit_invite_tips' => 'usergroups_edit_invite_tips',
+	'usergroups_edit_invite_tips' =>' <li> Mã mời đăng ký<a href="'.ADMINSCRIPT.'?action=setting&operation=access"> Bấm vào đây để khởi động</a> </li> ', 
+	
 	'usergroups_edit_invite_permission' => 'Sử dụng chức năng mời đăng ký',
 	'usergroups_edit_invite_permission_comment' => 'Whether or not to allow the purchase of the invitation code of rights',
 	'usergroups_edit_invite_send_permission' => 'Gửi mã mời đăng ký:',
 	'usergroups_edit_invite_send_permission_comment' => 'Có cho phép sự cho phép để mua mã số lời mời',
 	'usergroups_edit_invite_price' => 'Giá của mã đăng ký',
 	'usergroups_edit_invite_price_comment' => 'Mã đăng ký sẽ có giá trị đối với nhóm này',
-	'usergroups_edit_invite_buynum' => 'usergroups_edit_invite_buynum',
+	'usergroups_edit_invite_buynum' =>'Số mã kích hoạt trong một ngày cho phép mua', 
 	'usergroups_edit_invite_buynum_comment' => 'Trong vòng 24 giờ số lượng tối đa mã mới có thể mua',
 	'usergroups_edit_invite_maxinviteday' => 'Có hạn',
 	'usergroups_edit_invite_maxinviteday_comment' => 'Mặc định là 10 ngày',
@@ -3900,7 +3900,7 @@ $lang = array(
 	'usergroups_edit_credit_rate_isself' => 'Điểm khấu trừ',
 	'usergroups_edit_credit_rate_min' => 'Điểm tối thiểu',
 	'usergroups_edit_credit_rate_max' => 'Điểm tối đa',
-	'usergroups_edit_credit_rate_mrpd' => 'usergroups_edit_credit_rate_mrpd',
+	'usergroups_edit_credit_rate_mrpd' =>'Số điểm tối đa có thể tặng trong ngày', 
 	'usergroups_edit_credit_rate_comment' => 'Hãy kiểm tra Cho phép người dùng tham gia vào điểm số điểm nhóm (chỉ cho phép trong việc mở rộng toàn cầu của các điểm thiết lập để được đặt trong này), nếu tất cả không được chọn, không được điểm. Xin vui lòng cũng thiết lập các điểm thời gian tối thiểu và tối đa điểm số (từ -999 ~ 999), và tối thiểu không được lớn hơn mức tối đa, nếu không tỷ số không thể có hiệu quả để thiết lập',
 	'usergroups_edit_credit_rate_tips' => 'After themselves Rating, the User points will be deducted to the corresponding points. Otherwise, the system points deduction will be used',//'当选中扣除自身积分后，前台用户评分时会扣除用户的相应积分，否则扣除的系统积分',
 	'usergroups_edit_credit_exempt' => 'Mở rộng điểm',
@@ -4006,7 +4006,7 @@ $lang = array(
 	'group_mod_delconfirm' => 'To confirm that you want to delete the selected group?',
 
 	'threads' => 'threads',
-	'threads_tips' => 'threads_tips',
+	'threads_tips' =>' <li> volume through the management of the theme, you can search on the subject of the bulk delete, move, the classification / classification cancel, delete, set-top / cancellation of set-top, set up / cancellation of the essence, the on / off, as well as To delete the subject of the annex, and other operations; </ li> <li> your search terms based on the theme, and then select the appropriate operation. </ li> ', 
 	'threads_list' => 'theme of the list',
 	'threads_search' => 'Tìm chủ đề',
 	'threads_search_include_yes' => 'Chỉ bao hàm',
