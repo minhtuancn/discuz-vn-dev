@@ -149,7 +149,7 @@ $serialize_sql_setting = array (
     1 =>
     array (
       'img' => '',
-      'title' => '威望',
+      'title' => 'Uy tín',
       'unit' => '',
       'ratio' => 0,
       'available' => '1',
@@ -160,7 +160,7 @@ $serialize_sql_setting = array (
     2 =>
     array (
       'img' => '',
-      'title' => '金钱',
+      'title' => 'Tiền',
       'unit' => '',
       'ratio' => 0,
       'available' => '1',
@@ -171,7 +171,7 @@ $serialize_sql_setting = array (
     3 =>
     array (
       'img' => '',
-      'title' => '贡献',
+      'title' => 'Đóng góp',
       'unit' => '',
       'ratio' => 0,
       'available' => '1',
@@ -237,16 +237,16 @@ $serialize_sql_setting = array (
   ),
   'postnocustom' =>
   array (
-    0 => '楼主',
-    1 => '沙发',
-    2 => '板凳',
-    3 => '地板',
+    0 => 'Chủ thớt',
+    1 => 'Giật tem',
+    2 => 'Giật tem 2',
+    3 => 'Giật tem 3',
   ),
   'recommendthread' =>
   array (
     'status' => '0',
-    'addtext' => '支持',
-    'subtracttext' => '反对',
+    'addtext' => 'Hay',
+    'subtracttext' => 'Dở',
     'defaultshow' => '1',
     'daycount' => '0',
     'ownthread' => '0',
@@ -254,34 +254,34 @@ $serialize_sql_setting = array (
   ),
   'seotitle' =>
   array (
-    'portal' => '门户',
-    'forum' => '论坛',
-    'group' => '群组',
-    'home' => '家园',
-    'userapp' => '应用',
+    'portal' => 'Trang chủ',
+    'forum' => 'Diễn đàn',
+    'group' => 'Nhóm',
+    'home' => 'Mạng xã hội',
+    'userapp' => 'Ứng dụng',
   ),
   'activityfield' =>
   array (
-    'realname' => '真实姓名',
-    'mobile' => '手机',
-    'qq' => 'QQ号',
+    'realname' => 'Tên thật',
+    'mobile' => 'Số đt',
+    'qq' => 'QQ',
   ),
   'article_tags' =>
   array (
-    1 => '原创',
-    2 => '热点',
-    3 => '组图',
-    4 => '爆料',
-    5 => '头条',
-    6 => '幻灯',
-    7 => '滚动',
-    8 => '推荐',
+    1 => 'Gốc',
+    2 => 'Điểm nóng',
+    3 => 'Hình ảnh',
+    4 => 'Broke',
+    5 => 'Tiêu đề',
+    6 => 'Slide',
+    7 => 'Di chuyển',
+    8 => 'Khuyến nghị',
   ),
   'verify' =>
   array (
     6 =>
     array (
-      'title' => '实名认证',
+      'title' => 'Chứng thực tên thật',
       'available' => '0',
       'showicon' => '0',
       'viewrealname' => '0',
@@ -314,7 +314,7 @@ $serialize_sql_setting = array (
     ),
     7 =>
     array (
-      'title' => '视频认证',
+      'title' => 'Chứng nhận video',
       'available' => '0',
       'showicon' => '0',
       'viewvideophoto' => '0',
@@ -323,7 +323,7 @@ $serialize_sql_setting = array (
   ),
   'focus' =>
   array (
-    'title' => '站长推荐',
+    'title' => 'Tin tiêu điểm',
     'data' =>
     array (
     ),
@@ -335,7 +335,7 @@ $serialize_sql_setting = array (
     array (
       'available' => 1,
       'displayorder' => 0,
-      'title' => '基本资料',
+      'title' => 'Thông tin cơ bản',
       'field' =>
       array (
         'realname' => 'realname',
@@ -359,12 +359,12 @@ $serialize_sql_setting = array (
     ),
     'contact' =>
     array (
-      'title' => '联系方式',
+      'title' => 'Liên hệ',
       'available' => '1',
       'displayorder' => '1',
       'field' =>
       array (
-        'telephone' => 'telephone',
+        'telephone' => 'Số đt',
         'mobile' => 'mobile',
         'icq' => 'icq',
         'qq' => 'qq',
@@ -377,7 +377,7 @@ $serialize_sql_setting = array (
     array (
       'available' => 1,
       'displayorder' => 2,
-      'title' => '教育情况',
+      'title' => 'Học vấn',
       'field' =>
       array (
         'graduateschool' => 'graduateschool',
@@ -388,7 +388,7 @@ $serialize_sql_setting = array (
     array (
       'available' => 1,
       'displayorder' => 3,
-      'title' => '工作情况',
+      'title' => 'Công việc',
       'field' =>
       array (
         'occupation' => 'occupation',
@@ -399,7 +399,7 @@ $serialize_sql_setting = array (
     ),
     'info' =>
     array (
-      'title' => '个人信息',
+      'title' => 'Thông tin',
       'available' => '1',
       'displayorder' => '4',
       'field' =>
