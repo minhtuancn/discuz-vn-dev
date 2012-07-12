@@ -1,0 +1,45 @@
+#discuzeu_notification_tip {
+    z-index: 999;
+}
+.discuzeu_notification_tip {
+    background: none repeat scroll 0 0 #FFFFE3;
+    border: 1px solid #CCCCCC;
+    border-radius: 3px 3px 3px 3px;
+    color: #333333;
+    line-height: 20px;
+    padding: 5px 10px;
+    white-space: nowrap;
+}
+.discuzeu_notification_tip a.adel:hover {
+    background-position: 0 0;
+}
+.discuzeu_notification_tip p {
+    margin-top:10px;
+	text-align:left !important;
+	color: #336699;
+}
+.discuzeu_notification_tip a{
+	color: #336699 !important;
+}
+.discuzeu_notification_tip a.adel {
+    background-position: -16px 0;
+    border: 0 none;
+    height: 12px;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: 12px;
+    cursor: pointer;
+    display: block;
+    float: right;
+    overflow: hidden;
+    text-indent: -2000em;
+}
+.discuzeu_notification_tip p {
+    margin-right: 30px;
+}
+.discuzeu_notification_tip .adel {
+	background: url("../../source/plugin/discuzeu_notification/template/close.png") no-repeat scroll 0 0 transparent
+}
