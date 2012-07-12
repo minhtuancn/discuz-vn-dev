@@ -253,31 +253,25 @@ function discuzcode($message, $smileyoff, $bbcodeoff, $htmlon = 0, $allowsmilies
 	return $htmlon ? $message : nl2br(str_replace(array("\t", '   ', '  '), array('&nbsp; &nbsp; &nbsp; &nbsp; ', '&nbsp; &nbsp;', '&nbsp;&nbsp;'), $message));
 }
 
-// Bat dau sua ma link  out
 function parseurl($url, $text, $scheme) {
-        global $_G;
-        if(!$url && preg_match("/((https?|ftp|gopher|news|telnet|rtsp|mms|callto|bctp|thunder|qqdl|synacast){1}:\/\/|www\.)[^\[\"']+/i", trim($text), $matches)) {
-                $url = $matches[0];
-                $length = 65;
-                if(strlen($url) > $length) {
-                        $text = substr($url, 0, intval($length * 0.5)).' ... '.substr($url, - intval($length * 0.3));
-                }
-                $url = base64_encode($url); // Không edit dòng này
-                return '[<a href="link.php?referal='.(substr(strtolower($url), 0, 4) == 'www.' ? 'http://'.$url : $url).'=" target="_blank" title="'.base64_decode($url).'">Link <img src="source/js/link_out.gif" height="11" width="8" boder="0"></a>]';// Có thể edit nếu hiểu biết
-        
-        } else {
-                $url = substr($url, 1);
-                if(substr(strtolower($url), 0, 4) == 'www.') {
-                        $url = 'http://'.$url;
-                }
-                
-                $url = !$scheme ? $_G['siteurl'].$url : $url;
-                $url = base64_encode($url); // Không edit dòng này
-                return '<a href="link.php?referal='.(substr(strtolower($url), 0, 4) == 'www.' ? 'http://'.$url : $url).'=" target="_blank" title="'.base64_decode($url).'">'.$text.' <img src="source/js/link_out.gif" height="11" width="8" boder="0"></a>';// Có thể edit nếu hiểu biết
-        }
+	global $_G;
+	if(!$url && preg_match("/((https?|ftp|gopher|news|telnet|rtsp|mms|callto|bctp|thunder|qqdl|synacast){1}:\/\/|www\.)[^\[\"']+/i", trim($text), $matches)) {
+		$url = $matches[0];
+		$length = 65;
+		if(strlen($url) > $length) {
+			$text = substr($url, 0, intval($length * 0.5)).' ... '.substr($url, - intval($length * 0.3));
+		}
+		return '<a href="'.(substr(strtolower($url), 0, 4) == 'www.' ? 'http://'.$url : $url).'" target="_blank">'.$text.'</a>';
+	} else {
+		$url = substr($url, 1);
+		if(substr(strtolower($url), 0, 4) == 'www.') {
+			$url = 'http://'.$url;
+		}
+		$url = !$scheme ? $_G['siteurl'].$url : $url;
+		return '<a href="'.$url.'" target="_blank">'.$text.'</a>';
+	}
 }
 
-//ket thuc sua ma link out
 function parseflash($w, $h, $url) {
 	$w = !$w ? 500 : $w;
 	$h = !$h ? 400 : $h;
