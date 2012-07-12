@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<root>
+	<item id="Title"><![CDATA[Discuz! Plugin]]></item>
+	<item id="Version"><![CDATA[X2.5]]></item>
+	<item id="Time"><![CDATA[2011-05-08 00:20]]></item>
+	<item id="From"><![CDATA[Discuz! Board (http://localhost/dx2/)]]></item>
+	<item id="Data">
+		<item id="plugin">
+			<item id="available"><![CDATA[1]]></item>
+			<item id="adminid"><![CDATA[1]]></item>
+			<item id="name"><![CDATA[TopX Tiếng việt]]></item>
+			<item id="identifier"><![CDATA[kk_xshow]]></item>
+			<item id="description"><![CDATA[Chỉnh sửa bởi TuanTv]]></item>
+			<item id="datatables"><![CDATA[]]></item>
+			<item id="directory"><![CDATA[kk_xshow/]]></item>
+			<item id="copyright"><![CDATA[kookxiang | xuon | pzcgz]]></item>
+			<item id="version"><![CDATA[X2.5]]></item>
+			<item id="__modules">
+				<item id="0">
+					<item id="name"><![CDATA[xshow]]></item>
+					<item id="menu"><![CDATA[]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[11]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[0]]></item>
+				</item>
+			</item>
+		</item>
+		<item id="version"><![CDATA[X2.5]]></item>
+		<item id="var">
+			<item id="0">
+				<item id="displayorder"><![CDATA[31]]></item>
+				<item id="title"><![CDATA[Show ảnh]]></item>
+				<item id="description"><![CDATA[(*) Chọn chế độ show ảnh]]></item>
+				<item id="variable"><![CDATA[pic_switch]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[0]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="1">
+				<item id="displayorder"><![CDATA[30]]></item>
+				<item id="title"><![CDATA[Sắp xếp show ảnh]]></item>
+				<item id="description"><![CDATA[(*) Chọn kiểu show ảnh.]]></item>
+				<item id="variable"><![CDATA[pic_transfer]]></item>
+				<item id="type"><![CDATA[select]]></item>
+				<item id="value"><![CDATA[1]]></item>
+				<item id="extra"><![CDATA[1 = Thứ tự
+2 = Lượt tải
+3 = Ngẫu nhiên]]></item>
+			</item>
+			<item id="2">
+				<item id="displayorder"><![CDATA[1]]></item>
+				<item id="title"><![CDATA[Hiện mới khách]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[is_guest]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[1]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="3">
+				<item id="displayorder"><![CDATA[29]]></item>
+				<item id="title"><![CDATA[Số ảnh hiển thị]]></item>
+				<item id="description"><![CDATA[(*) Số lượng ảnh được show]]></item>
+				<item id="variable"><![CDATA[pic_schnum]]></item>
+				<item id="type"><![CDATA[number]]></item>
+				<item id="value"><![CDATA[50]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="4">
+				<item id="displayorder"><![CDATA[28]]></item>
+				<item id="title"><![CDATA[Mô tả ảnh]]></item>
+				<item id="description"><![CDATA[(*) Chọn Forum muốn mô tả ảnh (fid), phải nhiều hơn 2 chẳng hạn: 1,2,3 để trống là ko hạn chế]]></item>
+				<item id="variable"><![CDATA[only_pic]]></item>
+				<item id="type"><![CDATA[text]]></item>
+				<item id="value"><![CDATA[]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="5">
+				<item id="displayorder"><![CDATA[27]]></item>
+				<item id="title"><![CDATA[Màu tiêu đề hình ảnh]]></item>
+				<item id="description"><![CDATA[Màu của tiêu đề, mặc định: # 0099FF]]></item>
+				<item id="variable"><![CDATA[pic_color]]></item>
+				<item id="type"><![CDATA[color]]></item>
+				<item id="value"><![CDATA[]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="6">
+				<item id="displayorder"><![CDATA[26]]></item>
+				<item id="title"><![CDATA[Thiết lặp số lượng show ảnh]]></item>
+				<item id="description"><![CDATA[Thiết lặp chế độ này, bạn có thể quy điịnh được bao nhiêu hình ảnh sẽ được show ra trên topx]]></item>
+				<item id="variable"><![CDATA[pic_num]]></item>
+				<item id="type"><![CDATA[number]]></item>
+				<item id="value"><![CDATA[6]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="7">
+				<item id="displayorder"><![CDATA[25]]></item>
+				<item id="title"><![CDATA[Thiết lặp thời gian chuyển ảnh]]></item>
+				<item id="description"><![CDATA[Đơn vị là giây]]></item>
+				<item id="variable"><![CDATA[pic_cut]]></item>
+				<item id="type"><![CDATA[number]]></item>
+				<item id="value"><![CDATA[6]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="8">
+				<item id="displayorder"><![CDATA[23]]></item>
+				<item id="title"><![CDATA[Thiết lập màu lặp của hình ảnh]]></item>
+				<item id="description"><![CDATA[Màu xếp hạng thành viên]]></item>
+				<item id="variable"><![CDATA[authnum_color]]></item>
+				<item id="type"><![CDATA[color]]></item>
+				<item id="value"><![CDATA[]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="9">
+				<item id="displayorder"><![CDATA[22]]></item>
+				<item id="title"><![CDATA[Tên tác giả]]></item>
+				<item id="description"><![CDATA[(*) Chiều dài (byte) tên của tác giả]]></item>
+				<item id="variable"><![CDATA[ahthor_nums]]></item>
+				<item id="type"><![CDATA[number]]></item>
+				<item id="value"><![CDATA[8]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="10">
+				<item id="displayorder"><![CDATA[20]]></item>
+				<item id="title"><![CDATA[Thành viên mới]]></item>
+				<item id="description"><![CDATA[Chọn cái này thì nó sẽ hiện danh sách ngang (gồm avatar và tên nick).]]></item>
+				<item id="variable"><![CDATA[five_pic]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[1]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="11">
+				<item id="displayorder"><![CDATA[21]]></item>
+				<item id="title"><![CDATA[Thành viên mới trên Tab]]></item>
+				<item id="description"><![CDATA[Danh sách thành viên mới.
+				Có: Thì không hiện trên Tab
+				Không: Thì có hiện trên Tab
+				Bật cái này thì cái dưới mới có tác dụng.]]></item>
+				<item id="variable"><![CDATA[five_list]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[1]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="12">
+				<item id="displayorder"><![CDATA[19]]></item>
+				<item id="title"><![CDATA[Xếp hạng thành viên]]></item>
+				<item id="description"><![CDATA[(*) Thiết lập sắp xếp theo thứ tự thành viên]]></item>
+				<item id="variable"><![CDATA[author_date]]></item>
+				<item id="type"><![CDATA[select]]></item>
+				<item id="value"><![CDATA[6]]></item>
+				<item id="extra"><![CDATA[1 = Theo ngày
+2 = Theo tuần
+3 = Theo tháng
+4 = Theo năm
+5 = Top đăng bài
+6 = Thành viên mới]]></item>
+			</item>
+			<item id="13">
+				<item id="displayorder"><![CDATA[18]]></item>
+				<item id="title"><![CDATA[Cài đặt cấp độ hoạt động]]></item>
+				<item id="description"><![CDATA[(*) Đặt bản chất của cuộc gọi. Chẳng hạn như duy nhất: 1: 1, 2, 3 (khi tế bào thứ tư là bản chất của thiết lập)]]></item>
+				<item id="variable"><![CDATA[dig_rank]]></item>
+				<item id="type"><![CDATA[text]]></item>
+				<item id="value"><![CDATA[1,2,3]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="14">
+				<item id="displayorder"><![CDATA[17]]></item>
+				<item id="title"><![CDATA[Sắp xếp bài viết]]></item>
+				<item id="description"><![CDATA[(*) Sắp xếp theo thiết lập bản chất của bài]]></item>
+				<item id="variable"><![CDATA[dig_list]]></item>
+				<item id="type"><![CDATA[select]]></item>
+				<item id="value"><![CDATA[4]]></item>
+				<item id="extra"><![CDATA[1 = Số trả lời
+2 = Lượt xem
+3 = Bài Tinh hoa
+4 = Mới trả lời]]></item>
+			</item>
+			<item id="15">
+				<item id="displayorder"><![CDATA[16]]></item>
+				<item id="title"><![CDATA[Tab thứ 4]]></item>
+				<item id="description"><![CDATA[(*) Bài nóng hoặc bài Tinh hoa]]></item>
+				<item id="variable"><![CDATA[tid_day]]></item>
+				<item id="type"><![CDATA[number]]></item>
+				<item id="value"><![CDATA[7]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="16">
+				<item id="displayorder"><![CDATA[14]]></item>
+				<item id="title"><![CDATA[Thiết đặt các lệnh hiện thị]]></item>
+				<item id="description"><![CDATA[(*) Thiết lập cột thứ 4]]></item>
+				<item id="variable"><![CDATA[hot_dig]]></item>
+				<item id="type"><![CDATA[select]]></item>
+				<item id="value"><![CDATA[1]]></item>
+				<item id="extra"><![CDATA[1 = TOP bài viết
+2 = TOP trả lời]]></item>
+			</item>
+			<item id="17">
+				<item id="displayorder"><![CDATA[15]]></item>
+				<item id="title"><![CDATA[Sắp xếp]]></item>
+				<item id="description"><![CDATA[(*) Thiết đặt sắp xếp]]></item>
+				<item id="variable"><![CDATA[hot_list]]></item>
+				<item id="type"><![CDATA[select]]></item>
+				<item id="value"><![CDATA[2]]></item>
+				<item id="extra"><![CDATA[1 = Trả lời ít
+2 = Xem ít]]></item>
+			</item>
+			<item id="18">
+				<item id="displayorder"><![CDATA[13]]></item>
+				<item id="title"><![CDATA[Thiết lập chỉ cho bài của chuyên mục nào đó show lên TopX]]></item>
+				<item id="description"><![CDATA[(*) Điền vào fid của Chuyên mục(để trống là hiện toàn 4r)]]></item>
+				<item id="variable"><![CDATA[only_show]]></item>
+				<item id="type"><![CDATA[text]]></item>
+				<item id="value"><![CDATA[]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="19">
+				<item id="displayorder"><![CDATA[11]]></item>
+				<item id="title"><![CDATA[Thiết lập hiên tên tác giả trên TopX]]></item>
+				<item id="description"><![CDATA[(*) Thiết lập hiển thị tên tác giả ở cuối tên chủ đề không]]></item>
+				<item id="variable"><![CDATA[is_author]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[1]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="20">
+				<item id="displayorder"><![CDATA[12]]></item>
+				<item id="title"><![CDATA[Thiết lập ko cho bài của chuyên mục nào đó show lên TopX]]></item>
+				<item id="description"><![CDATA[(*) Điền vào fid của chuyên mục. Ví dụ: 1,24,5]]></item>
+				<item id="variable"><![CDATA[not_show]]></item>
+				<item id="type"><![CDATA[text]]></item>
+				<item id="value"><![CDATA[]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="21">
+				<item id="displayorder"><![CDATA[9]]></item>
+				<item id="title"><![CDATA[Chiều dài của tiêu đề]]></item>
+				<item id="description"><![CDATA[(*) Đơn vị là byte]]></item>
+				<item id="variable"><![CDATA[subject_length]]></item>
+				<item id="type"><![CDATA[number]]></item>
+				<item id="value"><![CDATA[60]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="22">
+				<item id="displayorder"><![CDATA[10]]></item>
+				<item id="title"><![CDATA[Màu sắc của tác giả]]></item>
+				<item id="description"><![CDATA[Màu sắc tên tác giả]]></item>
+				<item id="variable"><![CDATA[author_color]]></item>
+				<item id="type"><![CDATA[color]]></item>
+				<item id="value"><![CDATA[#95B9FF]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="23">
+				<item id="displayorder"><![CDATA[7]]></item>
+				<item id="title"><![CDATA[Chủ đề nổi bật]]></item>
+				<item id="description"><![CDATA[(*) Bật tắt chủ đề nổi bật]]></item>
+				<item id="variable"><![CDATA[highlight]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[1]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="24">
+				<item id="displayorder"><![CDATA[8]]></item>
+				<item id="title"><![CDATA[Mở cửa sổ mới khi bấm vào link]]></item>
+				<item id="description"><![CDATA[Chọn kiểu mở trang khi nhấp vào link]]></item>
+				<item id="variable"><![CDATA[link_window]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[1]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="25">
+				<item id="displayorder"><![CDATA[6]]></item>
+				<item id="title"><![CDATA[Hiệu ứng khi rê chuột vào]]></item>
+				<item id="description"><![CDATA[Hiệu ứng khi rê chuột vào tên bài viết]]></item>
+				<item id="variable"><![CDATA[propre]]></item>
+				<item id="type"><![CDATA[textarea]]></item>
+				<item id="value"><![CDATA[Diễn đàn: 
+Tiêu đề: 
+Bài viết: 
+Lượt xem:  
+ lần
+Đăng cuối: 
+Trả lời: ]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="26">
+				<item id="displayorder"><![CDATA[4]]></item>
+				<item id="title"><![CDATA[Tên Modunle]]></item>
+				<item id="description"><![CDATA[Thiết lập tên các Tab]]></item>
+				<item id="variable"><![CDATA[set_title]]></item>
+				<item id="type"><![CDATA[textarea]]></item>
+				<item id="value"><![CDATA[Hình ảnh
+Bài mới
+Trả lời
+Nổi bật
+Thành viên mới]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="27">
+				<item id="displayorder"><![CDATA[3]]></item>
+				<item id="title"><![CDATA[Cache Plugin]]></item>
+				<item id="description"><![CDATA[Chủ đề và thiết lập hình ảnh bộ nhớ cache đơn vị thời gian (giây).
+
+Note: The time required to achieve this [plug-in cache set or change the band (*) option] to take effect.]]></item>
+				<item id="variable"><![CDATA[cache_time]]></item>
+				<item id="type"><![CDATA[number]]></item>
+				<item id="value"><![CDATA[1]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="28">
+				<item id="displayorder"><![CDATA[32]]></item>
+				<item id="title"><![CDATA[Liên kết ảnh]]></item>
+				<item id="description"><![CDATA[Mỗi Link trên một dòng]]></item>
+				<item id="variable"><![CDATA[pic_urls]]></item>
+				<item id="type"><![CDATA[textarea]]></item>
+				<item id="value"><![CDATA[]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="29">
+				<item id="displayorder"><![CDATA[33]]></item>
+				<item id="title"><![CDATA[Hình ảnh tiêu đề]]></item>
+				<item id="description"><![CDATA[Tiêu đề của hình ảnh liên kết]]></item>
+				<item id="variable"><![CDATA[pic_titles]]></item>
+				<item id="type"><![CDATA[textarea]]></item>
+				<item id="value"><![CDATA[]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="30">
+				<item id="displayorder"><![CDATA[34]]></item>
+				<item id="title"><![CDATA[Chỉnh hình ảnh]]></item>
+				<item id="description"><![CDATA[Mỗi Link trên một dòng]]></item>
+				<item id="variable"><![CDATA[pic_links]]></item>
+				<item id="type"><![CDATA[textarea]]></item>
+				<item id="value"><![CDATA[]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="31">
+				<item id="displayorder"><![CDATA[35]]></item>
+				<item id="title"><![CDATA[Bật show ảnh]]></item>
+				<item id="description"><![CDATA[Bật chế độ show ảnh]]></item>
+				<item id="variable"><![CDATA[pic_on]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[1]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="32">
+				<item id="displayorder"><![CDATA[36]]></item>
+				<item id="title"><![CDATA[Số thành viên]]></item>
+				<item id="description"><![CDATA[Số thành viên mới được hiển thị]]></item>
+				<item id="variable"><![CDATA[user_num]]></item>
+				<item id="type"><![CDATA[number]]></item>
+				<item id="value"><![CDATA[10]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="33">
+				<item id="displayorder"><![CDATA[37]]></item>
+				<item id="title"><![CDATA[Giao diện]]></item>
+				<item id="description"><![CDATA[Sử dụng mã CSS:
+width:20px;background:#000;]]></item>
+				<item id="variable"><![CDATA[userdefinecss]]></item>
+				<item id="type"><![CDATA[text]]></item>
+				<item id="value"><![CDATA[]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="34">
+				<item id="displayorder"><![CDATA[38]]></item>
+				<item id="title"><![CDATA[Số bài hiển thị]]></item>
+				<item id="description"><![CDATA[Mặc định là 10 bài]]></item>
+				<item id="variable"><![CDATA[thread_num]]></item>
+				<item id="type"><![CDATA[number]]></item>
+				<item id="value"><![CDATA[10]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="35">
+				<item id="displayorder"><![CDATA[39]]></item>
+				<item id="title"><![CDATA[Duyệt kiểu Tab]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[tab_style]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[1]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="36">
+				<item id="displayorder"><![CDATA[40]]></item>
+				<item id="title"><![CDATA[Show tên chuyên mục]]></item>
+				<item id="description"><![CDATA[Hiển thị tên chuyên mục hay không]]></item>
+				<item id="variable"><![CDATA[tuantv_box]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[1]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+		</item>
+	</item>
+</root>

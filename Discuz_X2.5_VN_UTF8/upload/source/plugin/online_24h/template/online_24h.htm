@@ -1,0 +1,40 @@
+<!--{block return}-->
+		<!--{if $birthuser}-->	
+			<div id="birthday" class="bm oll">
+				<div class="bm_h">
+					<span class="o"><a href="forum.php?showoldetails=yes#online" title="Đóng/Mở"><img id="birthday_24h_img" src="{IMGDIR}/collapsed_no.gif" alt="Đóng/Mở" onclick="toggle_collapse('category_24h');"/></a></span>
+					<h3>
+						<strong>Cùng nâng ly chúc mừng các Thành viên có Sinh nhật trong hôm nay: Ngày $todate tháng $tomonth năm $toyear</strong>
+					</h3>
+				</div>
+				<dl id="birthday_24h" class="bm_c">
+					
+						<dd>
+<!--{loop $birthuser $result}-->
+ <a href="home.php?mod=space&uid=$result['authorid']"{$linkwindow} title="{$result['autitl']} [{$result['birthyear']}]" name="yyy"><img src='./uc_server/avatar.php?uid=$result['uid']&size='small' class='ava_border' style='width:16px; height:16px; padding:1px; border:#dddbd3 1px solid;'/>{$result['autitl']}</a>
+<!--{/loop}-->  </dd>
+				</dl>
+			</div>
+			<!--{/if}-->
+			
+			<div id="online24h" class="bm oll">
+				<div class="bm_h">
+					<span class="o"><a href="forum.php?showoldetails=yes#online" title="Đóng/Mở"><img id="category_24h_img" src="{IMGDIR}/collapsed_no.gif" alt="Đóng/Mở" onclick="toggle_collapse('category_24h');"/></a></span>
+					<h3>
+						<strong><a href="home.php?mod=space&do=friend&view=online&type=member" title="Thành viên đã Online ngày hôm nay:">Thành viên đã Online ngày hôm nay: </a>[$showcount]</strong>
+					</h3>
+				</div>
+				<dl id="category_24h" class="bm_c">
+					
+						<dd>
+						<ul class="cl">
+								<!--{loop $receiveshow $resultshow}-->
+								
+								
+								<a href="home.php?mod=space&uid=$resultshow['uid']"><img src='./uc_server/avatar.php?uid=$resultshow['uid']&size='small' class='ava_border' style='width:16px; height:16px; padding:1px; border:#dddbd3 1px solid;'/><font color="$resultshow['color']">$resultshow[username]</font></a>										
+							<!--{/loop}-->
+						</ul>
+					</dd>
+				</dl>
+			</div>
+<!--{/block}-->
