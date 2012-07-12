@@ -73,12 +73,12 @@ if($attackevasive & 8) {
 function securitymessage($subject, $message, $reload = TRUE, $form = FALSE) {
 	global $_G;
 	$scuritylang = array(
-		'attackevasive_1_subject' => '&#x9891;&#x7e41;&#x5237;&#x65b0;&#x9650;&#x5236;',
-		'attackevasive_1_message' => '&#x60a8;&#x8bbf;&#x95ee;&#x672c;&#x7ad9;&#x901f;&#x5ea6;&#x8fc7;&#x5feb;&#x6216;&#x8005;&#x5237;&#x65b0;&#x95f4;&#x9694;&#x65f6;&#x95f4;&#x5c0f;&#x4e8e;&#x4e24;&#x79d2;&#xff01;&#x8bf7;&#x7b49;&#x5f85;&#x9875;&#x9762;&#x81ea;&#x52a8;&#x8df3;&#x8f6c;&#x20;&#x2e;&#x2e;&#x2e;',
-		'attackevasive_2_subject' => '&#x4ee3;&#x7406;&#x670d;&#x52a1;&#x5668;&#x8bbf;&#x95ee;&#x9650;&#x5236;',
-		'attackevasive_2_message' => '&#x672c;&#x7ad9;&#x73b0;&#x5728;&#x9650;&#x5236;&#x4f7f;&#x7528;&#x4ee3;&#x7406;&#x670d;&#x52a1;&#x5668;&#x8bbf;&#x95ee;&#xff0c;&#x8bf7;&#x53bb;&#x9664;&#x60a8;&#x7684;&#x4ee3;&#x7406;&#x8bbe;&#x7f6e;&#xff0c;&#x76f4;&#x63a5;&#x8bbf;&#x95ee;&#x672c;&#x7ad9;&#x3002;',
-		'attackevasive_4_subject' => '&#x9875;&#x9762;&#x91cd;&#x8f7d;&#x5f00;&#x542f;',
-		'attackevasive_4_message' => '&#x6b22;&#x8fce;&#x5149;&#x4e34;&#x672c;&#x7ad9;&#xff0c;&#x9875;&#x9762;&#x6b63;&#x5728;&#x91cd;&#x65b0;&#x8f7d;&#x5165;&#xff0c;&#x8bf7;&#x7a0d;&#x5019;&#x20;&#x2e;&#x2e;&#x2e;'
+		'attackevasive_1_subject' => '<center>H&#7878; TH&#7888;NG B&#7842;O V&#7878; &#272;&#195; &#272;&#431;&#7906;C B&#7852;T.</center>',
+		'attackevasive_1_message' => '<center>B&#7841;n vui l&#242;ng &#273;&#7907;i gi&#226;y l&#225;t........ <br> Ho&#7863;c th&#7917; l&#7841;i thao t&#225;c v&#7915;a d&#249;ng. <br> (B&#7841;n n&#234;n thao t&#225;c ch&#7853;m khi chuy&#7875;n trang nh&#233;.) </center>',
+		'attackevasive_2_subject' => 'Truy c&#7853;p qua Proxy Server b&#7883; h&#7841;n ch&#7871;.',
+		'attackevasive_2_message' => 'Trang web c&#7911;a ch&#250;ng t&#244;i h&#7841;n ch&#7871; vi&#7879;c truy c&#7853;p qua m&#7897;t m&#225;y ch&#7911; trung gian. Xin vui l&#242;ng thi&#7871;t l&#7853;p k&#7871;t n&#7889;i tr&#7921;c ti&#7871;p',
+		'attackevasive_4_subject' => 'H&#7879; th&#7889;ng t&#7843;i l&#7841;i trang &#273;&#227; &#273;&#432;&#7907;c b&#7853;t.',
+		'attackevasive_4_message' => 'Ch&#224;o m&#7915;ng b&#7841;n &#273;&#7871;n v&#7899;i trang web c&#7911;a ch&#250;ng t&#244;i. Xin vui l&#242;ng ch&#7901; khi trang web &#273;&#432;&#7907;c t&#7843;i l&#7841;i.'
 	);
 
 	$subject = $scuritylang[$subject] ? $scuritylang[$subject] : $subject;

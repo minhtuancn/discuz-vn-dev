@@ -21,6 +21,9 @@ class table_security_failedlog extends discuz_table {
 	}
 
 	public function deleteDirtyLog() {
+		// 清理脏数据
+		// DB::delete($this->_table, 'lastfailtime = 0');
+		// DB::delete($this->_table, 'failcount >= 10');
 		DB::delete($this->_table, 'pid = 0 AND tid = 0 AND uid = 0 OR lastfailtime = 0 OR failcount >= 10');
 		return true;
 	}

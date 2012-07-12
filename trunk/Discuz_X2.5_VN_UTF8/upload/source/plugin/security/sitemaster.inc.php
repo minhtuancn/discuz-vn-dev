@@ -10,6 +10,7 @@ if (!defined('IN_DISCUZ')) {
 	exit('Access Denied');
 }
 
+// 非管理组员不能访问
 if ($_G['adminid'] <= 0) {
 	exit('Access Denied');
 }
@@ -22,6 +23,7 @@ $securityService = Cloud::loadClass('Service_Security');
 $securityClient = Cloud::loadClass('Service_Client_Security');
 
 $typeArray = array('1' => 'post', '2' => 'member');
+// 选择上报哪种类型的数据
 $operateType = 'member';
 $operateData = $securityService->getOperateData($operateType);
 if (count($operateData) == 0) {
@@ -51,3 +53,4 @@ if ($operateType == 'post') {
 	$res = $securityClient->securityReportOperation($operateType, $operateData);
 }
 $securityService->markasreported($operateType, $operateData);
+

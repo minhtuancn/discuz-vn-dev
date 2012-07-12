@@ -207,6 +207,11 @@ function discuzcode($message, $smileyoff, $bbcodeoff, $htmlon = 0, $allowsmilies
 			}
 			if(strpos($msglower, '[hide=') !== FALSE) {
 				$message = preg_replace("/\[hide=(\d+)\]\s*(.*?)\s*\[\/hide\]/ies", "creditshide(\\1,'\\2', $pid, $authorid)", $message);
+			//thêm vào để load imageshack.us minhtuancn
+
+			$message = preg_replace('#img[\d]+\.imageshack\.us#i', 'a.imageshack.us', $message);
+
+			//kết thúc thêm vào để load imageshack.us minhtuancn				
 			}
 		}
 	}
@@ -248,27 +253,33 @@ function discuzcode($message, $smileyoff, $bbcodeoff, $htmlon = 0, $allowsmilies
 	return $htmlon ? $message : nl2br(str_replace(array("\t", '   ', '  '), array('&nbsp; &nbsp; &nbsp; &nbsp; ', '&nbsp; &nbsp;', '&nbsp;&nbsp;'), $message));
 }
 
+// Bat dau sua ma link  out
 function parseurl($url, $text, $scheme) {
-	global $_G;
-	if(!$url && preg_match("/((https?|ftp|gopher|news|telnet|rtsp|mms|callto|bctp|thunder|qqdl|synacast){1}:\/\/|www\.)[^\[\"']+/i", trim($text), $matches)) {
-		$url = $matches[0];
-		$length = 65;
-		if(strlen($url) > $length) {
-			$text = substr($url, 0, intval($length * 0.5)).' ... '.substr($url, - intval($length * 0.3));
-		}
-		return '<a href="'.(substr(strtolower($url), 0, 4) == 'www.' ? 'http://'.$url : $url).'" target="_blank">'.$text.'</a>';
-	} else {
-		$url = substr($url, 1);
-		if(substr(strtolower($url), 0, 4) == 'www.') {
-			$url = 'http://'.$url;
-		}
-		$url = !$scheme ? $_G['siteurl'].$url : $url;
-		return '<a href="'.$url.'" target="_blank">'.$text.'</a>';
-	}
+        global $_G;
+        if(!$url && preg_match("/((https?|ftp|gopher|news|telnet|rtsp|mms|callto|bctp|thunder|qqdl|synacast){1}:\/\/|www\.)[^\[\"']+/i", trim($text), $matches)) {
+                $url = $matches[0];
+                $length = 65;
+                if(strlen($url) > $length) {
+                        $text = substr($url, 0, intval($length * 0.5)).' ... '.substr($url, - intval($length * 0.3));
+                }
+                $url = base64_encode($url); // Không edit dòng này
+                return '[<a href="link.php?referal='.(substr(strtolower($url), 0, 4) == 'www.' ? 'http://'.$url : $url).'=" target="_blank" title="'.base64_decode($url).'">Link <img src="source/js/link_out.gif" height="11" width="8" boder="0"></a>]';// Có thể edit nếu hiểu biết
+        
+        } else {
+                $url = substr($url, 1);
+                if(substr(strtolower($url), 0, 4) == 'www.') {
+                        $url = 'http://'.$url;
+                }
+                
+                $url = !$scheme ? $_G['siteurl'].$url : $url;
+                $url = base64_encode($url); // Không edit dòng này
+                return '<a href="link.php?referal='.(substr(strtolower($url), 0, 4) == 'www.' ? 'http://'.$url : $url).'=" target="_blank" title="'.base64_decode($url).'">'.$text.' <img src="source/js/link_out.gif" height="11" width="8" boder="0"></a>';// Có thể edit nếu hiểu biết
+        }
 }
 
+//ket thuc sua ma link out
 function parseflash($w, $h, $url) {
-	$w = !$w ? 550 : $w;
+	$w = !$w ? 500 : $w;
 	$h = !$h ? 400 : $h;
 	preg_match("/((https?){1}:\/\/|www\.)[^\[\"']+/i", $url, $matches);
 	$url = $matches[0];
@@ -500,8 +511,12 @@ function parseflv($url, $width = 0, $height = 0) {
 			}
 		}
 	} elseif(strpos($lowerurl, 'www.youtube.com/watch?') !== FALSE) {
+	// thêm hàm để sửa lỗi url không nhận minhtuancn
+	
+	// thêm hàm để sửa lỗi url không nhận minhtuancn
 		if(preg_match("/http:\/\/www.youtube.com\/watch\?v=([^\/&]+)&?/i", $url, $matches)) {
-			$flv = 'http://www.youtube.com/v/'.$matches[1].'&hl=zh_CN&fs=1';
+		//sửa info trong video
+			$flv = 'http://www.youtube.com/v/'.$matches[1].'&hl=vi_VN&amp;rel=0&fs=1&has_cc=true&showinfo=0';
 			if(!$width && !$height) {
 				$str = file_get_contents($url, false, $ctx);
 				if(!empty($str) && preg_match("/'VIDEO_HQ_THUMB':\s'(.+?)'/i", $str, $image)) {
@@ -511,6 +526,485 @@ function parseflv($url, $width = 0, $height = 0) {
 				}
 			}
 		}
+} elseif(strpos($lowerurl, 'http://youtu.be/') !== FALSE) {
+
+		
+
+		if(preg_match("/http:\/\/youtu.be\/([^\/&]+)&?/i", $url, $matches)) {
+
+			$flv = 'http://www.youtube.com/v/'.$matches[1].'&hl=vi_VN&amp;rel=0&fs=1&has_cc=true&showinfo=0';
+
+			if(!$width && !$height) {
+
+				$str = file_get_contents($url);
+
+				if(!empty($str) && preg_match("/'VIDEO_HQ_THUMB':\s'(.+?)'/i", $str, $image)) {
+
+					$url = substr($image[1], 0, strrpos($image[1], '/')+1);
+
+					$filename = substr($image[1], strrpos($image[1], '/')+3);
+
+					$imgurl = $url.$filename;
+
+				}
+
+			}
+
+		}
+
+			
+
+		
+
+//// Playlist Youtube
+
+
+
+} elseif(strpos($lowerurl, 'http://www.youtube.com/playlist?list') !== FALSE) {
+
+		if(preg_match("/http:\/\/www.youtube.com\/playlist\?list=PL([^\/&]+)&?/i", $url, $matches)) {
+
+		$flv = 'http://www.youtube.com/embed/videoseries?list=PL'.$matches[1].'';
+
+		$imgurl = 'http://start.go7s.com/images/Go7s.tv_ico.gif';	
+
+		}
+
+//		
+
+//############################# Bat dau Them nhaccuatui minhtuancn http://go7s.com##############################//
+
+	} elseif(strpos($lowerurl, 'http://www.nhaccuatui.com/nghe?m') !== FALSE) {
+
+		if(preg_match("/http:\/\/www.nhaccuatui.com\/nghe\?M=([^\/&]+)&?/i", $url, $matches)) {
+
+			$flv = 'http://www.nhaccuatui.com/m/'.$matches[1].'';
+
+			$imgurl = 'http://start.go7s.com/images/Go7s.tv_ico.gif';	
+
+		}
+
+
+
+//############################# Ket thuc nhaccuatui minhtuancn http://go7s.com##############################//
+
+
+
+////////////////////////////them nhaccuatui playlist minhtuancn http://go7s.com////////////////////////////
+
+	} elseif(strpos($lowerurl, 'http://www.nhaccuatui.com/nghe?l') !== FALSE) {
+
+		if(preg_match("/http:\/\/www.nhaccuatui.com\/nghe\?L=([^\/&]+)&?/i", $url, $matches)) {
+
+			$flv = 'http://www.nhaccuatui.com/l/'.$matches[1].'';
+
+			$imgurl = 'http://start.go7s.com/images/Go7s.tv_ico.gif';	
+
+	
+
+		}
+
+
+
+////////////////////////////ket thuc nhaccuatui playlist minhtuancn http://go7s.com////////////////////////////
+
+
+
+////////////////////////////them nhaccuatui mv4u minhtuancn http://go7s.com////////////////////////////
+
+	} elseif(strpos($lowerurl, 'http://www.nhaccuatui.com/mv4u/') !== FALSE) {
+
+		if(preg_match("/xem-clip\/([^\/&]+)/i", $url, $matches)) {
+
+			$flv = 'http://www.nhaccuatui.com/mv/xem-clip/'.$matches[1].'';
+
+			$imgurl = 'http://start.go7s.com/images/Go7s.tv_ico.gif';	
+
+	
+
+		}
+
+
+
+////////////////////////////ket thuc nhaccuatui mv4u minhtuancn http://go7s.com////////////////////////////
+
+
+
+////////////////them nhacso.net minhtuancn http://go7s.com
+
+	} elseif(strpos($lowerurl, 'http://nhacso.net/nghe-nhac/') !== FALSE) {
+
+		$str = file_get_contents($url);
+
+		$media_id = explode('[FLASH]',$str);
+
+		$media_id = explode('[/FLASH]',$media_id[1]);
+
+		$media_id=$media_id[0];
+
+			$flv = $media_id;
+
+			$imgurl = 'http://start.go7s.com/images/Go7s.tv_ico.gif';	
+
+
+
+
+
+		//nhacso video
+
+		
+
+	} elseif(strpos($lowerurl, 'http://nhacso.net/xem-video/') !== FALSE) {
+
+//$media_id=substr($url, -13, 13); // f
+
+//$media_id2=substr($media_id, 0, 8); // f \/b\/
+
+		if(preg_match("/http:\/\/nhacso.net\/xem-video\/([^\/&]+)&?/i", $url, $matches))
+
+			{
+
+$media_id=$matches[1];
+
+$media_id=substr($url, -13, 13); // f
+
+$media_id2=substr($media_id, 0, 8); // f \/b\/
+
+			$flv = 'http://st.nhacso.net/flash/v61/videoEmbed.swf?xmlPath=http://nhacso.net/flash/video/xnl/1/id/'.$media_id2.'&colorAux=0x0099ff&colorMain=0x000000&colorBorder=0xcccccc&mAuto=false&typePlayer=single';
+
+			$imgurl = 'http://start.go7s.com/images/Go7s.tv_ico.gif';	
+
+
+
+		}		
+
+// Nhac so Album 
+
+
+
+} elseif(strpos($lowerurl, 'http://nhacso.net/nghe-album/') !== FALSE) {
+
+//$media_id=substr($url, -13, 13); // f
+
+//$media_id2=substr($media_id, 0, 8); // f \/b\/
+
+		if(preg_match("/http:\/\/nhacso.net\/nghe-album\/([^\/&]+)&?/i", $url, $matches))
+
+			{
+
+$media_id=$matches[1];
+
+$media_id=substr($url, -13, 13); // f
+
+$media_id2=substr($media_id, 0, 8); // f \/b\/
+
+			$flv = 'http://st.nhacso.net/flash/v62/embedPlaylistjs.swf?xmlPath=http://nhacso.net/flash/album/xnl/1/uid/X1lVV0NabwcEAw==,'.$media_id2.',Xg==,1322218707&adsLink=&colorAux=0x017CA6&colorMain=0xafafaf&colorBorder=0x333333&typePlayer=playlist&mAuto=false';
+
+			$imgurl = 'http://start.go7s.com/images/Go7s.tv_ico.gif';	
+
+
+
+		}		
+
+
+
+//Nghe Playlist 
+
+		} elseif(strpos($lowerurl, 'http://nhacso.net/nghe-playlist/') !== FALSE) {
+
+//$media_id=substr($url, -13, 13); // f
+
+//$media_id2=substr($media_id, 0, 8); // f \/b\/
+
+		if(preg_match("/http:\/\/nhacso.net\/nghe-playlist\/([^\/&]+)&?/i", $url, $matches))
+
+			{
+
+$media_id=$matches[1];
+
+$media_id=substr($url, -13, 13); // f
+
+$media_id2=substr($media_id, 0, 8); // f \/b\/
+
+			$flv = 'http://st.nhacso.net/flash/v62/embedPlaylistjs.swf?xmlPath=http://nhacso.net/flash/playlist/xnl/1/uid/X1tXU0NZaQsFCA==,'.$media_id2.',Xg==,1322220469&adsLink=&colorAux=0x017CA6&colorMain=0xafafaf&colorBorder=0x333333&typePlayer=playlist&mAuto=false';
+
+			$imgurl = 'http://start.go7s.com/images/Go7s.tv_ico.gif';	
+
+		}		
+
+//ket thuc them nhacso.net minhtuancn http://go7s.com
+
+		
+
+////////////////////////////start Zing Video media///////////////////////////////
+
+		
+
+	} elseif(strpos($lowerurl, 'mp3.zing.vn/video-clip/') !== FALSE) {
+
+
+
+	
+		$str = file_get_contents($url);
+		$media_id = explode('[FLASH]',$str);
+		$media_id = explode('[/FLASH]',$media_id[1]);
+		$media_id=$media_id[0];
+		$flv = $media_id;
+		$imgurl = 'http://start.go7s.com/images/Go7s.tv_ico.gif';	
+
+
+
+///////ket thuc them zing Video minhtuancn http://go7s.com ////////////////////////////
+
+
+
+
+
+
+
+////////////////////////////start Zing mp3 media minhtuancn///////////////////////////////
+
+		
+
+	} elseif(strpos($lowerurl, 'http://mp3.zing.vn/bai-hat/') !== FALSE) {
+
+
+
+		if(preg_match("/http:\/\/mp3.zing.vn\/bai-hat\/([^\/&]+)&?/i", $url, $matches))
+
+			{
+
+			$str = file_get_contents($url);
+
+						//Thay player
+
+		if(!empty($str) && preg_match("/mp3.zing.vn\/xml\/song-xml\/([^\/&]+)\&/i", $str, $image)) {
+
+					$urlmp3zing = trim($image[1]);
+
+		}
+
+			//thay bang player khac ne.
+
+			$flv ='http://static.mp3.zing.vn/skins/gentle/flash/mp3player.swf?xmlURL=http://mp3.zing.vn/xml/song/'.$urlmp3zing.'&amp;songID=0&amp;_mp3=&amp;autoplay=false&amp;wmode=transparent quality=high type=application/x-shockwave-flash';
+
+			$imgurl = 'http://start.go7s.com/images/Go7s.tv_ico.gif';	
+
+		}		
+
+		
+
+///////ket thuc them zing mp3 minhtuancn http://go7s.com ////////////////////////////
+
+
+
+////////////////////////////start Zing album media minhtuancn///////////////////////////////
+
+		
+
+	} elseif(strpos($lowerurl, 'http://mp3.zing.vn/album') !== FALSE) {
+
+
+		$str = file_get_contents($url);
+		$media_id = explode('[FLASH]',$str);
+		$media_id = explode('[/FLASH]',$media_id[1]);
+		$media_id=$media_id[0];
+		$flv = $media_id;
+		$imgurl = 'http://start.go7s.com/images/Go7s.tv_ico.gif';	
+		
+
+/////////////////////////////ket thuc them zing album minhtuancn http://go7s.com ////////////////////////////
+
+
+
+////////////////////////////start Video Zing media minhtuancn///////////////////////////////
+
+} elseif(strpos($lowerurl, 'http://star.zing.vn/star/phong-thu/') !== FALSE) {
+
+		if(preg_match("/http:\/\/star.zing.vn\/star\/phong-thu\/([^\/&]+)/i", $url, $matches)) {
+
+
+
+		$str = file_get_contents($url);
+
+		$media_id = explode('song_id: "',$str);
+
+		$media_id = explode('",',$media_id[1]);
+
+		$media_id=$media_id[0];
+
+				
+
+			$flv = 'http://star.zing.vn/flash/zingStarPlayer.swf?username=&status=karaoke&song_id='.$media_id.'&recorder_id=&urlDemo=http://image.star.zing.vn/flash/&domain=http://star.zing.vn&filetype=.swf';
+
+			$imgurl = 'http://start.go7s.com/images/Go7s.tv_ico.gif';	
+
+		}
+
+		
+
+
+
+//Karaoke
+
+	} elseif(strpos($lowerurl, 'http://video.zing.vn/video/clip') !== FALSE) {
+
+		if(preg_match("/http:\/\/video.zing.vn\/video\/clip\/([^\/&]+)/i", $url, $matches)) {
+
+
+
+		$str = file_get_contents($url);
+
+		$media_id = explode('<link rel="video_src" href="',$str);
+
+		$media_id = explode('"/>',$media_id[1]);
+
+		$media_id=$media_id[0];
+
+				
+
+			$flv = $media_id;
+
+		$media_id = explode('<link rel="image_src" href="',$str);
+
+		$media_id = explode('" />',$media_id[1]);
+
+			$imgurl = $media_id;	
+
+		}
+
+		
+
+////////////// San dien Thanh vien hat 
+
+	} elseif(strpos($lowerurl,'http://star.zing.vn/star/san-dien/') !== FALSE) {
+
+		$str = file_get_contents($url);
+
+		if(preg_match("/song_id\=([^\/&]+)\&/i", $str, $matches)) {
+
+		$song_id=$matches[1];
+
+		}
+
+		if(preg_match("/recorder_id\=([^\/&]+)\&/i", $str, $matches)) {
+
+		$recorder_id=$matches[1];
+
+		}
+
+			$flv = 'http://star.zing.vn/flash/zingStarPlayer.swf?username=&status=karaokeshow&song_id='.$song_id.'&recorder_id='.$recorder_id.'&urlDemo=http://image.star.zing.vn/flash/&domain=http://star.zing.vn';
+
+			$imgurl = 'http://start.go7s.com/images/Go7s.tv_ico.gif';	
+
+//############################# Ket thuc Zing Star minhtuancn http://go7s.com##############################//
+
+
+
+
+
+
+
+
+
+//############################# Bat dau Them Clip.vn minhtuancn http://go7s.com##############################//
+
+// Clip binh thuong
+
+	} elseif(strpos($lowerurl, 'http://clip.vn/watch') !== FALSE) {
+
+	
+
+		if(!empty($str) && preg_match("/clip.vn\/watch\/([^\/&]+)\?/i", $url, $matches)) {
+
+			$media_id=$matches[1];
+
+			$media_id=substr($media_id, -4, 4); // f
+
+			$flv = 'http://clip.vn/w/'.$media_id.'';
+
+			$imgurl = 'http://start.go7s.com/images/Go7s.tv_ico.gif';	
+
+		}
+
+		
+
+//		
+
+// Phim dạng link http://phim.clip.vn/watch/Hung-Dong-The-Twilight-Saga-Breaking-Dawn-Tap-1,hwRJ
+
+	} elseif(strpos($lowerurl, 'phim.clip.vn/watch') !== FALSE) {
+
+			$str = file_get_contents($url);
+
+			if(!empty($str) && preg_match("/clip.vn\/w\/([^\/&]+)\,/i", $str, $matches)) {
+
+			//if(preg_match("/http:\/\/phim.clip.vn\/watch\/([^\/&]+)&?/i", $url, $matches)) {
+
+			$flv = 'http://clip.vn/w/'.$matches[1].'';
+
+			$imgurl = 'http://start.go7s.com/images/Go7s.tv_ico.gif';	
+
+		}
+
+		
+
+//				
+
+//############################# Ket thuc Them Clip.vn minhtuancn http://go7s.com##############################//
+
+
+
+////////////////////////////start VTV Media minhtuancn/////////////////////////////////////////////////
+
+	} elseif(strpos($lowerurl, 'media.vtv.vn/Media/Get/') !== FALSE) {
+
+		if(preg_match("/http:\/\/media.vtv.vn\/Media\/Get/\/([^\/&]+)&?/i", $url, $matches))
+
+			{
+
+		$str = file_get_contents($url);
+
+			if(!empty($str) && preg_match("/MediaFile\/([^&]+)\&/i", $str, $urlvod)) {
+
+			$url1 = trim($urlvod[1]);
+
+			}
+
+			if(!empty($str) && preg_match("/rtmp\:([^&]+)\&/i", $str, $urlsv)) {
+
+			$url2 = trim($urlsv[1]);
+
+			}
+
+	$flv ='http://static.mp3.zing.vn/skins/mp3_main/flash/mp3playlist.swf?xmlURL=http://mp3.zing.vn/xml/playlist/'.$urlzingalbum.'&autoplay=true&wmode=transparent';
+
+	$imgurl = 'http://start.go7s.com/images/Go7s.tv_ico.gif';	
+
+	}		
+
+///////////////////////////////////////ket thuc them VTV Media minhtuancn http://go7s.com ////////////////////////////
+
+////////////////////////////start zippyshare.com ///////////////////////////////
+
+		
+
+	} 
+	
+	elseif(strpos($lowerurl, 'zippyshare') !== FALSE) {
+
+		$str = file_get_contents($url);
+		$media_id = explode('<meta property="og:video" content="',$str);
+		$media_id = explode('" />',$media_id[1]);
+		$media_id=$media_id[0];
+		$flv = $media_id;
+		$imgurl = 'http://start.go7s.com/images/Go7s.tv_ico.gif';	
+
+
+		
+
+////////////////////////////ket thuc zippyshare.com ///////////////////////////////
+	
 	} elseif(strpos($lowerurl, 'tv.mofile.com/') !== FALSE) {
 		if(preg_match("/http:\/\/tv.mofile.com\/([^\/]+)/i", $url, $matches)) {
 			$flv = 'http://tv.mofile.com/cn/xplayer.swf?v='.$matches[1];
