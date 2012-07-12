@@ -1,0 +1,184 @@
+<!--{block return}-->
+<!-- XShow v1.2.70 -->
+<script type="text/javascript" src="source/plugin/kk_xshow/images/title.js"></script>
+<script type="text/javascript">
+	<!--
+	function xshowShow(id) {
+	for(i = 1;i <= {$tab_num};i++) {
+		if(i == id){
+			$('kk_xshow_tab_'+i).className='tab_cur';
+			$('kk_xshow_cont_'+i).style.display='';
+			continue;
+		}
+		try {
+			$('kk_xshow_tab_'+i).className='tab';
+			$('kk_xshow_cont_'+i).style.display='none';
+		} catch(e) {
+			return true;
+		}
+	}
+}
+	//-->
+</script>
+<style type="text/css">
+<!-- 
+.kk_xshow{width:{WRAPWIDTH};margin:0px 0px 5px 0px;padding:0px 0px 5px 0px;background:#FFFFFF;border:1px solid #CCCCCC;}
+.kk_xshow table {background:{WRAPBG};text-align:left;border:none;}
+.kk_xshow .header td{text-align:center;height:25px;border-bottom:1px solid {COMMONBORDER};{$userdefinecss}}
+.kk_xshow .border{}
+.kk_xshow .txt_con td{padding:5px;}
+.kk_xshow .txt td{padding:0;vertical-align:top;}
+.kk_xshow .txt li{width:100%;height:20px;background:url('source/plugin/kk_xshow/images/listbg.gif') repeat-x;overflow:hidden; *margin:0 0 0 -16px; list-style:none}
+.kk_xshow .txt span{float:right;}
+.kk_xshow .fiveline{border-top:1px solid {COMMONBORDER};padding: 0 5px;}
+.kk_xshow .fiveline img{width:48px;heigth:48px;}
+.kk_xshow .tabs {cursor:pointer; margin:1px 0; border-left:1px solid {COMMONBORDER};}
+.tabs li{
+			float:left;
+			margin:0 2px -1px 0;
+			position:relative;
+			float:left; 
+			cursor:pointer; 
+			line-height:25px; 
+			height:25px; 
+			padding:2px 8px; 
+			border-bottom-left-radius: 0px 0px;
+			border-bottom-right-radius: 0px 0px;
+			border-top-left-radius: 1px 1px;
+			border-top-right-radius: 1px 1px;
+
+			-moz-border-radius-bottomleft:0;
+			-moz-border-radius-bottomright:0;
+			-moz-border-radius-topleft:1px;
+			-moz-border-radius-topright:1px;
+			
+  			-webkit-border-top-left-radius: 1px;
+  			-webkit-border-top-right-radius: 1px;
+  			-webkit-border-bottom-left-radius: 0px;
+  			-webkit-border-bottom-right-radius: 0px;
+			
+			background:#F4F4F4 repeat-x scroll 0 0;
+			border:1px solid #DDD;
+			display:block;
+			padding:0 10px;
+			{DXHSUBFONT}
+}
+.kk_xshow .tab_cur {cursor:pointer;font-weight:700;color:#005DC3;background:#FFF;border-bottom-color:#FFF;margin:0 4px -1px 0;position:relative;}
+.popupmenu_popup {
+background:none repeat scroll 0 0 #FEFEFE;
+border:1px solid #7FCAE2;
+overflow:hidden;
+padding:10px;
+text-align:left;
+}
+.txt_con {border-bottom:1px solid #CDCDCD;}
+.kk_xshow .kk_avatar{float:left;margin:5px 0 0 0;width:15px;border:1px solid #DDDDDD;text-align:center;text-valign:center;display:inline;-moz-border-radius:2px;}
+.kk_a{float:left;margin:0 0 0 4px;padding:5px 0 0 0;width:54px;height:70px;overflow:hidden;}
+-->
+</style>
+<div class="kk_xshow">
+  <table cellspacing="0" cellpadding="0" width="100%" align="center">
+	  <tr class="header"><td class="border">
+				  <!--{if $pic_on}--><ul class="tabs"><li class="tab_cur">{$x_title[0]}</li></ul></td><td class="border"><!--{/if}--><ul class="tabs">
+				  <li id="kk_xshow_tab_1" class="tab_cur" onmouseover="xshowShow(1);">{$x_title[1]}</li>
+				<li id="kk_xshow_tab_2" class="tab" onmouseover="xshowShow(2);">{$x_title[2]}</li>
+				<li id="kk_xshow_tab_3" class="tab" onmouseover="xshowShow(3);">{$x_title[3]}</li>
+<!--{if !$kk_xshow['five_list']}-->
+				<li id="kk_xshow_tab_4" class="tab" onmouseover="xshowShow(4);">{$x_title[4]}</li>
+<!--{/if}-->
+	</li></ul></td>
+    </tr>
+    <tr class="txt_con">
+	<!--{if $pic_on}-->
+	<td width="40%" class="border">
+        <script type="text/javascript">
+          var config = '{$kk_xshow['pic_cut']}|0xffffff|{$pic_color}|50|0xffffff|{$pic_color}|0x000000';
+          var files = '{$picpics}';
+	  var links = '{$piclinks}';
+	  var texts = '{$pictexts}';
+	  document.write('<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0" width="100%" height="198">');
+          document.write('<param name="movie" value="source/plugin/kk_xshow/images/focus.swf" />');
+          document.write('<param name="quality" value="high" />');
+          document.write('<param name="menu" value="false" />');
+          document.write('<param name="wmode" value="transparent" />');
+          document.write('<param name="FlashVars" value="config='+config+'&bcastr_flie='+files+'&bcastr_link='+links+'&bcastr_title='+texts+'" />');
+	  document.write('<embed src="source/plugin/kk_xshow/images/focus.swf" wmode="opaque" FlashVars="config='+config+'&bcastr_flie='+files+'&bcastr_link='+links+'&bcastr_title='+texts+'" menu="false" quality="high" width="100%" height="198}" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />');
+          document.write('</object>');
+        </script>
+	</td>
+	<!--{/if}-->
+	<td width="55%" class="border">
+		<table cellpadding="0" cellspacing="0" class="txt">
+			<tr>
+				<td><div style="height:{$thread_height}px;overflow:hidden;"><img src="source/plugin/kk_xshow/images/list.gif" alt="" /></div></td>
+				<td width="100%">
+					<!--{if $newPost}-->
+					<div id="kk_xshow_cont_1" style="">
+						<!--{loop $newPost $thread}-->
+						<li >
+						<!--{if $kk_xshow['is_author']}--><span><a href="home.php?mod=space.php&uid=$thread['authorid']"{$linkwindow} style="color:{$author_color}">[{$thread['authors']}]</a></span><!--{/if}-->
+						<!--{if $thread['replies']}-->
+<!--{if $kk_xshow['tuantv_box']}-->[<a href="$thread['fid']-1/$thread['tuantv'].html" style="font-weight:700; color:#666666">$thread['name']</a>]&nbsp;&nbsp;<!--{/if}--><a href="forum.php?mod=viewthread&tid=$thread['tid']"{$thread['highlight']}{$linkwindow} title="{$propre[0]}$thread['name']\n{$propre[1]}$thread['subject']\n{$propre[2]}$thread['author'] ($thread['date'])\n{$propre[3]}$thread['views']{$propre[4]}\n{$propre[5]}$thread['lastposter'] ($thread['retime'])\n{$propre[5]}$thread['replies']{$propre[4]}" name="xxx">$thread['view_subject']</a>(<a style="font-style:italic; font-size:9px" title="Tac gia">$thread['date']</a>)
+						<!--{else}-->
+                <!--{if $kk_xshow['tuantv_box']}-->[<a href="$thread['fid']-1/$thread['tuantv'].html" style="font-weight:700; color:#666666">$thread['name']</a>]&nbsp;&nbsp;<!--{/if}--><a href="forum.php?mod=viewthread&tid=$thread['tid']"{$thread['highlight']}{$linkwindow} title="{$propre[0]}$thread['name']\n{$propre[1]}$thread['subject']\n{$propre[2]}$thread['author'] ($thread['date'])\n{$propre[3]}$thread['views']{$propre[4]}\n{$propre[6]}" name="xxx">$thread['view_subject']</a>(<a style="font-style:italic; font-size:9px" title="Tac gia">$thread['date']</a>)
+						<!--{/if}-->
+						</li>
+						<!--{/loop}-->
+					</div>
+					<!--{/if}-->
+
+					<div id="kk_xshow_cont_2" style="display:none;">
+					<!--{if $newReply}-->
+						<!--{loop $newReply $thread}-->
+						<li>
+						<!--{if $kk_xshow['is_author']}--><span><a href="home.php?mod=space&username=$thread['lastposters_klxy']"{$linkwindow} style="color:{$author_color}">[{$thread['lastposters']}]</a></span>
+						<!--{/if}--><!--{if $kk_xshow['tuantv_box']}-->[<a href="$thread['fid']-1/$thread['tuantv'].html" style="font-weight:700; color:#666666">$thread['name']</a>]&nbsp;&nbsp;<!--{/if}--><a href="forum.php?mod=redirect&tid=$thread['tid']&goto=lastpost#lastpost"{$thread['highlight']}{$linkwindow} title="{$propre[0]}$thread['name']\n{$propre[1]}$thread['subject']\n{$propre[2]}$thread['author'] ($thread['date'])\n{$propre[3]}$thread['views']{$propre[4]}\n{$propre[5]}$thread['lastposter'] ($thread['retime'])\n{$propre[5]}$thread['replies']{$propre[4]}" name="xxx">$thread['view_subject']</a>(<a style="font-style:italic; font-size:9px" title="Tac gia">$thread['retime']</a>)
+						</li>
+						<!--{/loop}-->
+					<!--{/if}-->
+					</div>
+
+					<div id="kk_xshow_cont_3" style="display:none;">
+					<!--{if $ObjArray}-->
+						<!--{loop $ObjArray $thread}-->
+						<li>
+						<!--{if $kk_xshow['is_author']}--><span><a href="home.php?mod=space&uid=$thread['authorid']"{$linkwindow} style="color:{$author_color}">[{$thread['authors']}]</a></span><!--{/if}-->
+                				<!--{if $kk_xshow['tuantv_box']}-->[<a href="$thread['fid']-1/$thread['tuantv'].html" style="font-weight:700; color:#666666">$thread['name']</a>]&nbsp;&nbsp;<!--{/if}--><a href="forum.php?mod=viewthread&tid=$thread['tid']"{$thread['highlight']}{$linkwindow} title="{$propre[0]}$thread['name']\n{$propre[1]}$thread['subject']\n{$propre[2]}$thread['author'] ($thread['date'])\n{$propre[3]}$thread['views']{$propre[4]}\n{$propre[5]}$thread['lastposter'] ($thread['retime'])\n{$propre[5]}$thread['replies']{$propre[4]}" name="xxx">$thread['view_subject']</a>(<a style="font-style:italic; font-size:9px" title="Tac gia">$thread['date']</a>)
+						
+						</li>
+						<!--{/loop}-->
+					<!--{/if}-->
+					</div>
+
+					<div id="kk_xshow_cont_4" style="display:none;">
+					<!--{if $postStar && !$kk_xshow['five_list']}-->
+						<!--{loop $postStar $result}-->
+						<li>
+						<span style="color:{$authnum_color}">[{$result['num']}]</span><a href="home.php?mod=space&uid=$result['authorid']"{$linkwindow} title="$result['autitl'] ($result['num'])" name="xxx">$result['author']</a>
+						</li>
+						<!--{/loop}-->
+					<!--{/if}-->
+					</div>
+				</td>
+			</tr>
+
+		</table>
+	</td>  
+</tr>
+			<!--{if $postStar && $kk_xshow['five_list']}-->
+			<tr>
+				<td colspan="2">
+					<div class="newimg"><img src="source/plugin/kk_xshow/images/newshy.jpg"  align="left" width="23px" height="60px"/></div>
+					<!--{loop $postStar $result}-->
+					<div class="kk_a"><ul class="avt y" style="float:left;"><a href="home.php?mod=space&uid=$result['authorid']"{$linkwindow} name="xxx" title="{$result['autitl']} [{$result['num']}]">$result['avatar']</a><ul>
+								<ul style="text-align:center;"><a href="home.php?mod=space&uid=$result['authorid']"{$linkwindow} title="{$result['autitl']} [{$result['num']}]" name="xxx">{$result['author']}</a></ul>
+					</div>
+					<!--{/loop}-->
+				</td>
+			</tr>
+			<!--{/if}-->
+</table>
+</div>
+
+<!-- kk_xshow end -->
+<!--{/block}-->

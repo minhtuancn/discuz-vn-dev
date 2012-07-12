@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<item id="Title"><![CDATA[Discuz! Plugin]]></item>
+	<item id="Version"><![CDATA[Xpreria]></item>
+	<item id="Time"><![CDATA[2011-06-06 15:23]]></item>
+	<item id="From"><![CDATA[24h online (http://7sac.org/)]]></item>
+	<item id="Data">
+		<item id="plugin">
+			<item id="available"><![CDATA[1]]></item>
+			<item id="adminid"><![CDATA[1]]></item>
+			<item id="name"><![CDATA[Online 24h]]></item>
+			<item id="identifier"><![CDATA[online_24h]]></item>
+			<item id="description"><![CDATA[24h online - CODE by Mr.LeThinh@yahoo.com]]></item>
+			<item id="datatables"><![CDATA[]]></item>
+			<item id="directory"><![CDATA[online_24h/]]></item>
+			<item id="copyright"><![CDATA[7SAC.ORG]]></item>
+			<item id="version"><![CDATA[Xpreria]]></item>
+			<item id="__modules">
+				<item id="0">
+					<item id="name"><![CDATA[online_24h]]></item>
+					<item id="menu"><![CDATA[]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[11]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[0]]></item>
+				</item>
+			</item>
+		</item>
+		<item id="version"><![CDATA[Xpreria]]></item>
+	</item>
+</root>

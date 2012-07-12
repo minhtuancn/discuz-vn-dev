@@ -15,6 +15,4 @@ if ($_POST['formhash'] != formhash()) {
 }
 
 $securityService = Cloud::loadClass('Service_Security');
-// 每次ajax访问这个脚本的时候重试一条数据
 $securityService->retryReportData('3');
-

@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<root>
+	<item id="Title"><![CDATA[Discuz! Plugin]]></item>
+	<item id="Version"><![CDATA[X2.5 RC]]></item>
+	<item id="Time"><![CDATA[2012-03-14 06:58]]></item>
+	<item id="From"><![CDATA[Discuz! Board (http://localhost/comcn/)]]></item>
+	<item id="Data">
+		<item id="plugin">
+			<item id="available"><![CDATA[1]]></item>
+			<item id="adminid"><![CDATA[1]]></item>
+			<item id="name"><![CDATA[①Google +1]]></item>
+			<item id="identifier"><![CDATA[onexin_google_1]]></item>
+			<item id="description"><![CDATA[将 +1 按钮添加到您的网页上，让您的网站脱颖而出。 ]]></item>
+			<item id="datatables"><![CDATA[]]></item>
+			<item id="directory"><![CDATA[onexin_google_1/]]></item>
+			<item id="copyright"><![CDATA[Onexin Team]]></item>
+			<item id="version"><![CDATA[4.0.1]]></item>
+			<item id="__modules">
+				<item id="0">
+					<item id="name"><![CDATA[onexin_google_1]]></item>
+					<item id="menu"><![CDATA[]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[11]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[0]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+				<item id="1">
+					<item id="name"><![CDATA[onexin_donation]]></item>
+					<item id="menu"><![CDATA[赞助]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[3]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[10]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+			</item>
+		</item>
+		<item id="version"><![CDATA[X2.5 RC]]></item>
+		<item id="var">
+			<item id="0">
+				<item id="displayorder"><![CDATA[1]]></item>
+				<item id="title"><![CDATA[是否开启Google +1]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[isopen]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[0]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="1">
+				<item id="displayorder"><![CDATA[2]]></item>
+				<item id="title"><![CDATA[指定页头首页URL]]></item>
+				<item id="description"><![CDATA[如不填写，则默认为当前页。]]></item>
+				<item id="variable"><![CDATA[siteurl]]></item>
+				<item id="type"><![CDATA[text]]></item>
+				<item id="value"><![CDATA[http://www.onexin.com]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="2">
+				<item id="displayorder"><![CDATA[3]]></item>
+				<item id="title"><![CDATA[语言本地化]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[plusone_lang]]></item>
+				<item id="type"><![CDATA[select]]></item>
+				<item id="value"><![CDATA[zh-CN]]></item>
+				<item id="extra"><![CDATA[ar = Arabic
+bg = Bulgarian
+ca = Catalan
+zh-CN = Chinese (Simplified)
+zh-TW = Chinese (Traditional)
+hr = Croatian
+cs = Czech
+da = Danish
+nl = Dutch
+en-US = English (US)
+en-GB = English (UK)
+et = Estonian
+fil = Filipino
+fi = Finnish
+fr = French
+de = German
+el = Greek
+iw = Hebrew
+hi = Hindi
+hu = Hungarian
+id = Indonesian
+it = Italian
+ja = Japanese
+ko = Korean
+lv = Latvian
+lt = Lithuanian
+ms = Malay
+no = Norwegian
+fa = Persian
+pl = Polish
+pt-BR = Portuguese (Brazil)
+pt-PT = Portuguese (Portugal)
+ro = Romanian
+ru = Russian
+sr = Serbian
+sv = Swedish
+sk = Slovak
+sl = Slovenian
+es = Spanish
+es-419 = Spanish (Latin America)
+th = Thai
+tr = Turkish
+uk = Ukrainian
+vi = Vietnamese]]></item>
+			</item>
+			<item id="3">
+				<item id="displayorder"><![CDATA[4]]></item>
+				<item id="title"><![CDATA[是否启用异步加载]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[issync]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[1]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="4">
+				<item id="displayorder"><![CDATA[4]]></item>
+				<item id="title"><![CDATA[是否启用HTML5验证标签]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[isvalidtag]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[0]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="5">
+				<item id="displayorder"><![CDATA[5]]></item>
+				<item id="title"><![CDATA[Plusone JS来源]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[plusone_url]]></item>
+				<item id="type"><![CDATA[text]]></item>
+				<item id="value"><![CDATA[https://apis.google.com/js/plusone.js]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="6">
+				<item id="displayorder"><![CDATA[10]]></item>
+				<item id="title"><![CDATA[显示在今日统计之上]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[index_status_extra]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[1]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="7">
+				<item id="displayorder"><![CDATA[11]]></item>
+				<item id="title"><![CDATA[网站页头左侧]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[global_cpnav_extra1]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[1]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="8">
+				<item id="displayorder"><![CDATA[12]]></item>
+				<item id="title"><![CDATA[网站页头右侧]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[global_cpnav_extra2]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[0]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="9">
+				<item id="displayorder"><![CDATA[30]]></item>
+				<item id="title"><![CDATA[显示在贴子标题后面]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[viewthread_title_extra]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[1]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="10">
+				<item id="displayorder"><![CDATA[31]]></item>
+				<item id="title"><![CDATA[显示在贴子正文用户动作后]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[viewthread_useraction]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[1]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="11">
+				<item id="displayorder"><![CDATA[40]]></item>
+				<item id="title"><![CDATA[显示在日志标题下面]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[space_blog_title]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[0]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+		</item>
+	</item>
+</root>

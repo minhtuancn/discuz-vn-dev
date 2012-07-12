@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<root>
+	<item id="Title"><![CDATA[Discuz! Plugin]]></item>
+	<item id="Version"><![CDATA[X2,X2.5]]></item>
+	<item id="Time"><![CDATA[2012-06-10 23:46]]></item>
+	<item id="From"><![CDATA[人工智能实验室 (http://www.ailab.org/)]]></item>
+	<item id="Data">
+		<item id="plugin">
+			<item id="available"><![CDATA[1]]></item>
+			<item id="adminid"><![CDATA[1]]></item>
+			<item id="name"><![CDATA[网站地图 For X2.0/X2.5]]></item>
+			<item id="identifier"><![CDATA[nimba_sitemap]]></item>
+			<item id="description"><![CDATA[网站地图v1.5 for Discuz X2.0/X2.5 作者 土著人宁巴 人工智能实验室 出品（Made By Nimba, Team From AiLab.org ）]]></item>
+			<item id="datatables"><![CDATA[]]></item>
+			<item id="directory"><![CDATA[nimba_sitemap/]]></item>
+			<item id="copyright"><![CDATA[nimba]]></item>
+			<item id="version"><![CDATA[v1.5]]></item>
+			<item id="__modules">
+				<item id="0">
+					<item id="name"><![CDATA[sitemapauto]]></item>
+					<item id="menu"><![CDATA[]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[11]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[0]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+				<item id="1">
+					<item id="name"><![CDATA[do]]></item>
+					<item id="menu"><![CDATA[手动生成]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[3]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[1]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+				<item id="2">
+					<item id="name"><![CDATA[readme]]></item>
+					<item id="menu"><![CDATA[使用说明]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[3]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[2]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+			</item>
+		</item>
+		<item id="version"><![CDATA[X2,X2.5]]></item>
+		<item id="var">
+			<item id="0">
+				<item id="displayorder"><![CDATA[-3]]></item>
+				<item id="title"><![CDATA[网站域名]]></item>
+				<item id="description"><![CDATA[请填写您的域名，不要填“http://”和结尾的“/”]]></item>
+				<item id="variable"><![CDATA[mysite]]></item>
+				<item id="type"><![CDATA[text]]></item>
+				<item id="value"><![CDATA[www.bbs369.com]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="1">
+				<item id="displayorder"><![CDATA[-2]]></item>
+				<item id="title"><![CDATA[开启自动]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[auto]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[1]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="2">
+				<item id="displayorder"><![CDATA[-1]]></item>
+				<item id="title"><![CDATA[网址类型]]></item>
+				<item id="description"><![CDATA[(按住 CTRL 多选)设置要显示的网址类型]]></item>
+				<item id="variable"><![CDATA[urls]]></item>
+				<item id="type"><![CDATA[selects]]></item>
+				<item id="extra"><![CDATA[1=论坛帖子
+2=论坛版块
+3=门户文章]]></item>
+				<item id="__value">
+					<item id="0"><![CDATA[1]]></item>
+					<item id="1"><![CDATA[2]]></item>
+					<item id="2"><![CDATA[3]]></item>
+				</item>
+			</item>
+			<item id="3">
+				<item id="displayorder"><![CDATA[2]]></item>
+				<item id="title"><![CDATA[地图名称]]></item>
+				<item id="description"><![CDATA[.xml格式，默认使用sitemap.xml,在和其他程序不产生冲突的情况下，不建议修改]]></item>
+				<item id="variable"><![CDATA[filename]]></item>
+				<item id="type"><![CDATA[text]]></item>
+				<item id="value"><![CDATA[sitemap.xml]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="4">
+				<item id="displayorder"><![CDATA[3]]></item>
+				<item id="title"><![CDATA[网站目录]]></item>
+				<item id="description"><![CDATA[如果帖子地址http://www.abc.com/thread-30-1-1.html就输入/；帖子地址是http://www.abc.com/bbs/thread-30-1-1.html就输入/bbs/，其他情况类推]]></item>
+				<item id="variable"><![CDATA[web_root]]></item>
+				<item id="type"><![CDATA[text]]></item>
+				<item id="value"><![CDATA[/]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="5">
+				<item id="displayorder"><![CDATA[4]]></item>
+				<item id="title"><![CDATA[更新周期]]></item>
+				<item id="description"><![CDATA[单位：秒，建议小型网站设置为3600，即1小时更新一次；数据量较大的网站设置为86400，即24小时更新一次]]></item>
+				<item id="variable"><![CDATA[cycle]]></item>
+				<item id="type"><![CDATA[number]]></item>
+				<item id="value"><![CDATA[3600]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="6">
+				<item id="displayorder"><![CDATA[5]]></item>
+				<item id="title"><![CDATA[编码方式]]></item>
+				<item id="description"><![CDATA[目前仅支持gbk和utf-8]]></item>
+				<item id="variable"><![CDATA[charset]]></item>
+				<item id="type"><![CDATA[select]]></item>
+				<item id="value"><![CDATA[1]]></item>
+				<item id="extra"><![CDATA[1=GBK
+2=UTF-8]]></item>
+			</item>
+			<item id="7">
+				<item id="displayorder"><![CDATA[7]]></item>
+				<item id="title"><![CDATA[屏蔽版块]]></item>
+				<item id="description"><![CDATA[添加不需要在地图中显示的版块]]></item>
+				<item id="variable"><![CDATA[ban]]></item>
+				<item id="type"><![CDATA[forums]]></item>
+				<item id="extra"><![CDATA[]]></item>
+				<item id="__value">
+					<item id="0"><![CDATA[]]></item>
+				</item>
+			</item>
+		</item>
+	</item>
+</root>
