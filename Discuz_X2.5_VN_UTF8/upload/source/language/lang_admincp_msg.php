@@ -617,7 +617,7 @@ $lang = array (
 
   'moderate_shares_succeed' => 'Audit operation is successful, of {validates} share was through sharing {ignores} is ignored, {deletes} share is deleted',
 
-  'moderate_threads_succeed' => 'Audit operation is successful, validates} theme of {by {ignores} theme was ignored, {recycles} theme is the Recycle Bin, {deletes} theme',
+  'moderate_threads_succeed' => 'Audit operation is successful, {validates} theme of {by {ignores} theme was ignored, {recycles} theme is the Recycle Bin, {deletes} theme',
 
   'cloudaddons_ftp_path_error' => 'Site FTP path errors, please fill out the re-',
 
