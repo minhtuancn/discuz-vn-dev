@@ -325,9 +325,9 @@ $lang = array(
 
 	'spacecp_message_prompt' => '({msg} hỗ trợ, tối đa 1000 kí tự)',
 	'card_update_doing' => ' <a class="xi2" href="###">[Cập nhật Profile]</a>',
-	'email_acitve_message' => '<img src="{imgdir}/mail_inactive.png" alt="Chưa xác minh" class="vm" /> <span class="xi1">新邮箱({newemail})等待验证中...</span><br />
-								系统已经向该邮箱发送了一封验证激活邮件，请查收邮件，进行验证激活。<br>
-								如果没有收到验证邮件，您可以更换一个邮箱，或者<a href="home.php?mod=spacecp&ac=profile&op=password&resend=1" class="xi2">重新接收验证邮件</a>',
+	'email_acitve_message' => '<img src="{imgdir}/mail_inactive.png" alt="Chưa xác minh" class="vm" /> <span class="xi1"> New Email({newemail})Đang chờ xác minh...</span><br />
+								Hệ thống đã gửi một email xác minh đến email của bạn, vui lòng kiểm tra email của bạn, kích hoạt để xác minh.<br>
+								Nếu bạn không nhận được email xác minh, bạn có thể đổi Email, hoặc <a href="home.php?mod=spacecp&ac=profile&op=password&resend=1" class="xi2">Gửi lại email xác minh lần nữa</a>',
 
 );
 
