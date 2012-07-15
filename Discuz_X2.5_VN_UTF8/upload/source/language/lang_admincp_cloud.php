@@ -12,7 +12,7 @@ if(!defined('IN_DISCUZ')) {
 }
 $extend_lang = array
 (
-	'header_cloud' => 'Nền tảng đám mây',
+	'header_cloud' => 'Cloud',
 	'header_navcloud' => 'Discuz! Cloud Platform',
 	'nav_cloud' => 'Nền tảng đám mây Discuz',
 	'menu_cloud_open' => 'Enable Discuz! cloud platform',
