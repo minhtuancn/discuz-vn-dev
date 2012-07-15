@@ -469,7 +469,7 @@ $lang = array (
   'message_banned' => 'Lưu ý: Tác giả đã bị cấm hoặc bị xóa tự động che chắn, chỉ các quản trị viên có thể nhìn thấy',
   'my_space' => 'Nhà tôi',
   'return_homepage' => 'Trang chủ',
-  'somebody_space' => 'Blog của',
+  'somebody_space' => ' Blog',
   'visit_my_space' => 'Thăm nhà tôi',
   'feed' => 'Tin tức',
   'main_page' => 'Home',
@@ -643,7 +643,7 @@ $lang = array (
   'delete_chatpm_comment' => 'Xóa PM Nhóm',
   'delete_privatepm_user' => 'Xóa các PM từ thành viên',
   'dots' => '....',
-  'ignore_list' => 'DS bỏ qua',
+  'ignore_list' => 'DS chặn',
  'ignore_member_pm_message' => '<p>Thêm tên ai vào danh sách thì hắn gửi tin nhắn ngắn sẽ không được chấp nhận</p>
 								<p>Nếu thêm nhiều người thì dùng dấu , để ngăn cách</p>
 								<p>Nếu muốn tất cả thì điền "&#123;ALL&#125;"</p>',
