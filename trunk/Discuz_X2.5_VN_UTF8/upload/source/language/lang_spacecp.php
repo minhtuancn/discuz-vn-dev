@@ -3,13 +3,9 @@
 /**
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
- *
- *      $Id: lang_spacecp.php 28195 2012-02-24 02:59:57Z svn_project_zhangjie $
+ *		Translate by DCV team - http://www.discuzviet.net
+ *      $Id: lang_spacecp.php 22088 2011-04-21 07:50:14Z zhengqingpeng $
  */
-
-if(!defined('IN_DISCUZ')) {
-	exit('Access Denied');
-}
 
 $lang = array(
 
@@ -20,10 +16,10 @@ $lang = array(
 	'share_action' => 'Chia sẻ',
 
 	'pm_comment' => 'Trả lời bình luận',
-	'pm_thread_about' => 'Trả lời chủ đề "{subject}" của bạn',
+	'pm_thread_about' => 'Trả lời chủ đề “{subject}” của bạn',
 
 	'wall_pm_subject' => 'Hello!',
-	'wall_pm_message' => 'Tôi đã gửi một tin nhắn lên tường của bạn, [url=\\1]bấm vào đây để đến tường để xem nó[/url]',
+	'wall_pm_message' => 'Tôi đã gửi một tin nhắn lên bảng tin của bạn, [url=\\1]bấm vào đây để đến bảng tin để xem nó[/url]',
 	'reward' => 'Phần thưởng',
 	'reward_info' => 'Sẵn sàng bình chọn  \\1 phù hợp',
 	'poll_separator' => '"."',
@@ -44,13 +40,12 @@ $lang = array(
 	'message_can_not_send_13' => 'Đây không phải là 1 tin nhắn Nhóm',
 	'message_can_not_send_14' => 'Đây không phải 1 tin nhắn',
 	'message_can_not_send_15' => 'Dữ liệu không chính xác',
-	'message_can_not_send_16' => 'Bạn đã vượt quá số lượng tối đa PM trong vòng 24 giờ',
 	'message_can_not_send_onlyfriend' => 'Chỉ nhận được 1 tin nhắn để gửi cho bạn bè',
 
 
 	'friend_subject' => '<a href="{url}" target="_blank">{username} gửi yêu cầu kết bạn với bạn</a>',
 	'friend_request_note' => ' , PS: {note}',
-	'comment_friend' =>'<a href="\\2" target="_blank">\\1 给您留言了</a>',
+	'comment_friend' =>'<a href="\\2" target="_blank">\\1 Gửi cho bạn 1 bình luận</a>',
 	'photo_comment' => '<a href="\\2" target="_blank">\\1 Bình luận Ảnh của bạn</a>',
 	'blog_comment' => '<a href="\\2" target="_blank">\\1 Bình luận Blog của bạn</a>',
 	'poll_comment' => '<a href="\\2" target="_blank">\\1 Tham gia Khảo sát của bạn</a>',
@@ -76,15 +71,15 @@ $lang = array(
 		<tr>
 		<td valign="top">{avatar}</td>
 		<td valign="top">
-		<h3>Hi，我是{username}，邀请您也加入{sitename}并成为我的好友</h3><br>
-		请加入到我的好友中，您就可以了解我的近况，与我一起交流，随时与我保持联系。<br>
+		<h3>Hi. Tôi là {username}. Mời bạn đến {sitename} và trở thành bạn của tôi</h3><br>
+		Khi kết bạn với tôi ở đó, bạn có thể biết tình hình hiện tại của tôi, thông tin liên lạc của tôi, dễ dàng liên hệ với tôi.<br>
 		<br>
-		邀请附言：<br>{saymsg}
+		Lời nhắn: <br>{saymsg}
 		<br><br>
-		<strong>请您点击以下链接，接受好友邀请：</strong><br>
+		<strong>Xin vui lòng nhấp vào liên kết dưới đây để nhận được lời mời bạn bè.</strong><br>
 		<a href="{inviteurl}">{inviteurl}</a><br>
 		<br>
-		<strong>如果您拥有{sitename}上面的账号，请点击以下链接查看我的个人主页：</strong><br>
+		<strong>Nếu bạn có tài khoản trên {sitename}, hãy nhấp vào liên kết sau để xem trang của tôi</strong><br>
 		<a href="{siteurl}home.php?mod=space&uid={uid}">{siteurl}home.php?mod=space&uid={uid}</a><br>
 		</td></tr></table>',
 
@@ -93,15 +88,15 @@ $lang = array(
 		<tr>
 		<td valign="top">{avatar}</td>
 		<td valign="top">
-		<h3>Hi，我是{username}，在{sitename}上玩 {appname}，邀请您也加入一起玩</h3><br>
+		<h3>Xin chào, tôi là {username}. Mời bạn tham gia {sitename} để cùng chơi {appname} với tôi</h3><br>
 		<br>
-		邀请附言：<br>
+		Lời nhắn: <br>
 		{saymsg}
 		<br><br>
-		<strong>请您点击以下链接，接受好友邀请一起玩{appname}：</strong><br>
+		<strong>Xin vui lòng nhấp vào liên kết dưới đây để nhận được lời mời từ bạn bè để chơi {appname}.</strong><br>
 		<a href="{inviteurl}">{inviteurl}</a><br>
 		<br>
-		<strong>如果您拥有{sitename}上面的账号，请点击以下链接查看我的个人主页：</strong><br>
+		<strong>Nếu bạn có tài khoản trên {sitename}, vui lòng nhấp vào liên kết sau đây để xem trang chủ cá nhân của tôi.</strong><br>
 		<a href="{siteurl}home.php?mod=space&uid={uid}">{siteurl}home.php?mod=space&uid={uid}</a><br>
 		</td></tr></table>',
 
@@ -167,7 +162,7 @@ $lang = array(
 
 
 	'magicunit' => 'thẻ',
-	'magic_note_wall' => '{actor} gửi thông điệp trong tường của bạn. <a href="{url}" target="_blank">Thông điệp</a>',
+	'magic_note_wall' => '{actor} gửi thông điệp trong bảng tin của bạn. <a href="{url}" target="_blank">Thông điệp</a>',
 	'magic_call' => 'Tên đăng nhập của bạn, <a href="{url}" target="_blank">xem nó</a>',
 
 
@@ -209,7 +204,7 @@ $lang = array(
 	'do_stat_eventcomment' => 'Bình luận sự kiện',
 	'do_stat_eventjoin' => 'Tham gia sự kiện',
 	'do_stat_sharecomment' => 'Bình luận chia sẻ',
-	'do_stat_post' => 'Trả lời chủ đề',
+	
 	'do_stat_click' => 'Click',
 	'do_stat_wall' => 'Thông điệp',
 	'do_stat_poke' => 'Chọc',
@@ -241,14 +236,11 @@ $lang = array(
 	'logs_credit_update_RCA' => 'Tranh luận thắng',
 	'logs_credit_update_RCB' => 'Trả lại điểm thưởng',
 	'logs_credit_update_CDC' => 'Thẻ nạp tiền',
+
 	'logs_credit_update_RGC' => 'Mua Bao lì xì',
 	'logs_credit_update_BGC' => 'Dùng Bao lì xì',
 	'logs_credit_update_AGC' => 'Nhận quà',
 	'logs_credit_update_RKC' => 'Xếp hạng',
-	'logs_credit_update_BME' => 'Mua huy chương',
-	'logs_credit_update_RPR' => 'Điểm thưởng và trừng phạt',
-	'logs_credit_update_RPZ' => 'Thiếu khuyến khích xóa',
-	'logs_credit_update_reward_clean' => 'Xóa',
 	'logs_select_operation' => 'Chọn loại hoạt động',
 	'task_credit' => 'Thưởng hoàn thành nhiệm vụ',
 	'special_3_credit' => 'Điểm khấu trừ',
@@ -272,7 +264,6 @@ $lang = array(
 	'thread_credit2' => 'Điểm khấu trừ',
 	'buy_credit' => 'Điểm mua',
 	'buy_usergroup' => 'Điểm mua nhóm',
-	'buy_medal' => 'Mua huy chương',
 	'report_credit' => 'Điểm từ báo cáo',
 	'join' => 'Tham gia',
 	'activity_credit' => 'Điểm hoạt động',
@@ -284,8 +275,6 @@ $lang = array(
 	'replycredit_thread' => 'Phân phối bài viết',
 	'card_credit' => 'Điểm được nạp thẻ truy cập',
 	'ranklist_top' => 'Điểm xếp hạng',
-	'admincp_op_credit' => 'Thiếu khuyến khích điều hành',
-	'credit_update_reward_clean' => 'Xóa',
 
 	'profile_unchangeable' => 'Thông tin không thể thay đổi sau khi xác nhận',
 	'profile_is_verifying' => 'Thông tin đang được xác minh',
@@ -301,27 +290,6 @@ $lang = array(
 	'district_level_3' => '-Quận/Huyện-',
 	'district_level_4' => '-Xã/Phường-',
 	'invite_you_to_visit' => '{user} mời bạn ghé thăm {bbname}',
-
-	'portal' => 'Portal',
-	'group' => 'Nhóm',
-	'follow' => 'Theo dõi',
-	'collection' => 'Album',
-	'guide' => 'Hướng dẫn',
-	'feed' => 'Cập nhật',
-	'blog' => 'Blog',
-	'doing' => 'Tâm trạng',
-	'wall' => 'Tường',
-	'homepage' => 'Hồ sơ',
-	'ranklist' => 'Top',
-	'select_the_navigation_position' => 'Chọn kiểu danh mục {type}',
-	'close_module' => 'Đóng chức năng {type}',
-
-	'follow_add_remark' => 'Thêm ghi chú',
-	'follow_modify_remark' => 'Sửa Ghi chú',
-	'follow_specified_group' => 'Theo dõi nhóm',
-	'follow_specified_forum' => 'Theo dõi diễn đàn',
-
-	'filesize_lessthan' => 'Kích thước tập tin phải nhỏ hơn',
 
 	'spacecp_message_prompt' => '({msg} hỗ trợ, tối đa 1000 kí tự)',
 	'card_update_doing' => ' <a class="xi2" href="###">[Cập nhật Profile]</a>',
