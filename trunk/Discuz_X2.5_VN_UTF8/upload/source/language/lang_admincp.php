@@ -3735,9 +3735,9 @@ $lang = array(
 	'usergroups_edit_system_guest_portal_tips' => '<li>Guests user group settings, related to the portal posting privileges</li>',//'<li>游客用户组设置时，门户相关的发表权限对此用户组无效</li>',
 	'usergroups_edit_system_guest_home_tips' => '<li>Guests user group settings, related to space publication and comments permissions</li>',//'<li>游客用户组设置时，空间相关的发表、评论权限对此用户组无效</li>',
 
-	'usergroups_edit_forum' => 'usergroups_edit_forum',
-	'usergroups_edit_special' => 'Special thread',//'特殊主题',
-	'usergroups_edit_special_poll' => 'Allow create poll',//'允许发起投票',
+	'usergroups_edit_forum' => 'Quyền viết bài',
+	'usergroups_edit_special' => 'Chủ đề đặc biệt',//'特殊主题',
+	'usergroups_edit_special_poll' => 'Cho phép tạo bình chọn',//'允许发起投票',
 	'usergroups_edit_special_poll_comment' => 'Select "Yes" to allow add new polls',//'选择“是”允许在论坛发布投票主题',
 	'usergroups_edit_special_vote' => 'Allow to vote',//'允许参与投票',
 	'usergroups_edit_special_vote_comment' => 'Select "Yes" to allow vote the Forum polls',//'选择“是”允许在论坛参与投票',
