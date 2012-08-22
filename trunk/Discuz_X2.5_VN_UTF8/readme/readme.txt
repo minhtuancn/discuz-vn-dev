@@ -1,48 +1,48 @@
-+----------------------------------+
- Discuz! X 社区软件系统简介
-+----------------------------------+
-Crossday Discuz! Board（以下简称 Discuz!，中国国家版权局著作权登记号 2008SR11708
-）是康盛创想(北京)科技有限公司（英文简称Comsenz）推出的一套通用的社区论坛软件系
-统。作为国内最大的社区软件及服务提供商，Comsenz旗下的 Discuz! 产品，无论在功能、
-稳定性、负载能力、安全保障等方面都居于国内外同类产品领先地位，是全球成熟度最高、
-覆盖率最大的论坛软件系统之一。
++ ---------------------------------- +
+ Discuz! X-Community Software System Introduction
++ ---------------------------------- +
+Crossday Discuz! Board (hereinafter referred to as Discuz! Chinese National Copyright Administration of copyright registration number 2008SR11708
+) Comsenz (Beijing) Technology Co., Ltd. (abbreviation Comsenz) introduced a common set of Department of Community Forum Software
+Systems. As the nation's largest community of software and services provider, Comsenz's Discuz! In terms of function,
+Stability, load capacity, security and other aspects of living in the leading position in domestic and foreign products, is the highest global mature
+One of the coverage of the forum software system.
 
-+----------------------------------+
- Discuz! X 社区软件的下载
-+----------------------------------+
-您可以随时从我们的官方下载站下载到最新版本，以及各种补丁
++ ---------------------------------- +
+ Discuz! X community software download
++ ---------------------------------- +
+You can always be downloaded from our official download site to the latest version, and patch
 http://download.comsenz.com/DiscuzX/
 
-+----------------------------------+
- Discuz! X 社区软件的环境需求
-+----------------------------------+
-1. 可用的 www 服务器，如 Apache、Zeus、IIS 等
-2. php 4.3.0 及以上
-3. Zend Optimizer 2.5.7 及以上
-4. MySQL 3.23 及以上，仅针对 MySQL 版
++ ---------------------------------- +
+ Discuz! X community environmental needs of the software
++ ---------------------------------- +
+A www server is available, such as the Apache, Zeus, IIS, etc.
+2. Php 4.3.0 and above
+3. Zend Optimizer 2.5.7 and above
+4 MySQL 3.23 and above, only for MySQL version
 
-+----------------------------------+
- Discuz! X 社区软件的安装
-+----------------------------------+
-1. 上传 upload 目录中的文件到服务器
-2. 设置目录属性（windows 服务器可忽略这一步）
-	以下这些目录需要可读写权限
-	./config
-	./data 含子目录
-3. 执行安装脚本 /install/
-   请在浏览器中运行 install 程序，即访问 http://您的域名/论坛目录/install/
-4. 参照页面提示，进行安装，直至安装完毕
++ ---------------------------------- +
+ Discuz! X community software installation
++ ---------------------------------- +
+Upload the file to the server in the upload directory
+Set directory attributes (windows server can ignore this step.)
+These directories can read and write permissions
+. / Config
+. / Data containing subdirectories
+(3) run the installation scripts / install /
+   Install the program, run in the browser to access your domain name / forum directory / install /
+(4) reference page prompted to install it, until installation is complete
 
-+----------------------------------+
- Discuz! X 软件的技术支持
-+----------------------------------+
-当您在安装、升级、日常使用当中遇到疑难，请您到以下站点获取技术支持。
++ ---------------------------------- +
+ Discuz! X software technical support
++ ---------------------------------- +
+When you install, upgrade, daily use of them encounter problems, please to the following site for technical support.
 
-Discuz! 讨论区：          http://www.discuz.net
-Discuz! 使用手册:         http://faq.comsenz.com/usersguide/discuz
-Discuz! 风格下载：        http://www.comsenz.com/downloads/styles/discuz
-Discuz! 插件下载：        http://www.comsenz.com/downloads/plugins/discuz
-Discuz! 相关产品:         http://www.comsenz.com/downloads/install
+Discuz! Forum: http://www.discuz.net
+Discuz! Manual: http://faq.comsenz.com/usersguide/discuz the
+Discuz! Style Download: http://www.comsenz.com/downloads/styles/discuz
+Discuz! Plug-in Download: http://www.comsenz.com/downloads/plugins/discuz
+Discuz! Related Products: http://www.comsenz.com/downloads/install
 
-Discuz! 商业授权购买：    http://www.comsenz.com/purchase/discuz
-Discuz! 商业用户支持：    http://www.comsenz.com/customer/
+Discuz! Commercial license to buy: http://www.comsenz.com/purchase/discuz
+Discuz! The business user support: http://www.comsenz.com/customer/
