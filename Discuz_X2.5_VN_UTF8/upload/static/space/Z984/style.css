@@ -1,0 +1,41 @@
+/*
+[name]Gấu bông[/name]
+Powered by Discuz! X2
+*/
+#ct { color: #2f1307; }
+#ct a { color: #75451f; }
+body { background-color:#d5f3eb; background:url(images/tile.gif);}
+.block .title { padding: 0 10px; border-bottom: none; background:url(images/bg_title.gif) repeat-x; }
+	.block .title, .block .title a { color: #000000; }
+.block{border:1px solid #9fd5c4; background:#c5eae0;}
+.bm {border:1px solid #9fd5c4; background:#c5eae0;}
+	.bm_h { border: none; background:url(images/bg_title.gif) repeat-x; }
+.mingzi{color:#080808;}
+.notes2{color:#080808;}
+.dizhi {background-color:#c5eae0;}
+.dizhi a{color:#696379;}
+.topmood a{color:#916645;}
+.zuixiamian{border-top:1px solid #9fd5c4;}
+.zuixiamian,.zuixiamian *{color:#916645;}
+.zuidibu{background:url(images/footer.jpg) no-repeat top center;}
+.tabs_header { border-bottom:1px solid #9fd5c4;}
+.tabs_header li {color:#75451f}
+.tabs_header li a {border:1px solid #9fd5c4; background-color:#8dc29c; color:#75451f; }
+.tabs_header li a:hover { border-bottom:none; background-color:#8dc29c;  }
+.tabs_header li.active a {border:1px solid #9fd5c4; border-bottom:1px solid #9fd5c4; background:#c5eae0;}
+.tabs_header li.active a:link, .tabs_header li.active a:visited { color:#2f1307;}
+.tabs_header li.active a:hover { border-bottom:1px solid #9fd5c4; background:#ffffff;}
+.tabs_header li.null a {background: #ffffff; border:1px solid #9fd5c4; border-left:1px solid #9fd5c4; border-top:1px solid #9fd5c4; }
+.tabs_header li.null a:link, .tabs_header li.null a:visited { color:#75451f;}
+.tabs_header li.null a:hover { border:1px solid #9fd5c4; background:#2977AB;}
+
+#hd { background: url(images/header.jpg) no-repeat 0 0;color:#000; height:350px;}
+#nv { bottom: auto; left: auto; top: 45px; right: 0; }
+#nv li { padding: 0px 2px; }
+#nv li a, #nv li a:visited { padding: 0px 10px; color: #333; }
+#nv li a:hover { background-image: none !important; }
+#ct, .n, .w { background: transparent none !important; }
+.bbda, .el li { border-bottom-color: #e3eef8; }
+.vw .ph, .vw .d{ color: #FFF; }
+.tl .th { background: none; }
+#doingform { background: none; }

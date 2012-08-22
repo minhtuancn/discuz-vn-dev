@@ -1,43 +1,43 @@
-||==================================||
-   Discuz! X 升级文档
-||==================================||
+| | ================================== | |
+   Discuz! X upgrade documentation
+| | ================================== | |
 
-本文档用于帮助您将 Discuz! X 版本程序升级至现今版本，如果您的论坛不是 Discuz! X 
-系列，请首先使用我们的转换程序。
+This document is used to help you will be Powered by Discuz! X version of the program is to upgrade to the present version, if your forum is not Powered by Discuz! X-
+Series, the first to use our conversion program.
 
-在您开始升级之前，请务必逐条仔细阅读以下的注意事项：
+Before you begin the upgrade, please be sure one by one to read the following precautions:
 
-1. 升级之前，为了确保无误，强烈建议您备份原有数据，我们无法对升级前没有备份的用
-   户提供任何技术支持
-2. 通常情况下，我们的升级程序是 update.php, 他放置在发行版本的 ./utilities/ 目录中
-3. 大多数情况下，您升级到 Discuz! X 产品以后，需要进入后台进行一系列重新设置，否
-   则某些功能可能无法正常使用。
-4. 升级成功后，请您删除 update 程序，以避免可能的安全问题
+(1) before upgrading, in order to ensure correct, it is strongly recommended that you backup the original data, we can not pre-upgrade backup with the
+   Households to provide any technical support
+Under normal circumstances, the upgrade process update.php, he placed in the release. / Utilities / directory
+(3) In most cases, you upgrade to Discuz! X a product, you need to enter the background to a series of reset, whether
+   Some features may not work properly.
+4 upgrade is successful, you delete the update process in order to avoid possible security problems
 
-+--------------------------------------+
- 升级方法和步骤（以下方法仅适用于Discuz!X系列产品)
-+--------------------------------------+
-1. 进入您原来的系统，关闭您的站点。进行数据备份。
-2. 站点建立 old 文件夹，除 data, config, uc_server, uc_client 之外的文件移动到 old 目录中
-3. 下载并解压缩最新版的程序包（请注意需要与您原来的语言版本一样，不可混用)
-4. 程序包解压缩后，可以看到 readme, upload, utilities 三个目录， 
-5. 上传upload目录中的程序到服务器论坛目录，如果提示需要覆盖，则选择“是”
-6. 将压缩包中 /utilities/ 目录中的 update.php 程序上传到您的论坛 install 目录。并删除 install 目录
-   中的 index.php
-7. 访问 http://您的域名/论坛目录/install/update.php
-8. 按照程序提示，直至所有升级完毕。删除 update.php 程序，以免被恶意利用。
-9. 进入论坛后台，更新缓存，并对新功能进行设置和测试。
-10.old目录中如果存放有非discuzX程序文件，则将他备份或者恢复到原来的位置，否则当中的程序可以在升级成功后删除。
++ -------------------------------------- +
+ Upgrade and the steps (the following method applies only to the Discuz! X-series products)
++ -------------------------------------- +
+(1) Go to your original system, shut down your site. For data backup.
+Site to establish the old file folder, move the file outside of the addition to the data, config, uc_server, uc_client to the old directory
+Download and unzip the latest version of the package (please pay attention to the need with your original language version, can not be mixed)
+(4) Extract the package, you can see the readme, upload, utilities three directory
+Upload the program to the server in the upload directory forum directory, If you are prompted to need to cover, then select "Yes"
+6 will compress the the update.php program / utilities / package directory and upload it to your forum install directory. And delete the install directory
+   In the index.php
+Go to http:// your domain name / forum directory / install / update.php
+8 tips, until all the upgrade is completed in accordance with the procedures. Delete the the update.php program, to avoid malicious use.
+9 to enter the forum background, updating the cache, and new features to set up and testing.
+If stored 10.old directory non-discuzX program files, then back up or restore to its original position, otherwise the program which can be removed after the upgrade was successful.
 
-+--------------------------------------+
- 升级疑难解决
-+--------------------------------------+
-您在升级过程中遇到任何问题，可通过以下途径解决
++ -------------------------------------- +
+ Upgrade Troubleshooting
++ -------------------------------------- +
+You encounter any problems during the upgrade process can be resolved through the following means
 
-1. 到我们的讨论区寻求帮助和支持
-   http://www.discuz.net
+A. To our forum to seek help and support
+   http://www.discuz.net
 
-2. 查看详细升级指导文件
-   http://faq.comsenz.com/category-202
+(2) guidance documents to view detailed upgrade
+   http://faq.comsenz.com/category-202
 
-3. 商业用户可以根据您购买的服务，使用电话、MSN、QQ、论坛等多种方式寻求技术支持
+Business users based on the services you have purchased a variety of ways for using the telephone, MSN, QQ, forums for technical support

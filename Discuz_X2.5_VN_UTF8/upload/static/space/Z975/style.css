@@ -1,0 +1,48 @@
+/*
+[name]Thơ ngây[/name]
+Powered by Discuz! X2
+*/
+
+#ct { color: #787040; }
+
+#ct a { color: #e66620; }
+
+body { background-color:#b04126; background:url(images/tile.gif);}
+
+.block .title { padding: 0 10px; border-bottom: none; background:url(images/bg_title.gif) repeat-x; }
+.block .title, .block .title a { color: #fdf5d9; }
+.block{border:1px solid #ffffff; background:#ffffff;}
+
+.bm {border:1px solid #ffffff; background:#ffffff;}
+	.bm_h { border: none; background:url(images/bg_title.gif) repeat-x; }
+
+.mingzi{color:#d04c2d;}
+
+.notes2{color:#d04c2d;}
+.dizhi {background-color:#ffffff;}
+.dizhi a{color:#977c7b;}
+.topmood a{color:#81785c;}
+.zuixiamian{border-top:1px solid #f9f1d8;}
+.zuixiamian,.zuixiamian *{color:#81785c;}
+.zuidibu{background:url(images/footer.jpg) no-repeat top center;}
+.tabs_header { border-bottom:1px solid #f9f1d8;}
+.tabs_header li {color:#ffffff}
+.tabs_header li a {border:1px solid #d04c2d; background-color:#d04c2d; color:#ffffff; }
+.tabs_header li a:hover { border-bottom:none; background-color:#d04c2d;  }
+.tabs_header li.active a {border:1px solid #ffffff; border-bottom:1px solid #ffffff; background:#ffffff;}
+.tabs_header li.active a:link, .tabs_header li.active a:visited { color:#787040;}
+.tabs_header li.active a:hover { border-bottom:1px solid #d04c2d; background:#d04c2d;}
+.tabs_header li.null a {background: #d04c2d; border:1px solid #f9f1d8; border-left:1px solid #f9f1d8; border-top:1px solid #f9f1d8; }
+.tabs_header li.null a:link, .tabs_header li.null a:visited { color:#ffffff;}
+.tabs_header li.null a:hover { border:1px solid #f9f1d8; background:#d04c2d;}
+#hd { background: url(images/header.jpg) no-repeat 0 0;color:#000; height:300px;}
+#hd h2 { color: #000; }
+#nv { bottom: auto; left: auto; top: 45px; right: 0; }
+#nv li { padding: 0px 2px; }
+#nv li a, #nv li a:visited { padding: 0px 10px; color: #333; }
+#nv li a:hover { background-image: none !important; }
+#ct, .n, .w { background: transparent none !important; }
+.bbda, .el li { border-bottom-color: #e3eef8; }
+.vw .ph, .vw .d{ color: #FFF; }
+.tl .th { background: none; }
+#doingform { background: none; }
