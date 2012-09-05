@@ -4,7 +4,7 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: function_profile.php 28582 2012-03-05 07:15:39Z chenmengshu $
+ *      $Id: function_profile.php 31228 2012-07-27 07:34:25Z liulanbo $
  */
 
 if(!defined('IN_DISCUZ')) {
@@ -149,14 +149,14 @@ function profile_setting($fieldid, $space=array(), $showstatus=false, $ignoreunc
 			$html = "<textarea name=\"$fieldid\" id=\"$fieldid\" class=\"pt\" rows=\"3\" cols=\"40\" tabindex=\"1\">$space[$fieldid]</textarea>";
 		} elseif($field['formtype']=='select') {
 			$field['choices'] = explode("\n", $field['choices']);
-			$html = "<select name=\"$fieldid\" class=\"ps\" tabindex=\"1\">";
+			$html = "<select name=\"$fieldid\" id=\"$fieldid\" class=\"ps\" tabindex=\"1\">";
 			foreach($field['choices'] as $op) {
 				$html .= "<option value=\"$op\"".($op==$space[$fieldid] ? 'selected="selected"' : '').">$op</option>";
 			}
 			$html .= '</select>';
 		} elseif($field['formtype']=='list') {
 			$field['choices'] = explode("\n", $field['choices']);
-			$html = "<select name=\"{$fieldid}[]\" class=\"ps\" multiple=\"multiplue\" tabindex=\"1\">";
+			$html = "<select name=\"{$fieldid}[]\" id=\"$fieldid\" class=\"ps\" multiple=\"multiplue\" tabindex=\"1\">";
 			$space[$fieldid] = explode("\n", $space[$fieldid]);
 			foreach($field['choices'] as $op) {
 				$html .= "<option value=\"$op\"".(in_array($op, $space[$fieldid]) ? 'selected="selected"' : '').">$op</option>";
@@ -167,7 +167,7 @@ function profile_setting($fieldid, $space=array(), $showstatus=false, $ignoreunc
 			$space[$fieldid] = explode("\n", $space[$fieldid]);
 			foreach($field['choices'] as $op) {
 				$html .= ''
-					."<label class=\"lb\"><input type=\"checkbox\" name=\"{$fieldid}[]\" class=\"pc\" value=\"$op\" tabindex=\"1\"".(in_array($op, $space[$fieldid]) ? ' checked="checked"' : '')." />"
+					."<label class=\"lb\"><input type=\"checkbox\" name=\"{$fieldid}[]\" id=\"$fieldid\" class=\"pc\" value=\"$op\" tabindex=\"1\"".(in_array($op, $space[$fieldid]) ? ' checked="checked"' : '')." />"
 					."$op</label>";
 			}
 		} elseif($field['formtype']=='radio') {
@@ -178,13 +178,13 @@ function profile_setting($fieldid, $space=array(), $showstatus=false, $ignoreunc
 						."$op</label>";
 			}
 		} elseif($field['formtype']=='file') {
-			$html = "<input type=\"file\" value=\"\" name=\"$fieldid\" tabindex=\"1\" class=\"pf\" style=\"height:26px;\" /><input type=\"hidden\" name=\"$fieldid\" value=\"$space[$fieldid]\" />";
+			$html = "<input type=\"file\" value=\"\" name=\"$fieldid\" id=\"$fieldid\" tabindex=\"1\" class=\"pf\" style=\"height:26px;\" /><input type=\"hidden\" name=\"$fieldid\" value=\"$space[$fieldid]\" />";
 			if(!empty($space[$fieldid])) {
 				$url = getglobal('setting/attachurl').'./profile/'.$space[$fieldid];
-				$html .= "&nbsp;<label><input type=\"checkbox\" class=\"checkbox\" tabindex=\"1\" name=\"deletefile[$fieldid]\" value=\"yes\" />".lang('spacecp', 'delete')."</label><br /><a href=\"$url\" target=\"_blank\"><img src=\"$url\" width=\"200\" class=\"mtm\" /></a>";
+				$html .= "&nbsp;<label><input type=\"checkbox\" class=\"checkbox\" tabindex=\"1\" name=\"deletefile[$fieldid]\" id=\"$fieldid\" value=\"yes\" />".lang('spacecp', 'delete')."</label><br /><a href=\"$url\" target=\"_blank\"><img src=\"$url\" width=\"200\" class=\"mtm\" /></a>";
 			}
 		} else {
-			$html = "<input type=\"text\" name=\"$fieldid\" class=\"px\" value=\"$space[$fieldid]\" tabindex=\"1\" />";
+			$html = "<input type=\"text\" name=\"$fieldid\" id=\"$fieldid\" class=\"px\" value=\"$space[$fieldid]\" tabindex=\"1\" />";
 		}
 	}
 	$html .= !$ignoreshowerror ? "<div class=\"rq mtn\" id=\"showerror_$fieldid\"></div>" : '';

@@ -4,7 +4,7 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: class_image.php 30471 2012-05-30 06:06:09Z zhangguosheng $
+ *      $Id: class_image.php 30998 2012-07-06 07:22:08Z zhangguosheng $
  */
 
 if(!defined('IN_DISCUZ')) {
@@ -265,10 +265,11 @@ class image {
 		imagecopy($copy_photo, $attach_photo ,0, 0, 0, 0, $this->imginfo['width'], $this->imginfo['height']);
 		$attach_photo = $copy_photo;
 
+		$thumb_photo = null;
 		switch($this->param['thumbtype']) {
 			case 'fixnone':
 			case 1:
-				if($this->imginfo['width'] > $this->param['thumbwidth'] || $this->imginfo['height'] > $this->param['thumbheight']) {
+				if($this->imginfo['width'] >= $this->param['thumbwidth'] || $this->imginfo['height'] >= $this->param['thumbheight']) {
 					$thumb = array();
 					list(,,$thumb['width'], $thumb['height']) = $this->sizevalue(0);
 					$cx = $this->imginfo['width'];
@@ -296,12 +297,16 @@ class image {
 				break;
 		}
 		clearstatcache();
-		if($this->imginfo['mime'] == 'image/jpeg') {
-			@$imagefunc($thumb_photo, $this->target, $this->param['thumbquality']);
+		if($thumb_photo) {
+			if($this->imginfo['mime'] == 'image/jpeg') {
+				@$imagefunc($thumb_photo, $this->target, $this->param['thumbquality']);
+			} else {
+				@$imagefunc($thumb_photo, $this->target);
+			}
+			return 1;
 		} else {
-			@$imagefunc($thumb_photo, $this->target);
+			return 0;
 		}
-		return 1;
 	}
 
 	function Thumb_IM() {

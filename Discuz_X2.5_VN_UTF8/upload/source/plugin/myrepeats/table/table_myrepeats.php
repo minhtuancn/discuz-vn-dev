@@ -4,8 +4,14 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: table_myrepeats.php 29364 2012-04-09 02:51:41Z monkey $
+ *      $Id: table_myrepeats.php 31431 2012-08-28 02:59:33Z monkey $
  */
+if(!defined('IN_DISCUZ')) {
+	exit('Access Denied');
+}
+if(!defined('IN_DISCUZ')) {
+	exit('Access Denied');
+}
 
 class table_myrepeats extends discuz_table
 {

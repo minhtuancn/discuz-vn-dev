@@ -4,7 +4,7 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: collection_comment.php 28324 2012-02-28 03:13:05Z chenmengshu $
+ *      $Id: collection_comment.php 30986 2012-07-06 01:53:01Z zhengqingpeng $
  */
 
 if(!defined('IN_DISCUZ')) {
@@ -127,8 +127,6 @@ if(empty($op) || $op == 'add') {
 			} else {
 				showmessage('message_bad_touid', '', array(), array('return' => true));
 			}
-		} else {
-			$return = sendpm(0, $subject, $message, '', $pmid, 0);
 		}
 		if($return > 0) {
 			include_once libfile('function/stat');

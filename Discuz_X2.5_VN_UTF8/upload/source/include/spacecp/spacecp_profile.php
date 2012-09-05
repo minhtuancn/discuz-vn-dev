@@ -4,7 +4,7 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: spacecp_profile.php 30384 2012-05-25 04:48:52Z liulanbo $
+ *      $Id: spacecp_profile.php 31130 2012-07-18 09:29:13Z zhengqingpeng $
  */
 
 if(!defined('IN_DISCUZ')) {
@@ -105,7 +105,7 @@ if(submitcheck('profilesubmit')) {
 			if($key == 'sightml') {
 				loadcache(array('smilies', 'smileytypes'));
 				$value = cutstr($value, $_G['group']['maxsigsize'], '');
-				foreach($_G['cache']['smilies']['replacearray'] AS $skey => $smiley) {
+				foreach($_G['cache']['smilies']['replacearray'] as $skey => $smiley) {
 					$_G['cache']['smilies']['replacearray'][$skey] = '[img]'.$_G['siteurl'].'static/image/smiley/'.$_G['cache']['smileytypes'][$_G['cache']['smilies']['typearray'][$skey]]['directory'].'/'.$smiley.'[/img]';
 				}
 				$value = preg_replace($_G['cache']['smilies']['searcharray'], $_G['cache']['smilies']['replacearray'], trim($value));
@@ -441,7 +441,7 @@ if($operation == 'password') {
 		}
 	}
 	if($vid) {
-		if($value = C::t('common_member_verify_info')->fetch($_G['uid'])) {
+		if($value = C::t('common_member_verify_info')->fetch_by_uid_verifytype($_G['uid'], $vid)) {
 			$field = dunserialize($value['field']);
 			foreach($field as $key => $fvalue) {
 				$space[$key] = $fvalue;

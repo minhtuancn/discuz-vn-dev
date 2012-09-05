@@ -2,7 +2,7 @@
 	[Discuz!] (C)2001-2099 Comsenz Inc.
 	This is NOT a freeware, use is subject to license terms
 
-	$Id: common_diy.js 24718 2011-10-09 09:40:35Z zhangguosheng $
+	$Id: common_diy.js 31093 2012-07-16 03:54:34Z zhangguosheng $
 */
 
 String.prototype.property2js = function(){
@@ -715,7 +715,7 @@ var Util = {
 				var dom = document.createElement('div');
 				dom.className = 'edit hide';
 				dom.id = id+'_edit';
-				dom.innerHTML = '<span id="'+id+'_edit_menu">Sửa chữa</span>';
+				dom.innerHTML = '<span id="'+id+'_edit_menu">编辑</span>';
 				ele.appendChild(dom);
 				$(id+'_edit_menu').onclick = function (e){Drag.prototype.toggleMenu.call(_method, e, this);};
 			}
@@ -806,7 +806,7 @@ var Util = {
 			var collection = ele.getElementsByTagName('a');
 			if (collection.length > 0) {
 				 shref = collection[0]['href'];
-				 scolor = collection[0].style['color'];
+				 scolor = collection[0].style['color'] + ' !important';
 			}
 			collection = ele.getElementsByTagName('img');
 			if (collection.length > 0) {
@@ -1224,7 +1224,7 @@ var Util = {
 		setClose : function () {
 			if (!this.isChange) {
 				window.onbeforeunload = function() {
-					return 'Nếu bạn thoát nội dung sẽ không thể lưu.';
+					return '您的数据已经修改,退出将无法保存您的修改。';
 				};
 			}
 			this.isChange = true;

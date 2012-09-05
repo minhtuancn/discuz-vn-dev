@@ -4,7 +4,7 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: portalcp_diy.php 30764 2012-06-18 10:11:48Z zhangguosheng $
+ *      $Id: portalcp_diy.php 30999 2012-07-06 07:54:34Z zhangguosheng $
  */
 
 if(!defined('IN_DISCUZ')) {
@@ -299,9 +299,11 @@ if($op == 'blockclass') {
 	tpl_checkperm($tpl);
 
 	if (submitcheck('importsubmit')) {
+		$isinner = false;
 		$filename = '';
 		if($_POST['importfilename']) {
 			$filename = DISCUZ_ROOT.'./template/default/portal/diyxml/'.$_POST['importfilename'].'.xml';
+			$isinner = true;
 		} else {
 			$upload = new discuz_upload();
 
@@ -319,7 +321,9 @@ if($op == 'blockclass') {
 		}
 		if($filename) {
 			$arr = import_diy($filename);
-			@unlink($filename);
+			if(!$isinner) {
+				@unlink($filename);
+			}
 			if (!empty($arr)) {
 				$search = array('/\<script/i', '/\<\/script\>/i', "/\r/", "/\n/", '/(\[script [^>]*?)(src=)(.*?\[\/script\])/');
 				$replace = array('[script', '[/script]', '', '', '$1[src=]$3');

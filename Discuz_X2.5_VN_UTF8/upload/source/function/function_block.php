@@ -4,7 +4,7 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: function_block.php 30547 2012-06-01 09:06:40Z zhangguosheng $
+ *      $Id: function_block.php 30991 2012-07-06 03:24:23Z zhangguosheng $
  */
 
 if(!defined('IN_DISCUZ')) {
@@ -221,7 +221,7 @@ function block_updatecache($bid, $forceupdate=false) {
 			$shownum = intval($block['shownum']);
 			$titlelength	= !empty($block['param']['titlelength']) ? intval($block['param']['titlelength']) : 40;
 			$summarylength	= !empty($block['param']['summarylength']) ? intval($block['param']['summarylength']) : 80;
-			foreach(C::t('common_block_item_data')->fetch_all_by_bid($bid, 1, 0, $shownum, $bannedids, false) as $value) {
+			foreach(C::t('common_block_item_data')->fetch_all_by_bid($bid, 1, 0, $shownum * 2, $bannedids, false) as $value) {
 				$value['title'] = cutstr($value['title'], $titlelength, '');
 				$value['summary'] = cutstr($value['summary'], $summarylength, '');
 				$value['itemtype'] = '3';
@@ -348,8 +348,11 @@ function block_template($bid) {
 			}
 			$blockitem['fields'] = !empty($blockitem['fields']) ? $blockitem['fields'] : array();
 			$blockitem['fields'] = is_array($blockitem['fields']) ? $blockitem['fields'] : dunserialize($blockitem['fields']);
-			$blockitem['showstyle'] = !empty($blockitem['showstyle']) ? dunserialize($blockitem['showstyle']) : array();
-			$blockitem['showstyle'] = !empty($blockitem['showstyle']) ? $blockitem['showstyle'] : (!empty($blockitem['fields']['showstyle']) ? $blockitem['fields']['showstyle'] : array());
+			if(!empty($blockitem['showstyle'])) {
+				$blockitem['fields']['showstyle'] = dunserialize($blockitem['showstyle']);
+			}
+			$blockitem = $blockitem['fields'] + $blockitem;
+
 			$blockitem['picwidth'] = !empty($block['picwidth']) ? intval($block['picwidth']) : 'auto';
 			$blockitem['picheight'] = !empty($block['picheight']) ? intval($block['picheight']) : 'auto';
 			$blockitem['target'] = !empty($block['target']) ? ' target="_'.$block['target'].'"' : '';
@@ -360,7 +363,7 @@ function block_template($bid) {
 			$searcharr[] = '{parity}';
 			$replacearr[] = $blockitem['parity'];
 			foreach($fields as $key=>$field) {
-				$replacevalue = isset($blockitem[$key]) ? $blockitem[$key] : (isset($blockitem['fields'][$key]) ? $blockitem['fields'][$key] : '');
+				$replacevalue = $blockitem[$key];
 				$field['datatype'] = !empty($field['datatype']) ? $field['datatype'] : '';
 				if($field['datatype'] == 'int') {// int
 					$replacevalue = intval($replacevalue);

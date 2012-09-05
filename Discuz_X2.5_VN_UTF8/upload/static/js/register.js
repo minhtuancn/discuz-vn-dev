@@ -1,8 +1,8 @@
 /*
 	[Discuz!] (C)2001-2099 Comsenz Inc.
 	This is NOT a freeware, use is subject to license terms
-	Vietnamese by Kyehani - discuz.vn
-	$Id: register.js 27312 2012-01-16 02:39:24Z monkey $
+
+	$Id: register.js 31330 2012-08-13 07:49:00Z zhangguosheng $
 */
 
 var lastusername = '', lastpassword = '', lastemail = '', lastinvitecode = '', stmp = new Array();
@@ -51,9 +51,9 @@ function addFormEvent(formid, focus){
 	};
 	formNode[stmp[1]].onblur = function () {
 		if(formNode[stmp[1]].value == '') {
-			var pwmsg = 'Điền mật khẩu';
+			var pwmsg = 'Điển mật khẩu';
 			if(pwlength > 0) {
-				pwmsg += ',Độ dài tối thiểu '+pwlength+' ký tự';
+				pwmsg += ', Độ dài tối thiểu mật khẩu '+pwlength+' ký tự';
 			}
 			errormessage(formNode[stmp[1]].id, pwmsg);
 		}else{
@@ -63,7 +63,7 @@ function addFormEvent(formid, focus){
 	};
 	formNode[stmp[1]].onkeyup = function () {
 		if(pwlength == 0 || $(formNode[stmp[1]].id).value.length >= pwlength) {
-			var passlevels = new Array('','Yếu','Tốt','Ngon');
+			var passlevels = new Array('','Yếu','Trung Bình','Mạnh');
 			var passlevel = checkstrongpw(formNode[stmp[1]].id);
 			errormessage(formNode[stmp[1]].id, '<span class="passlevel passlevel'+passlevel+'">Độ mạnh mật khẩu:'+passlevels[passlevel]+'</span>');
 		}
@@ -161,7 +161,7 @@ function trim(str) {
 	return str.replace(/^\s*(.*?)[\s\n]*$/g, '$1');
 }
 
-var emailMenuST = null, emailMenui = 0, emaildomains = ['gmail.com', 'yahoo.com', 'yahoo.com.vn', 'ymail.com', 'rocketmail.com', 'zing.vn', 'fpt.vn', 'vnn.vn', 'ovi.com', 'hotmail.com', 'live.com'];
+var emailMenuST = null, emailMenui = 0, emaildomains = ['gmail.com', 'yahoo.com', 'yahoo.com.vn', 'zing.vn', 'facebook.com', 'hn.vnn.vn', 'hotmail.com'];
 function emailMenuOp(op, e, id) {
 	if(op == 3 && BROWSER.ie && BROWSER.ie < 7) {
 		checkemail(id);
@@ -230,6 +230,7 @@ function emailMenu(e, id) {
 		menu.id = 'emailmore_menu';
 		menu.style.display = 'none';
 		menu.className = 'p_pop';
+		menu.setAttribute('disautofocus', true);
 		$('append_parent').appendChild(menu);
 	}
 	var s = '<ul>';
@@ -271,7 +272,7 @@ function checkusername(id) {
 	}
 	var x = new Ajax();
 	$('tip_' + id).parentNode.className = $('tip_' + id).parentNode.className.replace(/ p_right/, '');
-	x.get('forum.php?mod=ajax&inajax=yes&infloat=register&handlekey=register&ajaxmenu=1&action=checkusername&username=' + (BROWSER.ie && document.charset == 'utf-8' ? encodeURIComponent(username) : username), function(s) {
+	x.get('forum.php?mod=ajax&inajax=yes&infloat=register&handlekey=register&ajaxmenu=1&action=checkusername&username=' + encodeURIComponent(username), function(s) {
 		errormessage(id, s);
 	});
 }
@@ -312,13 +313,13 @@ function checkpassword(id1, id2) {
 			}
 		}
 		if(strongpw_error) {
-			errormessage(id1, 'Mật khẩu cần có '+strongpw_str.join(','));
+			errormessage(id1, '密码太弱，密码中必须包含 '+strongpw_str.join('，'));
 			return;
 		}
 	}
 	errormessage(id2);
 	if($(id1).value != $(id2).value) {
-		errormessage(id2, 'Mật khẩu không khớp nhau');
+		errormessage(id2, '两次输入的密码不一致');
 	} else {
 		errormessage(id2, 'succeed');
 	}
@@ -333,7 +334,7 @@ function checkemail(id) {
 		lastemail = email;
 	}
 	if(email.match(/<|"/ig)) {
-		errormessage(id, 'Email có ký tự bị cấm');
+		errormessage(id, 'Email 包含敏感字符');
 		return;
 	}
 	var x = new Ajax();
@@ -352,7 +353,7 @@ function checkinvite() {
 		lastinvitecode = invitecode;
 	}
 	if(invitecode.match(/<|"/ig)) {
-		errormessage('invitecode', 'Mã mời chứa kí tự không được phép');
+		errormessage('invitecode', '邀请码包含敏感字符');
 		return;
 	}
 	var x = new Ajax();

@@ -3,7 +3,7 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: spacecp_follow.php 30849 2012-06-26 02:21:32Z zhangguosheng $
+ *      $Id: spacecp_follow.php 31477 2012-08-31 10:11:54Z zhengqingpeng $
  */
 
 if(!defined('IN_DISCUZ')) {
@@ -203,6 +203,7 @@ if($op == 'add') {
 		}
 		showmessage('relay_feed_success', dreferer(), array(), array('showdialog'=>true, 'closetime' => true));
 	}
+	$fastpost = $_G['setting']['fastpost'];
 } elseif($op == 'checkfeed') {
 
 	header('Content-Type: text/javascript');

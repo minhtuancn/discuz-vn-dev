@@ -4,7 +4,7 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: discuz_application.php 30190 2012-05-16 06:14:24Z zhangguosheng $
+ *      $Id: discuz_application.php 31032 2012-07-11 03:35:50Z chenmengshu $
  */
 
 if(!defined('IN_DISCUZ')) {
@@ -322,7 +322,10 @@ class discuz_application extends discuz_base{
 
 		$allowgzip = $this->config['output']['gzip'] && empty($this->var['inajax']) && $this->var['mod'] != 'attachment' && EXT_OBGZIP;
 		setglobal('gzipcompress', $allowgzip);
-		ob_start($allowgzip ? 'ob_gzhandler' : null);
+
+		if(!ob_start($allowgzip ? 'ob_gzhandler' : null)) {
+			ob_start();
+		}
 
 		setglobal('charset', $this->config['output']['charset']);
 		define('CHARSET', $this->config['output']['charset']);

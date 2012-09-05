@@ -4,7 +4,7 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: admincp_setting.php 30458 2012-05-30 01:50:37Z zhangguosheng $
+ *      $Id: admincp_setting.php 31458 2012-08-30 03:39:40Z zhengqingpeng $
  */
 if(!defined('IN_DISCUZ') || !defined('IN_ADMINCP')) {
 	exit('Access Denied');
@@ -1065,6 +1065,7 @@ EOF;
 		showtips('setting_tips', 'other_tips', $_GET['anchor'] == 'other');
 		showtableheader('', 'nobottom', 'id="other"'.($_GET['anchor'] != 'other' ? ' style="display: none"' : ''));
 		showsetting('setting_functions_other_pwdsafety', 'settingnew[pwdsafety]', $setting['pwdsafety'], 'radio');
+		showsetting('setting_functions_other_uidlogin', 'settingnew[uidlogin]', $setting['uidlogin'], 'radio');
 		showsetting('setting_functions_other_autoidselect', 'settingnew[autoidselect]', $setting['autoidselect'], 'radio');
 		showsetting('setting_functions_other_rssstatus', 'settingnew[rssstatus]', $setting['rssstatus'], 'radio');
 		showsetting('setting_functions_other_rssttl', 'settingnew[rssttl]', $setting['rssttl'], 'text');
@@ -2039,12 +2040,18 @@ EOT;
 			$cache_config['eaccelerator'] ? cplang('open') : cplang('closed'),
 			$cache_type == 'eaccelerator' ? $do_clear_link : '--'
 			);
+		$wincache = array('wincache',
+			$cache_extension['wincache'] ? cplang('setting_memory_php_enable') : cplang('setting_memory_php_disable'),
+			$cache_config['wincache'] ? cplang('open') : cplang('closed'),
+			$cache_type == 'wincache' ? $do_clear_link : '--'
+			);
 
 		showtablerow('', array('width="100"', 'width="120"', 'width="120"'), $redis);
 		showtablerow('', '', $memcache);
 		showtablerow('', '', $apc);
 		showtablerow('', '', $xcache);
 		showtablerow('', '', $ea);
+		showtablerow('', '', $wincache);
 		showtablefooter();
 
 		if(!isset($setting['memory'])) {
@@ -2865,6 +2872,14 @@ EOT;
 	}
 
 	if($operation == 'search') {
+		$appService = Cloud::loadClass('Service_App');
+		if($appService->getCloudAppStatus('search')) {
+			$setting['search'] = dunserialize($setting['search']);
+			$settingnew['search']['forum']['status'] = 1;
+			$settingnew['search']['forum']['searchctrl'] = $setting['search']['forum']['searchctrl'];
+			$settingnew['search']['forum']['maxspm'] = $setting['search']['forum']['maxspm'];
+			$settingnew['search']['forum']['maxsearchresults'] = $setting['search']['forum']['maxsearchresults'];
+		}
 		foreach($settingnew['search'] as $key => $val) {
 			foreach($val as $k => $v) {
 				$settingnew['search'][$key][$k] = max(0, intval($v));

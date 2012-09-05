@@ -4,7 +4,7 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: misc_swfupload.php 29000 2012-03-22 03:52:01Z zhengqingpeng $
+ *      $Id: misc_swfupload.php 31159 2012-07-20 04:27:18Z zhengqingpeng $
  */
 
 if(!defined('IN_DISCUZ')) {
@@ -28,6 +28,23 @@ if($_GET['operation'] == 'upload') {
 	if(empty($_GET['simple'])) {
 		$_FILES['Filedata']['name'] = addslashes(diconv(urldecode($_FILES['Filedata']['name']), 'UTF-8'));
 		$_FILES['Filedata']['type'] = $_GET['filetype'];
+	}
+	$forumattachextensions = '';
+	$fid = intval($_GET['fid']);
+	if($fid) {
+		$forum = $fid != $_G['fid'] ? C::t('forum_forum')->fetch_info_by_fid($fid) : $_G['forum'];
+		if($forum['status'] == 3 && $forum['level']) {
+			$levelinfo = C::t('forum_grouplevel')->fetch($forum['level']);
+			if($postpolicy = $levelinfo['postpolicy']) {
+				$postpolicy = dunserialize($postpolicy);
+				$forumattachextensions = $postpolicy['attachextensions'];
+			}
+		} else {
+			$forumattachextensions = $forum['attachextensions'];
+		}
+		if($forumattachextensions) {
+			$_G['group']['attachextensions'] = $forumattachextensions;
+		}
 	}
 	$upload = new forum_upload();
 } elseif($_GET['operation'] == 'album') {

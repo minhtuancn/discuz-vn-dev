@@ -4,7 +4,7 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: function_threadsort.php 30784 2012-06-19 06:47:32Z liulanbo $
+ *      $Id: function_threadsort.php 31474 2012-08-31 09:23:49Z zhangguosheng $
  */
 
 if(!defined('IN_DISCUZ')) {
@@ -306,6 +306,7 @@ function showsorttemplate($sortid, $fid, $sortoptionarray, $templatearray, $thre
 function showsortmodetemplate($sortid, $fid, $sortoptionarray, $templatearray, $threadlist, $threadids = array(), &$verify = array()) {
 	global $_G;
 	$sorttemplate = $replaces = array();
+	$sorttemplate['footer'] = $sorttemplate['body'] = $sorttemplate['header'] = '';
 	if(strexists($templatearray[$sortid], '[loop]') && strexists($templatearray[$sortid], '[/loop]')) {
 		preg_match('/^(.+?)\[loop\](.+?)\[\/loop\](.+?)$/s', $templatearray[$sortid], $r);
 		$sorttemplate['header'] = stripslashes($r[1]);

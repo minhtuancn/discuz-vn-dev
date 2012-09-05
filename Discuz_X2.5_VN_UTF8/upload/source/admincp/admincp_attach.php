@@ -4,7 +4,7 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: admincp_attach.php 27045 2011-12-31 02:40:01Z chenmengshu $
+ *      $Id: admincp_attach.php 31441 2012-08-28 07:46:04Z monkey $
  */
 
 if(!defined('IN_DISCUZ') || !defined('IN_ADMINCP')) {
@@ -74,7 +74,7 @@ if(!submitcheck('deletesubmit')) {
 					$attachment['url'] = $_G['setting']['attachurl'].'forum/';
 				} else {
 					@set_time_limit(0);
-					if(@fclose(@fopen($_G['setting']['ftp']['attachurl'].$attachment['attachment'], 'r'))) {
+					if(@fclose(@fopen($_G['setting']['ftp']['attachurl'].'forum/'.$attachment['attachment'], 'r'))) {
 						$matched = '';
 					} else {
 						$matched = cplang('attach_lost');

@@ -362,6 +362,11 @@
 							var sObj = $('subject');
 							$('attachlist').innerHTML = $('fastpostmessage').value = sObj.value = '';
 							strLenCalc(sObj, 'checklen', 80);
+							if(values.sechash) {
+								updatesecqaa(values.sechash);
+								updateseccode(values.sechash);
+								$('seccodeverify_'+values.sechash).value='';
+							}
 							//var msg = '您的主题已发布，<a href="'+url+'" class="xi2">点击这里查看主题</a>'
 							//showDialog(msg, 'notice', null, null, 0, null, null, null, null, 3);
 						}
@@ -518,9 +523,15 @@
 
 			<script type="text/javascript">
 				var boxflag = {};
+				var parentReplyId = '';
 				function quickreply(fid, tid, feedid) {
 					$('relaybox_'+feedid).style.display = 'none';
 					var replyboxid = 'replybox_'+feedid;
+					if(parentReplyId && parentReplyId != feedid) {
+						var oldbox = $('replybox_'+parentReplyId);
+						oldbox.innerHTML = '';
+						oldbox.style.display = 'none';
+					}
 					if($(replyboxid).style.display == '' && boxflag[replyboxid]) {
 						$(replyboxid).style.display = 'none';
 					} else {
@@ -528,6 +539,7 @@
 						ajaxget('forum.php?mod=ajax&action=quickreply&tid='+tid+'&fid='+fid+'&handlekey=qreply_'+feedid+'&feedid='+feedid, replyboxid);
 						$(replyboxid).style.display = '';
 					}
+					parentReplyId = feedid;
 				}
 				function quickrelay(feedid, tid) {
 					$('replybox_'+feedid).style.display = 'none';

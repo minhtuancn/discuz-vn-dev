@@ -4,7 +4,7 @@
 		<tr>
 			<td class="attswf">
 				<p id="attach$attach[aid]">
-					<span>$attach[filetype] <a href="javascript:;" class="xi2" id="attachname$attach[aid]" isimage="{if $attach['isimage']}1{else}0{/if}" onclick="{if $attach['isimage']}insertAttachimgTag('$attach[aid]');hideMenu('attach_preview_$attach[aid]_menu'){else}insertAttachTag('$attach[aid]'){/if};doane(event);" title="{lang upload_msg}" {if $attach['isimage']}onmouseout="hideMenu('attach_preview_$attach[aid]_menu');" onmouseover="showMenu({'menuid':'attach_preview_$attach[aid]_menu','ctrlclass':'a','duration':2,'timeout':0,'pos':'34'});"{/if}>{$attach[filename]}</a></span>
+					<span>$attach[filetype] <a href="javascript:;" class="xi2" id="attachname$attach[aid]" isimage="{if $attach['isimage']}1{else}0{/if}" onclick="{if $attach['isimage']}insertAttachimgTag('$attach[aid]');hideMenu('attach_preview_$attach[aid]_menu'){else}insertAttachTag('$attach[aid]'){/if};doane(event);" title="{lang upload_msg}" {if $attach['isimage']}onmouseout="hideMenu('attach_preview_$attach[aid]_menu');" onmouseover="showMenu({'ctrlid':this.id,'menuid':'attach_preview_$attach[aid]_menu','pos':'!'});"{/if}>{$attach[filename]}</a></span>
 					<!--{if $_G['setting']['allowattachurl']}-->
 						<a href="javascript:;" class="atturl" title="{lang e_attach_url}" onclick="insertText('attach://$attach[aid].{echo fileext($attach[filenametitle])}');doane(event);"><img src="{IMGDIR}/attachurl.gif" /></a>
 						<!--{if ($attachmcode = parseattachmedia($attach))}--><a href="javascript:;" class="atturl" title="{lang e_attach_mediacode}" onclick="insertText('$attachmcode');doane(event);"><img src="{IMGDIR}/attachmediacode.gif" /></a><!--{/if}-->
@@ -16,9 +16,7 @@
 				</p>
 				<span id="attachupdate$attach[aid]"></span>
 				<!--{if $attach['isimage']}-->
-				<div id="attach_preview_$attach[aid]_menu"  style="display:none">
-					<img src="{echo getforumimg($attach[aid], 1, 300, 300, 'fixnone')}&ramdom={echo random(5)}" id="image_$attach[aid]" cwidth="{if $attach[width] < 300}$attach[width]{else}300{/if}"/>
-				</div>
+				<div id="attach_preview_$attach[aid]_menu" class="attach_preview" style="display:none"><img src="{echo getforumimg($attach[aid], 1, 300, 300, 'fixnone')}&ramdom={echo random(5)}" id="image_$attach[aid]" cwidth="{if $attach[width] < 300}$attach[width]{else}300{/if}"/></div>
 				<!--{/if}-->
 				<!--{if $_GET[result] == 'simple'}-->
 				<input type="hidden" name="attachnew[{$attach[aid]}][description]" value="" />

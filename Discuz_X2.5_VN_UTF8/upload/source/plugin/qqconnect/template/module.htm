@@ -41,6 +41,9 @@ function tpl_global_footer($loadJs) {
 	<!--{if $loadJs['guestloginjs']}-->
 		<script type="text/javascript">_attachEvent(window, 'load', function () { appendscript('{$loadJs[guestloginjs][jsurl]}', '', 1, 'utf-8') }, document);</script>
 	<!--{/if}-->
+	<!--{if $loadJs['syncpostjs']}-->
+		<script type="text/javascript">_attachEvent(window, 'load', function () { appendscript('{$loadJs[syncpostjs][jsurl]}', '', 1, 'utf-8') }, document);</script>
+	<!--{/if}-->
 <!--{/block}-->
 <!--{eval return $return;}-->
 {eval
@@ -76,8 +79,8 @@ global $_G;
 		<script type="text/javascript">
 		var _allow_qq = {if $allowconnectfeed}true{else}false{/if};
 		var _allow_t = {if $allowconnectt}true{else}false{/if};
-		var _syn_qq = {if $_G['member']['conisbind'] && $_G['member']['conispublishfeed']}true{else}false{/if};
-		var _syn_t = {if $_G['member']['conisbind'] && $_G['member']['conispublisht']}true{else}false{/if};
+		var _syn_qq = {if intval($_G['cookie']['connect_not_sync_feed'])}false{else}{if $_G['member']['conisbind'] && $_G['member']['conispublishfeed']}true{else}false{/if}{/if};
+		var _syn_t = {if intval($_G['cookie']['connect_not_sync_t'])}false{else}{if $_G['member']['conisbind'] && $_G['member']['conispublisht']}true{else}false{/if}{/if};
 		var _is_oauth_user = {if $_G['member']['conisbind']}true{else}false{/if};
 		var _is_feed_auth = {if $_G['member']['conuinsecret'] && $_G['member']['is_feed']}true{else}false{/if};
 		var _is_token_outofdate = {if $_G['member']['conuinsecret']}false{else}true{/if};
@@ -220,8 +223,8 @@ global $_G;
 		<script type="text/javascript" reload="1">
 		var _allow_qq_infloat = {if $allowconnectfeed}true{else}false{/if};
 		var _allow_t_infloat = {if $allowconnectt}true{else}false{/if};
-		var _syn_qq_infloat = {if $_G['member']['conisbind'] && $_G['member']['conispublishfeed']}true{else}false{/if};
-		var _syn_t_infloat = {if $_G['member']['conisbind'] && $_G['member']['conispublisht']}true{else}false{/if};
+		var _syn_qq_infloat = {if intval($_G['cookie']['connect_not_sync_feed'])}false{else}{if $_G['member']['conisbind'] && $_G['member']['conispublishfeed']}true{else}false{/if}{/if};
+		var _syn_t_infloat = {if intval($_G['cookie']['connect_not_sync_t'])}false{else}{if $_G['member']['conisbind'] && $_G['member']['conispublisht']}true{else}false{/if}{/if};
 		var _is_oauth_user_infloat = {if $_G['member']['conisbind']}true{else}false{/if};
 		var _is_feed_auth_infloat = {if $_G['member']['conuinsecret'] && $_G['member']['is_feed']}true{else}false{/if};
 		var _is_token_outofdate = {if $_G['member']['conuinsecret']}false{else}true{/if};
@@ -470,6 +473,15 @@ global $_G;
 	<!--{if $jsurl}-->
 		<script type="text/javascript">_attachEvent(window, 'load', function () { appendscript('{$jsurl}', '', 1, 'utf-8') }, document);</script>
 	<!--{/if}-->
+<!--{/block}-->
+<!--{eval return $return;}-->
+{eval
+}
+
+function tpl_sync_post_viewthread_bottom($jsurl) {
+}
+<!--{block return}-->
+	<div style="display:none;"><iframe src='{$jsurl}' style="display:none;"></div>
 <!--{/block}-->
 <!--{eval return $return;}-->
 {eval

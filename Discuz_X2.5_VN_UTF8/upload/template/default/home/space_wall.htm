@@ -41,7 +41,7 @@
 			</p>
 			<div class="tedt mtn mbn">
 				<div class="area">
-					<!--{if $_G['uid']}-->
+					<!--{if $_G['uid'] || $_G['group']['allowcomment']}-->
 						<textarea id="comment_message" onkeydown="ctrlEnter(event, 'commentsubmit_btn');" name="message" rows="5" class="pt"></textarea>
 					<!--{elseif $_G['connectguest']}-->
 						<div class="pt hm">{lang connect_fill_profile_to_comment}</div>

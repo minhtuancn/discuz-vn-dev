@@ -4,7 +4,7 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: upgrade.php 29521 2012-04-17 09:24:42Z songlixin $
+ *      $Id: upgrade.php 31304 2012-08-09 06:31:09Z liudongdong $
  */
 
 if(!defined('IN_DISCUZ')) {
@@ -14,6 +14,18 @@ if(!defined('IN_DISCUZ')) {
 $sql = '';
 
 $sql .= <<<EOF
+
+CREATE TABLE IF NOT EXISTS pre_connect_postfeedlog (
+  flid mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
+  pid int(10) unsigned NOT NULL DEFAULT '0',
+  uid mediumint(8) unsigned NOT NULL DEFAULT '0',
+  publishtimes mediumint(8) unsigned NOT NULL DEFAULT '0',
+  lastpublished int(10) unsigned NOT NULL DEFAULT '0',
+  dateline int(10) unsigned NOT NULL DEFAULT '0',
+  `status` tinyint(1) NOT NULL DEFAULT '1',
+  PRIMARY KEY (flid),
+  UNIQUE KEY pid (pid)
+) ENGINE=MyISAM;
 
 CREATE TABLE IF NOT EXISTS pre_connect_tthreadlog (
   twid char(16) NOT NULL,

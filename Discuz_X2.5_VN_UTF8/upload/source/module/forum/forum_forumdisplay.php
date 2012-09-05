@@ -4,7 +4,7 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: forum_forumdisplay.php 30548 2012-06-01 09:14:29Z zhengqingpeng $
+ *      $Id: forum_forumdisplay.php 31046 2012-07-12 02:19:40Z liulanbo $
  */
 
 if(!defined('IN_DISCUZ')) {
@@ -606,6 +606,7 @@ $todaytime = strtotime(dgmdate(TIMESTAMP, 'Ymd'));
 $verify = $verifyuids = $grouptids = array();
 $threadindex = 0;
 foreach($threadlist as $thread) {
+	$thread['ordertype'] = getstatus($thread['status'], 4);
 	if($_G['forum']['picstyle'] && empty($_G['cookie']['forumdefstyle'])) {
 		if($thread['fid'] != $_G['fid'] && empty($thread['cover'])) {
 			continue;

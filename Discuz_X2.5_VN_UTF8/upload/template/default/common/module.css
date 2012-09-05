@@ -242,6 +242,8 @@ Created & Modified by Monkey, Lushnis, Pony, Dfox & DragonLee.
 			.atds { width: 80px; text-align: center; }
 				.atds .px { width: 60px; }
 			.attp { text-align: center; width: 40px; }
+			.attach_preview { border: 1px solid {COMMONBORDER}; box-shadow: 0 0 5px rgba(96, 96, 96, 0.3); }
+				.ie8 .attach_preview, .ie9 .attach_preview { top: 57px; right: 18px; }
 /** end **/
 
 

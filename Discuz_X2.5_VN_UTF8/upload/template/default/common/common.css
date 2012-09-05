@@ -120,6 +120,11 @@ CSS 写作注意事项：
 	.cl:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; } .cl { zoom: 1; }
 
 /*
+	元素获取焦点时隐藏外边框
+*/
+	.hidefocus { outline: none; }
+
+/*
 	Name:			mod_hr
 	Level:			Global
 	Sample:			<hr />
@@ -986,11 +991,11 @@ CSS 写作注意事项：
 	Explain:		风格切换菜单
 	Last Modify:	lushnis
 */
-	#toptb a#sslct { width: 10px; background: url({IMGDIR}/style_switch.png) no-repeat 50% 50%; text-indent: -9999px; overflow: hidden; }
+	#toptb a#sslct, #toptb a.switchblind { width: 10px; background: url({IMGDIR}/style_switch.png) no-repeat 50% 50%; text-indent: -9999px; overflow: hidden; }
 	#sslct_menu { padding: 6px 10px 10px; }
 		 .sslct_btn { float: left; margin: 4px 4px 0 0; width: 12px; height: 12px; border: 1px solid {COMMONBORDER}; cursor: pointer; }
 			.sslct_btn i { float: left; display: inline; margin: 1px; width: 10px; height: 10px; background: #2E80D1; overflow: hidden; font-style: normal; }
-
+	#toptb a.switchblind{ background-image: url({IMGDIR}/switch_blind.png) ; }
 /* 弹出菜单、弹出层及弹出窗口 */
 	.p_pop, .p_pof, .sllt { padding: 4px; border: 1px solid; min-width: 60px; border-color: {DROPMENUBORDER}; {DROPMENUBGCODE}; box-shadow: 1px 2px 2px rgba(0,0,0,0.3); }
 		.ie6 .p_pop { width: 100px; }

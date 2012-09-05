@@ -4,7 +4,7 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: discuz_censor.php 27449 2012-02-01 05:32:35Z zhangguosheng $
+ *      $Id: discuz_censor.php 31080 2012-07-13 07:03:32Z liulanbo $
  */
 
 if(!defined('IN_DISCUZ')) {
@@ -50,7 +50,7 @@ class discuz_censor {
 	}
 
 	function check(&$message, $modword = NULL) {
-		$limitnum = 1000;
+		$limitnum = 500;
 		$this->words_found = array();
 		$bbcodes = 'b|i|color|size|font|align|list|indent|email|hide|quote|code|free|table|tr|td|img|swf|attach|payto|float'.($this->bbcodes_display ? '|'.implode('|', array_keys($this->bbcodes_display)) : '');
 		if(is_array($this->censor_words['banned']) && !empty($this->censor_words['banned'])) {

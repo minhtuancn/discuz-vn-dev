@@ -4,7 +4,7 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: portalcp_block.php 30465 2012-05-30 04:10:03Z zhengqingpeng $
+ *      $Id: portalcp_block.php 31466 2012-08-30 09:53:47Z zhangguosheng $
  */
 
 if(!defined('IN_DISCUZ')) {
@@ -497,7 +497,7 @@ if($op == 'block') {
 		if($theclass['fields'][$key]) {
 			switch($theclass['fields'][$key]['datatype']) {
 				case 'date':
-					$itemfields[$key] = dgmdate($value);
+					$itemfields[$key] = dgmdate($value, 'Y-m-d H:i:s');
 					break;
 				case 'int':
 					$itemfields[$key] = intval($value);

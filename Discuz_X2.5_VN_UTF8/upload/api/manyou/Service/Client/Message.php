@@ -3,7 +3,7 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: Message.php 29721 2012-04-26 07:01:08Z zhengqingpeng $
+ *      $Id: Message.php 31447 2012-08-28 09:03:49Z songlixin $
  */
 
 if(!defined('IN_DISCUZ')) {
@@ -33,15 +33,28 @@ class Cloud_Service_Client_Message extends Cloud_Service_Client_Restful {
 	public function add($siteUids, $authorId, $author, $dateline) {
 		$toUids = array();
 		if($siteUids) {
-			foreach(C::t('#qqconnect#common_member_connect')->fetch_all((array)$siteUids) as $user) {
-				$toUids[$user['conopenid']] = $user['uid'];
+			$users = C::t('#qqconnect#common_member')->fetch_all((array)$siteUids);
+			$connectUsers = C::t('#qqconnect#common_member_connect')->fetch_all((array)$siteUids);
+			$i = 1;
+			foreach ($users as $uid => $user) {
+				$conopenid = $connectUsers[$uid]['conopenid'];
+				if (!$conopenid) {
+					$conopenid = 'n' . $i ++;
+				}
+				$toUids[$conopenid] = $user['uid'];
 			}
+
 			$_params = array(
 					'openidData' => $toUids,
 					'authorId' => $authorId,
 					'author' => $author,
 					'dateline' => $dateline,
-					'deviceToken' => $this->getUserDeviceToken($siteUids)
+					'deviceToken' => $this->getUserDeviceToken($siteUids),
+					'extra' => array(
+							'isAdminGroup' => getglobal('adminid'),
+							'groupId' => getglobal('groupid'),
+							'groupName' => getglobal('group/grouptitle')
+						)
 				);
 			return $this->_callMethod('connect.discuz.message.add', $_params);
 		}

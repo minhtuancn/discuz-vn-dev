@@ -4,7 +4,7 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: function_spacecp.php 27757 2012-02-14 03:08:15Z chenmengshu $
+ *      $Id: function_spacecp.php 31003 2012-07-06 08:42:09Z zhengqingpeng $
  */
 
 if(!defined('IN_DISCUZ')) {
@@ -174,6 +174,10 @@ function pic_save($FILE, $albumid, $title, $iswatermark = true, $catid = 0) {
 	$upload->save();
 	if($upload->error()) {
 		return lang('spacecp', 'mobile_picture_temporary_failure');
+	}
+	if(!$upload->attach['imageinfo'] || !in_array($upload->attach['imageinfo']['2'], array(1,2,3,6))) {
+		@unlink($upload->attach['target']);
+		return lang('spacecp', 'only_allows_upload_file_types');
 	}
 
 	$new_name = $upload->attach['target'];

@@ -4,7 +4,7 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: helper_seo.php 30848 2012-06-26 02:21:07Z liulanbo $
+ *      $Id: helper_seo.php 31054 2012-07-12 04:24:01Z liulanbo $
  */
 
 if(!defined('IN_DISCUZ')) {
@@ -72,6 +72,7 @@ class helper_seo {
 				}
 			}
 		}
+		rsort($links);
 		return $links;
 	}
 
@@ -90,7 +91,7 @@ class helper_seo {
 			}
 			if($searcharray && $replacearray) {
 				$_G['trunsform_tmp'] = array();
-				$content = preg_replace("/(<script\s+.*?>.*?<\/script>)|(<a\s+.*?>.*?<\/a>)|(<img\s+.*?[\/]?>)|(\[attach\](\d+)\[\/attach\])/ies", "helper_seo::base64_transform('encode', '<relatedlink>', '\\1\\2\\3', '</relatedlink>')", $content);
+				$content = preg_replace("/(<script\s+.*?>.*?<\/script>)|(<a\s+.*?>.*?<\/a>)|(<img\s+.*?[\/]?>)|(\[attach\](\d+)\[\/attach\])/ies", "helper_seo::base64_transform('encode', '<relatedlink>', '\\1\\2\\3\\4', '</relatedlink>')", $content);
 				$content = preg_replace($searcharray, $replacearray, $content, 1);
 				$content = preg_replace("/<relatedlink>(.*?)<\/relatedlink>/ies", "helper_seo::base64_transform('decode', '', '\\1', '')", $content);
 			}

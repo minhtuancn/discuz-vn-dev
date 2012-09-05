@@ -44,7 +44,7 @@
 		var x = new Ajax();
 		var openTitle = 0;
 		drag.setClose();
-		x.get('portal.php?mod=portalcp&ac=block&op=getblock&bid='+bid+'&tpl=$_GET[tpl]&inajax=1<!--{if $_GET[from]}-->&from=$_GET[from]<!--{/if}-->', function(s) {
+		x.get('portal.php?mod=portalcp&ac=block&op=getblock&forceupdate=1&bid='+bid+'&tpl=$_GET[tpl]&inajax=1<!--{if $_GET[from]}-->&from=$_GET[from]<!--{/if}-->', function(s) {
 			var obj = document.createElement('div');
 			bid = 'portal_block_'+bid;
 			obj.innerHTML = s;

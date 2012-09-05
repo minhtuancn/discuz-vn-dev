@@ -4,7 +4,7 @@
  *      [Discuz! X] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: search.class.php 30263 2012-05-17 13:44:07Z zhouxiaobo $
+ *      $Id: search.class.php 30943 2012-07-03 01:22:38Z zhouxiaobo $
  */
 
 if(!defined('IN_DISCUZ')) {
@@ -500,26 +500,12 @@ class plugin_cloudsearch_forum extends plugin_cloudsearch {
 
 	public function index_forum_extra_output() {
 
-		return;
-		if (!$this->allow || !$this->allow_forum_recommend) {
-			return;
-		}
-
-		global $forumlist;
-
-		return $this->_get_forum_hotspot($forumlist);
+		return array();
 	}
 
 	public function forumdisplay_subforum_extra_output() {
 
-		return;
-		if (!$this->allow || !$this->allow_forum_recommend) {
-			return;
-		}
-
-		global $sublist;
-
-		return $this->_get_forum_hotspot($sublist);
+		return array();
 	}
 
 	private function _get_forum_hotspot($forumlist) {

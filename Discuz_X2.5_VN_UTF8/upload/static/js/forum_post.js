@@ -1,10 +1,11 @@
 /*
 	[Discuz!] (C)2001-2099 Comsenz Inc.
 	This is NOT a freeware, use is subject to license terms
-	Vietnamese by Kyehani - discuz.vn
-	$Id: forum_post.js 28434 2012-02-29 11:03:43Z monkey $
+
+	$Id: forum_post.js 31449 2012-08-28 09:19:06Z monkey $
 */
 
+var forum_post_inited = true;
 var postSubmited = false;
 var AID = {0:1,1:1};
 var UPLOADSTATUS = -1;
@@ -28,6 +29,7 @@ var STATUSMSG = {
 	'9' : 'Không có tập tin hợp lệ được tải lên',
 	'10' : 'Hoạt động bất hợp pháp',
 	'11' : 'Hôm nay bạn có tải lên tập tin'
+
 };
 
 EXTRAFUNC['validator'] = [];
@@ -74,8 +76,8 @@ function validate(theform) {
 	if(($('postsubmit').name != 'replysubmit' && !($('postsubmit').name == 'editsubmit' && !isfirstpost) && theform.subject.value == "") || !sortid && !special && trim(message) == "") {
 		showError('Có lỗi, bạn không nhập tiêu đề hoặc nội dung');
 		return false;
-	} else if(mb_strlen(theform.subject.value) > 255) {
-		showError('Tiêu đề quá giới hạn 255 ký tự');
+	} else if(mb_strlen(theform.subject.value) > 80) {
+		showError('Tiêu đề quá giới hạn 80 ký tự');
 		return false;
 	}
 	if(ispicstyleforum == 1 && ATTACHORIMAGE == 0 && isfirstpost) {

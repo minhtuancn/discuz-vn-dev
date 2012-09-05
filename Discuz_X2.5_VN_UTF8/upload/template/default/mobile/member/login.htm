@@ -10,7 +10,9 @@
 	<p>
 		<select name="fastloginfield" id="fastloginfield_{$loginhash}" >
 		<option value="username">{lang username}</option>
+		<!--{if getglobal('setting/uidlogin')}-->
 		<option value="uid">UID</option>
+		<!--{/if}-->
 		<option value="email">Email</option>
 		</select>
 		<input type="text" name="username" id="username_{$loginhash}" class="txt" />

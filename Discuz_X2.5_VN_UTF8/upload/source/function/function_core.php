@@ -4,7 +4,7 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: function_core.php 30700 2012-06-12 10:39:22Z svn_project_zhangjie $
+ *      $Id: function_core.php 31292 2012-08-07 06:21:02Z monkey $
  */
 
 if(!defined('IN_DISCUZ')) {
@@ -12,79 +12,7 @@ if(!defined('IN_DISCUZ')) {
 }
 
 define('DISCUZ_CORE_FUNCTION', true);
-	//Bo dau tieng viet
-	function locdau($value)
-	{
-	//bat dau loc dau
-	$locdau_in = array (
-	'#(A|Á|À|Ả|Ã|Ạ|Ă|Ắ|Ằ|Ẳ|Ẵ|Ặ|Â|Ấ|Ầ|Ẩ|Ẫ|Ậ|á|à|ả|ã|ạ|ă|ắ|ằ|ẳ|ẵ|ặ|â|ấ|ầ|ẩ|ẫ|ậ)#', 
-	'#(B)#', 
-	'#(C)#', 
-	'#(D|Đ|đ)#', 
-	'#(E|É|È|Ẻ|Ẽ|Ẹ|Ê|Ế|Ề|Ể|Ễ|Ệ|é|è|ẻ|ẽ|ẹ|ê|ế|ề|ể|ễ|ệ)#', 
-	'#(F)#', 
-	'#(G)#', 
-	'#(H)#', 
-	'#(I|Í|Ì|Ỉ|Ĩ|Ị|í|ì|ỉ|ĩ|ị)#', 
-	'#(J)#', 
-	'#(K)#', 
-	'#(L)#', 
-	'#(M)#', 
-	'#(N)#', 
-	'#(O|Ó|Ò|Ỏ|Õ|Ọ|Ô|Ố|Ồ|Ổ|Ỗ|Ộ|Ơ|Ớ|Ờ|Ở|Ỡ|Ợ|ó|ò|ỏ|õ|ọ|ô|ố|ồ|ổ|ỗ|ộ|ơ|ớ|ờ|ở|ỡ|ợ)#', 
-	'#(P)#', 
-	'#(Q)#', 
-	'#(R)#', 
-	'#(S)#', 
-	'#(T)#', 
-	'#(U|Ú|Ù|Ủ|Ũ|Ụ|Ư|Ứ|Ừ|Ử|Ữ|Ự|ú|ù|ủ|ũ|ụ|ư|ứ|ừ|ử|ữ|ự)#', 
-	'#(V)#', 
-	'#(W)#', 
-	'#(X)#', 
-	'#(Ý|Ỳ|Ỷ|Ỹ|Ỵ|Y|ý|ỳ|ỷ|ỹ|ỵ|y)#', 
-	'#(Z)#', 
-	"/[^a-zA-Z0-9\-\_]/", 
-	'#(@)#',
-	) ; 
-	$locdau_out = array ( 
-	'a', 
-	'b', 
-	'c', 
-	'd', 
-	'e', 
-	'f', 
-	'g', 
-	'h', 
-	'i', 
-	'j', 
-	'k', 
-	'l', 
-	'm', 
-	'n', 
-	'o', 
-	'p',
-	'q',
-	'r',
-	's',
-	't',
-	'u',
-	'v',
-	'w',
-	'x',
-	'y',
-	'z',
-	'-',
-	'-',
 
-	) ; 
-
-	$value = preg_replace($locdau_in, $locdau_out, $value); 
-	$value = preg_replace('/(-)+/', '_', $value);
-		$value = str_replace(array('-quot', '"'), '', $value);
-	$value = str_replace(array('-', '_'), '_', $value);
-    //ket thuc loc dau
-		return $value;
-	}
 function system_error($message, $show = true, $save = true, $halt = true) {
 	discuz_error::system_error($message, $show, $save, $halt);
 }
@@ -697,7 +625,7 @@ function getcurrentnav() {
 			$_GET['mod'] = 'follow';
 		}
 		foreach($_G['setting']['navmns'][$_G['basefilename']] as $navmn) {
-			if($navmn[0] == array_intersect_assoc($navmn[0], $_GET)) {
+			if($navmn[0] == array_intersect_assoc($navmn[0], $_GET) || ($navmn[0]['mod'] == 'space' && $_GET['mod'] == 'spacecp' && ($navmn[0]['do'] == $_GET['ac'] || $navmn[0]['do'] == 'album' && $_GET['ac'] == 'upload'))) {
 				$mnid = $navmn[1];
 			}
 		}
@@ -958,7 +886,6 @@ function rewriteoutput($type, $returntype, $host) {
 		list(,,, $fid, $page, $extra) = func_get_args();
 		$r = array(
 			'{fid}' => empty($_G['setting']['forumkeys'][$fid]) ? $fid : $_G['setting']['forumkeys'][$fid],
-			'{tenbox}' => locdau(DB::result_first("SELECT name FROM ".DB::table('forum_forum')." WHERE fid='$fid'")),
 			'{page}' => $page ? $page : 1,
 		);
 	} elseif($type == 'forum_viewthread') {
@@ -967,7 +894,6 @@ function rewriteoutput($type, $returntype, $host) {
 			'{tid}' => $tid,
 			'{page}' => $page ? $page : 1,
 			'{prevpage}' => $prevpage && !IS_ROBOT ? $prevpage : 1,
-			'{tenbai}' => locdau(DB::result_first("SELECT subject FROM ".DB::table('forum_thread')." WHERE tid='$tid'")),
 		);
 	} elseif($type == 'home_space') {
 		list(,,, $uid, $username, $extra) = func_get_args();
@@ -981,7 +907,6 @@ function rewriteoutput($type, $returntype, $host) {
 		$r = array(
 			'{uid}' => $uid,
 			'{blogid}' => $blogid,
-			'{tenblog}' => locdau(DB::result_first("SELECT subject FROM ".DB::table('home_blog')." WHERE blogid='$blogid'")),
 		);
 	} elseif($type == 'group_group') {
 		list(,,, $fid, $page, $extra) = func_get_args();
@@ -1028,6 +953,7 @@ function rewriteoutput($type, $returntype, $host) {
 		return $host.$href;
 	}
 }
+
 function mobilereplace($file, $replace) {
 	return helper_mobile::mobilereplace($file, $replace);
 }
@@ -1172,7 +1098,7 @@ function hookscript($script, $hscript, $type = 'funcs', $param = array(), $func 
 			foreach($hookfuncs as $hookfunc) {
 				if($hooksadminid[$hookfunc[0]]) {
 					$classkey = (HOOKTYPE != 'hookscriptmobile' ? '' : 'mobile').'plugin_'.($hookfunc[0].($hscript != 'global' ? '_'.$hscript : ''));
-					if(!class_exists($classkey)) {
+					if(!class_exists($classkey, false)) {
 						continue;
 					}
 					if(!isset($pluginclasses[$classkey])) {
@@ -1474,7 +1400,6 @@ function runlog($file, $message, $halt=0) {
 function stripsearchkey($string) {
 	$string = trim($string);
 	$string = str_replace('*', '%', addcslashes($string, '%_'));
-	$string = str_replace('_', '\_', $string);
 	return $string;
 }
 

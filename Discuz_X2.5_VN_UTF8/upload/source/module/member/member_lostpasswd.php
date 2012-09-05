@@ -4,7 +4,7 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: member_lostpasswd.php 28113 2012-02-22 09:25:55Z svn_project_zhangjie $
+ *      $Id: member_lostpasswd.php 31164 2012-07-20 07:50:57Z chenmengshu $
  */
 
 if(!defined('IN_DISCUZ')) {
@@ -20,6 +20,7 @@ if(submitcheck('lostpwsubmit')) {
 	$_GET['email'] = strtolower(trim($_GET['email']));
 	if($_GET['username']) {
 		list($tmp['uid'], , $tmp['email']) = uc_get_user(addslashes($_GET['username']));
+		$tmp['email'] = strtolower(trim($tmp['email']));
 		if($_GET['email'] != $tmp['email']) {
 			showmessage('getpasswd_account_notmatch');
 		}
@@ -34,6 +35,7 @@ if(submitcheck('lostpwsubmit')) {
 		}
 		$member = C::t('common_member')->fetch_by_email($_GET['email'], 1);
 		list($tmp['uid'], , $tmp['email']) = uc_get_user(addslashes($member['username']));
+		$tmp['email'] = strtolower(trim($tmp['email']));
 	}
 	if(!$member) {
 		showmessage('getpasswd_account_notmatch');

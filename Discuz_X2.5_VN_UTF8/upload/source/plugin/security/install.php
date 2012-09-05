@@ -4,7 +4,7 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: install.php 29568 2012-04-19 03:39:25Z songlixin $
+ *      $Id: install.php 31428 2012-08-28 02:35:36Z songlixin $
  */
 
 if(!defined('IN_DISCUZ')) {
@@ -96,5 +96,11 @@ if (file_exists(DISCUZ_ROOT . './source/include/cron/cron_security_daily.php')) 
 	updatecache('setting');
 	discuz_cron::run($cronId);
 }
+$updateData = array(
+	'security_usergroups_white_list' => serialize(array(1, 2, 3)),
+);
+
+C::t('common_setting')->update_batch($updateData);
+updatecache('setting');
 
 $finish = true;

@@ -1,8 +1,8 @@
 /*
 	[Discuz!] (C)2001-2099 Comsenz Inc.
 	This is NOT a freeware, use is subject to license terms
-	Vietnamese by Kyehani - discuz.vn
-	$Id: forum.js 28137 2012-02-23 03:28:22Z zhengqingpeng $
+
+	$Id: forum.js 31416 2012-08-27 07:50:15Z zhangguosheng $
 */
 
 function saveData(ignoreempty) {
@@ -95,6 +95,9 @@ function sidebar_collapse(lang) {
 }
 
 function keyPageScroll(e, prev, next, url, page) {
+	if(loadUserdata('is_blindman')) {
+		return true;
+	}
 	e = e ? e : window.event;
 	var tagname = BROWSER.ie ? e.srcElement.tagName : e.target.tagName;
 	if(tagname == 'INPUT' || tagname == 'TEXTAREA') return;
@@ -209,8 +212,8 @@ function fastpostvalidate(theform, noajaxpost) {
 	if(theform.message.value == '' || theform.subject.value == '') {
 		s = 'Có lỗi! Bạn chưa nhập Tiêu đề hoặc Nội dung';
 		theform.message.focus();
-	} else if(mb_strlen(theform.subject.value) > 255) {
-		s = 'Tiêu đề bài viết lớn hơn 255 kí tự';
+	} else if(mb_strlen(theform.subject.value) > 80) {
+		s = 'Tiêu đề bài viết lớn hơn 80 kí tự';
 		theform.subject.focus();
 	}
 	if(!disablepostctrl && ((postminchars != 0 && mb_strlen(theform.message.value) < postminchars) || (postmaxchars != 0 && mb_strlen(theform.message.value) > postmaxchars))) {
@@ -234,7 +237,7 @@ function fastpostvalidate(theform, noajaxpost) {
 }
 
 function updatefastpostattach(aid, url) {
-	ajaxget('forum.php?mod=ajax&action=attachlist&posttime=' + $('posttime').value + (!fid ? '' : '&fid=' + fid), 'attachlist');// k y e hani
+	ajaxget('forum.php?mod=ajax&action=attachlist&posttime=' + $('posttime').value + (!fid ? '' : '&fid=' + fid), 'attachlist');
 	$('attach_tblheader').style.display = '';
 }
 
@@ -274,7 +277,7 @@ function loadData(quiet, formobj) {
 
 	if(in_array((data = trim(data)), ['', 'null', 'false', null, false])) {
 		if(!quiet) {
-			showDialog('Không có dữ liệu để phục hồi!', 'info');
+			showDialog('Không có dữ liệu phục hồi！', 'info');
 		}
 		return;
 	}

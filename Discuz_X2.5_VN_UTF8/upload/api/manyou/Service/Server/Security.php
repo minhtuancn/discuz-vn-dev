@@ -4,7 +4,7 @@
  *		[Discuz!] (C)2001-2099 Comsenz Inc.
  *		This is NOT a freeware, use is subject to license terms
  *
- *		$Id: Security.php 30666 2012-06-11 03:49:30Z songlixin $
+ *		$Id: Security.php 31428 2012-08-28 02:35:36Z songlixin $
  */
 
 if(!defined('IN_DISCUZ')) {
@@ -212,7 +212,7 @@ class Cloud_Service_Server_Security extends Cloud_Service_Server_Restful {
 
 		$memberInfo = C::t('common_member')->fetch($uid, 0, 1);
 		$checkResult = false;
-		if ($memberInfo['adminid'] > 0 || in_array($memberInfo['groupid'], $whiteList)) {
+		if (in_array($memberInfo['groupid'], $whiteList)) {
 			$checkResult = true;
 		}
 

@@ -1581,6 +1581,8 @@ $lang = array(
 	'setting_functions_other' => 'Khác',
 	'setting_functions_other_pwdsafety' => 'Kích hoạt tính năng mã hóa mật khẩu',
 	'setting_functions_other_pwdsafety_comment' => 'Chọn "Có", các diễn đàn về mật khẩu để đăng nhập vào thời điểm đã được mã hóa trước khi truyền',
+	'setting_functions_other_uidlogin' => 'Bật Đăng nhập UID',
+	'setting_functions_other_uidlogin_comment' => 'Đăng nhập trang web cho phép chứng thực đăng nhập thông qua UID',
 	'setting_functions_other_autoidselect' => 'Đăng nhập tự động lựa chọn mở tài khoản',
 	'setting_functions_other_autoidselect_comment' => 'Chọn "Yes", trang web sẽ được tự động đăng nhập bởi UID, E-mail, tên người dùng từng người một để phù hợp với thứ tự',
 	'setting_functions_other_rssstatus' => '<span class="spectitle">Sử dụng RSS</span>:',
@@ -3874,7 +3876,6 @@ $lang = array(
 	'usergroups_edit_magic_unallowed' => 'Không cho phép sử dụng, mua và chuyển nhượng',
 	'usergroups_edit_magic_allow' => 'Cho phép sử dụng, mua',
 	'usergroups_edit_magic_allow_and_pass' =>'Cho phép sử dụng, mua và chuyển nhượng',
-
 	'usergroups_edit_invite' => 'Mời đăng ký',
 	'usergroups_edit_invite_tips' =>' <li> Mã mời đăng ký<a href="'.ADMINSCRIPT.'?action=setting&operation=access"> Bấm vào đây để khởi động</a> </li> ', 
 	
@@ -6136,7 +6137,7 @@ $lang = array(
 	'portalcategory_summary_comment' => 'This is a description of the content for search engine optimization, placed on the description meta tag',//'此描述内容用于搜索引擎优化，放在 meta 的 description 标签中',
 	'portalcategory_keyword' => 'SEO keywords',//'SEO 关键字',
 	'portalcategory_keyword_comment' => 'The keywords for search engine optimization, on the keyword meta tag. Separate multiple keywords with a comma &quot;,&quot;.',//'此关键词用于搜索引擎优化，放在 meta 的 keyword 标签中，多个关键字间请用半角逗号 "," 隔开',
-	'portalcategory_seoTitle' => 'Title',
+	'portalcategory_seotitle' => 'Title',
 	'portalcategory_url' => 'Tùy chỉnh URL',
 	'portalcategory_url_comment' => 'Define the link to jump',//'定义要跳转的链接地址',
 	'portalcategory_listprimaltplname' => 'List page template name',//'列表页模板名',

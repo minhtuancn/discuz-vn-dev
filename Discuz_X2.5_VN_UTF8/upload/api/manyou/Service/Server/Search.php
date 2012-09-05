@@ -4,7 +4,7 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: Search.php 29325 2012-04-01 09:17:16Z zhouxiaobo $
+ *      $Id: Search.php 31454 2012-08-29 03:07:40Z zhouxiaobo $
  */
 
 if(!defined('IN_DISCUZ')) {
@@ -959,16 +959,25 @@ class Cloud_Service_Server_Search extends Cloud_Service_Server_Restful {
 			$searchData = array();
 		}
 
+		$settings = array();
 		foreach($data as $k => $v) {
 			if (substr($k, 0, strlen('hotWordChangedFId_')) == 'hotWordChangedFId_') {
 				$hotWordChangedFId = dintval(substr($k, strlen('hotWordChangedFId_')));
 				C::t('common_syscache')->delete('search_recommend_words_' . $hotWordChangedFId);
 				continue;
 			}
+			if ($k == 'showDiscuzSearch' && $v) {
+				$status = $v == 1 ? 1 : 0;
+				$searchSetting = C::t('common_setting')->fetch('search', true);
+				$searchSetting['forum']['status'] = $status;
+				$settings['search'] = $searchSetting;
+				continue;
+			}
 			$searchData[$k] = $v;
 		}
+		$settings['my_search_data'] = $searchData;
 
-		C::t('common_setting')->update('my_search_data', $searchData);
+		C::t('common_setting')->update_batch($settings);
 		require_once DISCUZ_ROOT . './source/function/function_cache.php';
 		updatecache('setting');
 

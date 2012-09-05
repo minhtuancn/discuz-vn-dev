@@ -4,7 +4,7 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: home_space.php 28502 2012-03-01 11:33:29Z zhengqingpeng $
+ *      $Id: home_space.php 31211 2012-07-26 03:38:16Z liulanbo $
  */
 
 if(!defined('IN_DISCUZ')) {
@@ -20,7 +20,9 @@ $do = (!empty($_GET['do']) && in_array($_GET['do'], $dos))?$_GET['do']:'index';
 if(!in_array($do, array('home', 'doing', 'blog', 'album', 'share', 'wall'))) {
 	$_G['mnid'] = 'mn_common';
 }
-
+if(empty($_G['uid']) && in_array($_GET['do'], array('thread', 'trade', 'poll', 'activity', 'debate', 'reward', 'profile'))) {
+	showmessage('login_before_enter_home', null, array(), array('showmsg' => true, 'login' => 1));
+}
 $uid = empty($_GET['uid']) ? 0 : intval($_GET['uid']);
 
 $member = array();
@@ -30,6 +32,7 @@ if($_GET['username']) {
 		showmessage('space_does_not_exist');
 	}
 	$uid = $member['uid'];
+	$member['self'] = $uid == $_G['uid'] ? 1 : 0;
 }
 
 if($_GET['view'] == 'admin') {
@@ -70,7 +73,7 @@ if($uid && empty($member)) {
 }
 
 if(empty($space)) {
-	if(in_array($do, array('doing', 'blog', 'album', 'share', 'home', 'thread', 'trade', 'poll', 'activity', 'debate', 'reward', 'group'))) {
+	if(in_array($do, array('doing', 'blog', 'album', 'share', 'home', 'trade', 'poll', 'activity', 'debate', 'reward', 'group'))) {
 		$_GET['view'] = 'all';
 		$space['uid'] = 0;
 	} else {

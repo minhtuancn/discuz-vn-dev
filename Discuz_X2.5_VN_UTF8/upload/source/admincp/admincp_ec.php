@@ -4,7 +4,7 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: admincp_ec.php 30773 2012-06-19 03:41:56Z zhengqingpeng $
+ *      $Id: admincp_ec.php 30977 2012-07-05 07:03:30Z monkey $
  */
 
 if(!defined('IN_DISCUZ') || !defined('IN_ADMINCP')) {
@@ -203,7 +203,6 @@ EOT;
 		showsetting('ec_tenpay_opentrans_key', 'settingsnew[ec_tenpay_opentrans_key]', $tenpay_securitycodemask, 'text');
 
 		showtitle('ec_tenpay');
-		showsetting('ec_tenpay_direct', 'settingsnew[ec_tenpay_direct]', $settings['ec_tenpay_direct'], 'radio');
 		showsetting('ec_tenpay_bargainor', 'settingsnew[ec_tenpay_bargainor]', $settings['ec_tenpay_bargainor'], 'text');
 
 		$tenpay_securitycodemask = $settings['ec_tenpay_key'] ? $settings['ec_tenpay_key']{0}.'********'.substr($settings['ec_tenpay_key'], -4) : '';

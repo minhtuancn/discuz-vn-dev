@@ -4,15 +4,15 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: cron_publish_halfhourly.php 27692 2012-02-10 02:37:09Z chenmengshu $
+ *      $Id: cron_publish_halfhourly.php 31463 2012-08-30 08:59:17Z zhangguosheng $
  */
 
 if(!defined('IN_DISCUZ')) {
 	exit('Access Denied');
 }
 
-require_once './source/function/function_forum.php';
-require_once './source/function/function_post.php';
+require_once libfile('function/forum');
+require_once libfile('function/post');
 
 loadcache('cronpublish');
 
