@@ -4,7 +4,7 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: admincp_threadtypes.php 29387 2012-04-10 02:21:02Z zhangguosheng $
+ *      $Id: admincp_threadtypes.php 31481 2012-09-03 03:02:21Z zhengqingpeng $
  */
 
 if(!defined('IN_DISCUZ') || !defined('IN_ADMINCP')) {
@@ -781,7 +781,7 @@ EOT;
 
 		showformheader("threadtypes&operation=sorttemplate&sortid={$_GET['sortid']}");
 		echo '<script type="text/JavaScript">var currentAnchor = \'ltype\';</script>'.
-			'<div class="itemtitle"><ul class="tab1" id="submenu">'.
+			'<div class="itemtitle" style="width:100%;margin-bottom:5px;"><ul class="tab1" id="submenu">'.
 			'<li id="nav_ttype" onclick="showanchor(this)" class="current"><a href="#"><span>'.$lang['threadtype_template_viewthread'].'</span></a></li>'.
 			'<li id="nav_stype" onclick="showanchor(this)"><a href="#"><span>'.$lang['threadtype_template_forumdisplay'].'</span></a></li>'.
 			'<li id="nav_ptype" onclick="showanchor(this)"><a href="#"><span>'.$lang['threadtype_template_post'].'</span></a></li>'.
@@ -1265,14 +1265,10 @@ EOT;
 
 		foreach($idcmp as $k => $v) {
 			if($k != $v) {
-				$searcharr[] = '{'.$k.'}';
 				$searcharr[] = '{'.$k;
 				$searcharr[] = '['.$k;
-				$searcharr[] = '['.$k.']';
-				$replacearr[] = '{'.$v.'}';
 				$replacearr[] = '{'.$v;
 				$replacearr[] = '['.$v;
-				$replacearr[] = '['.$v.']';
 			}
 		}
 

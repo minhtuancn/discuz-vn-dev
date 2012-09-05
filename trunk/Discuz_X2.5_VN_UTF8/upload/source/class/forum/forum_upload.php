@@ -4,7 +4,7 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: forum_upload.php 29250 2012-03-31 01:54:28Z chenmengshu $
+ *      $Id: forum_upload.php 31201 2012-07-25 07:37:51Z zhengqingpeng $
  */
 
 if(!defined('IN_DISCUZ')) {
@@ -94,6 +94,9 @@ class forum_upload {
 			$this->uploadmsg(7);
 		}
 		if($upload->attach['isimage']) {
+			if(!in_array($upload->attach['imageinfo']['2'], array(1,2,3,6))) {
+				$this->uploadmsg(7);
+			}
 			if($_G['setting']['showexif']) {
 				require_once libfile('function/attachment');
 				$exif = getattachexif(0, $upload->attach['target']);

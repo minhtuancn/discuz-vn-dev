@@ -2,7 +2,7 @@
 	[Discuz!] (C)2001-2099 Comsenz Inc.
 	This is NOT a freeware, use is subject to license terms
 
-	$Id: home.js 30720 2012-06-14 03:42:20Z zhengqingpeng $
+	$Id: home.js 31008 2012-07-09 02:24:15Z zhengqingpeng $
 */
 
 var note_step = 0;
@@ -264,7 +264,7 @@ function showFlash(host, flashvar, obj, shareid) {
 	    + '<param name="bgcolor" value="#FFFFFF" />'
 	    + '<param name="allowScriptAccess" value="none" />'
 	    + '<param name="allowNetworking" value="internal" />'
-	    + '<embed width="480" height="400" menu="false" quality="high" src="FLASHADDR" type="application/x-shockwave-flash" />'
+	    + '<embed width="480" height="400" menu="false" quality="high" allowScriptAccess="none" allowNetworking="internal" src="FLASHADDR" type="application/x-shockwave-flash" />'
 	    + '</object>';
 	var videoFlash = '<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="480" height="450">'
 		+ '<param value="transparent" name="wmode"/>'

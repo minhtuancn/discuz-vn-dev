@@ -4,7 +4,7 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: spacecp_credit_base.php 28214 2012-02-24 06:38:56Z zhengqingpeng $
+ *      $Id: spacecp_credit_base.php 30977 2012-07-05 07:03:30Z monkey $
  */
 
 if(!defined('IN_DISCUZ')) {
@@ -127,8 +127,9 @@ if($_GET['op'] == 'base') {
 			$price = round(($amount / $_G['setting']['ec_ratio'] * 100) / 100, 2);
 			$orderid = '';
 
+			$apitype = is_numeric($_GET['bank_type']) ? 'tenpay' : $_GET['bank_type'];
 			require_once libfile('function/trade');
-			$requesturl = credit_payurl($price, $orderid);
+			$requesturl = credit_payurl($price, $orderid, $_GET['bank_type']);
 
 			if(C::t('forum_order')->fetch($orderid)) {
 				showmessage('credits_addfunds_order_invalid', '', array(), array('showdialog' => 1, 'showmsg' => true, 'closetime' => true));

@@ -4,7 +4,7 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: spacecp_pm.php 30849 2012-06-26 02:21:32Z zhangguosheng $
+ *      $Id: spacecp_pm.php 30985 2012-07-06 01:47:44Z zhengqingpeng $
  */
 
 if(!defined('IN_DISCUZ')) {
@@ -231,7 +231,8 @@ if($_GET['op'] == 'checknewpm') {
 					showmessage('message_bad_touid', '', array(), array('return' => true));
 				}
 			} else {
-				$return = sendpm(0, $subject, $message, '', $pmid, 0);
+				$topmuid = intval($_GET['topmuid']);
+				$return = sendpm($topmuid, $subject, $message, '', $pmid, 0);
 			}
 
 		} elseif($users) {

@@ -37,6 +37,11 @@
 			var ulObj = $('newreply_'+values.tid+'_{$_GET['feedid']}');
 			ulObj.insertBefore(newli, ulObj.firstChild);
 			$('postmessage_{$_GET[tid]}_{$_GET['feedid']}').value = '';
+			if(values.sechash) {
+				updatesecqaa(values.sechash);
+				updateseccode(values.sechash);
+				$('seccodeverify_'+values.sechash).value='';
+			}
 		});
 		
 		if(parseInt(values.feedid)) {

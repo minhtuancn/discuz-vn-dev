@@ -4,7 +4,7 @@
  *		[Discuz!] (C)2001-2099 Comsenz Inc.
  *		This is NOT a freeware, use is subject to license terms
  *
- *		$Id: Connect.php 29263 2012-03-31 05:45:08Z yexinhao $
+ *		$Id: Connect.php 31377 2012-08-21 07:05:44Z liudongdong $
  */
 
 if(!defined('IN_DISCUZ')) {
@@ -209,8 +209,9 @@ class Cloud_Service_Connect {
 	public function connectParseBbcode($bbcode, $fId, $pId, $isHtml, &$attachImages) {
 		include_once libfile('function/discuzcode');
 
-		$result = preg_replace('/\[hide(=\d+)?\].+?\[\/hide\](\r\n|\n|\r)/i', '', $bbcode);
-		$result = preg_replace('/\[payto(=\d+)?\].+?\[\/payto\](\r\n|\n|\r)/i', '', $result);
+		$result = preg_replace('/\[hide(=\d+)?\].+?\[\/hide\](\r\n|\s)/i', '', $bbcode);
+		$result = preg_replace('/\[payto(=\d+)?\].+?\[\/payto\](\r\n|\s)/i', '', $result);
+		$result = preg_replace('/\[quote\].*\[\/quote\](\r\n|\n|\r){0,}/is', '', $result);
 		$result = discuzcode($result, 0, 0, $isHtml, 1, 2, 1, 0, 0, 0, 0, 1, 0);
 		$result = strip_tags($result, '<img><a>');
 		$result = preg_replace('/<img src="images\//i', "<img src=\"".$_G['siteurl']."images/", $result);

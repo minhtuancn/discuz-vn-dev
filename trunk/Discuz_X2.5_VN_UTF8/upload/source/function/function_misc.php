@@ -4,7 +4,7 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: function_misc.php 30465 2012-05-30 04:10:03Z zhengqingpeng $
+ *      $Id: function_misc.php 30988 2012-07-06 02:24:35Z chenmengshu $
  */
 
 if(!defined('IN_DISCUZ')) {
@@ -488,7 +488,7 @@ function recyclebinpostundelete($undeletepids, $posttableid = false) {
 		return $postsundel;
 	}
 
-	$postsundel = C::t('forum_post')->update($posttableid, $undeletepids, array('invisible' => '0'), true);
+	C::t('forum_post')->update($posttableid, $undeletepids, array('invisible' => '0'), true);
 
 	include_once libfile('function/post');
 	if($ruidarray) {
@@ -503,7 +503,7 @@ function recyclebinpostundelete($undeletepids, $posttableid = false) {
 		updateforumcount($fid);
 	}
 
-	return $postsundel;
+	return count($undeletepids);
 }
 
 ?>

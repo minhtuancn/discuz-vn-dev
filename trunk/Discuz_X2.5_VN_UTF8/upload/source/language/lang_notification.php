@@ -100,7 +100,7 @@ $lang = array
 	'reason_quickclear' => '{cleartype} hãy xóa {actor} <div class="quote"><blockquote>{reason}</blockquote></div>',
 
 	'modthreads_delete' => 'Chủ đề {threadsubject} không được chấp thuận, đã bị xóa !<div class="quote"><blockquote>{reason}</blockquote></div>',
-
+	'modthreads_delete_reason' => 'Bài viết {threadsubject} không vượt qua được sự kiểm duyệt！<div class="quote"><blockquote>{reason}</blockquote></div>',
 	'modthreads_validate' => 'Chủ đề <a href="forum.php?mod=viewthread&tid={tid}" target="_blank">{threadsubject}</a> đã được phê duyệt! &nbsp; <a href="forum.php?mod=viewthread&tid={tid}" target="_blank" class="lit">Xem &rsaquo;</a> <div class="quote"><blockquote>{reason}</blockquote></div>',
 
 	'modreplies_delete' => 'Trả lời của bạn đã không được thông qua, hiện đã bị xóa! <p class="summary">Nội dung:<span>{post}</span></p> <div class="quote"><blockquote>{reason}</blockquote></div>',

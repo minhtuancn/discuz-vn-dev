@@ -1,8 +1,8 @@
 /*
 	[Discuz!] (C)2001-2099 Comsenz Inc.
 	This is NOT a freeware, use is subject to license terms
-	Vietnamese by Kyehani - discuz.vn
-	$Id: admincp.js 27346 2012-01-17 05:56:24Z monkey $
+
+	$Id: admincp.js 31416 2012-08-27 07:50:15Z zhangguosheng $
 */
 
 function redirect(url) {
@@ -185,6 +185,9 @@ function updatecolorpreview(obj) {
 }
 
 function entersubmit(e, name) {
+	if(loadUserdata('is_blindman')) {
+		return false;
+	}
 	var e = e ? e : event;
 	if(e.keyCode != 13) {
 		return;

@@ -4,7 +4,7 @@
  *		[Discuz! X] (C)2001-2099 Comsenz Inc.
  *		This is NOT a freeware, use is subject to license terms
  *
- *		$Id: connect.class.php 30759 2012-06-18 08:36:12Z liudongdong $
+ *		$Id: connect.class.php 31369 2012-08-20 07:59:43Z liudongdong $
  */
 
 if(!defined('IN_DISCUZ')) {
@@ -40,6 +40,7 @@ class plugin_qqconnect_base {
 			$_G['connect']['login_url'] = $_G['siteurl'].'connect.php?mod=login&op=init&referer='.urlencode($_G['connect']['referer'] ? $_G['connect']['referer'] : 'index.php');
 			$_G['connect']['callback_url'] = $_G['siteurl'].'connect.php?mod=login&op=callback';
 			$_G['connect']['discuz_new_feed_url'] = $_G['siteurl'].'connect.php?mod=feed&op=new&formhash=' . formhash();
+			$_G['connect']['discuz_new_post_feed_url'] = $_G['siteurl'].'connect.php?mod=feed&op=new&action=post&formhash=' . formhash();
 			$_G['connect']['discuz_new_share_url'] = $_G['siteurl'].'home.php?mod=spacecp&ac=plugin&id=qqconnect:spacecp&pluginop=new';
 			$_G['connect']['discuz_sync_tthread_url'] = $_G['siteurl'].'home.php?mod=spacecp&ac=plugin&id=qqconnect:spacecp&pluginop=sync_tthread&formhash=' . formhash();
 			$_G['connect']['discuz_change_qq_url'] = $_G['siteurl'].'connect.php?mod=login&op=change';
@@ -196,6 +197,17 @@ class plugin_qqconnect extends plugin_qqconnect_base {
 			}
 		}
 
+		if ($_G['cookie']['connect_sync_post']) {
+			$params = array();
+			list($params['thread_id'], $params['post_id']) = explode('|', $_G['cookie']['connect_sync_post']);
+			$params['ts'] = TIMESTAMP;
+			$params['sig'] = $connectService->connectGetSig($params, $connectService->connectGetSigKey());
+
+			$utilService = Cloud::loadClass('Service_Util');
+			$jsurl = $_G['connect']['discuz_new_post_feed_url'].'&'.$utilService->httpBuildQuery($params, '', '&');
+			$loadJs['syncpostjs'] = array('jsurl' => $jsurl);
+		}
+
 		return tpl_global_footer($loadJs);
 	}
 
@@ -245,6 +257,14 @@ class plugin_qqconnect extends plugin_qqconnect_base {
 				return tpl_sync_method($allowconnectfeed, $allowconnectt);
 			}
 		}
+
+		if(!$_G['inajax'] && ($allowconnectfeed || $allowconnectt) && $_GET['action'] == 'reply') {
+			$connectService = Cloud::loadClass('Service_Connect');
+			$connectService->connectMergeMember();
+			if ($_G['member']['is_feed']) {
+				return tpl_sync_method(false, $allowconnectt);
+			}
+		}
 	}
 
 	function _post_infloat_btn_extra_output() {
@@ -261,6 +281,14 @@ class plugin_qqconnect extends plugin_qqconnect_base {
 				return tpl_infloat_sync_method($allowconnectfeed, $allowconnectt, ' z');
 			}
 		}
+
+		if($_G['inajax'] && ($allowconnectfeed || $allowconnectt) && $_GET['action'] == 'reply') {
+			$connectService = Cloud::loadClass('Service_Connect');
+			$connectService->connectMergeMember();
+			if ($_G['member']['is_feed']) {
+				return tpl_infloat_sync_method(false, $allowconnectt, ' z');
+			}
+		}
 	}
 
 	function _post_feedlog_message($param) {
@@ -268,34 +296,62 @@ class plugin_qqconnect extends plugin_qqconnect_base {
 			return;
 		}
 		global $_G;
-		$condition1 = $_GET['action'] == 'reply' || substr($param['param'][0], -8) != '_succeed';
+		$condition1 = substr($param['param'][0], -8) != '_succeed';
 		$condition2 = $_GET['action'] == 'edit' && !$GLOBALS['isfirstpost'];
 		$condition3 = !$this->_allowconnectfeed() && !$this->_allowconnectt();
 		$condition4 = empty($_GET['connect_publish_feed']) && empty($_GET['connect_publish_t']);
+		if (empty($_GET['connect_publish_feed']) && $_GET['action'] != 'reply') {
+			dsetcookie('connect_not_sync_feed', 1);
+		} else {
+			dsetcookie('connect_not_sync_feed', 0);
+		}
+		if (empty($_GET['connect_publish_t'])) {
+			dsetcookie('connect_not_sync_t', 1);
+		} else {
+			dsetcookie('connect_not_sync_t', 0);
+		}
 		if ($condition1 || $condition2 || $condition3 || $condition4) {
 			return false;
 		}
 
-		$tid = $param['param'][2]['tid'];
+		if ($_GET['action'] == 'reply') {
+			$tid = $param['param'][2]['tid'];
+			$pid = $param['param'][2]['pid'];
 
-		$thread = C::t('forum_thread')->fetch($tid);
-		if ($_GET['connect_publish_feed']) {
-			$thread['status'] = setstatus(7, 1, $thread['status']);
+			if ($_GET['connect_publish_t']) {
+				dsetcookie('connect_sync_post', $tid .'|'. $pid);
+
+				$data = array(
+					'pid' => $pid,
+					'uid' => $_G['uid'],
+					'lastpublished' => 0,
+					'dateline' => $_G['timestamp'],
+					'status' => 0,
+				);
+				C::t('#qqconnect#connect_postfeedlog')->insert($data, 0, 1);
+			}
+		} else {
+			$tid = $param['param'][2]['tid'];
+
+			$thread = C::t('forum_thread')->fetch($tid);
+			if ($_GET['connect_publish_feed']) {
+				$thread['status'] = setstatus(7, 1, $thread['status']);
+			}
+			if ($_GET['connect_publish_t']) {
+				$thread['status'] = setstatus(8, 1, $thread['status']);
+			}
+
+			C::t('forum_thread')->update($tid, array('status' => $thread['status']));
+
+			$data = array(
+				'tid' => $tid,
+				'uid' => $_G['uid'],
+				'lastpublished' => 0,
+				'dateline' => $_G['timestamp'],
+				'status' => 0,
+			);
+			C::t('#qqconnect#connect_feedlog')->insert($data, 0, 1);
 		}
-		if ($_GET['connect_publish_t']) {
-			$thread['status'] = setstatus(8, 1, $thread['status']);
-		}
-
-		C::t('forum_thread')->update($tid, array('status' => $thread['status']));
-
-		$data = array(
-			'tid' => $tid,
-			'uid' => $_G['uid'],
-			'lastpublished' => 0,
-			'dateline' => $_G['timestamp'],
-			'status' => 0,
-		);
-		C::t('#qqconnect#connect_feedlog')->insert($data, 0, 1);
 	}
 
 
@@ -454,9 +510,50 @@ class plugin_qqconnect extends plugin_qqconnect_base {
 		}
 	}
 
+	function _viewthread_postbottom_output() {
+		global $_G, $postlist;
+		if($postlist[$_G['forum_firstpid']]['invisible'] == 0 && $_G['inajax']) {
+			$jsurl = $return = '';
+			$viewpid = intval($_GET['viewpid']);
+			if ($viewpid && $_G['tid']) {
+
+				$data = C::t('#qqconnect#connect_postfeedlog')->fetch_by_pid($viewpid);
+				if (!$data['status'] && $data) {
+
+					$params = array();
+					$params['thread_id'] = $_G['tid'];
+					$params['post_id'] = $viewpid;
+					$params['ts'] = TIMESTAMP;
+					$connectService = Cloud::loadClass('Service_Connect');
+					$params['sig'] = $connectService->connectGetSig($params, $connectService->connectGetSigKey());
+
+					$utilService = Cloud::loadClass('Service_Util');
+					$jsurl = $_G['connect']['discuz_new_post_feed_url'].'&'.$utilService->httpBuildQuery($params, '', '&');
+					$return = tpl_sync_post_viewthread_bottom($jsurl);
+				}
+			}
+			return array($return);
+		}
+	}
+
 	function _qqshow_img($openid) {
 		global $_G;
-		return '<img width="120" src="http://open.show.qq.com/cgi-bin/qs_open_snapshot?appid='.$_G['setting']['connectappid'].'&openid='.$openid.'" />';
+		return '<img width="120" src="http://qs.qlogo.cn/qsthirdbg/'.$_G['setting']['connectappid'].'/'.$openid.'/140" />';
+	}
+
+	function _viewthread_fastpost_btn_extra_output() {
+		if(!$this->allow) {
+			return;
+		}
+		global $_G;
+		$allowconnectt = $this->_allowconnectt();
+		if($GLOBALS['fastpost'] && $allowconnectt) {
+			$connectService = Cloud::loadClass('Service_Connect');
+			$connectService->connectMergeMember();
+			if ($_G['member']['is_feed']) {
+				return lang('plugin/qqconnect', 'connect_post_sync_method') . tpl_sync_method(false, $allowconnectt) . ' | ';
+			}
+		}
 	}
 }
 
@@ -574,6 +671,14 @@ class plugin_qqconnect_forum extends plugin_qqconnect {
 		return $this->_viewthread_bottom_output();
 	}
 
+	function viewthread_fastpost_btn_extra_output() {
+		return $this->_viewthread_fastpost_btn_extra_output();
+	}
+
+	function viewthread_postbottom_output() {
+		return $this->_viewthread_postbottom_output();
+	}
+
 }
 
 class plugin_qqconnect_group extends plugin_qqconnect {
@@ -601,6 +706,10 @@ class plugin_qqconnect_group extends plugin_qqconnect {
 	function viewthread_bottom_output() {
 		return $this->_viewthread_bottom_output();
 	}
+
+	function viewthread_fastpost_btn_extra_output() {
+		return $this->_viewthread_fastpost_btn_extra_output();
+	}
 }
 
 class plugin_qqconnect_home extends plugin_qqconnect {
@@ -608,10 +717,6 @@ class plugin_qqconnect_home extends plugin_qqconnect {
 	function spacecp_profile_bottom() {
 		global $_G;
 
-		if(submitcheck('profilesubmit')) {
-			$_G['group']['maxsigsize'] = $_G['group']['maxsigsize'] < 200 ? 200 : $_G['group']['maxsigsize'];
-			return;
-		}
 		if($_G['uid'] && $_G['setting']['connect']['allow']) {
 			return tpl_spacecp_profile_bottom();
 		}

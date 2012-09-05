@@ -4,7 +4,7 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: helper_pm.php 29691 2012-04-25 06:53:43Z zhengqingpeng $
+ *      $Id: helper_pm.php 31440 2012-08-28 07:22:57Z zhengqingpeng $
  */
 
 if(!defined('IN_DISCUZ')) {
@@ -42,16 +42,11 @@ class helper_pm {
 			if($_G['setting']['cloud_status']) {
 				$msgService = Cloud::loadClass('Cloud_Service_Client_Message');
 				if(is_numeric($toid)) {
-					$tospace = getuserbyuid($toid);
-					if($tospace['conisbind']) {
-						$msgService->add($toid, $fromid, $author, $_G['timestamp']);
-					}
+					$msgService->add($toid, $fromid, $author, $_G['timestamp']);
 				} else {
 					$senduids = array();
 					foreach(C::t('common_member')->fetch_all_by_username(explode(',', $toid)) as $touser) {
-						if($touser['conisbind']) {
-							$senduids[$touser['uid']] = $touser['uid'];
-						}
+						$senduids[$touser['uid']] = $touser['uid'];
 					}
 					if($senduids) {
 						$msgService->add($senduids, $fromid, $author, $_G['timestamp']);

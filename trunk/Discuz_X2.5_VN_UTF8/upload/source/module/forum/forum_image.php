@@ -4,7 +4,7 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: forum_image.php 25246 2011-11-02 03:34:53Z zhangguosheng $
+ *      $Id: forum_image.php 31435 2012-08-28 04:25:57Z zhangjie $
  */
 
 if(!defined('IN_DISCUZ') || empty($_GET['aid']) || empty($_GET['size']) || empty($_GET['key'])) {
@@ -35,7 +35,7 @@ if(md5($id.'|'.$dw.'|'.$dh) != $_GET['key']) {
 }
 
 if($attach = C::t('forum_attachment_n')->fetch('aid:'.$daid, $daid, array(1, -1))) {
-	if(!$dw && !$dh && $attach['tid'] != $daid) {
+	if(!$dw && !$dh && $attach['tid'] != $id) {
 	       dheader('location: '.$_G['siteurl'].'static/image/common/none.gif');
 	}
         dheader('Expires: '.gmdate('D, d M Y H:i:s', TIMESTAMP + 3600).' GMT');
@@ -48,12 +48,14 @@ if($attach = C::t('forum_attachment_n')->fetch('aid:'.$daid, $daid, array(1, -1)
 	$img = new image;
 	if($img->Thumb($filename, $thumbfile, $w, $h, $type)) {
 		if($nocache) {
+			dheader('Content-Type: image');
 			@readfile($_G['setting']['attachdir'].$thumbfile);
 			@unlink($_G['setting']['attachdir'].$thumbfile);
 		} else {
 			dheader('location: '.$attachurl.$thumbfile);
 		}
 	} else {
+		dheader('Content-Type: image');
 		@readfile($filename);
 	}
 }

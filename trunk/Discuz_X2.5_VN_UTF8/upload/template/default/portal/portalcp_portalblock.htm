@@ -101,7 +101,7 @@
 			{eval
 			$addurl = $_GET['targettplname'] ? '&targettplname='.$_GET['targettplname'] : '';
 			$addurl .= $_GET['searchkey'] ? '&searchkey='.$_GET['searchkey'] : '';
-			$_block = current($blocks);
+			$_block = count($blocks) == 1 ? current($blocks) : array();
 			}
 			<ul class="tb cl">
 				<!--{if $_GET['searchkey'] && $_block}-->

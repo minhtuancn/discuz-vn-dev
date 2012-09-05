@@ -4,7 +4,7 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: forum_viewthread.php 30837 2012-06-25 08:24:29Z zhangguosheng $
+ *      $Id: forum_viewthread.php 31208 2012-07-26 03:26:06Z liulanbo $
  */
 
 if(!defined('IN_DISCUZ')) {
@@ -389,7 +389,7 @@ if(empty($_GET['viewpid'])) {
 				$rushids[$var] = $var;
 			}
 			$temp_reply = $_G['forum_thread']['replies'];
-			$_G['forum_thread']['replies'] = $countrushpost = count($rushids) - 1;
+			$_G['forum_thread']['replies'] = $countrushpost = max(0, count($rushids) - 1);
 			$rushids = array_slice($rushids, ($page - 1) * $_G['ppp'], $_G['ppp']);
 			foreach(C::t('forum_post')->fetch_all_by_tid_position($posttableid, $_G['tid'], $rushids) as $post) {
 				$postarr[$post['position']] = $post;
@@ -1136,7 +1136,9 @@ function viewthread_custominfo($post) {
 			if(substr($key, 0, 10) == 'extcredits') {
 				$i = substr($key, 10);
 				$extcredit = $_G['setting']['extcredits'][$i];
-				$v = '<dt>'.($extcredit['img'] ? $extcredit['img'].' ' : '').$extcredit['title'].'</dt><dd>'.$post['extcredits'.$i].' '.$extcredit['unit'].'</dd>';
+				if($extcredit) {
+					$v = '<dt>'.($extcredit['img'] ? $extcredit['img'].' ' : '').$extcredit['title'].'</dt><dd>'.$post['extcredits'.$i].' '.$extcredit['unit'].'</dd>';
+				}
 			} elseif(substr($key, 0, 6) == 'field_') {
 				$field = substr($key, 6);
 				if(!empty($post['privacy']['profile'][$field])) {

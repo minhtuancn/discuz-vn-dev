@@ -4,7 +4,7 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: function_member.php 30409 2012-05-28 02:53:10Z liulanbo $
+ *      $Id: function_member.php 31458 2012-08-30 03:39:40Z zhengqingpeng $
  */
 
 if(!defined('IN_DISCUZ')) {
@@ -14,7 +14,7 @@ if(!defined('IN_DISCUZ')) {
 function userlogin($username, $password, $questionid, $answer, $loginfield = 'username', $ip = '') {
 	$return = array();
 
-	if($loginfield == 'uid') {
+	if($loginfield == 'uid' && getglobal('setting/uidlogin')) {
 		$isuid = 1;
 	} elseif($loginfield == 'email') {
 		$isuid = 2;
@@ -28,7 +28,7 @@ function userlogin($username, $password, $questionid, $answer, $loginfield = 'us
 		loaducenter();
 	}
 	if($isuid == 3) {
-		if(!strcmp(dintval($username), $username)) {
+		if(!strcmp(dintval($username), $username) && getglobal('setting/uidlogin')) {
 			$return['ucresult'] = uc_user_login($username, $password, 1, 1, $questionid, $answer, $ip);
 		} elseif(isemail($username)) {
 			$return['ucresult'] = uc_user_login($username, $password, 2, 1, $questionid, $answer, $ip);

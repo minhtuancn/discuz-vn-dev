@@ -2,7 +2,7 @@
 	[Discuz!] (C)2001-2099 Comsenz Inc.
 	This is NOT a freeware, use is subject to license terms
 
-	$Id: handlers.js 30714 2012-06-13 09:54:07Z zhengqingpeng $
+	$Id: handlers.js 31453 2012-08-29 01:05:44Z monkey $
 */
 
 var sdCloseTime = 2;
@@ -17,17 +17,22 @@ function loadFailed() {
 }
 function disableMultiUpload(obj) {
 	if(obj.uploadSource == 'forum' && obj.uploadFrom != 'fastpost') {
-		obj.singleUpload.style.display = '';
-		var dIdStr = obj.singleUpload.getAttribute("did");
-		if(dIdStr != null) {
-			appendscript(JSPATH + 'forum_post.js?' + VERHASH);
-			var idArr = dIdStr.split("|");
-			$(idArr[0]).style.display = 'none';
-			if(idArr[1] == 'local') {
-				switchImagebutton('local');
-			} else if(idArr[1] == 'upload') {
-				switchAttachbutton('upload');
+		try{
+			obj.singleUpload.style.display = '';
+			var dIdStr = obj.singleUpload.getAttribute("did");
+			if(dIdStr != null) {
+				if(typeof forum_post_inited == 'undefined') {
+					appendscript(JSPATH + 'forum_post.js?' + VERHASH);
+				}
+				var idArr = dIdStr.split("|");
+				$(idArr[0]).style.display = 'none';
+				if(idArr[1] == 'local') {
+					switchImagebutton('local');
+				} else if(idArr[1] == 'upload') {
+					switchAttachbutton('upload');
+				}
 			}
+		} catch (e) {
 		}
 	}
 }
@@ -35,7 +40,9 @@ function fileDialogStart() {
 	if(this.customSettings.uploadSource == 'forum') {
 		this.customSettings.alertType = 0;
 		if(this.customSettings.uploadFrom == 'fastpost') {
-			appendscript(JSPATH + 'forum_post.js?' + VERHASH);
+			if(typeof forum_post_inited == 'undefined') {
+				appendscript(JSPATH + 'forum_post.js?' + VERHASH);
+			}
 		}
 	}
 }
@@ -239,7 +246,7 @@ function uploadSuccess(file, serverData) {
 				newTr.appendChild(newTd);
 				newTd = document.createElement("TD");
 				newTd.className = 'd';
-				newTd.innerHTML = 'Mô tả ảnh <br/><textarea name="title['+data.picid+']" cols="40" rows="2" class="pt"></textarea>';
+				newTd.innerHTML = 'Mô tả ảnh<br/><textarea name="title['+data.picid+']" cols="40" rows="2" class="pt"></textarea>';
 				newTr.appendChild(newTd);
 				this.customSettings.imgBoxObj.appendChild(newTr);
 			} else {

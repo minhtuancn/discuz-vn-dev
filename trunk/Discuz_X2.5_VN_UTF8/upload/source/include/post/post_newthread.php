@@ -4,7 +4,7 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: post_newthread.php 30010 2012-05-07 07:29:48Z zhengqingpeng $
+ *      $Id: post_newthread.php 31151 2012-07-19 08:23:40Z liulanbo $
  */
 
 if(!defined('IN_DISCUZ')) {
@@ -617,7 +617,7 @@ if(!submitcheck('topicsubmit', 0, $seccodecheck, $secqaacheck)) {
 		}
 	}
 
-	$values = array('fid' => $_G['fid'], 'tid' => $tid, 'pid' => $pid, 'coverimg' => '');
+	$values = array('fid' => $_G['fid'], 'tid' => $tid, 'pid' => $pid, 'coverimg' => '', 'sechash' => !empty($_GET['sechash']) ? $_GET['sechash'] : '');
 	$param = array();
 	if($_G['forum']['picstyle']) {
 		if(!setthreadcover($pid, 0, $threadimageaid)) {

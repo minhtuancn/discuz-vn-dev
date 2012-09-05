@@ -4,7 +4,7 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: forum_group.php 30894 2012-06-29 03:14:36Z zhangguosheng $
+ *      $Id: forum_group.php 31053 2012-07-12 03:53:04Z liulanbo $
  */
 
 if(!defined('IN_DISCUZ')) {
@@ -437,7 +437,7 @@ if($action == 'index') {
 				@unlink($_G['forum']['banner']);
 			}
 			require_once libfile('function/discuzcode');
-			$_GET['descriptionnew'] = discuzcode(dhtmlspecialchars(censor(trim($_GET['descriptionnew']))), 0, 0, 0, 0, 1, 1, 0, 0, 1);
+			$_GET['descriptionnew'] = discuzcode(censor(trim($_GET['descriptionnew'])), 0, 0, 0, 0, 1, 1, 0, 0, 1);
 			$censormod = censormod($_GET['descriptionnew']);
 			if($censormod) {
 				showmessage('group_description_failed');
@@ -597,7 +597,9 @@ if($action == 'index') {
 								}
 							}
 							if($newtypeid) {
-								$threadtypesnew['types'][$newtypeid] = $val;
+								$threadtypesnew['options']['name'][$newtypeid] = $val;
+								$threadtypesnew['options']['displayorder'][$newtypeid] = $threadtypes_newdisplayorder;
+								$threadtypesnew['options']['enable'][$newtypeid] = 1;
 							}
 						}
 					}

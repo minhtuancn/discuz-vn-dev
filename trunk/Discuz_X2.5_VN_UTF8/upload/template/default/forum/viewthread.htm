@@ -265,7 +265,7 @@
 					<!--{/if}-->
 					<!--{if $rushresult[rewardfloor] && $_GET['checkrush']}-->
 						<p class="ptn">
-							<!--{if $countrushpost}-->[<strong>$countrushpost</strong>]{lang thread_rushreply_rewardnum}&nbsp;&nbsp;<!--{/if}-->
+							<!--{if $countrushpost}-->[<strong>$countrushpost</strong>]{lang thread_rushreply_rewardnum}<!--{else}--> {lang thread_rushreply_noreward} <!--{/if}-->&nbsp;&nbsp;
 							<a href="forum.php?mod=viewthread&tid=$_G[tid]" class="xi2">{lang thread_rushreply_check_back}</a>
 						</p>
 					<!--{/if}-->

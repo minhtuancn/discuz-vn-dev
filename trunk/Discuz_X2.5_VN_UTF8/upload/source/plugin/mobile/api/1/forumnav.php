@@ -4,7 +4,7 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: forumnav.php 30851 2012-06-26 03:08:50Z congyushuai $
+ *      $Id: forumnav.php 31324 2012-08-13 02:30:18Z zhangjie $
  */
 
 if(!defined('IN_MOBILE_API')) {
@@ -18,7 +18,18 @@ class mobile_api {
 	function common() {
 		global $_G;
 		$forums = array();
-		$query = DB::query("SELECT f.fid, f.type, f.name, f.fup, f.status, ff.password, ff.redirect, ff.viewperm, ff.postperm, ff.threadtypes, ff.threadsorts FROM ".DB::table('forum_forum')." f LEFT JOIN ".DB::table('forum_forumfield')." ff ON ff.fid=f.fid LEFT JOIN ".DB::table('forum_access')." a ON a.fid=f.fid AND a.allowview>'0' WHERE f.status='1' ORDER BY f.type, f.displayorder");
+		$sql = !empty($_G['member']['accessmasks']) ?
+			"SELECT f.fid, f.type, f.name, f.fup, f.status, ff.password, ff.redirect, ff.viewperm, ff.postperm, ff.threadtypes, ff.threadsorts
+				FROM ".DB::table('forum_forum')." f
+				LEFT JOIN ".DB::table('forum_forumfield')." ff ON ff.fid=f.fid
+				LEFT JOIN ".DB::table('forum_access')." a ON a.uid='$_G[uid]' AND a.allowview>'0' AND a.fid=f.fid
+				WHERE f.status='1' ORDER BY f.type, f.displayorder"
+			: "SELECT f.fid, f.type, f.name, f.fup, f.status, ff.password, ff.redirect, ff.viewperm, ff.postperm, ff.threadtypes, ff.threadsorts
+				FROM ".DB::table('forum_forum')." f
+				LEFT JOIN ".DB::table('forum_forumfield')." ff USING(fid)
+				WHERE f.status='1' ORDER BY f.type, f.displayorder";
+
+		$query = DB::query($sql);
 		while($forum = DB::fetch($query)) {
 			if($forum['redirect'] || $forum['password']) {
 				continue;
@@ -42,6 +53,16 @@ class mobile_api {
 								unset($forum['threadtypes']['types'][$k]);
 							}
 						}
+					}
+					$flag = 0;
+					foreach($forum['threadtypes']['types'] as $k => $v) {
+						if($k == 0) {
+							$flag = 1;
+							break;
+						}
+					}
+					if($flag == 1) {
+						krsort($forum['threadtypes']['types']);
 					}
 					$forum['threadtypes'] = mobile_core::getvalues($forum['threadtypes'], array('required', 'types'));
 				}

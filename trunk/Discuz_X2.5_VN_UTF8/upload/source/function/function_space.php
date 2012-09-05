@@ -4,7 +4,7 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: function_space.php 30433 2012-05-29 02:45:59Z zhengqingpeng $
+ *      $Id: function_space.php 31057 2012-07-12 06:29:29Z zhangguosheng $
  */
 
 if(!defined('IN_DISCUZ')) {
@@ -570,7 +570,7 @@ function getblockhtml($blockname,$parameters = array()) {
 		case 'myapp':
 			$html = '';
 			$listclass = 'ptm ml mls cl';
-			$userapps = C::t('home_userapp')->fetch_all_by_uid_appid($_G['uid'], 0, 'menuorder');
+			$userapps = C::t('home_userapp')->fetch_all_by_uid_appid($_G['uid'], 0, 'menuorder', 'DESC', 0, $shownum);
 			$appids = array();
 			foreach($userapps as $app) {
 				$appids[$app['appid']] = $app['appid'];

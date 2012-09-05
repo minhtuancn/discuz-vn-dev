@@ -4,7 +4,7 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: function_forumlist.php 30293 2012-05-18 09:04:02Z liulanbo $
+ *      $Id: function_forumlist.php 31131 2012-07-18 09:44:21Z liulanbo $
  */
 
 if(!defined('IN_DISCUZ')) {
@@ -47,8 +47,12 @@ function forum(&$forum) {
 	$forum['lastpost'] =count($forum['lastpost']) != 4 ? $lastpost : $forum['lastpost'];
 
 	list($lastpost['tid'], $lastpost['subject'], $lastpost['dateline'], $lastpost['author']) = $forum['lastpost'];
+	$thisforumlastvisit = array();
+	if($_G['cookie']['forum_lastvisit']) {
+		preg_match("/D\_".$forum['fid']."\_(\d+)/", $_G['cookie']['forum_lastvisit'], $thisforumlastvisit);
+	}
 
-	$forum['folder'] = (isset($_G['cookie']['fid'.$forum['fid']]) && $_G['cookie']['fid'.$forum['fid']] > $lastvisit ? $_G['cookie']['fid'.$forum['fid']] : $lastvisit) < $lastpost['dateline'] ? ' class="new"' : '';
+	$forum['folder'] = ($thisforumlastvisit && $thisforumlastvisit[1] > $lastvisit ? $thisforumlastvisit[1] : $lastvisit) < $lastpost['dateline'] ? ' class="new"' : '';
 
 	if($lastpost['tid']) {
 		$lastpost['dateline'] = dgmdate($lastpost['dateline'], 'u');

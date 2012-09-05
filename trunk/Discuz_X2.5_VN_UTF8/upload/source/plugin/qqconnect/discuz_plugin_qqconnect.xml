@@ -12,7 +12,7 @@
 			<item id="datatables"><![CDATA[]]></item>
 			<item id="directory"><![CDATA[qqconnect/]]></item>
 			<item id="copyright"><![CDATA[Comsenz Inc.]]></item>
-			<item id="version"><![CDATA[1.11]]></item>
+			<item id="version"><![CDATA[1.14]]></item>
 			<item id="__modules">
 				<item id="0">
 					<item id="name"><![CDATA[connect]]></item>
@@ -130,6 +130,11 @@
 				<item id="connect_error_code_31000"><![CDATA[QQ 互联插件异常，请更新程序后重新安装]]]></item>
 				<item id="connect_error_code_31001"><![CDATA[QQ 互联插件异常，请更新程序后重新安装]]]></item>
 				<item id="connect_error_code_31002"><![CDATA[QQ 互联 APPID 被禁用]]></item>
+				<item id="connect_feed_iam"><![CDATA[我在]]></item>
+				<item id="connect_feed_published_thread"><![CDATA[发表了《{subject}》：]]></item>
+				<item id="connect_feed_published_post"><![CDATA[参与了《{subject}》的讨论：]]></item>
+				<item id="connect_spacecp_share_a_post"><![CDATA[分享一个好帖#{bbname}#《{subject}》：{message}]]></item>
+				<item id="connect_post_sync_method"><![CDATA[将此回复同步到]]></item>
 			</item>
 			<item id="templatelang">
 				<item id="connect_header_login"><![CDATA[QQ登录]]></item>
@@ -179,7 +184,7 @@
 				<item id="connect_config_profile"><![CDATA[个人资料]]></item>
 				<item id="connect_config_link_name"><![CDATA[QQ绑定设置]]></item>
 				<item id="connect_config_default_pulish_feed_title"><![CDATA[发表主题时默认发送动态到QQ空间]]></item>
-				<item id="connect_config_default_pulish_t_title"><![CDATA[发表主题时默认转播到腾讯微博]]></item>
+				<item id="connect_config_default_pulish_t_title"><![CDATA[发表主题和回复时默认转播到腾讯微博]]></item>
 				<item id="connect_config_save"><![CDATA[保存设置]]></item>
 				<item id="connect_config_newpassword"><![CDATA[为单独登录站点创建登录密码]]></item>
 				<item id="connect_config_new_password"><![CDATA[新密码]]></item>

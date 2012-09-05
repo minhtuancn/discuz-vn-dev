@@ -4,7 +4,7 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: table_common_member.php 30071 2012-05-09 02:22:31Z zhengqingpeng $
+ *      $Id: table_common_member.php 30950 2012-07-03 05:49:22Z monkey $
  */
 
 if(!defined('IN_DISCUZ')) {
@@ -70,10 +70,13 @@ class table_common_member extends discuz_table_archive
 		return $user;
 	}
 
-	public function fetch_all_by_username($usernames) {
+	public function fetch_all_by_username($usernames, $fetch_archive = 1) {
 		$users = array();
 		if(!empty($usernames)) {
 			$users = DB::fetch_all('SELECT * FROM %t WHERE username IN (%n)', array($this->_table, (array)$usernames), 'username');
+			if(isset($this->membersplit) && $fetch_archive && count($usernames) !== count($users)) {
+				$users += C::t($this->_table.'_archive')->fetch_all_by_username($username);
+			}
 		}
 		return $users;
 	}
@@ -89,21 +92,24 @@ class table_common_member extends discuz_table_archive
 		return $uid;
 	}
 
-	public function fetch_all_uid_by_username($usernames) {
+	public function fetch_all_uid_by_username($usernames, $fetch_archive = 1) {
 		$uids = array();
 		if($usernames) {
-			foreach($this->fetch_all_by_username($usernames) as $username => $value) {
+			foreach($this->fetch_all_by_username($usernames, $fetch_archive) as $username => $value) {
 				$uids[$username] = $value['uid'];
 			}
 		}
 		return $uids;
 	}
 
-	public function fetch_all_by_adminid($adminids) {
+	public function fetch_all_by_adminid($adminids, $fetch_archive = 1) {
 		$users = array();
 		$adminids = dintval((array)$adminids, true);
 		if($adminids) {
 			$users = DB::fetch_all('SELECT * FROM %t WHERE adminid IN (%n) ORDER BY adminid, uid', array($this->_table, (array)$adminids), $this->_pk);
+			if(isset($this->membersplit) && $fetch_archive && count($adminids) !== count($users)) {
+				$users += C::t($this->_table.'_archive')->fetch_all_by_adminid($adminids);
+			}
 		}
 		return $users;
 	}
@@ -124,7 +130,7 @@ class table_common_member extends discuz_table_archive
 
 	public function fetch_all_by_groupid($groupid, $start = 0, $limit = 0) {
 		$users = array();
-		if(!($groupid = dintval($groupid, true))) {
+		if($groupid = dintval($groupid, true)) {
 			$users = DB::fetch_all('SELECT * FROM '.DB::table($this->_table).' WHERE '.DB::field('groupid', $groupid).' '.DB::limit($start, $limit), null, 'uid');
 		}
 		return $users;
@@ -180,8 +186,15 @@ class table_common_member extends discuz_table_archive
 		return $user;
 	}
 
-	public function fetch_all_by_email($emails) {
-		return !empty($emails) ? DB::fetch_all('SELECT * FROM %t WHERE %i', array($this->_table, DB::field('email', $emails)), 'email') : array();
+	public function fetch_all_by_email($emails, $fetch_archive = 1) {
+		$users = array();
+		if(!empty($emails)) {
+			$users = DB::fetch_all('SELECT * FROM %t WHERE %i', array($this->_table, DB::field('email', $emails)), 'email');
+			if(isset($this->membersplit) && $fetch_archive && count($emails) !== count($users)) {
+				$users += C::t($this->_table.'_archive')->fetch_all_by_email($emails);
+			}
+		}
+		return $users;
 	}
 
 	public function count_by_email($email, $fetch_archive = 0) {

@@ -4,7 +4,7 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: Restful.php 29777 2012-04-27 04:50:50Z zhengqingpeng $
+ *      $Id: Restful.php 31472 2012-08-31 08:18:07Z zhengqingpeng $
  */
 
 if(!defined('IN_DISCUZ')) {
@@ -258,10 +258,12 @@ abstract class Cloud_Service_Client_Restful {
 
 	protected function getUserOpenId($uid) {
 		$openId = '';
-		$connectInfo = C::t('#qqconnect#common_member_connect')->fetch($uid);
-		if($connectInfo) {
-			$openId = $connectInfo['conopenid'];
-		}
+		try {
+			$connectInfo = C::t('#qqconnect#common_member_connect')->fetch($uid);
+			if($connectInfo) {
+				$openId = $connectInfo['conopenid'];
+			}
+		} catch (Exception $e) {}
 		return $openId;
 	}
 	protected function getUserDeviceToken($uids) {

@@ -4,7 +4,7 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: lang_navtitle.php 29183 2012-03-28 06:39:26Z zhengqingpeng $
+ *      $Id: lang_navtitle.php 31175 2012-07-24 02:35:29Z liulanbo $
  *
  *      This file is automatically generate
  */

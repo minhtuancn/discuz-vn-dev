@@ -4,7 +4,7 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: discuz_database.php 29671 2012-04-24 08:38:02Z zhangguosheng $
+ *      $Id: discuz_database.php 31468 2012-08-31 02:27:23Z zhangguosheng $
  */
 
 if(!defined('IN_DISCUZ')) {
@@ -44,7 +44,7 @@ class discuz_database {
 			$where = $condition;
 		}
 		$limit = dintval($limit);
-		$sql = "DELETE FROM " . self::table($table) . " WHERE $where " . ($limit ? "LIMIT $limit" : '');
+		$sql = "DELETE FROM " . self::table($table) . " WHERE $where " . ($limit > 0 ? "LIMIT $limit" : '');
 		return self::query($sql, ($unbuffered ? 'UNBUFFERED' : ''));
 	}
 
@@ -212,7 +212,7 @@ class discuz_database {
 	public static function limit($start, $limit = 0) {
 		$limit = intval($limit > 0 ? $limit : 0);
 		$start = intval($start > 0 ? $start : 0);
-		if ($start && $limit) {
+		if ($start > 0 && $limit > 0) {
 			return " LIMIT $start, $limit";
 		} elseif ($limit) {
 			return " LIMIT $limit";

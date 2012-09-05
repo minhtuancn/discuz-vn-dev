@@ -4,7 +4,7 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: viewthread.php 30880 2012-06-28 07:32:59Z congyushuai $
+ *      $Id: viewthread.php 31418 2012-08-27 08:47:01Z zhangjie $
  */
 
 if(!defined('IN_MOBILE_API')) {
@@ -24,7 +24,7 @@ class mobile_api {
 		if($GLOBALS['hiddenreplies']) {
 			foreach($GLOBALS['postlist'] as $k => $post) {
 				if(!$post['first'] && $_G['uid'] != $post['authorid'] && $_G['uid'] != $_G['forum_thread']['authorid'] && !$_G['forum']['ismoderator']) {
-					$GLOBALS['postlist'][$k]['message'] = '';
+					$GLOBALS['postlist'][$k]['message'] = lang('plugin/mobile', 'mobile_post_author_visible');
 					$GLOBALS['postlist'][$k]['attachments'] = array();
 				}
 			}
@@ -58,6 +58,17 @@ class mobile_api {
 		}
 		foreach($variable['$postlist'] as $k => $v) {
 			$variable['$postlist'][$k]['attachments'] = array_values(mobile_core::getvalues($v['attachments'], array('/^\d+$/'), array('aid', 'tid', 'uid', 'dbdateline', 'dateline', 'filename', 'filesize', 'url', 'attachment', 'remote', 'description', 'readperm', 'price', 'width', 'thumb', 'picid', 'ext', 'imgalt', 'attachsize', 'payed', 'downloads')));
+		}
+
+		if(!empty($GLOBALS['polloptions'])) {
+			$variable['special_poll']['polloptions'] = $GLOBALS['polloptions'];
+			$variable['special_poll']['expirations'] = $GLOBALS['expirations'];
+			$variable['special_poll']['multiple'] = $GLOBALS['multiple'];
+			$variable['special_poll']['maxchoices'] = $GLOBALS['maxchoices'];
+			$variable['special_poll']['voterscount'] = $GLOBALS['voterscount'];
+			$variable['special_poll']['visiblepoll'] = $GLOBALS['visiblepoll'];
+			$variable['special_poll']['allowvote'] = $_G['group']['allowvote'];
+			$variable['special_poll']['remaintime'] = $thread['remaintime'];
 		}
 
 		$variable['forum']['password'] = $variable['forum']['password'] ? '1' : '0';

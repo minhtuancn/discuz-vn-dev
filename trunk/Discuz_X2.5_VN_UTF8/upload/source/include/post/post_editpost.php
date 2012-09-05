@@ -4,7 +4,7 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: post_editpost.php 30607 2012-06-06 06:31:41Z liulanbo $
+ *      $Id: post_editpost.php 31126 2012-07-18 07:12:43Z liulanbo $
  */
 
 if(!defined('IN_DISCUZ')) {
@@ -85,6 +85,10 @@ if(!submitcheck('editsubmit')) {
 	$codeoffcheck = $postinfo['bbcodeoff'] == 1 ? 'checked="checked"' : '';
 	$tagoffcheck = $postinfo['htmlon'] & 2 ? 'checked="checked"' : '';
 	$htmloncheck = $postinfo['htmlon'] & 1 ? 'checked="checked"' : '';
+	if($htmloncheck) {
+		$editor['editormode'] = 0;
+		$editor['allowswitcheditor'] = 0;
+	}
 	$showthreadsorts = ($thread['sortid'] || !empty($sortid)) && $isfirstpost;
 	$sortid = empty($sortid) ? $thread['sortid'] : $sortid;
 
@@ -665,7 +669,7 @@ if(!submitcheck('editsubmit')) {
 			$threadupdatearr['typeid'] = $typeid;
 			$threadupdatearr['sortid'] = $sortid;
 			$threadupdatearr['subject'] = $subject;
-			if($readperm != 'ignore') {
+			if($readperm !== 'ignore') {
 				$threadupdatearr['readperm'] = $readperm;
 			}
 			$threadupdatearr['price'] = $price;

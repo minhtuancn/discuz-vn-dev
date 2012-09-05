@@ -4,7 +4,7 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: admincp_usergroups.php 29284 2012-03-31 09:42:04Z chenmengshu $
+ *      $Id: admincp_usergroups.php 31192 2012-07-25 03:26:29Z chenmengshu $
  */
 
 if(!defined('IN_DISCUZ') || !defined('IN_ADMINCP')) {
@@ -395,7 +395,7 @@ EOT;
 		$sgroups .= '<li><a href="home.php?mod=space&uid='.$uid.'" target="_blank">'.$member['username'].'</a></li>';
 	}
 	ajaxshowheader();
-	echo '<ul class="userlist"><li class="unum">'.$lang['usernum'].$num.($num > 80 ? '&nbsp;<a href="'.ADMINSCRIPT.'?action=members&submit=yes&usergroupid[]='.$sgroupid.'">'.$lang['more'].'&raquo;</a>' : '').'</li>'.$sgroups.'</ul>';
+	echo '<ul class="userlist"><li class="unum">'.$lang['usernum'].$num.($num > 80 ? '&nbsp;<a href="'.ADMINSCRIPT.'?action=members&operation=search&submit=yes&groupid='.$sgroupid.'">'.$lang['more'].'&raquo;</a>' : '').'</li>'.$sgroups.'</ul>';
 	ajaxshowfooter();
 
 } elseif($operation == 'edit') {

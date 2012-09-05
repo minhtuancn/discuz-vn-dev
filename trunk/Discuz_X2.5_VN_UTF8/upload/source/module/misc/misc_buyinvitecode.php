@@ -4,7 +4,7 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: misc_buyinvitecode.php 25289 2011-11-03 10:06:19Z zhangguosheng $
+ *      $Id: misc_buyinvitecode.php 30977 2012-07-05 07:03:30Z monkey $
  */
 
 if(!defined('IN_DISCUZ')) {
@@ -25,12 +25,12 @@ if(submitcheck('buysubmit')) {
 		$price = round($amount * $_G['setting']['inviteconfig']['invitecodeprice'], 2);
 		$orderid = '';
 
-		$apitype = $_GET['apitype'];
+		$apitype = is_numeric($_GET['bank_type']) ? 'tenpay' : $_GET['bank_type'];
 		if(empty($apitype)) {
 			showmessage('parameters_error');
 		}
 		require_once libfile('function/trade');
-		$requesturl = invite_payurl($amount, $price, $orderid);
+		$requesturl = invite_payurl($amount, $price, $orderid, $_GET['bank_type']);
 
 		if(C::t('forum_order')->fetch($orderid)) {
 			showmessage('credits_addfunds_order_invalid');

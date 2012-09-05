@@ -4,7 +4,7 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: discuz_memory.php 28628 2012-03-06 09:33:10Z zhangguosheng $
+ *      $Id: discuz_memory.php 31432 2012-08-28 03:04:18Z zhangguosheng $
  */
 
 if(!defined('IN_DISCUZ')) {
@@ -28,6 +28,7 @@ class discuz_memory extends discuz_base
 		$this->extension['apc'] = function_exists('apc_cache_info') && @apc_cache_info();
 		$this->extension['xcache'] = function_exists('xcache_get');
 		$this->extension['eaccelerator'] = function_exists('eaccelerator_get');
+		$this->extension['wincache'] = function_exists('wincache_ucache_meminfo') && wincache_ucache_meminfo();
 	}
 
 	public function init($config) {
@@ -51,7 +52,7 @@ class discuz_memory extends discuz_base
 			}
 		}
 
-		foreach(array('apc', 'eaccelerator', 'xcache') as $cache) {
+		foreach(array('apc', 'eaccelerator', 'xcache', 'wincache') as $cache) {
 			if(!is_object($this->memory) && $this->extension[$cache] && $this->config[$cache]) {
 				$class_name = 'memory_driver_'.$cache;
 				$this->memory = new $class_name();

@@ -1,15 +1,15 @@
 /*
 	[Discuz!] (C)2001-2099 Comsenz Inc.
 	This is NOT a freeware, use is subject to license terms
-	Vietnamese by Kyehani - discuz.vn
-	$Id: portal_diy.js 29297 2012-04-01 01:59:13Z zhangguosheng $
+
+	$Id: portal_diy.js 31093 2012-07-16 03:54:34Z zhangguosheng $
 */
 
 var drag = new Drag();
 drag.extend({
 	'getBlocksTimer' : '',
 	'blocks' : [],
-		'blockDefaultClass' : [{'key':'Select Style','value':''},{'key':'Style1','value':'xbs_1'},{'key':'Style2','value':'xbs xbs_2'},{'key':'Style3','value':'xbs xbs_3'},{'key':'Style4','value':'xbs xbs_4'},{'key':'Style5','value':'xbs xbs_5'},{'key':'Style6','value':'xbs xbs_6'},{'key':'Style7','value':'xbs xbs_7'}],
+	'blockDefaultClass' : [{'key':'Select Style','value':''},{'key':'Style1','value':'xbs_1'},{'key':'Style2','value':'xbs xbs_2'},{'key':'Style3','value':'xbs xbs_3'},{'key':'Style4','value':'xbs xbs_4'},{'key':'Style5','value':'xbs xbs_5'},{'key':'Style6','value':'xbs xbs_6'},{'key':'Style7','value':'xbs xbs_7'}],
 		'frameDefaultClass' : [{'key':'Select Style','value':''},{'key':'Không có khung viền','value':'xfs xfs_nbd'},{'key':'Style1','value':'xfs xfs_1'},{'key':'Style2','value':'xfs xfs_2'},{'key':'Style3','value':'xfs xfs_3'},{'key':'Style4','value':'xfs xfs_4'},{'key':'Style5','value':'xfs xfs_5'}],
 	setDefalutMenu : function () {
 			this.addMenu('default','Title','drag.openTitleEdit(event)');
@@ -150,7 +150,7 @@ drag.extend({
 		if (bdtwidth != '' || bdtcolor != '' ) {
 			ulclass = 'borderula';
 			opchecked = ' checked="checked"';
-		}//kyehani
+		}
 
 		table += '<tr><th>Frame</th><td><ul id="borderul" class="'+ulclass+'">';
 		table += '<li><label>Trên</label><select class="ps vm" id="bdtwidth" ><option value="">Size</option>'+this.getOption(widtharr,bdtwidth)+'</select>';
@@ -216,6 +216,7 @@ drag.extend({
 		var wname = objType ? 'Module' : 'Frame';
 		html = '<div class="c diywin" style="width:450px;position:relative;">'+table+'</div>';
 		var h = '<h3 class="flb"><em>Edit'+wname+'Style</em><span><a href="javascript:;" class="flbc" onclick="drag.closeStyleEdit(\''+id+'\');return false;" title="Close">\n\Close</a></span></h3>';
+			
 		var f = '<p class="o pns"><button onclick="drag.saveStyle(\''+id+'\');drag.closeStyleEdit(\''+id+'\');" class="pn pnc" value="true">\n\
 			<strong>Confirm</strong></button><button onclick="drag.closeStyleEdit(\''+id+'\')" class="pn" value="true"><strong>Cancel</strong></button></p>';
 		this.removeMenu(e);
@@ -354,7 +355,7 @@ drag.extend({
 		}
 		common += '</table><hr class="l">';
 		var li = '';
-		li += '<div id="titleInput_0"><table class="tfm"><tr><th>'+titlename+'Title:</th><td><input type="text" id="titleText_0" class="px p_fre" value="`title`" /></td></tr>';
+li += '<div id="titleInput_0"><table class="tfm"><tr><th>'+titlename+'Title:</th><td><input type="text" id="titleText_0" class="px p_fre" value="`title`" /></td></tr>';
 		li += '<tr><th>Link:</th><td><input type="text" id="titleLink_0" class="px p_fre" value="`link`" /></td></tr>';
 		li += '<tr><th>Image:</th><td><input type="text" id="titleSrc_0" class="px p_fre" value="`src`" /></td></tr>';
 		li += '<tr><th>Position:</th><td><select id="titleFloat_0" class="ps vm"><option value="" `left`>Căn Left</option><option value="right" `right`>Căn Right</option></select>';
@@ -523,7 +524,7 @@ drag.extend({
 		var tcolor = $('titleColor'+tid).value;
 		var src = $('titleSrc'+tid).value;
 		var divStyle = 'float:'+tfloat+';margin-'+tmargin_+':'+tmargin+'px;font-size:'+tsize;
-		var aStyle = 'color:'+tcolor+';';
+		var aStyle = 'color:'+tcolor+' !important;';
 		if (src) {
 			img = '<img class="vm" src="'+src+'" alt="'+ttext+'" />';
 		}
@@ -655,7 +656,7 @@ drag.extend({
 		bcontent.style.lineHeight = height == 'auto' ? '' : (height == '0px' ? '20px' : height);
 		var boldcontent = bcontent.innerHTML;
 		bcontent.innerHTML = '<center>Loading...</center>';
-		var x = new Ajax();//k y e h a n i
+		var x = new Ajax();
 		x.get('portal.php?mod=portalcp&ac=block&op=getblock&forceupdate=1&inajax=1&bid='+bid+'&tpl='+document.diyform.template.value, function(s) {
 			if(s.indexOf('errorhandle_') != -1) {
 				bcontent.innerHTML = boldcontent;

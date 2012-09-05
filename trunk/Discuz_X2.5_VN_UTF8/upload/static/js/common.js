@@ -2,7 +2,7 @@
 	[Discuz!] (C)2001-2099 Comsenz Inc.
 	This is NOT a freeware, use is subject to license terms
 
-	$Id: common.js 30758 2012-06-18 06:48:59Z chenmengshu $
+	$Id: common.js 31416 2012-08-27 07:50:15Z zhangguosheng $
 */
 
 var BROWSER = {};
@@ -291,7 +291,7 @@ function Ajax(recvType, waitId) {
 
 	var aj = new Object();
 
-	aj.loading = 'Vui lòng chờ...';
+	aj.loading = '请稍候...';
 	aj.recvType = recvType ? recvType : 'XML';
 	aj.waitId = waitId ? $(waitId) : null;
 
@@ -349,7 +349,7 @@ function Ajax(recvType, waitId) {
 				aj.resultHandle(aj.XMLHttpRequest.responseText, aj);
 			} else if(aj.recvType == 'XML') {
 				if(!aj.XMLHttpRequest.responseXML || !aj.XMLHttpRequest.responseXML.lastChild || aj.XMLHttpRequest.responseXML.lastChild.localName == 'parsererror') {
-					aj.resultHandle('<a href="' + aj.targetUrl + '" target="_blank" style="color:red">Lỗi nội bộ, không thể hiển thị nội dung này</a>' , aj);
+					aj.resultHandle('<a href="' + aj.targetUrl + '" target="_blank" style="color:red">内部错误，无法显示此内容</a>' , aj);
 				} else {
 					aj.resultHandle(aj.XMLHttpRequest.responseXML.lastChild.firstChild.nodeValue, aj);
 				}
@@ -624,7 +624,8 @@ function ajaxpost(formid, showid, waitid, showidclass, submitbtn, recall) {
 	var showidclass = !showidclass ? '' : showidclass;
 	var ajaxframeid = 'ajaxframe';
 	var ajaxframe = $(ajaxframeid);
-	var formtarget = $(formid).target;
+	var curform = $(formid);
+	var formtarget = curform.target;
 
 	var handleResult = function() {
 		var s = '';
@@ -640,7 +641,7 @@ function ajaxpost(formid, showid, waitid, showidclass, submitbtn, recall) {
 				try {
 					s = $(ajaxframeid).contentWindow.document.documentElement.firstChild.nodeValue;
 				} catch(e) {
-					s = 'Lỗi nội bộ, không thể hiển thị nội dung này';
+					s = '内部错误，无法显示此内容';
 				}
 			}
 		}
@@ -695,11 +696,11 @@ function ajaxpost(formid, showid, waitid, showidclass, submitbtn, recall) {
 	_attachEvent(ajaxframe, 'load', handleResult);
 
 	showloading();
-	$(formid).target = ajaxframeid;
-	var action = $(formid).getAttribute('action');
+	curform.target = ajaxframeid;
+	var action = curform.getAttribute('action');
 	action = hostconvert(action);
-	$(formid).action = action.replace(/\&inajax\=1/g, '')+'&inajax=1';
-	$(formid).submit();
+	curform.action = action.replace(/\&inajax\=1/g, '')+'&inajax=1';
+	curform.submit();
 	if(submitbtn) {
 		submitbtn.disabled = true;
 	}
@@ -792,7 +793,7 @@ function showPreview(val, id) {
 
 function showloading(display, waiting) {
 	var display = display ? display : 'block';
-	var waiting = waiting ? waiting : 'Vui lòng chờ...';
+	var waiting = waiting ? waiting : '请稍候...';
 	$('ajaxwaitid').innerHTML = waiting;
 	$('ajaxwaitid').style.display = display;
 }
@@ -1041,6 +1042,45 @@ function showMenu(v) {
 	menuObj.cache = cache;
 	if(layer > JSMENU['layer']) {
 		JSMENU['layer'] = layer;
+	}
+	var hasshow = function(ele) {
+		while(ele.parentNode && ((typeof(ele['currentStyle']) === 'undefined') ? window.getComputedStyle(ele,null) : ele['currentStyle'])['display'] !== 'none') {
+			ele = ele.parentNode;
+		}
+		if(ele === document) {
+			return true;
+		} else {
+			return false;
+		}
+	};
+	if(!menuObj.getAttribute('disautofocus')) {
+		try{
+			var focused = false;
+			var tags = ['input', 'select', 'textarea', 'button', 'a'];
+			for(var i = 0; i < tags.length; i++) {
+				var _all = menuObj.getElementsByTagName(tags[i]);
+				if(_all.length) {
+					for(j = 0; j < _all.length; j++) {
+						if((!_all[j]['type'] || _all[j]['type'] != 'hidden') && hasshow(_all[j])) {
+							_all[j].className += ' hidefocus';
+							_all[j].focus();
+							focused = true;
+							var cobj = _all[j];
+							_attachEvent(_all[j], 'blur', function (){cobj.className = trim(cobj.className.replace(' hidefocus', ''));});
+							break;
+						}
+					}
+				}
+				if(focused) {
+					break;
+				}
+			}
+			if(!focused) {
+				menuObj.focus();
+			}
+		} catch (e) {
+
+		}
 	}
 }
 var delayShowST = null;
@@ -1327,7 +1367,7 @@ function showDialog(msg, mode, t, func, cover, funccancel, leftmsg, confirmtxt, 
 	var menuid = 'fwin_dialog';
 	var menuObj = $(menuid);
 	var showconfirm = 1;
-	confirmtxtdefault = 'Xác định';
+	confirmtxtdefault = '确定';
 	closetime = isUndefined(closetime) ? '' : closetime;
 	closefunc = function () {
 		if(typeof func == 'function') func();
@@ -1335,7 +1375,7 @@ function showDialog(msg, mode, t, func, cover, funccancel, leftmsg, confirmtxt, 
 		hideMenu(menuid, 'dialog');
 	};
 	if(closetime) {
-		leftmsg = closetime + ' Vài giây sau khi cửa sổ được đóng lại';
+		leftmsg = closetime + ' 秒后窗口关闭';
 		showDialogST = setTimeout(closefunc, closetime * 1000);
 		showconfirm = 0;
 	}
@@ -1411,13 +1451,16 @@ function showWindow(k, url, mode, cache, menuv) {
 			menuObj.url = url;
 			url += (url.search(/\?/) > 0 ? '&' : '?') + 'infloat=yes&handlekey=' + k;
 			url += cache == -1 ? '&t='+(+ new Date()) : '';
+			if(BROWSER.ie &&  url.indexOf('referer=') < 0) {
+				url = url + '&referer=' + encodeURIComponent(location);
+			}
 			ajaxget(url, 'fwin_content_' + k, null, '', '', function() {initMenu();show();});
 		} else if(mode == 'post') {
 			menuObj.act = $(url).action;
 			ajaxpost(url, 'fwin_content_' + k, '', '', '', function() {initMenu();show();});
 		}
 		if(parseInt(BROWSER.ie) != 6) {
-			loadingst = setTimeout(function() {showDialog('', 'info', '<img src="' + IMGDIR + '/loading.gif"> Vui lòng chờ...')}, 500);
+			loadingst = setTimeout(function() {showDialog('', 'info', '<img src="' + IMGDIR + '/loading.gif"> 请稍候...')}, 500);
 		}
 	};
 	var initMenu = function() {
@@ -1892,7 +1935,7 @@ function initSearchmenu(searchform, cloudSearchUrl) {
 }
 
 function searchFocus(obj) {
-	if(obj.value == 'Nhập nội dung tìm kiếm') {
+	if(obj.value == '请输入搜索内容') {
 		obj.value = '';
 	}
 	if($('cloudsearchquery') != null) {
@@ -1937,10 +1980,15 @@ function cardInit() {
 		pos = obj.getAttribute('c') == '1' ? '43' : obj.getAttribute('c');
 		USERCARDST = setTimeout(function() {ajaxmenu(obj, 500, 1, 2, pos, null, 'p_pop card');}, 250);
 	};
+	var cardids = {};
 	var a = document.body.getElementsByTagName('a');
 	for(var i = 0;i < a.length;i++){
 		if(a[i].getAttribute('c')) {
-			a[i].setAttribute('mid', hash(a[i].href));
+			var href = a[i].getAttribute('href', 1);
+			if(typeof cardids[href] == 'undefined') {
+				cardids[href] = Math.round(Math.random()*10000);
+			}
+			a[i].setAttribute('mid', 'card_' + cardids[href]);
 			a[i].onmouseover = function() {cardShow(this)};
 			a[i].onmouseout = function() {clearTimeout(USERCARDST);};
 		}
@@ -2004,7 +2052,7 @@ function noticeTitle() {
 
 function noticeTitleFlash() {
 	if(NOTICETITLE.flashNumber < 5 || NOTICETITLE.flashNumber > 4 && !NOTICETITLE['State']) {
-		document.title = (NOTICETITLE['State'] ? '[Bạn có ]' : 'Tin mới ') + NOTICETITLE['oldTitle'];
+		document.title = (NOTICETITLE['State'] ? '【　　　】' : '【新提醒】') + NOTICETITLE['oldTitle'];
 		NOTICETITLE['State'] = !NOTICETITLE['State'];
 	}
 	NOTICETITLE.flashNumber = NOTICETITLE.flashNumber < NOTICETITLE.sleep ? ++NOTICETITLE.flashNumber : 0;
@@ -2019,27 +2067,29 @@ function con_handle_response(response) {
 }
 
 function showTopLink() {
-	if($('ft')){
+	var ft = $('ft');
+	if(ft){
+		var scrolltop = $('scrolltop');
 		var viewPortHeight = parseInt(document.documentElement.clientHeight);
 		var scrollHeight = parseInt(document.body.getBoundingClientRect().top);
-		var basew = parseInt($('ft').clientWidth);
-		var sw = $('scrolltop').clientWidth;
+		var basew = parseInt(ft.clientWidth);
+		var sw = scrolltop.clientWidth;
 		if (basew < 1000) {
-			var left = parseInt(fetchOffset($('ft'))['left']);
+			var left = parseInt(fetchOffset(ft)['left']);
 			left = left < sw ? left * 2 - sw : left;
-			$('scrolltop').style.left = ( basew + left ) + 'px';
+			scrolltop.style.left = ( basew + left ) + 'px';
 		} else {
-			$('scrolltop').style.left = 'auto';
-			$('scrolltop').style.right = 0;
+			scrolltop.style.left = 'auto';
+			scrolltop.style.right = 0;
 		}
 
 		if (BROWSER.ie && BROWSER.ie < 7) {
-			$('scrolltop').style.top = viewPortHeight - scrollHeight - 150 + 'px';
+			scrolltop.style.top = viewPortHeight - scrollHeight - 150 + 'px';
 		}
 		if (scrollHeight < -100) {
-			$('scrolltop').style.visibility = 'visible';
+			scrolltop.style.visibility = 'visible';
 		} else {
-			$('scrolltop').style.visibility = 'hidden';
+			scrolltop.style.visibility = 'hidden';
 		}
 	}
 }
@@ -2125,4 +2175,23 @@ function img_onmouseoverfunc(obj) {
 		showsetcover(obj);
 	}
 	return;
+}
+
+function toggleBlind(dom) {
+	if(loadUserdata('is_blindman')) {
+		saveUserdata('is_blindman', '');
+		dom.title = 'Open the blind experience';
+	} else {
+		saveUserdata('is_blindman', '1');
+		dom.title = 'Close the blind experience';
+	}
+}
+
+function checkBlind() {
+	var dom = $('switchblind');
+	if(loadUserdata('is_blindman')) {
+		dom.title = 'Close the blind experience';
+	} else {
+		dom.title = 'To open the blind experience';
+	}
 }

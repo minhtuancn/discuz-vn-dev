@@ -1,8 +1,8 @@
 /*
 	[Discuz!] (C)2001-2099 Comsenz Inc.
 	This is NOT a freeware, use is subject to license terms
-	Vietnamese by Kyehani - discuz.vn
-	$Id: threadsort.js 28987 2012-03-21 10:34:02Z monkey $
+
+	$Id: threadsort.js 30962 2012-07-04 07:57:45Z zhangjie $
 */
 
 function xmlobj() {
@@ -16,7 +16,7 @@ function xmlobj() {
 			} catch(e) {
 			}
 		} else if(window.ActiveXObject) {
-			var versions = ["MSXML2.DOMDocument.5.0", "MSXML2.DOMDocument.4.0", "MSXML2.DOMDocument.3.0", "MSXML2.DOMDocument", "Microsoft.XmlDom"]; //discuz . vn
+			var versions = ["MSXML2.DOMDocument.5.0", "MSXML2.DOMDocument.4.0", "MSXML2.DOMDocument.3.0", "MSXML2.DOMDocument", "Microsoft.XmlDom"];
 			for(var i=0; i<versions.length; i++) {
 				try {
 					xmlobj = new ActiveXObject(versions[i]);
@@ -52,7 +52,7 @@ function xmlobj() {
 			}
 			for(var i = 0;i < nodechilds.length;i++) {
 				if(nodechilds[i].tagName != null) {
-					if(nodechilds[i].childNodes[0] != null && nodechilds[i].childNodes.length <= 1 && (nodechilds[i].childNodes[0].nodeType == 3 || nodechilds[i].childNodes[0].nodeType == 4)) {// discuzvn
+					if(nodechilds[i].childNodes[0] != null && nodechilds[i].childNodes.length <= 1 && (nodechilds[i].childNodes[0].nodeType == 3 || nodechilds[i].childNodes[0].nodeType == 4)) {
 						if(xmlobj[nodechilds[i].tagName] == null) {
 							xmlobj[nodechilds[i].tagName] = nodechilds[i][nodetext];
 						} else {
@@ -165,7 +165,7 @@ function checkoption(identifier, required, checktype, checkmaxnum, checkminnum, 
 	ce.innerHTML = '';
 
 	if(checktype == 'select') {
-		if(required != '0' && $('typeoption_' + identifier) == null) {
+		if(required != '0' && ($('typeoption_' + identifier) == null || $('typeoption_' + identifier).value == '0')) {
 			warning(ce, 'Mục yêu cầu chưa điền');
 			return false;
 		} else if(required == '0' && ($('typeoption_' + identifier) == null || $('typeoption_' + identifier).value == '0')) {
@@ -208,14 +208,14 @@ function checkoption(identifier, required, checktype, checkmaxnum, checkminnum, 
 
 	if(checkvalue) {
 		if(checktype == 'email' && !(/^[\-\.\w]+@[\.\-\w]+(\.\w+)+$/.test(checkvalue))) {
-			warning(ce, 'E-mail không đúng');
+			warning(ce, 'Email không đúng');
 			return false;
 		} else if((checktype == 'text' || checktype == 'textarea') && checkmaxlength != '0' && mb_strlen(checkvalue) > checkmaxlength) {
 			warning(ce, 'Nội dung quá dài');
 			return false;
 		} else if((checktype == 'number' || checktype == 'range')) {
 			if(isNaN(checkvalue)) {
-				warning(ce, 'Chữ số, không chính xác');
+				warning(ce, 'Chữ số không chính xác');
 				return false;
 			} else if(checkmaxnum != '0' && parseInt(checkvalue) > parseInt(checkmaxnum)) {
 				warning(ce, 'Lớn hơn giá trị tối đa');
@@ -225,7 +225,7 @@ function checkoption(identifier, required, checktype, checkmaxnum, checkminnum, 
 				return false;
 			}
 		} else if(checktype == 'url' && !(/(http[s]?|ftp):\/\/[^\/\.]+?\..+\w[\/]?$/i.test(checkvalue))) {
-			warning(ce, 'Điền đúng dạng http:// URL');
+			warning(ce, 'Điền đúng định dạng http://đường dẫn');
 			return false;
 		}
 		ce.innerHTML = '<img src="' + IMGDIR + '/check_right.gif" width="16" height="16" class="vm" />';

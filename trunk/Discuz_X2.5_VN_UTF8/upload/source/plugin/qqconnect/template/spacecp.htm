@@ -338,7 +338,7 @@
 			$('subject').value = threadInfo.subject;
 			$('share_subject').value = threadInfo.subject.substr(0, 45);
 
-			var connect_reason_default = threadInfo.subject.substr(0, 120) + '\n' + connect_thread_url;
+                        var connect_reason_default = '{$share_message}' + '\n' + connect_thread_url;
 
 			$('reason').value = connect_reason_default;
 			var urllength = connect_url_filter(connect_reason_default);

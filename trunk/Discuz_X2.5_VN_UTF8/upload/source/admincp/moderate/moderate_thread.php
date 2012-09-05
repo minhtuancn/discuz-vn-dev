@@ -4,7 +4,7 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: moderate_thread.php 30609 2012-06-06 07:09:27Z liulanbo $
+ *      $Id: moderate_thread.php 31278 2012-08-02 08:32:31Z liulanbo $
  */
 
 if(!defined('IN_DISCUZ') || !defined('IN_ADMINCP')) {
@@ -218,8 +218,8 @@ if(!submitcheck('modsubmit') && !$_GET['fast']) {
 			$pm = 'pm_'.$thread['tid'];
 			if($thread['authorid'] && $thread['authorid'] != $_G['uid']) {
 				$pmlist[] = array(
-					'action' => 'modthreads_delete',
-					'notevar' => array('threadsubject' => $thread['subject'], 'reason' => $_GET[''.$pm]),
+					'action' =>  $_GET[$pm] ? 'modthreads_delete_reason' : 'modthreads_delete',
+					'notevar' => array('threadsubject' => $thread['subject'], 'reason' => $_GET[$pm]),
 					'authorid' => $thread['authorid'],
 				);
 			}

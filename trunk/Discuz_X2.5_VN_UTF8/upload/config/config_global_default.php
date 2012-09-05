@@ -4,7 +4,7 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: config_global_default.php 29404 2012-04-11 02:21:21Z cnteacher $
+ *      $Id: config_global_default.php 31432 2012-08-28 03:04:18Z zhangguosheng $
  */
 
 $_config = array();
@@ -110,6 +110,7 @@ $_config['memory']['memcache']['timeout'] = 1;			// memcache 服务器连接超�
 $_config['memory']['apc'] = 1;							// 启动对 apc 的支持
 $_config['memory']['xcache'] = 1;						// 启动对 xcache 的支持
 $_config['memory']['eaccelerator'] = 1;					// 启动对 eaccelerator 的支持
+$_config['memory']['wincache'] = 1; // Dòng này mới được thêm vào từ bản 01-09-2012 nhé						// 启动对 wincache 的支持
 // 服务器相关设置
 $_config['server']['id']		= 1;			// 服务器编号，多webserver的时候，用于标识当前服务器的ID
 

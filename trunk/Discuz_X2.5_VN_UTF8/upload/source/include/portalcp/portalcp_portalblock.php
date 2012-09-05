@@ -3,7 +3,7 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: portalcp_portalblock.php 29236 2012-03-30 05:34:47Z chenmengshu $
+ *      $Id: portalcp_portalblock.php 31094 2012-07-16 06:16:03Z zhangguosheng $
  */
 
 if(!defined('IN_DISCUZ')) {
@@ -139,8 +139,7 @@ if(submitcheck('getblocklistsubmit') || submitcheck('verifieddatasubmit') || sub
 			$bid = intval($match[1]);
 			$wherearr[] = " (b.bid='$bid' OR b.name='$bid')";
 		} else {
-			$_GET['searchkey'] = stripsearchkey($_GET['searchkey']);
-			$wherearr[] = " b.name LIKE '%".addslashes($_GET['searchkey'])."%'";
+			$wherearr[] = " b.name LIKE '%".stripsearchkey($_GET['searchkey'])."%'";
 			$perpage = 10000;
 		}
 		$_GET['searchkey'] = dhtmlspecialchars($_GET['searchkey']);

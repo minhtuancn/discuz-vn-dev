@@ -61,7 +61,9 @@
 									<span class="login_slct">
 										<select name="loginfield" style="float: left;" width="45" id="loginfield_$loginhash">
 											<option value="username">{lang username}</option>
+											<!--{if getglobal('setting/uidlogin')}-->
 											<option value="uid">{lang uid}</option>
+											<!--{/if}-->
 											<option value="email">{lang email}</option>
 										</select>
 									</span>
@@ -156,6 +158,9 @@
 			</div>
 		</form>
 	</div>
+	<!--{if $_G['setting']['pwdsafety']}-->
+		<script type="text/javascript" src="{$_G['setting']['jspath']}md5.js?{VERHASH}" reload="1"></script>
+	<!--{/if}-->
 	<div id="layer_lostpw_$loginhash" style="display: none;">
 		<h3 class="flb">
 			<em id="returnmessage3_$loginhash">{lang getpassword}</em>

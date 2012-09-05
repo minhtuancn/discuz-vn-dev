@@ -61,7 +61,11 @@
 		<script type="text/javascript">
 			$('note_{$tid}').focus();
 			function succeedhandle_$_GET['handlekey'](url, message, param) {
+				<!--{if $fastpost}-->
 				succeedhandle_fastpost(url, message, param);
+				<!--{else}-->
+					hideWindow('$_GET[handlekey]');
+				<!--{/if}-->
 				showCreditPrompt();
 			}
 		</script>

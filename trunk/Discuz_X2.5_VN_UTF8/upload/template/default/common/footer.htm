@@ -140,7 +140,7 @@
 <!--{eval userappprompt();}-->
 <!--{if $_G['basescript'] != 'userapp'}-->
 <span id="scrolltop" onclick="window.scrollTo('0','0')">{lang scrolltop}</span>
-<script type="text/javascript">_attachEvent(window, 'scroll', function(){showTopLink();});</script>
+<script type="text/javascript">_attachEvent(window, 'scroll', function(){showTopLink();});checkBlind();</script>
 <!--{/if}-->
 <!--{eval output();}-->
 </body>

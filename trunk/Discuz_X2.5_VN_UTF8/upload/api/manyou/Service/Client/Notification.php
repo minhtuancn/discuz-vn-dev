@@ -3,7 +3,7 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: Notification.php 30479 2012-05-30 07:28:46Z zhengqingpeng $
+ *      $Id: Notification.php 31447 2012-08-28 09:03:49Z songlixin $
  */
 
 if(!defined('IN_DISCUZ')) {
@@ -82,9 +82,17 @@ class Cloud_Service_Client_Notification extends Cloud_Service_Client_Restful {
 	public function addSiteMasterUserNotify($siteUids, $subject, $content, $authorId, $author, $fromType, $dateline) {
 		$toUids = array();
 		if($siteUids) {
-			foreach(C::t('#qqconnect#common_member_connect')->fetch_all((array)$siteUids) as $user) {
-				$toUids[$user['conopenid']] = $user['uid'];
+			$users = C::t('#qqconnect#common_member')->fetch_all((array)$siteUids);
+			$connectUsers = C::t('#qqconnect#common_member_connect')->fetch_all((array)$siteUids);
+			$i = 1;
+			foreach ($users as $uid => $user) {
+				$conopenid = $connectUsers[$uid]['conopenid'];
+				if (!$conopenid) {
+					$conopenid = 'n' . $i ++;
+				}
+				$toUids[$conopenid] = $user['uid'];
 			}
+
 			$_params = array(
 					'openidData' => $toUids,
 					'subject' => $subject,

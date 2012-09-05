@@ -4,7 +4,7 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: forum_attachment.php 27469 2012-02-01 10:28:47Z monkey $
+ *      $Id: forum_attachment.php 30933 2012-07-02 08:39:51Z zhengqingpeng $
  */
 
 if(!defined('IN_DISCUZ')) {
@@ -82,8 +82,8 @@ $archiveid = in_array($_GET['archiveid'], $threadtableids) ? intval($_GET['archi
 $attachexists = FALSE;
 if(!empty($aid) && is_numeric($aid)) {
 	$attach = C::t('forum_attachment_n')->fetch($tableid, $aid);
+	$thread = C::t('forum_thread')->fetch_by_tid_displayorder($attach['tid'], 0, '>=', null, $archiveid);
 	if($_G['uid'] && $attach['uid'] != $_G['uid']) {
-		$thread = C::t('forum_thread')->fetch_by_tid_displayorder($attach['tid'], 0, '>=', null, $archiveid);
 		if($attach) {
 			$attachpost = C::t('forum_post')->fetch($thread['posttableid'], $attach['pid'], false);
 			$attach['invisible'] = $attachpost['invisible'];

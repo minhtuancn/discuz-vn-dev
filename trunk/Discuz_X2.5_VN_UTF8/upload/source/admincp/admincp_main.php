@@ -4,7 +4,7 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: admincp_main.php 29260 2012-03-31 04:22:59Z svn_project_zhangjie $
+ *      $Id: admincp_main.php 31437 2012-08-28 05:25:08Z zhangjie $
  */
 
 if(!defined('IN_DISCUZ') || !defined('IN_ADMINCP')) {
@@ -62,8 +62,8 @@ if($_G['uid'] && $_G['member']['allowadmincp'] == 1 && !isset($_G['cookie']['che
 echo <<<EOT
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
-<title>$title</title>
 <meta http-equiv="Content-Type" content="text/html; charset=$charset">
+<title>$title</title>
 <meta content="Comsenz Inc." name="Copyright" />
 <link rel="stylesheet" href="static/image/admincp/admincp.css?{$_G[style][verhash]}" type="text/css" media="all" />
 <script src="{$_G[setting][jspath]}common.js?{$_G[style][verhash]}" type="text/javascript"></script>

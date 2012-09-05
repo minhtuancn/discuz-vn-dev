@@ -4,7 +4,7 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: function_delete.php 29479 2012-04-13 08:21:02Z zhangguosheng $
+ *      $Id: function_delete.php 31433 2012-08-28 03:27:34Z zhangjie $
  */
 
 if(!defined('IN_DISCUZ')) {
@@ -646,7 +646,12 @@ function deletedoings($ids) {
 
 	if($counts) {
 		foreach ($counts as $uid => $setarr) {
-			batchupdatecredit('doing', $uid, array('doings' => $setarr['doings']), $setarr['coef']);
+			if ($uid) {
+				batchupdatecredit('doing', $uid, array('doings' => $setarr['doings']), $setarr['coef']);
+				$lastdoing = C::t('home_doing')->fetch_all_by_uid_doid($uid, '', 'dateline', 0, 1, true, true);
+				$setarr = array('recentnote'=>$lastdoing[0]['message'], 'spacenote'=>$lastdoing[0]['message']);
+				C::t('common_member_field_home')->update($_G['uid'], $setarr);
+			}
 		}
 	}
 
@@ -892,7 +897,7 @@ function deleteportaltopic($dels) {
 	$tplpermission->delete_allperm_by_tplname($targettplname);
 
 	deletedomain($dels, 'topic');
-	C::t('common_template_block')->delete_by_targettplname($targettplname, '');
+	C::t('common_template_block')->delete_by_targettplname($targettplname);
 
 	require_once libfile('function/home');
 

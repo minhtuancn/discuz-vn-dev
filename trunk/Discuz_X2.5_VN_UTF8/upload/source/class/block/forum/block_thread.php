@@ -4,7 +4,7 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: block_thread.php 30726 2012-06-14 04:10:48Z zhangguosheng $
+ *      $Id: block_thread.php 31069 2012-07-12 09:13:58Z zhangguosheng $
  */
 
 if(!defined('IN_DISCUZ')) {
@@ -180,7 +180,6 @@ class block_thread extends discuz_block {
 					'avatar' => array('name' => lang('blockclass', 'blockclass_thread_field_avatar'), 'formtype' => 'text', 'datatype' => 'string'),
 					'avatar_middle' => array('name' => lang('blockclass', 'blockclass_thread_field_avatar_middle'), 'formtype' => 'text', 'datatype' => 'string'),
 					'avatar_big' => array('name' => lang('blockclass', 'blockclass_thread_field_avatar_big'), 'formtype' => 'text', 'datatype' => 'string'),
-					'icon' => array('name' => lang('blockclass', 'blockclass_thread_field_icon'), 'formtype' => 'text', 'datatype' => 'string'),
 					'forumurl' => array('name' => lang('blockclass', 'blockclass_thread_field_forumurl'), 'formtype' => 'text', 'datatype' => 'string'),
 					'forumname' => array('name' => lang('blockclass', 'blockclass_thread_field_forumname'), 'formtype' => 'text', 'datatype' => 'string'),
 					'typename' => array('name' => lang('blockclass', 'blockclass_thread_field_typename'), 'formtype' => 'text', 'datatype' => 'string'),
@@ -387,7 +386,6 @@ class block_thread extends discuz_block {
 					'lastpost' => $data['lastpost'],
 					'dateline' => $data['dateline'],
 					'replies' => $data['replies'],
-					'icon' => $data['icon'] > 0 ? STATICURL.'image/stamp/'.$_G['cache']['stamps'][$data['icon']]['url'] : '',
 					'forumurl' => 'forum.php?mod=forumdisplay&fid='.$data['fid'],
 					'forumname' => $_G['cache']['forums'][$data['fid']]['name'],
 					'typename' => $threadtypes[$data['typeid']]['name'],

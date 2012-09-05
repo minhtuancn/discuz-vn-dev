@@ -4,7 +4,7 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: admincp_members.php 30465 2012-05-30 04:10:03Z zhengqingpeng $
+ *      $Id: admincp_members.php 31403 2012-08-24 08:56:35Z chenmengshu $
  */
 
 if(!defined('IN_DISCUZ') || !defined('IN_ADMINCP')) {
@@ -23,6 +23,9 @@ $page = max(1, $_G['page']);
 $start_limit = ($page - 1) * $_G['setting']['memberperpage'];
 $search_condition = array_merge($_GET, $_POST);
 
+if(!is_array($search_condition['groupid']) && $search_condition['groupid']) {
+	$search_condition['groupid'][0] = $search_condition['groupid'];
+}
 foreach($search_condition as $k => $v) {
 	if(in_array($k, array('action', 'operation', 'formhash', 'confirmed', 'submit', 'page', 'deletestart', 'allnum', 'includeuc','includepost','current','pertask','lastprocess','deleteitem')) || $v === '') {
 		unset($search_condition[$k]);
@@ -89,7 +92,7 @@ EOF;
 				$allmember = C::t('common_member')->fetch_all($uids);
 				$allcount = C::t('common_member_count')->fetch_all($uids);
 				foreach($allmember as $uid=>$member) {
-					$member = array_merge($member, $allcount[$uid]);
+					$member = array_merge($member, (array)$allcount[$uid]);
 					$memberextcredits = array();
 					if($_G['setting']['extcredits']) {
 						foreach($_G['setting']['extcredits'] as $id => $credit) {
@@ -272,7 +275,7 @@ EOF;
 			$allcount = C::t('common_member_count')->fetch_all(array_keys($allstatus));
 			$allmember = C::t('common_member')->fetch_all(array_keys($allstatus));
 			foreach($allstatus as $uid => $member) {
-				$member = array_merge($member, $allcount[$uid], $allmember[$uid]);
+				$member = array_merge($member, (array)$allcount[$uid], (array)$allmember[$uid]);
 				$memberextcredits = array();
 				foreach($_G['setting']['extcredits'] as $id => $credit) {
 					$memberextcredits[] = $_G['setting']['extcredits'][$id]['title'].': '.$member['extcredits'.$id];
@@ -1508,7 +1511,14 @@ EOF;
 			}
 			$adminidnew = -1;
 			$my_data['expiry'] = groupexpiry($member['groupterms']);
+			$postcomment_cache_pid = array();
+			foreach(C::t('forum_postcomment')->fetch_all_by_authorid($member['uid']) as $postcomment) {
+				$postcomment_cache_pid[$postcomment['pid']] = $postcomment['pid'];
+			}
 			C::t('forum_postcomment')->delete_by_authorid($member['uid'], false, true);
+			if($postcomment_cache_pid) {
+				C::t('forum_postcache')->delete($postcomment_cache_pid);
+			}
 		} elseif($member['groupid'] == 4 || $member['groupid'] == 5) {
 			if(!empty($member['groupterms']['main']['groupid'])) {
 				$groupidnew = $member['groupterms']['main']['groupid'];
@@ -1711,7 +1721,14 @@ EOF;
 				C::t('home_comment')->delete_by_uid($member['uid']);
 			}
 			if(in_array('postcomment', $_GET['clear'])) {
+				$postcomment_cache_pid = array();
+				foreach(C::t('forum_postcomment')->fetch_all_by_authorid($member['uid']) as $postcomment) {
+					$postcomment_cache_pid[$postcomment['pid']] = $postcomment['pid'];
+				}
 				C::t('forum_postcomment')->delete_by_authorid($member['uid']);
+				if($postcomment_cache_pid) {
+					C::t('forum_postcache')->delete($postcomment_cache_pid);
+				}
 			}
 
 			if($membercount) {
@@ -2940,7 +2957,7 @@ function notifymembers($operation, $variable) {
 				while(true) {
 					$uids = searchmembers($search_condition, $limit, $i*$limit);
 					$allcount = C::t('common_member_count')->fetch_all($uids);
-					$insermember = array_diff($uids, array_keys($allcount));
+					$insertmember = array_diff($uids, array_keys($allcount));
 					foreach($insertmember as $uid) {
 						C::t('common_member_count')->insert(array('uid' => $uid));
 					}

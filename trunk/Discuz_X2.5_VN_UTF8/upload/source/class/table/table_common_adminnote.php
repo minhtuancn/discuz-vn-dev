@@ -4,7 +4,7 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: table_common_adminnote.php 30499 2012-05-31 06:43:01Z chenmengshu $
+ *      $Id: table_common_adminnote.php 31402 2012-08-24 08:34:58Z liulanbo $
  */
 
 if(!defined('IN_DISCUZ')) {
@@ -29,7 +29,7 @@ class table_common_adminnote extends discuz_table
 	}
 
 	public function fetch_all_by_access($access) {
-		if(!is_numeric($access)) {
+		if(!is_numeric($access) && !is_array($access)) {
 			return array();
 		}
 		return DB::fetch_all('SELECT * FROM %t WHERE '.DB::field('access', $access).' ORDER BY dateline DESC', array($this->_table));

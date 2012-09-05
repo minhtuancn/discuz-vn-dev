@@ -4,9 +4,11 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: mobile.class.php 30858 2012-06-26 10:30:21Z congyushuai $
+ *      $Id: mobile.class.php 31281 2012-08-03 02:29:27Z zhangjie $
  */
-define("MOBILE_PLUGIN_VERSION", "1");
+
+define("MOBILE_PLUGIN_VERSION", "2");
+
 class mobile_core {
 
 	function result($result) {
@@ -161,6 +163,23 @@ class base_plugin_mobile_forum extends base_plugin_mobile {
 			list($message, $url_forward, $values, $extraparam, $custom) = $param['param'];
 			mobile_api::post_mobile_message($message, $url_forward, $values, $extraparam, $custom);
 		}
+	}
+
+	function viewthread_postbottom_output() {
+		global $_G, $postlist;
+		foreach($postlist as $k => $post) {
+			$frommobiletype = '';
+			if($post['mobiletype'] == 1) {
+				$frommobiletype = lang('plugin/mobile', 'mobile_fromtype_ios');
+			} elseif($post['mobiletype'] == 2) {
+				$frommobiletype = lang('plugin/mobile', 'mobile_fromtype_android');
+			} elseif($post['mobiletype'] == 3) {
+				$frommobiletype = lang('plugin/mobile', 'mobile_fromtype_windowsphone');
+			}
+			$post['message'] .= $frommobiletype ? '<br><a href="misc.php?mod=mobile" target="_blank" style="font-size:12px;color:#708090;">'.$frommobiletype.'</a>' : '';
+			$postlist[$k] = $post;
+		}
+		return array();
 	}
 
 }

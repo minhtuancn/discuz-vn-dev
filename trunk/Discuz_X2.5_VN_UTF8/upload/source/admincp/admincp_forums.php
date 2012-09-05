@@ -4,7 +4,7 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: admincp_forums.php 29997 2012-05-07 04:00:02Z chenmengshu $
+ *      $Id: admincp_forums.php 31327 2012-08-13 07:01:41Z liulanbo $
  */
 
 if(!defined('IN_DISCUZ') || !defined('IN_ADMINCP')) {
@@ -293,10 +293,10 @@ var rowtypedata = [
 					C::t('forum_moderator')->delete_by_uid_fid_inherited($uid, $fid, $fidarray);
 				}
 
-				$excludeuids = 0;
+				$excludeuids = array();
 				$deleteuids = '\''.implode('\',\'', $_GET['delete']).'\'';
 				foreach(C::t('forum_moderator')->fetch_all_by_uid($_GET['delete']) as $mod) {
-					$excludeuids .= ','.$mod['uid'];
+					$excludeuids[] = $mod['uid'];
 				}
 
 				$usergroups = array();
@@ -475,6 +475,7 @@ var rowtypedata = [
 			C::t('forum_access')->insert(array('uid' => $access['uid'], 'fid' => $target, 'allowview' => $access['allowview'], 'allowpost' => $access['allowpost'], 'allowreply' => $access['allowreply'], 'allowgetattach' => $access['allowgetattach']));
 		}
 		C::t('forum_access')->delete_by_fid($source);
+		C::t('forum_thread')->clear_cache(array($source,$target), 'forumdisplay_');
 		updatecache('forums');
 
 		cpmsg('forums_merge_succeed', 'action=forums', 'succeed');

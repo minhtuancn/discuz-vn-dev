@@ -4,7 +4,7 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: spacecp_usergroup.php 28970 2012-03-21 04:11:39Z monkey $
+ *      $Id: spacecp_usergroup.php 31127 2012-07-18 09:00:56Z liulanbo $
  */
 
 if(!defined('IN_DISCUZ')) {
@@ -83,7 +83,7 @@ if(in_array($do, array('buy', 'exit'))) {
 				C::t('common_member')->update($_G['uid'], array('extgroupids' => $extgroupidsnew));
 			}
 
-			showmessage('usergroups_join_succeed', "home.php?mod=spacecp&ac=usergroup".($_GET['gid'] ? "&gid=$_GET[gid]" : '&do=expiry'), array('group' => $group['grouptitle']), array('showdialog' => 3, 'showmsg' => true, 'locationtime' => true));
+			showmessage('usergroups_join_succeed', "home.php?mod=spacecp&ac=usergroup".($_GET['gid'] ? "&gid=$_GET[gid]" : '&do=list'), array('group' => $group['grouptitle']), array('showdialog' => 3, 'showmsg' => true, 'locationtime' => true));
 
 		} else {
 
@@ -107,7 +107,7 @@ if(in_array($do, array('buy', 'exit'))) {
 			$extgroupidsnew = implode("\t", array_unique($extgroupidsarray));
 			C::t('common_member')->update($_G['uid'], array('groupexpiry' => $groupexpirynew, 'extgroupids' => $extgroupidsnew));
 
-			showmessage('usergroups_exit_succeed', "home.php?mod=spacecp&ac=usergroup".($_GET['gid'] ? "&gid=$_GET[gid]" : '&do=expiry'), array('group' => $group['grouptitle']), array('showdialog' => 3, 'showmsg' => true, 'locationtime' => true));
+			showmessage('usergroups_exit_succeed', "home.php?mod=spacecp&ac=usergroup".($_GET['gid'] ? "&gid=$_GET[gid]" : '&do=list'), array('group' => $group['grouptitle']), array('showdialog' => 3, 'showmsg' => true, 'locationtime' => true));
 
 		}
 
@@ -143,7 +143,7 @@ if(in_array($do, array('buy', 'exit'))) {
 		}
 
 		C::t('common_member')->update($_G['uid'], array('groupid' => $groupid, 'adminid' => $newadminid, 'groupexpiry' => $groupexpirynew, 'extgroupids' => $extgroupidsnew));
-		showmessage('usergroups_switch_succeed', "home.php?mod=spacecp&ac=usergroup".($_GET['gid'] ? "&gid=$_GET[gid]" : '&do=expiry'), array('group' => $group['grouptitle']), array('showdialog' => 3, 'showmsg' => true, 'locationtime' => true));
+		showmessage('usergroups_switch_succeed', "home.php?mod=spacecp&ac=usergroup".($_GET['gid'] ? "&gid=$_GET[gid]" : '&do=list'), array('group' => $group['grouptitle']), array('showdialog' => 3, 'showmsg' => true, 'locationtime' => true));
 	}
 
 } elseif($do == 'forum') {
@@ -256,7 +256,7 @@ if(in_array($do, array('buy', 'exit'))) {
 	if(!$_G['member']['groupexpiry']) {
 		dheader('home.php?mod=spacecp&ac=usergroup');
 	}
-
+	$usermoney = $space['extcredits'.$_G['setting']['creditstrans']];
 	$groupterms = unserialize(DB::result_first("SELECT groupterms FROM ".DB::table('common_member_field_forum')." WHERE uid='$_G[uid]'"));
 
 	$expgrouparray = $expirylist = $termsarray = array();

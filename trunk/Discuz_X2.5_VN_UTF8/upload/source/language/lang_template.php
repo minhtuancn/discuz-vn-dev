@@ -4,7 +4,7 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: lang_template.php 29150 2012-03-27 09:52:24Z zhaobing $
+ *      $Id: lang_template.php 31426 2012-08-28 02:19:51Z shiyanchao $
  *
  *      This file is automatically generate
  */
@@ -80,6 +80,7 @@ $lang = array (
   'setup' => 'Thiết đặt',
   'switch_narrow' => 'Thu nhỏ trang',
   'switch_wide' => 'Mở rộng trang',
+  'switch_blind' => 'Switch blind',
   'task_doing' => 'Đang thực hiện',
   'to_be_continue' => 'Tiếp tục',
   'usergroup' => 'Nhóm TV',

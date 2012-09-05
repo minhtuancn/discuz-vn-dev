@@ -4,7 +4,7 @@
  *	  [Discuz! X] (C)2001-2099 Comsenz Inc.
  *	  This is NOT a freeware, use is subject to license terms
  *
- *	  $Id: spacecp.inc.php 29265 2012-03-31 06:03:26Z yexinhao $
+ *	  $Id: spacecp.inc.php 31459 2012-08-30 07:05:37Z songlixin $
  */
 
 if(!defined('IN_DISCUZ')) {
@@ -48,9 +48,19 @@ if ($pluginop == 'config') {
 
 	$post = C::t('forum_post')->fetch_threadpost_by_tid_invisible($tid, 0);
 	$thread = C::t('forum_thread')->fetch_by_tid_displayorder($tid, 0);
+	$msglower = strtolower($post['message']);
+	if(strpos($msglower, '[/quote]') !== FALSE) {
+		$post['message'] = preg_replace('/\[quote\].*\[\/quote\](\r\n|\n|\r){0,}/is', '', $post['message']);
+	}
+	if(strpos($msglower, '[/media]') !== FALSE) {
+		$post['message'] = preg_replace("/\[media=([\w,]+)\]\s*([^\[\<\r\n]+?)\s*\[\/media\]/ies", '', $post['message']);
+	}
+	if(strpos($msglower, '[/flash]') !== FALSE) {
+		$post['message'] = preg_replace("/\[flash(=(\d+),(\d+))?\]\s*([^\[\<\r\n]+?)\s*\[\/flash\]/ies", '', $post['message']);
+	}
 
+	$html_content = $connectService->connectParseBbcode($post['message'], $thread['fid'], $post['pid'], $post['htmlon'], $attach_images);
 	if ($_G['group']['allowgetimage'] && $thread['price'] == 0 && $post['pid']) {
-		$connectService->connectParseBbcode($post['message'], $thread['fid'], $post['pid'], $post['htmlon'], $attach_images);
 		if ($attach_images && is_array($attach_images)) {
 			$_GET['share_images'] = array_slice($attach_images, 0, 3);
 
@@ -62,7 +72,8 @@ if ($pluginop == 'config') {
 			unset($attach_images);
 		}
 	}
-
+	$share_message = lang('plugin/qqconnect', 'connect_spacecp_share_a_post', array('bbname' => cutstr($_G['setting']['bbname'], 20,''), 'subject' => cutstr($thread['subject'], 120), 'message' => cutstr(strip_tags(str_replace('&nbsp;', ' ', $html_content)), 80)));
+	$share_message = str_replace(array('\'', "\r\n", "\r", "\n"), array('"', '', '', ''), $share_message);
 } elseif ($pluginop == 'new') {
 	if (trim($_GET['formhash']) != formhash()) {
 		showmessage('submit_invalid');

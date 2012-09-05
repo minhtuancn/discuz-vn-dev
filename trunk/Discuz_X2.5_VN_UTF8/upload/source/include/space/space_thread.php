@@ -4,7 +4,7 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: space_thread.php 28220 2012-02-24 07:52:50Z zhengqingpeng $
+ *      $Id: space_thread.php 31364 2012-08-20 03:19:05Z zhengqingpeng $
  */
 
 if(!defined('IN_DISCUZ')) {
@@ -29,7 +29,7 @@ ckstart($start, $perpage);
 $list = array();
 $userlist = array();
 $hiddennum = $count = $pricount = 0;
-
+$_GET['from'] = dhtmlspecialchars(preg_replace("/[^\[A-Za-z0-9_\]]/", '', $_GET['from']));
 $gets = array(
 	'mod' => 'space',
 	'uid' => $space['uid'],
@@ -207,6 +207,8 @@ if($_GET['view'] == 'me') {
 			foreach($threads as $tid => $thread) {
 				$delrow = false;
 				if($_G['adminid'] != 1 && $thread['displayorder'] < 0) {
+					$delrow = true;
+				} elseif($_G['adminid'] != 1 && $_G['uid'] != $thread['authorid'] && getstatus($thread['status'], 2)) {
 					$delrow = true;
 				} elseif(!isset($_G['cache']['forums'][$thread['fid']])) {
 					if(!$_G['setting']['groupstatus']) {
