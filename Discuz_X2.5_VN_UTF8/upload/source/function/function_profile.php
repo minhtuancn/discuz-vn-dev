@@ -79,9 +79,9 @@ function profile_setting($fieldid, $space=array(), $showstatus=false, $ignoreunc
 			$selectstr = $i == $space['birthday']?' selected':'';
 			$birthdayhtml .= "<option value=\"$i\"$selectstr>$i</option>";
 		}
-		$html = '<select name="birthyear" id="birthyear" class="ps" onchange="showbirthday();" tabindex="1">'
-				.'<option value="">'.lang('space', 'year').'</option>'
-				.$birthyeayhtml
+		$html = '<select name="birthday" id="birthday" class="ps" tabindex="1">'
+				.'<option value="">'.lang('space', 'day').'</option>'
+				.$birthdayhtml
 				.'</select>'
 				.'&nbsp;&nbsp;'
 				.'<select name="birthmonth" id="birthmonth" class="ps" onchange="showbirthday();" tabindex="1">'
@@ -89,9 +89,9 @@ function profile_setting($fieldid, $space=array(), $showstatus=false, $ignoreunc
 				.$birthmonthhtml
 				.'</select>'
 				.'&nbsp;&nbsp;'
-				.'<select name="birthday" id="birthday" class="ps" tabindex="1">'
-				.'<option value="">'.lang('space', 'day').'</option>'
-				.$birthdayhtml
+.'<select name="birthyear" id="birthyear" class="ps" onchange="showbirthday();" tabindex="1">'
+				.'<option value="">'.lang('space', 'year').'</option>'
+				.$birthyeayhtml
 				.'</select>';
 
 	} elseif($fieldid=='gender') {
@@ -300,9 +300,9 @@ function profile_show($fieldid, $space=array()) {
 	if($fieldid=='gender') {
 		return lang('space', 'gender_'.intval($space['gender']));
 	} elseif($fieldid=='birthday') {
-		$return = $space['birthyear'] ? $space['birthyear'].' '.lang('space', 'year').' ' : '';
-		if($space['birthmonth'] && $space['birthday']) {
-			$return .= $space['birthmonth'].' '.lang('space', 'month').' '.$space['birthday'].' '.lang('space', 'day');
+				$return = $space['birthday'] ? lang('space', 'day').' '.$space['birthday'].' ' : '';
+		if($space['birthmonth'] && $space['birthyear']) {
+			$return .= lang('space', 'month').' '.$space['birthmonth'].' '.lang('space', 'year').' '.$space['birthyear'];
 		}
 		return $return;
 	} elseif($fieldid=='birthcity') {

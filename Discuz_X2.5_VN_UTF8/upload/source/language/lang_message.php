@@ -442,7 +442,7 @@ $lang = array (
 
   'activate_succeed' => 'Xin chào,{username},Tài khoản của bạn đã được kích hoạt, hệ thống đang chuyển tới trang chủ diễn đàn.',
 
-  'login_clearcookie' => 'lịch sử đăng nhập đã xóa',
+  'login_clearcookie' => 'Cookies đăng nhập đã xóa!',
 
   'register_verify_invalid' => 'Trang web hướng dẫn sử dụng thiết lập xác minh, xin vui lòng chờ xác minh',
   'email_verify_invalid' => 'Có lỗi, Bạn chỉ được yêu cầu email kích hoạt 1 lần trong 1 ngày.',
